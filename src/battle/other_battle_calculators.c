@@ -900,7 +900,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 		(
 			GetBattlerAbility(sp, client1) == ABILITY_GALE_WINGS
 			&& sp->moveTbl[move1].type == TYPE_FLYING
-			&& sp->battlemon[client1].hp => (s32)sp->battlemon[client1].maxhp/2
+			&& sp->battlemon[client1].hp >= (s32)sp->battlemon[client1].maxhp/2
 		) {
 			priority1++;
 		}
@@ -909,7 +909,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 		(
 			GetBattlerAbility(sp, client2) == ABILITY_GALE_WINGS
 			&& sp->moveTbl[move2].type == TYPE_FLYING
-			&& sp->battlemon[client1].hp => (s32)sp->battlemon[client1].maxhp/2
+			&& sp->battlemon[client1].hp >= (s32)sp->battlemon[client1].maxhp/2
 		) {
 			priority2++;
 		}

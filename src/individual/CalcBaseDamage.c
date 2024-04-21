@@ -762,7 +762,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		((AttackingMon.type1 == DefendingMon.type1) || 
 		(AttackingMon.type1 == DefendingMon.type2) ||
 		(AttackingMon.type2 == DefendingMon.type1) ||
-		(AttackingMon.type2 == DefendingMon.type2) ||))
+		(AttackingMon.type2 == DefendingMon.type2)))
 	{
 	movepower = movepower * 125 / 100;
 	}
@@ -771,7 +771,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		((AttackingMon.type1 != DefendingMon.type1) || 
 		(AttackingMon.type1 != DefendingMon.type2) ||
 		(AttackingMon.type2 != DefendingMon.type1) ||
-		(AttackingMon.type2 != DefendingMon.type2) ||))
+		(AttackingMon.type2 != DefendingMon.type2)))
 	{
 	movepower = movepower * 75 / 100;
 	}
