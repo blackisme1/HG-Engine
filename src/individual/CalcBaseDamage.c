@@ -543,7 +543,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	}
 
 	// handle mud/water sport
-	if ((movetype == TYPE_ELECTRIC)||(movetype == TYPE_FIRE)) && (CheckFieldMoveEffect(bw, sp, MOVE_EFFECT_FLAG_MUD_SPORT)))
+	if (((movetype == TYPE_ELECTRIC) || (movetype == TYPE_FIRE)) && (CheckFieldMoveEffect(bw, sp, MOVE_EFFECT_FLAG_MUD_SPORT)))
 	{
 	MOVEpower /= 2;
 	}
