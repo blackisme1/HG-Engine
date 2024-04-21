@@ -24,19 +24,19 @@ typedef struct
 
 const AccuracyStatChangeRatio sAccStatChanges[] =
 {
-    {  33, 100 },
-    {  36, 100 },
-    {  43, 100 },
-    {  50, 100 },
-    {  60, 100 },
-    {  75, 100 },
-    {   1,   1 },
-    { 133, 100 },
-    { 166, 100 },
-    {   2,   1 },
-    { 233, 100 },
-    { 133,  50 },
-    {   3,   1 },
+    { 3, 9 },
+    { 3, 8 },
+    { 3, 7 },
+    { 3, 6 },
+    { 3, 5 },
+    { 3, 4 },
+    { 3, 3 },
+    { 4, 3 },
+    { 5, 3 },
+    { 6, 3 },
+    { 7, 3 },
+    { 8, 3 },
+    { 9, 3 },
 };
 
 const u16 PowderMovesList[] = {
@@ -717,7 +717,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
     }
 
     if ((ability1 == ABILITY_SLOW_START)
-     && ((sp->total_turn - sp->battlemon[client1].moveeffect.slowStartTurns) < 5))
+     && ((sp->total_turn - sp->battlemon[client1].moveeffect.slowStartTurns) < 3))
     {
         speed1 /= 2;
     }
@@ -799,7 +799,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
     }
 
     if ((ability2 == ABILITY_SLOW_START)
-     && ((sp->total_turn - sp->battlemon[client2].moveeffect.slowStartTurns) < 5))
+     && ((sp->total_turn - sp->battlemon[client2].moveeffect.slowStartTurns) < 3))
     {
         speed2 /= 2;
     }
