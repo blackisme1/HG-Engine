@@ -1334,6 +1334,7 @@ gIconPalTable:
 /* SPECIES_CALYREX_ICE_RIDER           */ .byte  0x0
 /* SPECIES_CALYREX_SHADOW_RIDER        */ .byte  0x0
 /* SPECIES_ENAMORUS_THERIAN            */ .byte  0x1
+/* SPECIES_CASTFORM_SANDY              */ .byte  0x0
 /* SPECIES_GROWLITHE_HISUIAN           */ .byte  0x0
 /* SPECIES_ARCANINE_HISUIAN            */ .byte  0x0
 /* SPECIES_VOLTORB_HISUIAN             */ .byte  0x0

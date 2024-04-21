@@ -1173,6 +1173,12 @@ const struct FormData UNUSED PokeFormDataTbl[]=
         .file = SPECIES_CASTFORM_SNOWY,
     },
     {
+        .species = SPECIES_CASTFORM,
+        .form_no = 4,
+        .need_rev = 1,
+        .file = SPECIES_CASTFORM_SANDY,
+    },
+    {
         .species = SPECIES_CHERRIM,
         .form_no = 1,
         .need_rev = 1,

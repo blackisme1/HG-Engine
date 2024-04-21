@@ -26570,6 +26570,23 @@ mondata SPECIES_ENAMORUS_THERIAN, "-----"
     colorflip BODY_COLOR_PINK, 0
 
 
+mondata SPECIES_CASTFORM_SANDY, "-----"
+    basestats 70, 70, 70, 70, 70, 70
+    types TYPE_ROCK, TYPE_ROCK
+    catchrate 45
+    baseexp 147
+    evyields 0, 0, 0, 0, 0, 0
+    items ITEM_MYSTIC_WATER, ITEM_MYSTIC_WATER
+    genderratio 127
+    eggcycles 25
+    basefriendship 70
+    growthrate GROWTH_MEDIUM_FAST
+    egggroups EGG_GROUP_FAIRY, EGG_GROUP_AMORPHOUS
+    abilities ABILITY_FORECAST, ABILITY_NONE
+    runchance 0
+    colorflip BODY_COLOR_WHITE, 0
+
+
 mondata SPECIES_GROWLITHE_HISUIAN, "-----"
     basestats 60, 75, 45, 55, 65, 50
     types TYPE_FIRE, TYPE_ROCK
