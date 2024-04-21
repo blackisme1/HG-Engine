@@ -259,7 +259,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     // handle slow start
     if ((AttackingMon.ability == ABILITY_SLOW_START)
      && ((BattleWorkMonDataGet(bw, sp, 3, 0) - BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_SLOW_START_COUNTER, NULL)) < 5))
-        attack /= 2;
+        attack = attack;
 
     // handle defeatist
     if ((AttackingMon.ability == ABILITY_DEFEATIST) && (AttackingMon.hp <= AttackingMon.maxhp / 2))
@@ -291,18 +291,18 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
         movepower = movepower * 130 / 100;
     }
 
-    // handle punk rock TODO uncomment
-//    if (AttackingMon.ability == ABILITY_PUNK_ROCK)
-//    {
-//        for(i = 0; i < NELEMS(SoundproofMoveList); i++)
-//        {
-//            if(moveno == SoundproofMoveList[i])
-//            {
-//                movepower = movepower * 130 / 100;
-//                break;
-//            }
-//        }
-//    }
+    // handle punk rock
+    if (AttackingMon.ability == ABILITY_PUNK_ROCK)
+    {
+        for(i = 0; i < NELEMS(SoundproofMoveList); i++)
+        {
+            if(moveno == SoundproofMoveList[i])
+            {
+                movepower = movepower * 130 / 100;
+                break;
+            }
+        }
+    }
 
 
     // type boosting held items
@@ -777,9 +777,9 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     u16 equivalentDefense;
     getEquivalentAttackAndDefense(sp, attack, defense, sp_attack, sp_defense, atkstate, defstate, spatkstate, spdefstate, &movesplit, attacker, defender, critical, moveno, &equivalentAttack, &equivalentDefense);
 
-    //// halve the defense if using selfdestruct/explosion
-    //if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
-    //    defense = defense / 2;
+    // halve the defense if using selfdestruct/explosion
+    if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
+        defense = defense / 2;
 
     damage = equivalentAttack * movepower;
     damage *= (level * 2 / 5 + 2);
@@ -930,18 +930,18 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
         damage /= 2;
     }
 
-    // handle punk rock TODO uncomment
-//    if (DefendingMon.ability == ABILITY_PUNK_ROCK)
-//    {
-//        for(i = 0; i < NELEMS(SoundproofMoveList); i++)
-//        {
-//            if(moveno == SoundproofMoveList[i])
-//            {
-//                damage /= 2;
-//                break;
-//            }
-//        }
-//    }
+    // handle punk rock
+    if (DefendingMon.ability == ABILITY_PUNK_ROCK)
+    {
+        for(i = 0; i < NELEMS(SoundproofMoveList); i++)
+        {
+            if(moveno == SoundproofMoveList[i])
+            {
+                damage /= 2;
+                break;
+            }
+        }
+    }
 
     // Handle field effects
     if (sp->terrainOverlay.numberOfTurnsLeft > 0) {
