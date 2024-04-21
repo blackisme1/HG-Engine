@@ -14,6 +14,7 @@
 a001_091:
     if IF_MASK, VAR_MOVE_STATUS, 0x10000, _failed
     moldbreakerabilitycheck 0x0, BATTLER_DEFENDER, ABILITY_SUCTION_CUPS, _suctionCupsMessage
+	moldbreakerabilitycheck 0x0, BATTLER_DEFENDER, ABILITY_GUARD_DOG, _guardDogMessage
     ifmonstat IF_EQUAL, BATTLER_DEFENDER, MON_DATA_MOVE_STATE, 0x400, _ingrainMessage
     if IF_EQUAL, VAR_BATTLE_TYPE, 0x4A, _failed
     if IF_LESSTHAN, VAR_FAINTED_BATTLER, 0x4, _failed       // If any Pokemon were fainted by the move, ignore effect (this is needed for Dragon Tail)
@@ -56,6 +57,9 @@ _failed:
     changevar VAR_OP_SETMASK, VAR_MOVE_STATUS, 0x40
     endscript
 _suctionCupsMessage:
+    preparemessage 0x293, 0xB, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN"
+    goto _016C
+_guardDogMessage:
     preparemessage 0x293, 0xB, 0x2, 0x2, "NaN", "NaN", "NaN", "NaN"
     goto _016C
 _ingrainMessage:

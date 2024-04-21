@@ -21,8 +21,14 @@ a030_241:
     ifcurrentmoveisvalidparentalbondmove DoParentalBond
 Continue:
     jumptoeffectscript 0
+
 _0024:
-    changevar VAR_OP_SETMASK, VAR_MOVE_STATUS, 0x40
+    trysnatch _002C
+    preparemessage 0x241, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x2000005A
+    endscript
+_002C:
+    changevar VAR_OP_SET, VAR_MOVE_STATUS, 0x40
     endscript
 
 DoParentalBond:

@@ -10,7 +10,7 @@
 .create "build/move/battle_eff_seq/0_029", 0
 
 a030_029:
-    setmultihit 0x0, 0xFD
+    setmultihit 5, 0xDD
     changevar VAR_OP_SET, VAR_SUCCESSIVE_HIT, 0x1
     critcalc
     damagecalc

@@ -10,7 +10,7 @@
 .create "build/move/battle_sub_seq/1_012", 0
 
 a001_012:
-    statbuffchange _00A8, _00F0, _00F4
+    statbuffchange _00A8, _Skipped, _Failed
     if IF_NOTEQUAL, VAR_ADD_EFFECT_TYPE, 0x1, _002C
     printattackmessage
     waitmessage
@@ -20,6 +20,9 @@ _002C:
     waitmessage
 _004C:
     if IF_EQUAL, VAR_CURRENT_MOVE, MOVE_RAPID_SPIN, _doRapidSpin
+	if IF_EQUAL, VAR_CURRENT_MOVE, MOVE_ROLLING_KICK, _doRapidSpin
+	if IF_EQUAL, VAR_CURRENT_MOVE, MOVE_FIRE_SPIN, _doRapidSpin
+	if IF_EQUAL, VAR_CURRENT_MOVE, MOVE_WHIRLPOOL, _doRapidSpin
 _return:
     if IF_MASK, VAR_SERVER_STATUS2, 0x2, _0094
     setstatus2effect3 BATTLER_ADDL_EFFECT, 0x2B
@@ -27,7 +30,7 @@ _return:
     if IF_NOTMASK, VAR_SERVER_STATUS2, 0x80, _0094
     changevar VAR_OP_SETMASK, VAR_SERVER_STATUS2, 0x2
 _0094:
-    if IF_MASK, VAR_SERVER_STATUS1, 0x00080000, _00F0 // use 0x00080000 to skip stat raise message from subscript 12.  it technically is used for hitting shadow force but we repurpose it here
+    if IF_MASK, VAR_SERVER_STATUS1, 0x00080000, _Skipped // use 0x00080000 to skip stat raise message from subscript 12.  it technically is used for hitting shadow force but we repurpose it here
     printpreparedmessage
     waitmessage
     wait 0x1E
@@ -37,14 +40,14 @@ _00A8:
     printattackmessage
     waitmessage
 _00C4:
-    if IF_MASK, VAR_SERVER_STATUS1, 0x200000, _00F0
+    if IF_MASK, VAR_SERVER_STATUS1, 0x200000, _Skipped
     wait 0x1E
     printpreparedmessage
     waitmessage
     wait 0x1E
-_00F0:
+_Skipped:
     endscript
-_00F4:
+_Failed:
     changevar VAR_OP_SETMASK, VAR_MOVE_STATUS, 0x40
     endscript
 

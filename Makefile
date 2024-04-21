@@ -45,8 +45,8 @@ endif
 
 default: all
 
-ROMNAME = rom.nds
-BUILDROM = test.nds
+ROMNAME = HeartGold_HGE.nds
+BUILDROM = HeartGold_HGE_1.nds
 
 ####################### Tools #######################
 ADPCMXQ := tools/adpcm-xq

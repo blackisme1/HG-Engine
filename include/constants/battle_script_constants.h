@@ -363,10 +363,13 @@
 #define SUB_SEQ_HANDLE_PARENTAL_BOND                  (353)
 #define SUB_SEQ_CREATE_TERRAIN_OVERLAY                (354)
 #define SUB_SEQ_HANDLE_SHED_TAIL                      (355)
-#define SUB_SEQ_HANDLE_AFTER_YOU                      (356)
-#define SUB_SEQ_HANDLE_QUASH                          (357)
-
-
+#define SUB_SEQ_LIFE_DEW                              (356)
+#define SUB_SEQ_JUNGLE_HEALING                        (357)
+#define SUB_SEQ_SKULK_OUT                             (358)
+#define SUB_SEQ_CACKLE                                (359)
+#define SUB_SEQ_STRENGTH_SAP                          (360)
+#define SUB_SEQ_TOXIC_THREAD                          (361)
+#define SUB_SEQ_MIND_BLOWN                            (362)
 
 // add status effect constants--used in battle effect scripts to queue up a subscript through the table in src/moves.c
 
@@ -530,10 +533,13 @@
 #define ADD_STATUS_EFF_SPICY_EXTRACT                   (157)
 #define ADD_STATUS_EFF_FILLET_AWAY                     (158)
 #define ADD_STATUS_EFF_SHED_TAIL                       (159)
-#define ADD_STATUS_EFF_AFTER_YOU                       (160)
-#define ADD_STATUS_EFF_QUASH                           (161)
-
-
+#define ADD_STATUS_EFF_LIFE_DEW                        (160)
+#define ADD_STATUS_EFF_JUNGLE_HEALING                  (161)
+#define ADD_STATUS_EFF_SKULK_OUT                       (162)
+#define ADD_STATUS_EFF_CACKLE                          (163)
+#define ADD_STATUS_EFF_STRENGTH_SAP                    (164)
+#define ADD_STATUS_EFF_TOXIC_THREAD                    (165)
+#define ADD_STATUS_EFF_MIND_BLOWN                      (166)
 
 // additional effect constants
 #define ADD_STATUS_NONE (0)

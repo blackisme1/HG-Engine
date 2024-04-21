@@ -9,24 +9,29 @@
 
 .create "build/move/battle_eff_seq/0_122", 0
 
-a030_122:
-    ifsecondhitofparentalbond Attack
-    trypresent _0014    
-    ifmonstat IF_NOTEQUAL, BATTLER_ATTACKER, MON_DATA_ABILITY, ABILITY_PARENTAL_BOND, SkipParentalBondEffect
-    setparentalbondflag
-Attack:
-    // No accuracy check per hit
-    setmultihit 0x2, 0xFD
-    changevar VAR_OP_SET, VAR_SUCCESSIVE_HIT, 0x1
-SkipParentalBondEffect:
+a030_324:
+    random 4, 0
+    if IF_GREATER, VAR_CALCULATION_WORK, 4, _150bp
+    if IF_GREATER, VAR_CALCULATION_WORK, 3, _120bp
+    if IF_GREATER, VAR_CALCULATION_WORK, 2, _80bp
+    if IF_GREATER, VAR_CALCULATION_WORK, 1, _60bp
+_40bp:
+    changevar VAR_OP_ADD, VAR_ABILITY_TEMP, 40
+    goto _end
+_60bp:
+    changevar VAR_OP_ADD, VAR_ABILITY_TEMP, 60
+    goto _end
+_80bp:
+    changevar VAR_OP_ADD, VAR_ABILITY_TEMP, 80
+    goto _end
+_120bp:
+    changevar VAR_OP_ADD, VAR_ABILITY_TEMP, 120
+    goto _end
+_150bp:
+    changevar VAR_OP_ADD, VAR_ABILITY_TEMP, 150
+    goto _end
+_end:
     critcalc
     damagecalc
     endscript
-_0014:
-    changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_DEFENDER
-    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x20000061
-    changevar VAR_OP_SETMASK, VAR_SERVER_STATUS1, 0x8000
-    changevar VAR_OP_SET, VAR_MOVE_EFFECT, 0x1
-    endscript
-
 .close

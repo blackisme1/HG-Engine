@@ -17,8 +17,13 @@ ADD_STATUS_WORK_UP equ 156
 ADD_STATUS_SPICY_EXTRACT equ 157
 ADD_STATUS_FILLET_AWAY equ 158
 ADD_STATUS_SHED_TAIL equ 159
-ADD_STATUS_AFTER_YOU equ 160
-ADD_STATUS_QUASH equ 161
+ADD_STATUS_LIFE_DEW equ 160
+ADD_STATUS_JUNGLE_HEALING equ 161
+ADD_STATUS_SKULK_OUT equ 162
+ADD_STATUS_CACKLE equ 163
+ADD_STATUS_STRENGTH_SAP equ 164
+ADD_STATUS_TOXIC_THREAD equ 165
+ADD_STATUS_MIND_BLOWN equ 166
 
 // status change
 
@@ -82,15 +87,15 @@ MON_DATA_MOVE_1 equ 6
 MON_DATA_MOVE_2 equ 7
 MON_DATA_MOVE_3 equ 8
 MON_DATA_MOVE_4 equ 9
-MON_DATA_10 equ 10
-MON_DATA_11 equ 11
-MON_DATA_12 equ 12
-MON_DATA_13 equ 13
-MON_DATA_14 equ 14
-MON_DATA_15 equ 15
+MON_DATA_HP_IV equ 10
+MON_DATA_ATK_IV equ 11
+MON_DATA_DEF_IV equ 12
+MON_DATA_SPEED_IV equ 13
+MON_DATA_SPATK_IV equ 14
+MON_DATA_SPDEF_IV equ 15
 MON_DATA_EGG_FLAG equ 16
 MON_DATA_NICKNAME_FLAG equ 17
-MON_DATA_18 equ 18
+MON_DATA_STAT_STAGE_HP equ 18
 MON_DATA_STAT_STAGE_ATTACK equ 19
 MON_DATA_STAT_STAGE_DEFENSE equ 20
 MON_DATA_STAT_STAGE_SPEED equ 21
@@ -171,6 +176,7 @@ MON_DATA_HP_RECOVERED_BY_ITEM equ 95
 MON_DATA_SLOW_START_ACTIVE equ 96
 MON_DATA_SLOW_START_INACTIVE equ 97
 MON_DATA_FORM equ 98
+MON_DATA_99 equ 99
 MON_DATA_VARIABLE equ 100
 
 
@@ -1563,13 +1569,4 @@ MOVE_DATA_CONTEST_TYPE equ 11
 .macro isparentalbondactive,address
     .word 0xF4
     .word ((address - org()) / 4) - 1
-.endmacro
-
-.macro changepermanentbg,bg,terrain
-    .word 0xF5, bg, terrain
-.endmacro
-
-.macro changeexecutionorderpriority,side,forceExecutionOrder,failAddress
-    .word 0xF6, side, forceExecutionOrder
-    .word ((failAddress - org()) / 4) - 1
 .endmacro

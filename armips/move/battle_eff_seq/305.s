@@ -7,12 +7,15 @@
 .include "armips/include/monnums.s"
 .include "armips/include/movenums.s"
 
+// Knock Off
+
 .create "build/move/battle_eff_seq/0_305", 0
 
-// After You
-
 a030_305:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1,  ADD_STATUS_AFTER_YOU | ADD_STATUS_DEFENDER
+    changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x20000076
+SkipEffect:
+    critcalc
+    damagecalc
     endscript
 
 .close

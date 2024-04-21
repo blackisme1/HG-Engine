@@ -936,10 +936,27 @@
 #define MOVE_PSYCHIC_NOISE 920
 #define MOVE_UPPER_HAND 921
 #define MOVE_MALIGNANT_CHAIN 922
+#define MOVE_NIBBLE 923
+#define MOVE_SKULK_OUT 924
+#define MOVE_CRUSH_JAW 925
+#define MOVE_KNEAD 926
+#define MOVE_JAB 927
+#define MOVE_CACKLE 928
+#define MOVE_CREEP_IN 929
+#define MOVE_HECKLE 930
+#define MOVE_CRACK_HAMMER 931
+#define MOVE_WATERMILL 932
+#define MOVE_TRAMPLE 933
+#define MOVE_LEAP 934
+#define MOVE_SHOCK 935
+#define MOVE_SKID 936
+#define MOVE_SHEAR 937
+#define MOVE_PALM_CLOSE 938
+#define MOVE_SHADOW_BLAST 939
 
 // there are a bunch more here but that is fine
 
-#define NUM_OF_MOVES 923
+#define NUM_OF_MOVES 998
 
 #define MOVE_G_MAX_WILDFIRE (NUM_OF_MOVES-1+1)
 #define MOVE_G_MAX_BEFUDDLE (NUM_OF_MOVES-1+2)

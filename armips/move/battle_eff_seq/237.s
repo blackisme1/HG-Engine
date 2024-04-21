@@ -11,8 +11,8 @@
 
 a030_237:
     wringoutdamagecalc
+	changevar VAR_OP_SET, VAR_DAMAGE_MULT, 25/2
     critcalc
     damagecalc
     endscript
-
 .close

@@ -1121,8 +1121,8 @@ void DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp) {
 
 const u8 CriticalRateTable[] =
 {
-     24,
      8,
+     4,
      2,
      1,
      1
@@ -2002,6 +2002,10 @@ void LONG_CALL getEquivalentAttackAndDefense(struct BattleStruct *sp, u16 attack
     }
 
     switch (moveno) {
+		case MOVE_CHIP_AWAY:
+        case MOVE_SACRED_SWORD:
+			*equivalentDefense = defenderDefense;
+			break;
         case MOVE_PSYSHOCK:
         case MOVE_PSYSTRIKE:
         case MOVE_SECRET_SWORD:
@@ -2015,10 +2019,13 @@ void LONG_CALL getEquivalentAttackAndDefense(struct BattleStruct *sp, u16 attack
             } else {
                 *movesplit = SPLIT_SPECIAL;
                 *equivalentAttack = rawSpecialAttack;
-                *equivalentDefense = rawPhysicalDefense;
+                *equivalentDefense = rawSpecialDefense;
             }
             break;
-
+		case MOVE_SHADOW_BLAST:
+                *equivalentAttack = rawPhysicalAttack + rawSpecialAttack;
+                *equivalentDefense = rawPhysicalDefense + rawSpecialDefense;
+            break;
         default:
             break;
     }

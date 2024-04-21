@@ -10,8 +10,7 @@
 .create "build/move/battle_eff_seq/0_064", 0
 
 a030_064:
-    critcalc
-    damagecalc
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, ACCURACY_DOWN_2 | ADD_STATUS_DEFENDER
     endscript
 
 .close

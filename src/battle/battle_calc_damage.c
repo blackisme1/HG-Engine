@@ -117,7 +117,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp)
     {
         for (type = sp->critical; type > 1; type--) // for every critical multiplier above 1, tack on 1.5x multiplier
         {
-            sp->damage = sp->damage * 150 / 100;
+            sp->damage = sp->damage * 2;
         }
     }
 
@@ -140,7 +140,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp)
 
         if ((sp->me_first_total_turns - sp->battlemon[sp->attack_client].moveeffect.meFirstCount) < 2)
         {
-            sp->damage = sp->damage * 15 / 10;
+            sp->damage = sp->damage;
         }
         else
         {

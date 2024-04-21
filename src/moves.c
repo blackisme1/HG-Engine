@@ -172,8 +172,13 @@ u16 move_effect_to_subscripts[] =
     [ADD_STATUS_EFF_SPICY_EXTRACT]               = SUB_SEQ_SPICY_EXTRACT,
     [ADD_STATUS_EFF_FILLET_AWAY]                 = SUB_SEQ_FILLET_AWAY,
     [ADD_STATUS_EFF_SHED_TAIL]                   = SUB_SEQ_HANDLE_SHED_TAIL,
-    [ADD_STATUS_EFF_AFTER_YOU]                   = SUB_SEQ_HANDLE_AFTER_YOU,
-    [ADD_STATUS_EFF_QUASH]                       = SUB_SEQ_HANDLE_QUASH,
+	[ADD_STATUS_EFF_LIFE_DEW]                    = SUB_SEQ_LIFE_DEW,
+	[ADD_STATUS_EFF_JUNGLE_HEALING]              = SUB_SEQ_JUNGLE_HEALING,
+	[ADD_STATUS_EFF_SKULK_OUT]                   = SUB_SEQ_SKULK_OUT,
+	[ADD_STATUS_EFF_CACKLE]                      = SUB_SEQ_CACKLE,
+	[ADD_STATUS_EFF_STRENGTH_SAP]                = SUB_SEQ_STRENGTH_SAP,
+	[ADD_STATUS_EFF_TOXIC_THREAD]                = SUB_SEQ_TOXIC_THREAD,
+	[ADD_STATUS_EFF_MIND_BLOWN]                  = SUB_SEQ_MIND_BLOWN,
 };
 
 

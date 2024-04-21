@@ -19,6 +19,7 @@ a030_217:
 _003C:
     changevar VAR_OP_SET, VAR_DAMAGE_MULT, 0x14
     iffirsthitofparentalbond _005C
+	changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x80000008
     changevar VAR_OP_SET, VAR_ADD_STATUS2, 0x20000075
 _005C:
     critcalc

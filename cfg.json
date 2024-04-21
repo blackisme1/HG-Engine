@@ -1,0 +1,155 @@
+{
+  "Startup": {
+    "Version": "24.3.26",
+    "ForceHaXOnLaunch": false,
+    "TryDetectRecentSave": true,
+    "AutoLoadSaveOnStartup": 1,
+    "ShowChangelogOnUpdate": true,
+    "PluginLoadMethod": 1,
+    "RecentlyLoaded": [
+      "C:\\Users\\CKIRUser\\Downloads\\hg-engine\\HeartGold_HGE.sav",
+      "",
+      "C:\\Users\\CKIRUser\\Downloads\\hg-engine\\HeartGold_HGE_1.sav"
+    ],
+    "RecentlyLoadedMaxCount": 10,
+    "Language": "en",
+    "DefaultSaveVersion": 50
+  },
+  "Backup": {
+    "BAKEnabled": true,
+    "BAKPrompt": true,
+    "OtherBackupPaths": [],
+    "OtherSaveFileExtensions": []
+  },
+  "Legality": {
+    "CheckWordFilter": true,
+    "CheckActiveHandler": false,
+    "AllowGen1Tradeback": true,
+    "NicknamedTrade": -1,
+    "NicknamedMysteryGift": 0,
+    "RNGFrameNotFound3": 0,
+    "RNGFrameNotFound4": -1,
+    "Gen7TransferStarPID": 0,
+    "Gen8MemoryMissingHT": 0,
+    "HOMETransferTrackerNotPresent": -1,
+    "NicknamedAnotherSpecies": 0,
+    "ZeroHeightWeight": 0,
+    "CurrentHandlerMismatch": -1
+  },
+  "Converter": {
+    "AllowIncompatibleConversion": 0,
+    "AllowGuessRejuvenateHOME": 1,
+    "VirtualConsoleSourceGen1": 35,
+    "VirtualConsoleSourceGen2": 40
+  },
+  "Import": {
+    "ApplyNature": true,
+    "ApplyMarkings": true
+  },
+  "SlotWrite": {
+    "SetUpdateDex": true,
+    "SetUpdatePKM": true,
+    "SetUpdateRecords": true,
+    "ModifyUnset": true
+  },
+  "Privacy": {
+    "HideSAVDetails": false,
+    "HideSecretDetails": false
+  },
+  "Display": {
+    "Unicode": true,
+    "IgnoreLegalPopup": false,
+    "FlagIllegal": true,
+    "FocusBorderDeflate": 1,
+    "DisableScalingDpi": false
+  },
+  "Sprite": {
+    "SpritePreference": 0,
+    "ShinySprites": true,
+    "ShowEggSpriteAsHeldItem": true,
+    "ShowEncounterBall": true,
+    "ShowEncounterColor": 2,
+    "ShowEncounterColorPKM": 0,
+    "ShowEncounterOpacityBackground": 63,
+    "ShowEncounterOpacityStripe": 95,
+    "ShowEncounterThicknessStripe": 4,
+    "ShowExperiencePercent": false,
+    "ShowTeraType": 1,
+    "ShowTeraThicknessStripe": 4,
+    "ShowTeraOpacityBackground": 255,
+    "ShowTeraOpacityStripe": 175
+  },
+  "Sounds": {
+    "PlaySoundSAVLoad": true,
+    "PlaySoundLegalityCheck": true
+  },
+  "Hover": {
+    "HoverSlotShowPreview": true,
+    "HoverSlotShowEncounter": true,
+    "HoverSlotShowText": true,
+    "HoverSlotPlayCry": true,
+    "HoverSlotGlowEdges": true,
+    "PreviewShowPaste": true,
+    "PreviewCursorShift": {
+      "IsEmpty": false,
+      "X": 16,
+      "Y": 8
+    }
+  },
+  "Draw": {
+    "GlowInitial": "#ffffff",
+    "GlowFinal": "#87cefa",
+    "InvalidSelection": "#e9967a",
+    "MarkDefault": "#000000",
+    "MarkBlue": "#00bfff",
+    "MarkPink": "#ff75b3",
+    "Male": "#0000ff",
+    "Female": "#ff0000",
+    "ShinyUnicode": "\u2606",
+    "ShinyDefault": "*",
+    "BackLegal": "#c8ffc8",
+    "TextColor": "#000000",
+    "BackColor": "#ffffff",
+    "BackHighlighted": "#0078d7",
+    "TextHighlighted": "#ffffff"
+  },
+  "Advanced": {
+    "PathBlockKeyList": "",
+    "HideEventTypeBelow": 0,
+    "HideEvent8Contains": ""
+  },
+  "EntityEditor": {
+    "HiddenPowerOnChangeMaxPower": true,
+    "ShowLegalBallsFirst": true
+  },
+  "EntityDb": {
+    "SearchBackups": true,
+    "SearchExtraSaves": true,
+    "SearchExtraSavesDeep": true,
+    "InitialSortMode": 0,
+    "FilterUnavailableSpecies": true
+  },
+  "EncounterDb": {
+    "ReturnNoneIfEmptySearch": true,
+    "FilterUnavailableSpecies": true,
+    "UseTabsAsCriteria": true,
+    "UseTabsAsCriteriaAnySpecies": true
+  },
+  "MysteryDb": {
+    "FilterUnavailableSpecies": true
+  },
+  "Bulk": {
+    "CheckActiveHandler": true
+  },
+  "SlotExport": {
+    "BoxExport": {
+      "Scope": 0,
+      "FolderCreation": 0,
+      "FolderPrefix": 0,
+      "EmptySlots": 0,
+      "FileIndexPrefix": 0,
+      "Notify": 0
+    },
+    "DefaultBoxExportNamer": ""
+  }
+}

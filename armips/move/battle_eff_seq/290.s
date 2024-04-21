@@ -10,7 +10,7 @@
 .create "build/move/battle_eff_seq/0_290", 0
 
 a030_290:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1,  ADD_STATUS_SHELL_SMASH | ADD_STATUS_ATTACKER
+    changevar VAR_OP_SET, VAR_ADD_STATUS1,  ADD_STATUS_V_CREATE | ADD_STATUS_ATTACKER
     endscript
 
 .close
