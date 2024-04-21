@@ -90,9 +90,9 @@ movedata MOVE_COMET_PUNCH, "Comet Punch"
 movedata MOVE_MEGA_PUNCH, "Mega Punch"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 120
+    basepower 110
     type TYPE_FIGHTING
-    accuracy 80
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1450,9 +1450,9 @@ movedata MOVE_EARTHQUAKE, "Earthquake"
 movedata MOVE_FISSURE, "Fissure"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 220
+    basepower 110
     type TYPE_GROUND
-    accuracy 50
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
