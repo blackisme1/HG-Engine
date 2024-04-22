@@ -24,20 +24,20 @@ movedata MOVE_NONE, "-"
     movedescription MOVE_NONE, "-"
 
 movedata MOVE_POUND, "Pound"
-    battleeffect 0
+    battleeffect 150
     pss SPLIT_PHYSICAL
-    basepower 50
+    basepower 40
     type TYPE_NORMAL
     accuracy 100
     pp 20
-    effectchance 0
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_POUND, "The foe is physically\npounded with a long\ntail or a foreleg,\netc. Test\n"
+    movedescription MOVE_POUND, "The foe is physically\npounded with a long\ntail or a foreleg,\netc. Flinch\n"
 
 movedata MOVE_KARATE_CHOP, "Karate Chop"
     battleeffect 43

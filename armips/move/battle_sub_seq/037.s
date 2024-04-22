@@ -35,7 +35,7 @@ _00C8:
 _0134:
     setstatus2effect BATTLER_ADDL_EFFECT, 0x6
     waitmessage
-    random 3, 2
+    random 1, 0
     changemondatabyvar VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, 0x35, VAR_CALCULATION_WORK
     if IF_EQUAL, VAR_ADD_EFFECT_TYPE, 0x4, _02E8
     printmessage 0x9C, 0x2, 0x7, "NaN", "NaN", "NaN", "NaN", "NaN"

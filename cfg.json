@@ -8,12 +8,12 @@
     "PluginLoadMethod": 1,
     "RecentlyLoaded": [
       "C:\\Users\\CKIRUser\\Downloads\\hg-engine\\HeartGold_HGE_1.sav",
-      "C:\\Users\\CKIRUser\\Downloads\\hg-engine\\HeartGold_HGE.sav",
-      ""
+      "",
+      "C:\\Users\\CKIRUser\\Downloads\\hg-engine\\HeartGold_HGE.sav"
     ],
     "RecentlyLoadedMaxCount": 10,
     "Language": "en",
-    "DefaultSaveVersion": 50
+    "DefaultSaveVersion": 7
   },
   "Backup": {
     "BAKEnabled": true,
@@ -23,18 +23,18 @@
   },
   "Legality": {
     "CheckWordFilter": true,
-    "CheckActiveHandler": false,
+    "CheckActiveHandler": true,
     "AllowGen1Tradeback": true,
-    "NicknamedTrade": -1,
-    "NicknamedMysteryGift": 0,
-    "RNGFrameNotFound3": 0,
-    "RNGFrameNotFound4": -1,
-    "Gen7TransferStarPID": 0,
-    "Gen8MemoryMissingHT": 0,
-    "HOMETransferTrackerNotPresent": -1,
-    "NicknamedAnotherSpecies": 0,
-    "ZeroHeightWeight": 0,
-    "CurrentHandlerMismatch": -1
+    "NicknamedTrade": 1,
+    "NicknamedMysteryGift": 1,
+    "RNGFrameNotFound3": 1,
+    "RNGFrameNotFound4": 1,
+    "Gen7TransferStarPID": 1,
+    "Gen8MemoryMissingHT": 1,
+    "HOMETransferTrackerNotPresent": 1,
+    "NicknamedAnotherSpecies": 1,
+    "ZeroHeightWeight": 1,
+    "CurrentHandlerMismatch": 1
   },
   "Converter": {
     "AllowIncompatibleConversion": 0,
