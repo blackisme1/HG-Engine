@@ -90,10 +90,10 @@ movedata MOVE_COMET_PUNCH, "Comet Punch"
 movedata MOVE_MEGA_PUNCH, "Mega Punch"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 120
     type TYPE_FIGHTING
-    accuracy 100
-    pp 5
+    accuracy 75
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -410,10 +410,10 @@ movedata MOVE_DOUBLE_KICK, "Double Kick"
 movedata MOVE_MEGA_KICK, "Mega Kick"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 90
     type TYPE_FIGHTING
     accuracy 100
-    pp 5
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2042,11 +2042,11 @@ movedata MOVE_FIRE_BLAST, "Fire Blast"
 movedata MOVE_WATERFALL, "Waterfall"
     battleeffect 31
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 70
     type TYPE_WATER
     accuracy 100
     pp 10
-    effectchance 25
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_HIDE_SHADOW | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
