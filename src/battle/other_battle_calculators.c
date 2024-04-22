@@ -533,7 +533,7 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 	 && (BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_TYPE1, NULL) == TYPE_POISON
 	  || BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_TYPE2, NULL) == TYPE_POISON))
 	{
-		return FALSE;
+		accuracy = accuracy;
 	}
 
 	if (((BattleRand(bw) % 100) + 1) > accuracy)
@@ -1121,11 +1121,11 @@ void DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp) {
 
 const u8 CriticalRateTable[] =
 {
-	 8,
-	 4,
-	 2,
-	 1,
-	 1
+	 0,
+	 100,
+	 100,
+	 100,
+	 100
 };
 
 // calculates the critical hit multiplier
@@ -1161,7 +1161,7 @@ int CalcCritical(void *bw, struct BattleStruct *sp, int attacker, int defender, 
 
 	if
 	(
-		BattleRand(bw) % CriticalRateTable[temp] == 0
+		BattleRand(bw) % 100 < CriticalRateTable[temp]
 		|| (ability == ABILITY_MERCILESS && (defender_condition & STATUS_POISON_ANY))
 	)
 	{
