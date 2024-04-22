@@ -117,7 +117,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp)
     {
         for (type = sp->critical; type > 1; type--) // for every critical multiplier above 1, tack on 1.5x multiplier
         {
-            sp->damage = sp->damage * 15 / 10;
+            sp->damage = sp->damage;
         }
     }
 
