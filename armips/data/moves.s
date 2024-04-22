@@ -7,7 +7,7 @@
 .include "armips/include/movemacros.s"
 .include "armips/include/movenums.s"
 
-movedata MOVE_NONE, ""
+movedata MOVE_NONE, "-"
     battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 0
@@ -21,7 +21,7 @@ movedata MOVE_NONE, ""
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_NONE, "\n\n\n\n"
+    movedescription MOVE_NONE, "-"
 
 movedata MOVE_POUND, "Pound"
     battleeffect 0
@@ -181,7 +181,7 @@ movedata MOVE_SCRATCH, "Scratch"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_SCRATCH, "Hard, pointed, and\nsharp claws rake the\nfoe to inflict damage.\nIt has a high\ncritical hit ratio.\n\n"
+    movedescription MOVE_SCRATCH, "Hard, pointed, and\nsharp claws rake the\nfoe to inflict damage.\nIt has a high\ncritical hit ratio."
 
 movedata MOVE_VICE_GRIP, "Vise Grip"
     battleeffect 0
@@ -202,9 +202,9 @@ movedata MOVE_VICE_GRIP, "Vise Grip"
 movedata MOVE_GUILLOTINE, "Pincer Cross"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 120
+    basepower 110
     type TYPE_WATER
-    accuracy 80
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1350,7 +1350,7 @@ movedata MOVE_FIRE_SPIN, "Fire Spin"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_FIRE_SPIN, "A spin attack that\ncan also eliminate\nsuch moves as Bind,\nWrap, Leech Seed,\nand Spikes."
-	
+
 movedata MOVE_THUNDER_SHOCK, "Thunder Shock"
     battleeffect 6
     pss SPLIT_SPECIAL
@@ -3229,7 +3229,7 @@ movedata MOVE_SANDSTORM, "Sandstorm"
     basepower 0
     type TYPE_ROCK
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_ACTIVE_FIELD
     priority 0
@@ -3318,7 +3318,7 @@ movedata MOVE_FALSE_SWIPE, "False Swipe"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_FALSE_SWIPE, "A restrained attack\nthat prevents the\nfoe from fainting.\nThe target is left\nwith at least 1 HP."
-	
+
 movedata MOVE_SWAGGER, "Swagger"
     battleeffect 118
     pss SPLIT_STATUS
@@ -5261,7 +5261,7 @@ movedata MOVE_SAND_TOMB, "Sand Tomb"
     basepower 50
     type TYPE_GROUND
     accuracy 80
-    pp 15
+    pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -11720,7 +11720,7 @@ movedata MOVE_CLANGOROUS_SOULBLAZE, "Soulblaze"
     movedescription MOVE_CLANGOROUS_SOULBLAZE, "---"
 
 movedata MOVE_ZIPPY_ZAP, "Zippy Zap"
-	battleeffect 282
+battleeffect 282
     pss SPLIT_PHYSICAL
     basepower 80
     type TYPE_ELECTRIC
@@ -14774,7 +14774,7 @@ movedata MOVE_MALIGNANT_CHAIN, "Malignant Chain"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_MALIGNANT_CHAIN, "---"
-	
+
 movedata MOVE_NIBBLE, "Nibble"
     battleeffect 0
     pss SPLIT_PHYSICAL
@@ -14790,7 +14790,7 @@ movedata MOVE_NIBBLE, "Nibble"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_NIBBLE, "The user nips at the\nfoe."
-	
+
 movedata MOVE_SKULK_OUT, "Skulk Out"
     battleeffect 317
     pss SPLIT_PHYSICAL
@@ -14806,7 +14806,7 @@ movedata MOVE_SKULK_OUT, "Skulk Out"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_SKULK_OUT, "The user sneaks away\nand commands an ally\nto perform an attack."
-	
+
 movedata MOVE_CRUSH_JAW, "Crush Jaw"
     battleeffect 282
     pss SPLIT_PHYSICAL
@@ -14822,7 +14822,7 @@ movedata MOVE_CRUSH_JAW, "Crush Jaw"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_CRUSH_JAW, "The user bites down\nwith immense force.\nThis move is sure\nto critically hit."
-	
+
 movedata MOVE_KNEAD, "Knead"
     battleeffect 0
     pss SPLIT_PHYSICAL
@@ -14838,7 +14838,7 @@ movedata MOVE_KNEAD, "Knead"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_KNEAD, "The user rubs against\nthe foe."
-	
+
 movedata MOVE_JAB, "Jab"
     battleeffect 0
     pss SPLIT_PHYSICAL
@@ -14870,7 +14870,7 @@ movedata MOVE_CACKLE, "Cackle"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_CACKLE, "Raises foes Speed but\nreduces Attack and\nDefense. Effect is\ndoubled if the foe has\na status condition."
-	
+
 movedata MOVE_CREEP_IN, "Creep In"
     battleeffect 321
     pss SPLIT_PHYSICAL
@@ -14886,7 +14886,7 @@ movedata MOVE_CREEP_IN, "Creep In"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_CREEP_IN, "A creeping strike that\ninflicts double damage\nif used on a foe that\nis switching in the\nbattle."
-	
+
 movedata MOVE_HECKLE, "Heckle"
     battleeffect 322
     pss SPLIT_STATUS
@@ -14902,7 +14902,7 @@ movedata MOVE_HECKLE, "Heckle"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_HECKLE, "The user confuses a\nfoe preparing an attack.\nThis move fails if\nthe foe moves first."
-	
+
 movedata MOVE_CRACK_HAMMER, "Crackdown"
     battleeffect 325
     pss SPLIT_PHYSICAL
@@ -14918,7 +14918,7 @@ movedata MOVE_CRACK_HAMMER, "Crackdown"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_CRACK_HAMMER, "The user launches a\nbash with a high\ncritical hit ratio.\nIt may also leave the\ntarget paralyzed."
-	
+
 movedata MOVE_WATERMILL, "Watermill"
     battleeffect 0
     pss SPLIT_PHYSICAL
@@ -14934,7 +14934,7 @@ movedata MOVE_WATERMILL, "Watermill"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_WATERMILL, "The user charges with\nspinning pressure."
-	
+
 movedata MOVE_TRAMPLE, "Trample"
     battleeffect 0
     pss SPLIT_PHYSICAL
@@ -14966,7 +14966,7 @@ movedata MOVE_LEAP, "Leap"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_LEAP, "The user leaps into the\nair and lands on the foe."
-	
+
 movedata MOVE_SHOCK, "Shock"
     battleeffect 31
     pss SPLIT_PHYSICAL
@@ -14998,7 +14998,7 @@ movedata MOVE_SKID, "Skid"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_SKID, "The user slams into\nthe foe by slipping on\nan icy surface."
-	
+
 movedata MOVE_SHEAR, "Shear"
     battleeffect 43
     pss SPLIT_PHYSICAL
@@ -15030,7 +15030,7 @@ movedata MOVE_PALM_CLOSE, "Palm Close"
     contesttype CONTEST_COOL
     terminatedata
     movedescription MOVE_PALM_CLOSE, "The user closes its hands.\nThe psychic energy hurts the foe."
-	
+
 movedata MOVE_SHADOW_BLAST, "Shadow Blast"
     battleeffect 0
     pss SPLIT_SPECIAL
