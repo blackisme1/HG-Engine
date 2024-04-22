@@ -21,7 +21,7 @@ a001_018:
     if IF_NOTMASK, VAR_FIELD_EFFECT, 0x30, _0080
     abilitycheck 0x0, BATTLER_ADDL_EFFECT, ABILITY_LEAF_GUARD, _032C
 _0080:
-    ifmonstat IF_MASK, BATTLER_ADDL_EFFECT, MON_DATA_STATUS_1, 0x7, _044C
+    ifmonstat IF_MASK, BATTLER_ADDL_EFFECT, MON_DATA_STATUS_1, 0x7, _044C // Uproar
     abilitycheck 0x0, BATTLER_ADDL_EFFECT, ABILITY_SOUNDPROOF, _00C0
     if IF_MASK, VAR_FIELD_EFFECT, 0xF00, _0494
 _00C0:
@@ -73,8 +73,7 @@ _01DC:
 _0250:
     setstatus2effect BATTLER_ADDL_EFFECT, 0x1
     waitmessage
-    //random 3, 2 // 1-4 turns
-    random 2, 2 // 1-3 turns of sleep to inflict.  prevents mon from waking up same turn to start at 2
+    random 4, 0 // 3 turns of sleep to inflict.
     changemondatabyvar VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, 0x34, VAR_CALCULATION_WORK
     if IF_EQUAL, VAR_ADD_EFFECT_TYPE, 0x3, _02AC
     printmessage 0x2F, 0x2, 0x7, "NaN", "NaN", "NaN", "NaN", "NaN"

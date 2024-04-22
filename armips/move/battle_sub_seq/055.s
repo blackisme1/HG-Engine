@@ -32,7 +32,7 @@ _00D8:
 _0108:
     waitmessage
     wait 0x1E
-    changemondatabyvalue VAR_OP_SETMASK, BATTLER_ATTACKER, 0x34, 0x3
+    changemondatabyvalue VAR_OP_SETMASK, BATTLER_ATTACKER, 0x34, 4
     setstatusicon BATTLER_ATTACKER, 0x1
     changevar2 VAR_OP_SET, VAR_BATTLER_SOMETHING, VAR_ATTACKER
     changevar VAR_OP_SETMASK, VAR_SERVER_STATUS1, 0x40
