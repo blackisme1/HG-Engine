@@ -1166,54 +1166,48 @@ levelup SPECIES_PERSIAN
 
 levelup SPECIES_PSYDUCK
 	learnset MOVE_SCRATCH, 1
-	learnset MOVE_TAIL_WHIP, 1
-	learnset MOVE_MUD_SPORT, 1
-	learnset MOVE_WATER_GUN, 4
-	learnset MOVE_TAIL_WHIP, 4
+	learnset MOVE_CONFUSE_RAY, 1
+	learnset MOVE_AMNESIA, 1
+	learnset MOVE_WATER_GUN, 3
 	learnset MOVE_CONFUSION, 7
-	learnset MOVE_FURY_SWIPES, 10
-	learnset MOVE_WATER_PULSE, 13
-	learnset MOVE_DISABLE, 16
-	learnset MOVE_ZEN_HEADBUTT, 21
-	learnset MOVE_SCREECH, 21
+	learnset MOVE_WATER_PULSE, 10
+	learnset MOVE_DISABLE, 13
+	learnset MOVE_ZEN_HEADBUTT, 15
+	learnset MOVE_ENCORE, 20
+ 	learnset MOVE_YAWN, 23
 	learnset MOVE_AQUA_TAIL, 25
-	learnset MOVE_SOAK, 28
-	learnset MOVE_PSYCH_UP, 31
+	learnset MOVE_SOAK, 27
+	learnset MOVE_HYPNOSIS, 30
+ 	learnset MOVE_FLIP_TURN, 33
 	learnset MOVE_AMNESIA, 35
 	learnset MOVE_HYDRO_PUMP, 37
-	learnset MOVE_WONDER_ROOM, 40
+	learnset MOVE_LIQUIDATION, 40
 	terminatelearnset
 
 
 levelup SPECIES_GOLDUCK
-	learnset MOVE_AQUA_JET, 1
 	learnset MOVE_SCRATCH, 1
-	learnset MOVE_TAIL_WHIP, 1
-	learnset MOVE_WATER_GUN, 1
-	learnset MOVE_CONFUSION, 1
-	learnset MOVE_ME_FIRST, 1
-	learnset MOVE_MUD_SPORT, 1
-	learnset MOVE_TAIL_WHIP, 4
-	learnset MOVE_WATER_GUN, 7
-	learnset MOVE_FURY_SWIPES, 10
-	learnset MOVE_CONFUSION, 10
-	learnset MOVE_WATER_PULSE, 13
-	learnset MOVE_DISABLE, 16
-	learnset MOVE_ZEN_HEADBUTT, 21
-	learnset MOVE_SCREECH, 21
+	learnset MOVE_CONFUSE_RAY, 1
+	learnset MOVE_AMNESIA, 1
+	learnset MOVE_WATER_GUN, 3
+	learnset MOVE_CONFUSION, 7
+	learnset MOVE_WATER_PULSE, 10
+	learnset MOVE_DISABLE, 13
+	learnset MOVE_ZEN_HEADBUTT, 15
+	learnset MOVE_ENCORE, 20
+ 	learnset MOVE_YAWN, 23
 	learnset MOVE_AQUA_TAIL, 25
-	learnset MOVE_SOAK, 28
-	learnset MOVE_PSYCH_UP, 32
-	learnset MOVE_AMNESIA, 38
-	learnset MOVE_HYDRO_PUMP, 42
-	learnset MOVE_WONDER_ROOM, 47
+	learnset MOVE_SOAK, 27
+	learnset MOVE_HYPNOSIS, 30
+ 	learnset MOVE_FLIP_TURN, 33
+	learnset MOVE_AMNESIA, 35
+	learnset MOVE_HYDRO_PUMP, 37
+	learnset MOVE_LIQUIDATION, 40
 	terminatelearnset
 
 
 levelup SPECIES_MANKEY
-	learnset MOVE_COVET, 1
 	learnset MOVE_SCRATCH, 1
-	learnset MOVE_LOW_KICK, 1
 	learnset MOVE_LEER, 1
 	learnset MOVE_FOCUS_ENERGY, 1
 	learnset MOVE_FURY_SWIPES, 5
@@ -1226,7 +1220,7 @@ levelup SPECIES_MANKEY
 	learnset MOVE_PUNISHMENT, 29
 	learnset MOVE_THRASH, 33
 	learnset MOVE_CLOSE_COMBAT, 36
-	learnset MOVE_SCREECH, 40
+	learnset MOVE_ROAR, 40
 	learnset MOVE_STOMPING_TANTRUM, 43
 	learnset MOVE_OUTRAGE, 47
 	learnset MOVE_FINAL_GAMBIT, 50
@@ -1236,10 +1230,7 @@ levelup SPECIES_MANKEY
 levelup SPECIES_PRIMEAPE
 	learnset MOVE_RAGE, 0
 	learnset MOVE_RAGE, 1
-	learnset MOVE_FINAL_GAMBIT, 1
-	learnset MOVE_FLING, 1
 	learnset MOVE_SCRATCH, 1
-	learnset MOVE_LOW_KICK, 1
 	learnset MOVE_LEER, 1
 	learnset MOVE_FOCUS_ENERGY, 1
 	learnset MOVE_FURY_SWIPES, 5
@@ -1249,15 +1240,13 @@ levelup SPECIES_PRIMEAPE
 	learnset MOVE_SWAGGER, 19
 	learnset MOVE_CROSS_CHOP, 22
 	learnset MOVE_ASSURANCE, 26
-	learnset MOVE_RAGE, 28
-	learnset MOVE_PUNISHMENT, 30
-	learnset MOVE_THRASH, 35
-	learnset MOVE_RAGE_FIST, 37
-	learnset MOVE_CLOSE_COMBAT, 39
-	learnset MOVE_SCREECH, 44
-	learnset MOVE_STOMPING_TANTRUM, 48
-	learnset MOVE_OUTRAGE, 53
-	learnset MOVE_FINAL_GAMBIT, 57
+	learnset MOVE_PUNISHMENT, 29
+	learnset MOVE_THRASH, 33
+	learnset MOVE_CLOSE_COMBAT, 36
+	learnset MOVE_ROAR, 40
+	learnset MOVE_STOMPING_TANTRUM, 43
+	learnset MOVE_OUTRAGE, 47
+	learnset MOVE_FINAL_GAMBIT, 50
 	terminatelearnset
 
 
@@ -12334,7 +12323,7 @@ levelup SPECIES_MUNNA
 	learnset MOVE_DREAM_EATER, 42
 	learnset MOVE_TELEKINESIS, 43
 	learnset MOVE_STORED_POWER, 47
-	learnset MOVE_WONDER_ROOM, 52
+	learnset MOVE_EMBARGO, 52
 	terminatelearnset
 
 
@@ -12350,7 +12339,7 @@ levelup SPECIES_MUSHARNA
 	learnset MOVE_MOONBLAST, 1
 	learnset MOVE_DREAM_EATER, 1
 	learnset MOVE_FUTURE_SIGHT, 1
-	learnset MOVE_WONDER_ROOM, 1
+	learnset MOVE_EMBARGO, 1
 	learnset MOVE_STORED_POWER, 1
 	learnset MOVE_DEFENSE_CURL, 1
 	learnset MOVE_HYPNOSIS, 1
@@ -13729,7 +13718,7 @@ levelup SPECIES_SOLOSIS
 	learnset MOVE_FUTURE_SIGHT, 37
 	learnset MOVE_SKILL_SWAP, 40
 	learnset MOVE_HEAL_BLOCK, 46
-	learnset MOVE_WONDER_ROOM, 48
+	learnset MOVE_EMBARGO, 48
 	terminatelearnset
 
 
@@ -13758,7 +13747,7 @@ levelup SPECIES_DUOSION
 	learnset MOVE_FUTURE_SIGHT, 42
 	learnset MOVE_SKILL_SWAP, 44
 	learnset MOVE_HEAL_BLOCK, 50
-	learnset MOVE_WONDER_ROOM, 55
+	learnset MOVE_EMBARGO, 55
 	terminatelearnset
 
 
@@ -13791,7 +13780,7 @@ levelup SPECIES_REUNICLUS
 	learnset MOVE_FUTURE_SIGHT, 44
 	learnset MOVE_SKILL_SWAP, 46
 	learnset MOVE_HEAL_BLOCK, 54
-	learnset MOVE_WONDER_ROOM, 61
+	learnset MOVE_EMBARGO, 61
 	terminatelearnset
 
 
@@ -14380,7 +14369,7 @@ levelup SPECIES_ELGYEM
 	learnset MOVE_CALM_MIND, 45
 	learnset MOVE_PSYCHIC, 50
 	learnset MOVE_SYNCHRONOISE, 53
-	learnset MOVE_WONDER_ROOM, 54
+	learnset MOVE_EMBARGO, 54
 	terminatelearnset
 
 
@@ -14390,7 +14379,7 @@ levelup SPECIES_BEHEEYEM
 	learnset MOVE_GROWL, 1
 	learnset MOVE_IMPRISON, 1
 	learnset MOVE_TELEPORT, 1
-	learnset MOVE_WONDER_ROOM, 1
+	learnset MOVE_EMBARGO, 1
 	learnset MOVE_SYNCHRONOISE, 1
 	learnset MOVE_HEAL_BLOCK, 1
 	learnset MOVE_MIRACLE_EYE, 1
@@ -14409,7 +14398,7 @@ levelup SPECIES_BEHEEYEM
 	learnset MOVE_RECOVER, 47
 	learnset MOVE_CALM_MIND, 48
 	learnset MOVE_PSYCHIC, 54
-	learnset MOVE_WONDER_ROOM, 63
+	learnset MOVE_EMBARGO, 63
 	learnset MOVE_SYNCHRONOISE, 63
 	terminatelearnset
 
@@ -17150,7 +17139,7 @@ levelup SPECIES_HOOPA
 	learnset MOVE_GUARD_SPLIT, 29
 	learnset MOVE_PHANTOM_FORCE, 35
 	learnset MOVE_ZEN_HEADBUTT, 46
-	learnset MOVE_WONDER_ROOM, 50
+	learnset MOVE_EMBARGO, 50
 	learnset MOVE_TRICK_ROOM, 50
 	learnset MOVE_SHADOW_BALL, 55
 	learnset MOVE_NASTY_PLOT, 68
@@ -18777,7 +18766,7 @@ levelup SPECIES_NIHILEGO
 	learnset MOVE_VENOM_DRENCH, 48
 	learnset MOVE_MIRROR_COAT, 52
 	learnset MOVE_STEALTH_ROCK, 56
-	learnset MOVE_WONDER_ROOM, 65
+	learnset MOVE_EMBARGO, 65
 	learnset MOVE_HEAD_SMASH, 71
 	terminatelearnset
 
@@ -25246,7 +25235,7 @@ levelup SPECIES_HOOPA_UNBOUND
 	learnset MOVE_POWER_SPLIT, 29
 	learnset MOVE_GUARD_SPLIT, 29
 	learnset MOVE_KNOCK_OFF, 46
-	learnset MOVE_WONDER_ROOM, 50
+	learnset MOVE_EMBARGO, 50
 	learnset MOVE_TRICK_ROOM, 50
 	learnset MOVE_DARK_PULSE, 55
 	learnset MOVE_PSYCHIC, 75
