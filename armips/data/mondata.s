@@ -9652,7 +9652,7 @@ mondata SPECIES_MANTYKE, "Mantyke"
 
 
 mondata SPECIES_SNOVER, "Snover"
-    basestats 60, 62, 50, 40, 62, 60
+    basestats 160, 62, 50, 50, 62, 50
     types TYPE_GRASS, TYPE_ICE
     catchrate 120
     baseexp 0 // defined in baseexp.s
@@ -9673,7 +9673,7 @@ mondata SPECIES_SNOVER, "Snover"
 
 
 mondata SPECIES_ABOMASNOW, "Abomasnow"
-    basestats 90, 92, 75, 60, 92, 85
+    basestats 190, 92, 80, 60, 92, 80
     types TYPE_GRASS, TYPE_ICE
     catchrate 60
     baseexp 0 // defined in baseexp.s
