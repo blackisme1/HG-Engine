@@ -8728,7 +8728,7 @@ mondata SPECIES_MOTHIM, "Mothim"
 
 
 mondata SPECIES_COMBEE, "Combee"
-    basestats 30, 30, 42, 70, 30, 42
+    basestats 40, 40, 40, 80, 40, 40
     types TYPE_BUG, TYPE_FLYING
     catchrate 120
     baseexp 0 // defined in baseexp.s
@@ -8749,7 +8749,7 @@ mondata SPECIES_COMBEE, "Combee"
 
 
 mondata SPECIES_VESPIQUEN, "Vespiquen"
-    basestats 70, 80, 102, 40, 80, 102
+    basestats 40, 100, 100, 80, 100, 100
     types TYPE_BUG, TYPE_FLYING
     catchrate 45
     baseexp 0 // defined in baseexp.s
