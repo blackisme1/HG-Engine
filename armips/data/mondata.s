@@ -1158,7 +1158,7 @@ mondata SPECIES_PSYDUCK, "Psyduck"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_ANALYTIC, ABILITY_NONE
+    abilities ABILITY_DAMP, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_PSYDUCK, "It has mystical powers but doesn’t\nrecall that it has used them.\nThat is why it always looks puzzled."
@@ -1179,7 +1179,7 @@ mondata SPECIES_GOLDUCK, "Golduck"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_ANALYTIC, ABILITY_NONE
+    abilities ABILITY_DAMP, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_GOLDUCK, "When it swims at full speed using\nits long, webbed limbs, its forehead\nsomehow begins to glow."
@@ -1462,7 +1462,7 @@ mondata SPECIES_MACHAMP, "Machamp"
 
 
 mondata SPECIES_BELLSPROUT, "Bellsprout"
-    basestats 50, 75, 35, 40, 70, 30
+    basestats 50, 70, 40, 40, 70, 40
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1483,7 +1483,7 @@ mondata SPECIES_BELLSPROUT, "Bellsprout"
 
 
 mondata SPECIES_WEEPINBELL, "Weepinbell"
-    basestats 65, 90, 50, 55, 85, 45
+    basestats 60, 90, 50, 50, 90, 50
     types TYPE_GRASS, TYPE_POISON
     catchrate 120
     baseexp 0 // defined in baseexp.s
@@ -1504,7 +1504,7 @@ mondata SPECIES_WEEPINBELL, "Weepinbell"
 
 
 mondata SPECIES_VICTREEBEL, "Victreebel"
-    basestats 80, 105, 65, 70, 100, 70
+    basestats 80, 100, 70, 70, 100, 70
     types TYPE_GRASS, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -1819,7 +1819,7 @@ mondata SPECIES_DODRIO, "Dodrio"
 
 
 mondata SPECIES_SEEL, "Seel"
-    basestats 65, 45, 55, 45, 45, 70
+    basestats 70, 50, 50, 50, 50, 70
     types TYPE_WATER, TYPE_ICE
     catchrate 190
     baseexp 0 // defined in baseexp.s
@@ -1830,7 +1830,7 @@ mondata SPECIES_SEEL, "Seel"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_REFRIGERATE, ABILITY_NONE
+    abilities ABILITY_THICK_FAT, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_SEEL, "Although it can’t walk well on land,\nit is a graceful swimmer. It especially\nloves being in frigid seas."
@@ -1840,7 +1840,7 @@ mondata SPECIES_SEEL, "Seel"
 
 
 mondata SPECIES_DEWGONG, "Dewgong"
-    basestats 90, 70, 80, 70, 70, 95
+    basestats 100, 70, 70, 70, 70, 100
     types TYPE_WATER, TYPE_ICE
     catchrate 75
     baseexp 0 // defined in baseexp.s
@@ -1851,7 +1851,7 @@ mondata SPECIES_DEWGONG, "Dewgong"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_FIELD
-    abilities ABILITY_REFRIGERATE, ABILITY_NONE
+    abilities ABILITY_THICK_FAT, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_WHITE, 0
     mondexentry SPECIES_DEWGONG, "Its streamlined body has little\ndrag in water. The colder the\ntemperature, the friskier it gets."
@@ -1945,7 +1945,7 @@ mondata SPECIES_CLOYSTER, "Cloyster"
 
 
 mondata SPECIES_GASTLY, "Gastly"
-    basestats 30, 35, 30, 80, 100, 35
+    basestats 30, 30, 30, 80, 100, 30
     types TYPE_GHOST, TYPE_POISON
     catchrate 190
     baseexp 0 // defined in baseexp.s
@@ -1966,7 +1966,7 @@ mondata SPECIES_GASTLY, "Gastly"
 
 
 mondata SPECIES_HAUNTER, "Haunter"
-    basestats 45, 50, 45, 95, 115, 55
+    basestats 50, 50, 50, 90, 110, 50
     types TYPE_GHOST, TYPE_POISON
     catchrate 90
     baseexp 0 // defined in baseexp.s
@@ -1987,7 +1987,7 @@ mondata SPECIES_HAUNTER, "Haunter"
 
 
 mondata SPECIES_GENGAR, "Gengar"
-    basestats 60, 65, 60, 110, 130, 75
+    basestats 70, 70, 70, 100, 120, 70
     types TYPE_GHOST, TYPE_POISON
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -2008,7 +2008,7 @@ mondata SPECIES_GENGAR, "Gengar"
 
 
 mondata SPECIES_ONIX, "Onix"
-    basestats 160, 45, 35, 70, 30, 45
+    basestats 170, 50, 50, 70, 30, 30
     types TYPE_ROCK, TYPE_GROUND
     catchrate 45
     baseexp 0 // defined in baseexp.s
@@ -4381,7 +4381,7 @@ mondata SPECIES_GLIGAR, "Gligar"
 
 
 mondata SPECIES_STEELIX, "Steelix"
-    basestats 75, 85, 200, 30, 55, 65
+    basestats 200, 80, 80, 70, 40, 40
     types TYPE_STEEL, TYPE_GROUND
     catchrate 25
     baseexp 0 // defined in baseexp.s
