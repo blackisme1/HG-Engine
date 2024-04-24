@@ -54,6 +54,39 @@ mov pc, r1
 CalcSpeed_return_address:
 .word 0
 
+.global ov12_02251710_hook
+ov12_02251710_hook:
+ldr r5, =ov12_02251710_return_address
+mov r6, lr
+str r6, [r5]
+pop {r5-r6}
+bl ov12_02251710
+ldr r1, =ov12_02251710_return_address
+ldr r1, [r1]
+mov pc, r1
+
+.pool
+
+ov12_02251710_return_address:
+.word 0
+
+
+.global UnlockBattlerOutOfCurrentMove_hook
+UnlockBattlerOutOfCurrentMove_hook:
+ldr r5, =ov12_02251710_return_address
+mov r6, lr
+str r6, [r5]
+pop {r5-r6}
+bl UnlockBattlerOutOfCurrentMove_hook
+ldr r1, =UnlockBattlerOutOfCurrentMove_hook_address
+ldr r1, [r1]
+mov pc, r1
+
+.pool
+
+UnlockBattlerOutOfCurrentMove_hook_return_address:
+.word 0
+
 
 .global CalcCritical_hook
 CalcCritical_hook:

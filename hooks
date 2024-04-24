@@ -76,6 +76,10 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 #0224FC48+4
 0012 CalcSpeed_hook 0801838C 5
 #02257C5C+4
+0012 ov12_02251710_hook 08014408 5
+#02251710+4
+0012 UnlockBattlerOutOfCurrentMove_hook 08014408 5
+#02251710+4
 0012 CalcCritical_hook 080203A0 5
 #022555EC
 0012 GetBattleMonItem 0801DD2C 2

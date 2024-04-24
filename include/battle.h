@@ -274,8 +274,6 @@
 #define STATUS2_DEFENCE_CURL (0x40000000)
 #define STATUS2_TORMENT (0x80000000)
 
-#define STATUS2_FLINCH_CUSTOM (0x00000001)
-
 /**
  *  @brief side status flags that apply to one side
  *  accessible in BattleStruct's side_condition[side]

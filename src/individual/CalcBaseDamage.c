@@ -1058,7 +1058,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	}
 	
 	// handle flinch
-	if ((sp->battlemon[attacker].condition2 & STATUS2_FLINCH_CUSTOM) != 0)
+	if ((sp->battlemon[attacker].condition2 & 0x08) != 0)
 	{
 		damage /= 2;
 	}

@@ -1540,12 +1540,12 @@ int LONG_CALL ServerDoTypeCalcMod(void *bw UNUSED, struct BattleStruct *sp, int 
  *  @brief tries to see if the player can even try to run.  queues up the proper message if not
  *
  *  @param bw battle work structure
- *  @param ctx global battle structure
+ *  @param sp global battle structure
  *  @param battlerId client to check for running
  *  @param msg msg param to fill with values for printing a message that results from running
  *  @return TRUE if the battler can not escape; FALSE if the battler can escape
  */
-BOOL CantEscape(void *bw, struct BattleStruct *ctx, int battlerId, MESSAGE_PARAM *msg) {
+BOOL CantEscape(void *bw, struct BattleStruct *sp, int battlerId, MESSAGE_PARAM *msg) {
 	int battlerIdAbility;
 	int maxBattlers UNUSED;
 	u8 side UNUSED;
@@ -1553,38 +1553,38 @@ BOOL CantEscape(void *bw, struct BattleStruct *ctx, int battlerId, MESSAGE_PARAM
 	u32 battleType;
 
 	battleType = BattleTypeGet(bw);
-	item = HeldItemHoldEffectGet(ctx, battlerId);
+	item = HeldItemHoldEffectGet(sp, battlerId);
 
 	// if shed shell or no experience or has run away or has ghost type then there is nothing stopping the battler from escaping
-	if (item == HOLD_EFFECT_FLEE || (battleType & BATTLE_TYPE_NO_EXPERIENCE) || GetBattlerAbility(ctx, battlerId) == ABILITY_RUN_AWAY || BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_GHOST)) {
+	if (item == HOLD_EFFECT_FLEE || (battleType & BATTLE_TYPE_NO_EXPERIENCE) || GetBattlerAbility(sp, battlerId) == ABILITY_RUN_AWAY || BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_GHOST)) {
 		return FALSE;
 	}
 
 	side = IsClientEnemy(bw, battlerId);
 	maxBattlers = BattleWorkClientSetMaxGet(bw);
 
-	battlerIdAbility = CheckSideAbility(bw, ctx, CHECK_ABILITY_ALL_HP_NOT_USER, battlerId, ABILITY_SHADOW_TAG);
-	if (battlerIdAbility && GetBattlerAbility(ctx, battlerId) != ABILITY_SHADOW_TAG) {
+	battlerIdAbility = CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP_NOT_USER, battlerId, ABILITY_SHADOW_TAG);
+	if (battlerIdAbility && GetBattlerAbility(sp, battlerId) != ABILITY_SHADOW_TAG) {
 		if (msg == NULL) {
 			return TRUE;
 		}
 		msg->msg_tag = TAG_NICK_ABILITY;
 		msg->msg_id = BATTLE_MSG_BATTLER_PREVENTS_ESCAPE_WITH;
-		msg->msg_para[0] = CreateNicknameTag(ctx, battlerIdAbility);
+		msg->msg_para[0] = CreateNicknameTag(sp, battlerIdAbility);
 		msg->msg_para[1] = ABILITY_SHADOW_TAG;
 		return TRUE;
 	}
 
-	battlerIdAbility = CheckSideAbility(bw, ctx, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_ARENA_TRAP);
+	battlerIdAbility = CheckSideAbility(bw, sp, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_ARENA_TRAP);
 	if (battlerIdAbility) {
-		if (!(ctx->field_condition & FIELD_STATUS_GRAVITY) && item != HOLD_EFFECT_HALVE_SPEED) {
-			if (GetBattlerAbility(ctx, battlerId) != ABILITY_LEVITATE && !ctx->battlemon[battlerId].moveeffect.magnetRiseTurns && !BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_FLYING)) {
+		if (!(sp->field_condition & FIELD_STATUS_GRAVITY) && item != HOLD_EFFECT_HALVE_SPEED) {
+			if (GetBattlerAbility(sp, battlerId) != ABILITY_LEVITATE && !sp->battlemon[battlerId].moveeffect.magnetRiseTurns && !BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_FLYING)) {
 			   if (msg == NULL) {
 					return TRUE;
 				}
 				msg->msg_tag = TAG_NICK_ABILITY;
 				msg->msg_id = BATTLE_MSG_BATTLER_PREVENTS_ESCAPE_WITH;
-				msg->msg_para[0] = CreateNicknameTag(ctx, battlerIdAbility);
+				msg->msg_para[0] = CreateNicknameTag(sp, battlerIdAbility);
 				msg->msg_para[1] = ABILITY_ARENA_TRAP;
 				return TRUE;
 			}
@@ -1594,25 +1594,25 @@ BOOL CantEscape(void *bw, struct BattleStruct *ctx, int battlerId, MESSAGE_PARAM
 			}
 			msg->msg_tag = TAG_NICK_ABILITY;
 			msg->msg_id = BATTLE_MSG_BATTLER_PREVENTS_ESCAPE_WITH;
-			msg->msg_para[0] = CreateNicknameTag(ctx, battlerIdAbility);
+			msg->msg_para[0] = CreateNicknameTag(sp, battlerIdAbility);
 			msg->msg_para[1] = ABILITY_ARENA_TRAP;
 			return TRUE;
 		}
 	}
 
-	battlerIdAbility = CheckSideAbility(bw, ctx, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_MAGNET_PULL);
-	if (battlerIdAbility && BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_STEEL)) {
+	battlerIdAbility = CheckSideAbility(bw, sp, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_MAGNET_PULL);
+	if (battlerIdAbility && BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_STEEL)) {
 		if (msg == NULL) {
 			return TRUE;
 		}
 		msg->msg_tag = TAG_NICK_ABILITY;
 		msg->msg_id = BATTLE_MSG_BATTLER_PREVENTS_ESCAPE_WITH;
-		msg->msg_para[0] = CreateNicknameTag(ctx, battlerIdAbility);
+		msg->msg_para[0] = CreateNicknameTag(sp, battlerIdAbility);
 		msg->msg_para[1] = ABILITY_MAGNET_PULL;
 		return TRUE;
 	}
 
-	if ((ctx->battlemon[battlerId].condition2 & (STATUS2_BINDING_TURNS | STATUS2_MEAN_LOOK)) || (ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN)){
+	if ((sp->battlemon[battlerId].condition2 & (STATUS2_BINDING_TURNS | STATUS2_MEAN_LOOK)) || (sp->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN)){
 		if (msg == NULL) {
 			return TRUE;
 		}
@@ -1629,34 +1629,34 @@ BOOL CantEscape(void *bw, struct BattleStruct *ctx, int battlerId, MESSAGE_PARAM
  *  @brief tries to see if the battler can switch
  *
  *  @param bw battle work structure
- *  @param ctx global battle structure
+ *  @param sp global battle structure
  *  @param battlerId client to check for running
  *  @return TRUE if the battler can not switch; FALSE if the battler can switch
  */
-BOOL BattlerCantSwitch(void *bw, struct BattleStruct *ctx, int battlerId) {
+BOOL BattlerCantSwitch(void *bw, struct BattleStruct *sp, int battlerId) {
 	BOOL ret = FALSE;
 
 	// ghost types can switch from anything like they had shed skin
-	if (HeldItemHoldEffectGet(ctx, battlerId) == HOLD_EFFECT_SWITCH || BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_GHOST)) {
+	if (HeldItemHoldEffectGet(sp, battlerId) == HOLD_EFFECT_SWITCH || BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_GHOST)) {
 		return FALSE;
 	}
 
-	if ((ctx->battlemon[battlerId].condition2 & (STATUS2_BINDING_TURNS | STATUS2_MEAN_LOOK)) || (ctx->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN)) {
+	if ((sp->battlemon[battlerId].condition2 & (STATUS2_BINDING_TURNS | STATUS2_MEAN_LOOK)) || (sp->battlemon[battlerId].effect_of_moves & MOVE_EFFECT_FLAG_INGRAIN)) {
 		ret = TRUE;
 	}
 
-	if ((GetBattlerAbility(ctx, battlerId) != ABILITY_SHADOW_TAG && CheckSideAbility(bw, ctx, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_SHADOW_TAG))
-	 || (BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_STEEL) && CheckSideAbility(bw, ctx, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_MAGNET_PULL)))
+	if ((GetBattlerAbility(sp, battlerId) != ABILITY_SHADOW_TAG && CheckSideAbility(bw, sp, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_SHADOW_TAG))
+	 || (BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_STEEL) && CheckSideAbility(bw, sp, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_MAGNET_PULL)))
 	{
 		ret = TRUE;
 	}
 
-	if (((GetBattlerAbility(ctx, battlerId) != ABILITY_LEVITATE
-	   && ctx->battlemon[battlerId].moveeffect.magnetRiseTurns == 0
-	   && !BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_FLYING))
-	  || HeldItemHoldEffectGet(ctx, battlerId) == HOLD_EFFECT_HALVE_SPEED
-	  || (ctx->field_condition & FIELD_STATUS_GRAVITY))
-	 && CheckSideAbility(bw, ctx, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_ARENA_TRAP))
+	if (((GetBattlerAbility(sp, battlerId) != ABILITY_LEVITATE
+	   && sp->battlemon[battlerId].moveeffect.magnetRiseTurns == 0
+	   && !BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_FLYING))
+	  || HeldItemHoldEffectGet(sp, battlerId) == HOLD_EFFECT_HALVE_SPEED
+	  || (sp->field_condition & FIELD_STATUS_GRAVITY))
+	 && CheckSideAbility(bw, sp, CHECK_ABILITY_OPPOSING_SIDE_HP, battlerId, ABILITY_ARENA_TRAP))
 	{
 		ret = TRUE;
 	}
@@ -1670,31 +1670,31 @@ BOOL BattlerCantSwitch(void *bw, struct BattleStruct *ctx, int battlerId) {
  *		 also takes into account the random chance to flee if none of the guaranteed chances work
  *
  *  @param bw battle work structure
- *  @param ctx global battle structure
+ *  @param sp global battle structure
  *  @param battlerId client to check for running
  *  @return TRUE if the battler can run; FALSE if the battler can not switch
  */
-BOOL BattleTryRun(void *bw, struct BattleStruct *ctx, int battlerId) {
+BOOL BattleTryRun(void *bw, struct BattleStruct *sp, int battlerId) {
 	BOOL ret;
 	u8 run;
 	int item;
 	u32 battleType;
 
 	battleType = BattleTypeGet(bw);
-	item = HeldItemHoldEffectGet(ctx, battlerId);
+	item = HeldItemHoldEffectGet(sp, battlerId);
 	ret = FALSE;
 
 	if (item == HOLD_EFFECT_FLEE) {
-		ctx->oneTurnFlag[battlerId].escape_flag = 1;
+		sp->oneTurnFlag[battlerId].escape_flag = 1;
 		ret = TRUE;
-	} else if (battleType & BATTLE_TYPE_NO_EXPERIENCE || BATTLE_MON_HAS_TYPE(ctx, battlerId, TYPE_GHOST)) { // ghost types can always escape regardless of speed
+	} else if (battleType & BATTLE_TYPE_NO_EXPERIENCE || BATTLE_MON_HAS_TYPE(sp, battlerId, TYPE_GHOST)) { // ghost types can always escape regardless of speed
 		ret = TRUE;
-	} else if (GetBattlerAbility(ctx, battlerId) == ABILITY_RUN_AWAY) {
-		ctx->oneTurnFlag[battlerId].escape_flag = 2;
+	} else if (GetBattlerAbility(sp, battlerId) == ABILITY_RUN_AWAY) {
+		sp->oneTurnFlag[battlerId].escape_flag = 2;
 		ret = TRUE;
 	} else {
-		if (ctx->battlemon[battlerId].speed < ctx->battlemon[battlerId ^ 1].speed) {
-			run = ctx->battlemon[battlerId].speed * 128 / ctx->battlemon[battlerId ^ 1].speed + ctx->escape_count * 30;
+		if (sp->battlemon[battlerId].speed < sp->battlemon[battlerId ^ 1].speed) {
+			run = sp->battlemon[battlerId].speed * 128 / sp->battlemon[battlerId ^ 1].speed + sp->escape_count * 30;
 			if (run > (BattleRand(bw) % 256)) {
 				ret = TRUE;
 			}
@@ -1704,7 +1704,7 @@ BOOL BattleTryRun(void *bw, struct BattleStruct *ctx, int battlerId) {
 		if (!ret) {
 			SCIO_IncRecord(bw, battlerId, 0, 99);
 		}
-		ctx->escape_count++;
+		sp->escape_count++;
 	}
 	return ret;
 }
@@ -2088,4 +2088,34 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno) {
 			return TRUE;
 			break;
 	}
+}
+
+void ov12_02251710(void *bw, struct BattleStruct *sp, struct OneTurnEffect *ote, struct MoveOutCheck *moc, struct side_condition_work *scw) {
+    int battlerId;
+
+    for (battlerId = 0; battlerId < 4; battlerId++) {
+        MIi_CpuClearFast(0, (u32 *)&ote[battlerId], sizeof(0x40));
+        MIi_CpuClearFast(0, (u32 *)&moc[battlerId], sizeof(0x4));
+        sp->battlemon[battlerId].condition2 &= ~STATUS2_FLINCH;
+        if (sp->battlemon[battlerId].moveeffect.rechargeCount + 1 < sp->total_turn) {
+            sp->battlemon[battlerId].condition2 &= ~STATUS2_RECHARGE;
+        }
+        if ((sp->battlemon[battlerId].condition & STATUS_FLAG_ASLEEP) && (sp->battlemon[battlerId].condition2 & STATUS2_LOCKED_INTO_MOVE)) {
+            UnlockBattlerOutOfCurrentMove(bw, sp, battlerId);
+        }
+        if ((sp->battlemon[battlerId].condition & STATUS_FLAG_ASLEEP) && (sp->battlemon[battlerId].condition2 & STATUS2_RAMPAGE_TURNS)) {
+            sp->battlemon[battlerId].condition2 &= ~STATUS2_RAMPAGE_TURNS;
+        }
+    }
+
+    scw[0].konoyubitomare_flag  = 0;
+    scw[1].konoyubitomare_flag  = 0;
+}
+
+void UnlockBattlerOutOfCurrentMove(struct BattlePokemon *bw, struct BattleStruct *sp, int battlerId) {
+    sp->battlemon[battlerId].condition2 &= ~STATUS2_LOCKED_INTO_MOVE;
+    sp->battlemon[battlerId].condition2 &= ~((1 << 8) | (1 << 9));
+    sp->battlemon[battlerId].effect_of_moves &= 0xDFFBFF3F;
+    sp->battlemon[battlerId].moveeffect.rolloutCount = 0;
+    sp->battlemon[battlerId].moveeffect.furyCutterCount = 0;
 }
