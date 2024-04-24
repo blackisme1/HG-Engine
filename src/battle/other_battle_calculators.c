@@ -2090,28 +2090,18 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno) {
 	}
 }
 
-void ov12_02251710(void *bw, struct BattleStruct *sp) {
-    int battlerId;
-
-    for (battlerId = 0; battlerId < 4; battlerId++) {
-        MIi_CpuClearFast(0, (u32 *)&sp->oneTurnFlag[battlerId], 0x40);
-        MIi_CpuClearFast(0, (u32 *)&sp->moveOutCheck[battlerId], 0x4);
-        sp->battlemon[battlerId].condition2 &= ~STATUS2_FLINCH;
-        if (sp->battlemon[battlerId].moveeffect.rechargeCount + 1 < sp->total_turn) {
-            sp->battlemon[battlerId].condition2 &= ~STATUS2_RECHARGE;
-        }
-        if ((sp->battlemon[battlerId].condition & STATUS_FLAG_ASLEEP) && (sp->battlemon[battlerId].condition2 & STATUS2_LOCKED_INTO_MOVE)) {
-			sp->battlemon[battlerId].condition2 &= ~STATUS2_LOCKED_INTO_MOVE;
-			sp->battlemon[battlerId].condition2 &= ~((1 << 8) | (1 << 9));
-			sp->battlemon[battlerId].effect_of_moves &= 0xDFFBFF3F;
-			sp->battlemon[battlerId].moveeffect.rolloutCount = 0;
-			sp->battlemon[battlerId].moveeffect.furyCutterCount = 0;
-        }
-        if ((sp->battlemon[battlerId].condition & STATUS_FLAG_ASLEEP) && (sp->battlemon[battlerId].condition2 & STATUS2_RAMPAGE_TURNS)) {
-            sp->battlemon[battlerId].condition2 &= ~STATUS2_RAMPAGE_TURNS;
-        }
+BOOL LONG_CALL ov12_02252218(struct BattleStruct *sp, int battlerId) {
+    if (sp->moveOutCheck[battlerId].stoppedFromParalysis ||
+        sp->moveOutCheck[battlerId].stoppedFromIneffective ||
+        sp->moveOutCheck[battlerId].stoppedFromImprison ||
+        sp->moveOutCheck[battlerId].stoppedFromAttract ||
+        sp->moveOutCheck[battlerId].stoppedFromDisable ||
+        sp->moveOutCheck[battlerId].stoppedFromTaunt ||
+        //sp->moveOutCheck[battlerId].stoppedFromFlinch ||
+        sp->moveOutCheck[battlerId].stoppedFromConfusion ||
+		sp->moveOutCheck[battlerId].stoppedFromGravity ||
+        sp->moveOutCheck[battlerId].stoppedFromHealBlock) {
+        return TRUE;
     }
-
-    sp->scw[0].konoyubitomare_flag  = 0;
-    sp->scw[1].konoyubitomare_flag  = 0;
+    return FALSE;
 }
