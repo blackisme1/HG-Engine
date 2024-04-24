@@ -2090,7 +2090,7 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno) {
 	}
 }
 
-BOOL LONG_CALL ov12_02252218(struct BattleStruct *sp, int battlerId) {
+BOOL ov12_02252218(struct BattleStruct *sp, int battlerId) {
     if (sp->moveOutCheck[battlerId].stoppedFromParalysis ||
         sp->moveOutCheck[battlerId].stoppedFromIneffective ||
         sp->moveOutCheck[battlerId].stoppedFromImprison ||
