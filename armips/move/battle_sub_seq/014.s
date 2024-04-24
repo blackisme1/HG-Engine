@@ -19,7 +19,6 @@ a001_014:
     moldbreakerabilitycheck 0x0, BATTLER_ADDL_EFFECT, ABILITY_SHIELD_DUST, _0068
 _0054:
 	changemondatabyvalue VAR_OP_SETMASK, BATTLER_ADDL_EFFECT, 0x35, 0x08
-    gotosubscript 15
 _0068:
     endscript
 _006C:
