@@ -2101,7 +2101,11 @@ void ov12_02251710(void *bw, struct BattleStruct *sp, struct OneTurnEffect *ote,
             sp->battlemon[battlerId].condition2 &= ~STATUS2_RECHARGE;
         }
         if ((sp->battlemon[battlerId].condition & STATUS_FLAG_ASLEEP) && (sp->battlemon[battlerId].condition2 & STATUS2_LOCKED_INTO_MOVE)) {
-            UnlockBattlerOutOfCurrentMove(bw, sp, battlerId);
+                sp->battlemon[battlerId].condition2 &= ~STATUS2_LOCKED_INTO_MOVE;
+				sp->battlemon[battlerId].condition2 &= ~((1 << 8) | (1 << 9));
+				sp->battlemon[battlerId].effect_of_moves &= 0xDFFBFF3F;
+				sp->battlemon[battlerId].moveeffect.rolloutCount = 0;
+				sp->battlemon[battlerId].moveeffect.furyCutterCount = 0;
         }
         if ((sp->battlemon[battlerId].condition & STATUS_FLAG_ASLEEP) && (sp->battlemon[battlerId].condition2 & STATUS2_RAMPAGE_TURNS)) {
             sp->battlemon[battlerId].condition2 &= ~STATUS2_RAMPAGE_TURNS;
@@ -2110,12 +2114,4 @@ void ov12_02251710(void *bw, struct BattleStruct *sp, struct OneTurnEffect *ote,
 
     scw[0].konoyubitomare_flag  = 0;
     scw[1].konoyubitomare_flag  = 0;
-}
-
-void UnlockBattlerOutOfCurrentMove(struct BattlePokemon *bw, struct BattleStruct *sp, int battlerId) {
-    sp->battlemon[battlerId].condition2 &= ~STATUS2_LOCKED_INTO_MOVE;
-    sp->battlemon[battlerId].condition2 &= ~((1 << 8) | (1 << 9));
-    sp->battlemon[battlerId].effect_of_moves &= 0xDFFBFF3F;
-    sp->battlemon[battlerId].moveeffect.rolloutCount = 0;
-    sp->battlemon[battlerId].moveeffect.furyCutterCount = 0;
 }
