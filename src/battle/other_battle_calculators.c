@@ -2090,12 +2090,12 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno) {
 	}
 }
 
-void ov12_02251710(void *bw, struct BattleStruct *sp, struct OneTurnEffect *ote, struct MoveOutCheck *moc, struct side_condition_work *scw) {
+void ov12_02251710(void *bw, struct BattleStruct *sp) {
     int battlerId;
 
     for (battlerId = 0; battlerId < 4; battlerId++) {
-        MIi_CpuClearFast(0, (u32 *)&ote[battlerId], sizeof(0x40));
-        MIi_CpuClearFast(0, (u32 *)&moc[battlerId], sizeof(0x4));
+        MIi_CpuClearFast(0, (u32 *)&sp->oneTurnFlag[battlerId], 0x40);
+        MIi_CpuClearFast(0, (u32 *)&sp->moveOutCheck[battlerId], 0x4);
         sp->battlemon[battlerId].condition2 &= ~STATUS2_FLINCH;
         if (sp->battlemon[battlerId].moveeffect.rechargeCount + 1 < sp->total_turn) {
             sp->battlemon[battlerId].condition2 &= ~STATUS2_RECHARGE;
@@ -2112,6 +2112,6 @@ void ov12_02251710(void *bw, struct BattleStruct *sp, struct OneTurnEffect *ote,
         }
     }
 
-    scw[0].konoyubitomare_flag  = 0;
-    scw[1].konoyubitomare_flag  = 0;
+    sp->scw[0].konoyubitomare_flag  = 0;
+    sp->scw[1].konoyubitomare_flag  = 0;
 }

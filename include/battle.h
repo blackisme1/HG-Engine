@@ -2189,18 +2189,6 @@ extern const u8 StatBoostModifiers[][2];
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // defined in battle_calc_damage.c
 /**
  *  @brief grab a battler's item.  returns 0 if the battler is in embargo or can't hold an item for any other reason
