@@ -19,6 +19,10 @@
 # 02251710
 0012 02251710 60 B4 C0 46
 
+# UnlockBattlerOutOfCurrentMove hook setup
+# 02251710
+0012 02251710 60 B4 C0 46
+
 # CalcCritical hook setup
 # 02257C5C
 0012 0802039C 60 B4 C0 46
