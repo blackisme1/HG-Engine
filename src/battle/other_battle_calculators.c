@@ -2097,7 +2097,7 @@ BOOL LONG_CALL ov12_02252218(struct BattleStruct *sp, int battlerId) {
         sp->moveOutCheck[battlerId].stoppedFromAttract ||
         sp->moveOutCheck[battlerId].stoppedFromDisable ||
         sp->moveOutCheck[battlerId].stoppedFromTaunt ||
-        sp->moveOutCheck[battlerId].stoppedFromFlinch ||
+        //sp->moveOutCheck[battlerId].stoppedFromFlinch ||
         sp->moveOutCheck[battlerId].stoppedFromConfusion ||
 		sp->moveOutCheck[battlerId].stoppedFromGravity ||
         sp->moveOutCheck[battlerId].stoppedFromHealBlock) {
