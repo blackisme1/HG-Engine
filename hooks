@@ -92,7 +92,7 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 #0224C218
 0012 ServerWazaKoyuuCheck 08014944 2
 
-0012 ov12_02252218_hook 024742B6 0
+0012 ov12_02252218_hook 02252218 0
 
 #battle script command hooks
 #0223E568
