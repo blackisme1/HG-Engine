@@ -2659,6 +2659,4 @@ void LONG_CALL DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp
 
 void LONG_CALL BattleControllerPlayer_CalcExecutionOrder(struct BattleSystem *bw, struct BattleStruct *sp);
 
-BOOL ov12_0224C204(struct BattleSystem *bw, struct BattleStruct *sp);
-
 #endif // BATTLE_H
