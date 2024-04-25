@@ -76,7 +76,6 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 #0224FC48+4
 0012 CalcSpeed_hook 0801838C 5
 #02257C5C+4
-0012 ov12_02252218_hook 02252218 0
 0012 CalcCritical_hook 080203A0 5
 #022555EC
 0012 GetBattleMonItem 0801DD2C 2
@@ -92,6 +91,8 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 0012 ServerFlinchCheck 080167B8 3
 #0224C218
 0012 ServerWazaKoyuuCheck 08014944 2
+
+0012 ov12_02252218_hook 024742B6 0
 
 #battle script command hooks
 #0223E568

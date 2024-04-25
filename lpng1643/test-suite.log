@@ -3,12 +3,60 @@
 =====================================
 
 # TOTAL: 32
-# PASS:  32
+# PASS:  24
 # SKIP:  0
 # XFAIL: 0
-# FAIL:  0
+# FAIL:  8
 # XPASS: 0
 # ERROR: 0
 
 .. contents:: :depth: 2
+
+FAIL: tests/pngstest-1.8
+========================
+
+./tests/pngstest-1.8: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-1.8 (exit status: 127)
+
+FAIL: tests/pngstest-1.8-alpha
+==============================
+
+./tests/pngstest-1.8-alpha: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-1.8-alpha (exit status: 127)
+
+FAIL: tests/pngstest-linear
+===========================
+
+./tests/pngstest-linear: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-linear (exit status: 127)
+
+FAIL: tests/pngstest-linear-alpha
+=================================
+
+./tests/pngstest-linear-alpha: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-linear-alpha (exit status: 127)
+
+FAIL: tests/pngstest-none
+=========================
+
+./tests/pngstest-none: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-none (exit status: 127)
+
+FAIL: tests/pngstest-none-alpha
+===============================
+
+./tests/pngstest-none-alpha: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-none-alpha (exit status: 127)
+
+FAIL: tests/pngstest-sRGB
+=========================
+
+./tests/pngstest-sRGB: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-sRGB (exit status: 127)
+
+FAIL: tests/pngstest-sRGB-alpha
+===============================
+
+./tests/pngstest-sRGB-alpha: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-sRGB-alpha (exit status: 127)
 

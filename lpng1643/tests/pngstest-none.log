@@ -1,23 +1,2 @@
-PASS: ./contrib/testpngs/gray-1-tRNS.png
-PASS: ./contrib/testpngs/gray-1.png
-PASS: ./contrib/testpngs/gray-16-tRNS.png
-PASS: ./contrib/testpngs/gray-16.png
-PASS: ./contrib/testpngs/gray-2-tRNS.png
-PASS: ./contrib/testpngs/gray-2.png
-PASS: ./contrib/testpngs/gray-4-tRNS.png
-PASS: ./contrib/testpngs/gray-4.png
-PASS: ./contrib/testpngs/gray-8-tRNS.png
-PASS: ./contrib/testpngs/gray-8.png
-PASS: ./contrib/testpngs/palette-1-tRNS.png
-PASS: ./contrib/testpngs/palette-1.png
-PASS: ./contrib/testpngs/palette-2-tRNS.png
-PASS: ./contrib/testpngs/palette-2.png
-PASS: ./contrib/testpngs/palette-4-tRNS.png
-PASS: ./contrib/testpngs/palette-4.png
-PASS: ./contrib/testpngs/palette-8-tRNS.png
-PASS: ./contrib/testpngs/palette-8.png
-PASS: ./contrib/testpngs/rgb-16-tRNS.png
-PASS: ./contrib/testpngs/rgb-16.png
-PASS: ./contrib/testpngs/rgb-8-tRNS.png
-PASS: ./contrib/testpngs/rgb-8.png
-PASS tests/pngstest-none (exit status: 0)
+./tests/pngstest-none: line 2: /c/Users/CKIRUser/Downloads/hg-engine/lpng1643/tests/pngstest: No such file or directory
+FAIL tests/pngstest-none (exit status: 127)
