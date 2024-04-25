@@ -2090,18 +2090,47 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno) {
 	}
 }
 
-BOOL LONG_CALL ov12_02252218(struct BattleStruct *sp, int battlerId) {
-    if (sp->moveOutCheck[battlerId].stoppedFromParalysis ||
-        sp->moveOutCheck[battlerId].stoppedFromIneffective ||
-        sp->moveOutCheck[battlerId].stoppedFromImprison ||
-        sp->moveOutCheck[battlerId].stoppedFromAttract ||
-        sp->moveOutCheck[battlerId].stoppedFromDisable ||
-        sp->moveOutCheck[battlerId].stoppedFromTaunt ||
-        //sp->moveOutCheck[battlerId].stoppedFromFlinch ||
-        sp->moveOutCheck[battlerId].stoppedFromConfusion ||
-		sp->moveOutCheck[battlerId].stoppedFromGravity ||
-        sp->moveOutCheck[battlerId].stoppedFromHealBlock) {
+BOOL ov12_0224C204(struct BattleSystem *bw, struct BattleStruct *sp) {
+    int i;
+    int battlerId;
+    int maxBattlers = bw->maxBattlers;
+     
+    if (sp->battlerIdTarget == 0x0000) {
+        return FALSE;
+    }
+    /*
+    if (!(sp->moveStatusFlag & MOVE_STATUS_FAIL) && sp->turnData[sp->battlerIdTarget].magicCoatFlag && (sp->trainerAIData.moveData[sp->moveNoCur].unkB & 4)) {
+        sp->turnData[sp->battlerIdTarget].magicCoatFlag = 0;
+        sp->moveNoProtect[sp->battlerIdAttacker] = 0;
+        sp->moveNoBattlerPrev[sp->battlerIdAttacker] = sp->moveNoTemp;
+        sp->moveNoPrev = sp->moveNoTemp;
+        sp->battleStatus |= BATTLE_STATUS_NO_MOVE_SET;
+        ReadBattleScriptFromNarc(sp, NARC_a_0_0_1, BATTLE_SUBSCRIPT_MAGIC_COAT);
+        sp->commandNext = sp->command;
+        sp->command = CONTROLLER_COMMAND_RUN_SCRIPT;
+        CheckIgnorePressure(sp, sp->battlerIdTarget, sp->battlerIdAttacker);
         return TRUE;
     }
-    return FALSE;
+    
+    for (i = 0; i < maxBattlers; i++) {
+        battlerId = sp->turnOrder[i];
+        if (!(sp->moveStatusFlag & MOVE_STATUS_FAIL) && sp->turnData[battlerId].snatchFlag && sp->trainerAIData.moveData[sp->moveNoCur].unkB & 8) {
+            sp->battlerIdTemp = battlerId;
+            sp->turnData[battlerId].snatchFlag = 0;
+            if (!(sp->battleStatus & BATTLE_STATUS_NO_MOVE_SET)) {
+                sp->moveNoProtect[sp->battlerIdAttacker] = 0;
+                sp->moveNoBattlerPrev[sp->battlerIdAttacker] = sp->moveNoTemp;
+                sp->moveNoPrev = sp->moveNoTemp;
+                sp->battleStatus |= BATTLE_STATUS_NO_MOVE_SET;
+            }
+            ReadBattleScriptFromNarc(sp, NARC_a_0_0_1, BATTLE_SUBSCRIPT_SNATCH);
+            sp->commandNext = sp->command;
+            sp->command = CONTROLLER_COMMAND_RUN_SCRIPT;
+            CheckIgnorePressure(sp, battlerId, sp->battlerIdAttacker);
+            return TRUE;
+        }
+    }
+    
+    return FALSE; 
+	*/
 }
