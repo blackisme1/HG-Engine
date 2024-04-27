@@ -18,4 +18,5 @@ a001_028:
     setstatus2effect BATTLER_ATTACKER, 0x4
     waitmessage
 	endscript
+
 .close
