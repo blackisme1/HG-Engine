@@ -22,6 +22,7 @@
 //custom asm scripts
 .include "armips/asm/custom/mart_items.s"
 .include "armips/asm/custom/nature_power.s"
+.include "armips/asm/custom/freeze_chance.s"
 
 .if REUSABLE_TMS == 1
 
