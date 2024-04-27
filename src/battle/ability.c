@@ -34,9 +34,6 @@ void ServerWazaOutAfterMessage(void *bw, struct BattleStruct *sp);
 //u32 ServerWazaKoyuuCheck(void *bw, struct BattleStruct *sp);
 void ServerDoPostMoveEffects(void *bw, struct BattleStruct *sp);
 
-
-
-
 const u16 SoundproofMoveList[] =
 {
 	MOVE_BOOMBURST,
@@ -208,6 +205,14 @@ int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int 
 			scriptnum = SUB_SEQ_MOTOR_DRIVE;
 		}
 	}
+	
+	if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_WIND_RIDER) == TRUE)
+	{
+		if ((movetype == TYPE_FLYING) && (attacker != defender))
+		{
+			scriptnum = SUB_SEQ_MOTOR_DRIVE;
+		}
+	}
 
 	// 02252FF8
 	if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_DRY_SKIN) == TRUE)
@@ -337,7 +342,7 @@ u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no)
 		case ABILITY_SHED_SKIN:
 			if ((sp->battlemon[client_no].condition & STATUS_ANY_PERSISTENT)
 				&& (sp->battlemon[client_no].hp)
-				&& (BattleRand(bw) % 10 < 3)) // 30% chance
+				&& (BattleRand(bw) % 10 < 10)) // 100% chance
 			{
 				if (sp->battlemon[client_no].condition & STATUS_FLAG_ASLEEP)
 				{
@@ -558,11 +563,24 @@ u8 BeastBoostGreatestStatHelper(struct BattleStruct *sp, u32 client)
  */
 BOOL MoveHitAttackerAbilityCheck(void *bw, struct BattleStruct *sp, int *seq_no)
 {
-	BOOL ret = FALSE;
+    BOOL ret = FALSE;
+    
+    if ((sp->defence_client == sp->fainting_client)
+        && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
+        && (sp->battlemon[sp->attack_client].hp)
+        && ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0)
+        && (sp->current_move_index == MOVE_FELL_STINGER))
+    {
+        sp->addeffect_param = ADD_STATE_ATTACK_UP_2;
+        sp->addeffect_type = ADD_EFFECT_MOVE_EFFECT;
+        sp->state_client = sp->attack_client;
+        seq_no[0] = SUB_SEQ_BOOST_STATS;
+        ret = TRUE;
+    }
 
-	if (sp->attack_client == 0xFF) {
-		return ret;
-	}
+    if (sp->attack_client == 0xFF) {
+        return ret;
+    }
 
 	switch (GetBattlerAbility(sp, sp->attack_client))
 	{
