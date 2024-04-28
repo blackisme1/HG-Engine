@@ -58,9 +58,9 @@ movedata MOVE_KARATE_CHOP, "Karate Chop"
 movedata MOVE_DOUBLE_SLAP, "Double Slap"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 25
     type TYPE_NORMAL
-    accuracy 80
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -74,9 +74,9 @@ movedata MOVE_DOUBLE_SLAP, "Double Slap"
 movedata MOVE_COMET_PUNCH, "Comet Punch"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 25
     type TYPE_FIGHTING
-    accuracy 80
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -506,9 +506,9 @@ movedata MOVE_HORN_ATTACK, "Horn Attack"
 movedata MOVE_FURY_ATTACK, "Fury Attack"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 30
     type TYPE_NORMAL
-    accuracy 80
+    accuracy 75
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -682,7 +682,7 @@ movedata MOVE_TWINEEDLE, "Twineedle"
 movedata MOVE_PIN_MISSILE, "Pin Missile"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 25
     type TYPE_BUG
     accuracy 90
     pp 10
@@ -2106,7 +2106,7 @@ movedata MOVE_SKULL_BASH, "Skull Bash"
 movedata MOVE_SPIKE_CANNON, "Barb Cannon"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 25
     type TYPE_WATER
     accuracy 90
     pp 10
@@ -2250,7 +2250,7 @@ movedata MOVE_POISON_GAS, "Poison Gas"
 movedata MOVE_BARRAGE, "Barrage"
     battleeffect 29
     pss SPLIT_SPECIAL
-    basepower 25
+    basepower 30
     type TYPE_NORMAL
     accuracy 75
     pp 20
@@ -2474,7 +2474,7 @@ movedata MOVE_EXPLOSION, "Explosion"
 movedata MOVE_FURY_SWIPES, "Fury Swipes"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 25
+    basepower 30
     type TYPE_NORMAL
     accuracy 75
     pp 10
@@ -2684,7 +2684,7 @@ movedata MOVE_TRIPLE_KICK, "Triple Kick"
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_FIGHTING
-    accuracy 90
+    accuracy 80
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3178,7 +3178,7 @@ movedata MOVE_DETECT, "Detect"
 movedata MOVE_BONE_RUSH, "Bone Rush"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 25
+    basepower 30
     type TYPE_GROUND
     accuracy 75
     pp 10
@@ -4682,9 +4682,9 @@ movedata MOVE_DIVE, "Dive"
 movedata MOVE_ARM_THRUST, "Arm Thrust"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 30
     type TYPE_FIGHTING
-    accuracy 80
+    accuracy 75
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5308,7 +5308,7 @@ movedata MOVE_BULLET_SEED, "Bullet Seed"
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_GRASS
-    accuracy 80
+    accuracy 90
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5338,9 +5338,9 @@ movedata MOVE_AERIAL_ACE, "Aerial Ace"
 movedata MOVE_ICICLE_SPEAR, "Icicle Spear"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 20
+    basepower 30
     type TYPE_ICE
-    accuracy 80
+    accuracy 75
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5612,7 +5612,7 @@ movedata MOVE_ROCK_BLAST, "Rock Blast"
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_ROCK
-    accuracy 80
+    accuracy 75
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -8714,7 +8714,7 @@ movedata MOVE_PSYSTRIKE, "Psystrike"
 movedata MOVE_TAIL_SLAP, "Tail Slap"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 25
+    basepower 30
     type TYPE_NORMAL
     accuracy 75
     pp 10
@@ -9562,7 +9562,7 @@ movedata MOVE_HYPERSPACE_HOLE, "Hyperspace Hole"
 movedata MOVE_WATER_SHURIKEN, "Water Shuriken"
     battleeffect 29
     pss SPLIT_SPECIAL
-    basepower 20
+    basepower 25
     type TYPE_WATER
     accuracy 90
     pp 20
@@ -13068,7 +13068,7 @@ movedata MOVE_TRIPLE_AXEL, "Triple Axel"
     pss SPLIT_PHYSICAL
     basepower 20
     type TYPE_ICE
-    accuracy 90
+    accuracy 80
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
