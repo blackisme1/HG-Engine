@@ -433,15 +433,6 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 		return FALSE;
 	}
 
-	if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0)
-	 && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0))
-	{
-		if ((sp->field_condition & WEATHER_SUNNY_ANY) && (sp->moveTbl[move_no].effect == 152)) // thunder sucks in the sun
-		{
-			accuracy = 50;
-		}
-	}
-
 	accuracy *= sAccStatChanges[temp].numerator;
 	accuracy /= sAccStatChanges[temp].denominator;
 
