@@ -5447,16 +5447,16 @@ levelup SPECIES_STANTLER
 
 
 levelup SPECIES_SMEARGLE
-	learnset MOVE_SKETCH, 1
-	learnset MOVE_SKETCH, 11
-	learnset MOVE_SKETCH, 21
-	learnset MOVE_SKETCH, 31
-	learnset MOVE_SKETCH, 41
-	learnset MOVE_SKETCH, 51
-	learnset MOVE_SKETCH, 61
-	learnset MOVE_SKETCH, 71
-	learnset MOVE_SKETCH, 81
-	learnset MOVE_SKETCH, 91
+	learnset MOVE_MIRROR_MOVE, 1
+	learnset MOVE_MIMIC, 3
+	learnset MOVE_METRONOME, 5
+	learnset MOVE_ASSIST, 7
+	learnset MOVE_NATURE_POWER, 10
+	learnset MOVE_ME_FIRST, 13
+	learnset MOVE_SNATCH, 13
+	learnset MOVE_COPYCAT, 15
+	learnset MOVE_IMPRISON, 17
+	learnset MOVE_SKETCH, 20
 	terminatelearnset
 
 
