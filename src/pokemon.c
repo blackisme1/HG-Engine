@@ -2129,3 +2129,70 @@ u32 MonTryLearnMoveOnLevelUp(struct PartyPokemon *mon, int * last_i, u16 * sp0)
     sys_FreeMemoryEz(levelUpLearnset);
     return ret;
 }
+
+void CalcMonStats(struct PartyPokemon *mon) {
+	BASE_STATS * baseStats;
+	int level;
+	int maxHp;
+	int form;
+	int hp;
+	int species;
+	int newMaxHp;
+	int newAtk;
+	int newDef;
+	int newSpeed;
+	int newSpatk;
+	int newSpdef;
+
+	BOOL decry = AcquireMonLock(mon);
+	level = (int)GetMonData(mon, MON_DATA_LEVEL, NULL);
+	maxHp = (int)GetMonData(mon, MON_DATA_MAXHP, NULL);
+	hp = (int)GetMonData(mon, MON_DATA_HP, NULL);
+	form = (int)GetMonData(mon, MON_DATA_FORM, NULL);
+	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
+
+	baseStats = (BASE_STATS *)sys_AllocMemory(HEAPID_MAIN_HEAP, sizeof(BASE_STATS));
+	LoadMonBaseStats_HandleAlternateForm(species, form, baseStats);
+
+	if (species == SPECIES_SHEDINJA) {
+		newMaxHp = 1;
+	} else {
+		newMaxHp = baseStats->hp * level / 50 + 10 - level / 20;
+	}
+	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
+
+	newAtk = baseStats->atk * level / 50 + 10 - level / 20;
+	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
+
+	newDef = baseStats->def * level / 50 + 10 - level / 20;
+	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
+
+	newSpeed = baseStats->speed * level / 50 + 10 - level / 20;
+	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
+
+	newSpatk = baseStats->spatk * level / 50 + 10 - level / 20;
+	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
+
+	newSpdef = baseStats->spdef * level / 50 + 10 - level / 20;
+	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
+
+	sys_FreeMemoryEz(baseStats);
+
+	if (hp != 0 || maxHp == 0) {
+		if (species == SPECIES_SHEDINJA) {
+			hp = 1;
+		} else if (hp == 0) {
+			hp = newMaxHp;
+		} else if (newMaxHp - maxHp < 0) {
+			if (hp > newMaxHp) {
+				hp = newMaxHp;
+			}
+		} else {
+			hp += newMaxHp - maxHp;
+		}
+	}
+	if (hp != 0) {
+		SetMonData(mon, MON_DATA_HP, &hp);
+	}
+	ReleaseMonLock(mon, decry);
+}
