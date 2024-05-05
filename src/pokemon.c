@@ -2145,11 +2145,11 @@ void CalcMonStats(struct PartyPokemon *mon) {
 	int newSpdef;
 
 	BOOL decry = AcquireMonLock(mon);
-	level = (int)GetMonData(mon, MON_DATA_LEVEL, NULL);
-	maxHp = (int)GetMonData(mon, MON_DATA_MAXHP, NULL);
-	hp = (int)GetMonData(mon, MON_DATA_HP, NULL);
-	form = (int)GetMonData(mon, MON_DATA_FORM, NULL);
-	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
+	level = (int)GetMonData(mon, 161, NULL);
+	maxHp = (int)GetMonData(mon, 164, NULL);
+	hp = (int)GetMonData(mon, 163, NULL);
+	form = (int)GetMonData(mon, 112, NULL);
+	species = (int)GetMonData(mon, 5, NULL);
 
 	baseStats = (BASE_STATS *)sys_AllocMemory(HEAPID_MAIN_HEAP, sizeof(BASE_STATS));
 	LoadMonBaseStats_HandleAlternateForm(species, form, baseStats);
@@ -2159,22 +2159,22 @@ void CalcMonStats(struct PartyPokemon *mon) {
 	} else {
 		newMaxHp = baseStats->hp * level / 50 + 10 - level / 20;
 	}
-	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
+	SetMonData(mon, 164, &newMaxHp);
 
 	newAtk = baseStats->atk * level / 50 + 10 - level / 20;
-	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
+	SetMonData(mon, 165, &newAtk);
 
 	newDef = baseStats->def * level / 50 + 10 - level / 20;
-	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
+	SetMonData(mon, 166, &newDef);
 
 	newSpeed = baseStats->speed * level / 50 + 10 - level / 20;
-	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
+	SetMonData(mon, 167, &newSpeed);
 
 	newSpatk = baseStats->spatk * level / 50 + 10 - level / 20;
-	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
+	SetMonData(mon, 168, &newSpatk);
 
 	newSpdef = baseStats->spdef * level / 50 + 10 - level / 20;
-	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
+	SetMonData(mon, 169, &newSpdef);
 
 	sys_FreeMemoryEz(baseStats);
 
@@ -2192,7 +2192,7 @@ void CalcMonStats(struct PartyPokemon *mon) {
 		}
 	}
 	if (hp != 0) {
-		SetMonData(mon, MON_DATA_HP, &hp);
+		SetMonData(mon, 163, &hp);
 	}
 	ReleaseMonLock(mon, decry);
 }
