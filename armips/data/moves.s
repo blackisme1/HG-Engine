@@ -3003,7 +3003,7 @@ movedata MOVE_BELLY_DRUM, "Belly Drum"
     battleeffect 142
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FIGHTING
     accuracy 0
     pp 10
     effectchance 0
@@ -3131,7 +3131,7 @@ movedata MOVE_PERISH_SONG, "Perish Song"
     battleeffect 114
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_GHOST
     accuracy 0
     pp 5
     effectchance 0
@@ -3623,11 +3623,11 @@ movedata MOVE_DRAGON_BREATH, "DragonBreath"
     terminatedata
     movedescription MOVE_DRAGON_BREATH, "The user exhales\na mighty gust that\ninflicts damage.\nIt may also paralyze\nthe target."
 
-movedata MOVE_BATON_PASS, "Baton Pass"
+movedata MOVE_BATON_PASS, "Psycho Switch"
     battleeffect 127
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_PSYCHIC
     accuracy 0
     pp 5
     effectchance 0
@@ -3915,7 +3915,7 @@ movedata MOVE_PSYCH_UP, "Psych Up"
     battleeffect 143
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_PSYCHIC
     accuracy 0
     pp 5
     effectchance 0
@@ -4061,7 +4061,7 @@ movedata MOVE_UPROAR, "Uproar"
     basepower 50
     type TYPE_NORMAL
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_RANDOM
     priority 0
@@ -4253,7 +4253,7 @@ movedata MOVE_SMELLING_SALTS, "Vital Slap"
     basepower 50
     type TYPE_NORMAL
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -4285,7 +4285,7 @@ movedata MOVE_NATURE_POWER, "Nature Power"
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_DEPENDS
     priority 0
@@ -4395,7 +4395,7 @@ movedata MOVE_ASSIST, "Assist"
     battleeffect 180
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_DARK
     accuracy 0
     pp 5
     effectchance 0
@@ -5741,7 +5741,7 @@ movedata MOVE_WAKE_UP_SLAP, "Wake Up Slap"
     basepower 50
     type TYPE_NORMAL
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5754,10 +5754,10 @@ movedata MOVE_WAKE_UP_SLAP, "Wake Up Slap"
 movedata MOVE_HAMMER_ARM, "Hammer Arm"
     battleeffect 218
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 120
     type TYPE_FIGHTING
-    accuracy 90
-    pp 10
+    accuracy 100
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5802,10 +5802,10 @@ movedata MOVE_HEALING_WISH, "Healing Wish"
 movedata MOVE_BRINE, "Brine"
     battleeffect 221
     pss SPLIT_SPECIAL
-    basepower 70
+    basepower 50
     type TYPE_WATER
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5962,10 +5962,10 @@ movedata MOVE_PAYBACK, "Payback"
 movedata MOVE_ASSURANCE, "Assurance"
     battleeffect 221
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 50
     type TYPE_DARK
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5980,7 +5980,7 @@ movedata MOVE_EMBARGO, "Embargo"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
-    accuracy 100
+    accuracy 0
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -6005,7 +6005,7 @@ movedata MOVE_FLING, "Fling"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_FLING, "The user flings anything it\nhas at the foe\nto attack. Its deals\ndouble damage\when an item is thrown."
+    movedescription MOVE_FLING, "The user flings anything it\nhas at the foe to\nattack. Its deals double\ndamage when an item is\nthrown."
 
 movedata MOVE_PSYCHO_SHIFT, "Psycho Shift"
     battleeffect 234
@@ -10698,10 +10698,10 @@ movedata MOVE_SPARKLING_ARIA, "Sparkling Aria"
 movedata MOVE_ICE_HAMMER, "Ice Hammer"
     battleeffect 218
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 120
     type TYPE_ICE
-    accuracy 90
-    pp 10
+    accuracy 100
+    pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
