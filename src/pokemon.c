@@ -2151,7 +2151,7 @@ void CalcMonStats(struct PartyPokemon *mon) {
 	form = (int)GetMonData(mon, 112, NULL);
 	species = (int)GetMonData(mon, 5, NULL);
 
-	baseStats = (BASE_STATS *)sys_AllocMemory(HEAPID_MAIN_HEAP, sizeof(BASE_STATS));
+	baseStats = (BASE_STATS *)sys_AllocMemory(HEAP_ID_DEFAULT, sizeof(BASE_STATS));
 	LoadMonBaseStats_HandleAlternateForm(species, form, baseStats);
 
 	if (species == SPECIES_SHEDINJA) {
