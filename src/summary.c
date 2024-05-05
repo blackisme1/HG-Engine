@@ -211,16 +211,6 @@ u16 ModifyStatByNature(u32 nature, u16 n, u8 statIndex) {
     }
 
     switch (sNatureStatEffects[nature][statIndex]) {
-    case 1:
-        // NOTE: will overflow for n > 595 because the intermediate value is cast to u16 before the division.
-        retVal = n * 110;
-        retVal /= 100;
-        break;
-    case -1:
-        // NOTE: will overflow for n > 728, see above
-        retVal = n * 90;
-        retVal /= 100;
-        break;
     default:
         retVal = n;
         break;
