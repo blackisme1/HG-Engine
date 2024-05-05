@@ -692,6 +692,12 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	{
 	movepower = movepower * 125 / 100;
 	}
+	
+	if ((AttackingMon.condition & STATUS_FLAG_BURNED))
+	{
+		defense /= 2;
+		sp_defense /= 2;
+	}
 
 	// handle simple
 	if (AttackingMon.ability == ABILITY_SIMPLE)
@@ -885,10 +891,9 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	// handle physical moves
 	if (movesplit == SPLIT_PHYSICAL)
 	{
-		// burns halve physical damage.  this is ignored by guts and facade (as of gen 6)
-		if ((AttackingMon.condition & STATUS_FLAG_BURNED) && (AttackingMon.ability != ABILITY_GUTS) && (moveno != MOVE_FACADE))
+		if ((AttackingMon.condition & STATUS_FLAG_BURNED))
 		{
-			damage /= 2;
+			damage *= 2;
 		}
 
 		// handle reflect
@@ -909,6 +914,11 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	}
 	else// if (movesplit == SPLIT_SPECIAL) // same as above, handle special moves
 	{
+		if ((AttackingMon.condition & STATUS_FLAG_BURNED))
+		{
+			damage *= 2;
+		}
+
 		// handle light screen
 		if (((side_cond & SIDE_STATUS_LIGHT_SCREEN) != 0)
 		 && (critical == 1)
@@ -1063,5 +1073,5 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		damage /= 2;
 	}
 
-	return damage + 2;
+	return damage + 1;
 }

@@ -697,7 +697,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if ((ability1 == ABILITY_QUICK_FEET) && (sp->battlemon[client1].condition & STATUS_ANY_PERSISTENT))
 	{
-		speed1 = speed1 * 15 / 10;
+		speed1 *= 2;
 	}
 	else
 	{
@@ -705,6 +705,11 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 		{
 			speed1 /= 2; // gen 7 on only halves speed for paralysis
 		}
+	}
+	
+	if (sp->battlemon[client2].condition & STATUS_FLAG_BURNED)
+	{
+		speed1 *= 2;
 	}
 
 	if ((ability1 == ABILITY_SLOW_START)
@@ -779,7 +784,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if ((ability2 == ABILITY_QUICK_FEET) && (sp->battlemon[client2].condition & STATUS_ANY_PERSISTENT))
 	{
-		speed2 = speed2 * 15 / 10;
+		speed2 *= 2;
 	}
 	else
 	{
@@ -787,6 +792,11 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 		{
 			speed2 /= 2; // gen 7 on only halves speed for paralysis
 		}
+	}
+	
+	if (sp->battlemon[client2].condition & STATUS_FLAG_BURNED)
+	{
+		speed2 *= 2;
 	}
 
 	if ((ability2 == ABILITY_SLOW_START)

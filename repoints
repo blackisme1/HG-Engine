@@ -49,4 +49,4 @@ arm9 sItemFieldUseFuncs+8 020649B4
 0012 TerrainPlatformEnemyNCGR 02265F24
 0012 TerrainPlatformPalettes 02265F2C
 
-0002 gNatureStatMods 020FF639
+arm9 gNatureStatMods 020FF639
