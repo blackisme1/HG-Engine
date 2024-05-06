@@ -66,31 +66,31 @@ static void UpdatePokemonData(struct SummaryState *summary, u8 mode)
 
 static s8 sNatureStatEffects[25][6] = {
     // atk, def, spatk, spdef, speed
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
-    {  0,  0,  0,  0,  0,  0  },
+    {  0,  0,  0,  0,  0,  0  },    // Hardy
+    {  0,  1, -1,  0,  0,  0  },    // Lonely
+    {  0,  1,  0,  0,  0, -1  },    // Brave
+    {  0,  1,  0, -1,  0,  0  },    // Adamant
+    {  0,  1,  0,  0, -1,  0  },    // Naughty
+    {  0, -1,  1,  0,  0,  0  },    // Bold
+    {  0,  0,  0,  0,  0,  0  },    // Docile
+    {  0,  0,  1,  0,  0, -1  },    // Relaxed
+    {  0,  0,  1, -1,  0,  0  },    // Impish
+    {  0,  0,  1,  0, -1,  0  },    // Lax
+    {  0, -1,  0,  0,  0,  1  },    // Timid
+    {  0,  0, -1,  0,  0,  1  },    // Hasty
+    {  0,  0,  0,  0,  0,  0  },    // Serious
+    {  0,  0,  0, -1,  0,  1  },    // Jolly
+    {  0,  0,  0,  0, -1,  1  },    // Naive
+    {  0, -1,  0,  1,  0,  0  },    // Modest
+    {  0,  0, -1,  1,  0,  0  },    // Mild
+    {  0,  0,  0,  1,  0, -1  },    // Quiet
+    {  0,  0,  0,  0,  0,  0  },    // Bashful
+    {  0,  0,  0,  1, -1,  0  },    // Rash
+    {  0, -1,  0,  0,  1,  0  },    // Calm
+    {  0,  0, -1,  0,  1,  0  },    // Gentle
+    {  0,  0,  0,  0,  1, -1  },    // Sassy
+    {  0,  0,  0, -1,  1,  0  },    // Careful
+    {  0,  0,  0,  0,  0,  0  },    // Quirky
 };
 
 static void PrintStatNumberWithColor(struct SummaryState *summary, u8 windowIdx, u32 justify)
@@ -211,6 +211,16 @@ u16 ModifyStatByNature(u32 nature, u16 n, u8 statIndex) {
     }
 
     switch (sNatureStatEffects[nature][statIndex]) {
+    case 1:
+        // NOTE: will overflow for n > 595 because the intermediate value is cast to u16 before the division.
+        retVal = n * 110;
+        retVal /= 100;
+        break;
+    case -1:
+        // NOTE: will overflow for n > 728, see above
+        retVal = n * 90;
+        retVal /= 100;
+        break;
     default:
         retVal = n;
         break;
