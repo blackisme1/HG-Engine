@@ -139,39 +139,6 @@ enum
     PERSONAL_TM_ARRAY_4,
 };
 
-typedef enum HeapID {
-    HEAP_ID_DEFAULT,
-    HEAP_ID_1,
-    HEAP_ID_2,
-    HEAP_ID_3,
-    HEAP_ID_4,
-    HEAP_ID_BATTLE,
-    HEAP_ID_6,
-    HEAP_ID_7,
-    HEAP_ID_8,
-    HEAP_ID_9,
-    HEAP_ID_10,
-    HEAP_ID_FIELD,
-    HEAP_ID_PARTY_MENU,
-    HEAP_ID_20 = 20,
-    HEAP_ID_26 = 26,
-    HEAP_ID_TITLE_SCREEN = 30,
-    HEAP_ID_32 = 32,
-    HEAP_ID_OPTIONS_APP = 38,
-    HEAP_ID_OV55 = 40,
-    HEAP_ID_CHOOSE_STARTER = 46,
-    HEAP_ID_EVOLUTION = 71,
-    HEAP_ID_CREDITS = 73,
-    HEAP_ID_INTRO_MOVIE = 74,
-    HEAP_ID_CERTIFICATES = 82,
-    HEAP_ID_89 = 89,
-    HEAP_ID_ALPH_PUZZLE = 97,
-    HEAP_ID_GAME_BOARD = 110,
-    HEAP_ID_BERRY_POTS = 130,
-    HEAP_ID_BERRY_POTS_APP = 131,
-    HEAP_ID_VOLTORB_FLIP = 160
-} HeapID;
-
 typedef struct BaseStats {
     /* 0x00 */ u8 hp;
     /* 0x01 */ u8 atk;
@@ -1834,8 +1801,8 @@ void LONG_CALL Daycare_GetBothBoxMonsPtr(Daycare *dayCare, struct BoxPokemon **b
 
 #endif
 
-BOOL AcquireMonLock(struct PartyPokemon *mon);
+BOOL LONG_CALL AcquireMonLock(struct PartyPokemon *mon);
 
-BOOL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
+BOOL LONG_CALL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
 
-void LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
+void LONG_CALL LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
