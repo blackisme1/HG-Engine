@@ -47,23 +47,23 @@ void CalcMonStats(struct PartyPokemon *mon) {
 	if (species == SPECIES_SHEDINJA) {
 		newMaxHp = 1;
 	} else {
-		newMaxHp = ((baseStats->hp * level) + 1) / 50;
+		newMaxHp = baseStats->hp * level / 50;
 	}
 	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
 
-	newAtk = ((baseStats->atk * level) + 1) / 50;
+	newAtk = baseStats->atk * level / 50;
 	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
 
-	newDef = ((baseStats->def * level) + 1) / 50;
+	newDef = baseStats->def * level / 50;
 	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
 
-	newSpeed = ((baseStats->speed * level) + 1) / 50;
+	newSpeed = baseStats->speed * level / 50;
 	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
 
-	newSpatk = ((baseStats->spatk * level) + 1) / 50;
+	newSpatk = baseStats->spatk * level / 50;
 	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
 
-	newSpdef = ((baseStats->spdef * level) + 1) / 50;
+	newSpdef = baseStats->spdef * level / 50;
 	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
 
 	sys_FreeMemoryEz(baseStats);
