@@ -588,6 +588,5 @@ Mon_UpdateRotomForm = 0x02071EC0 | 1;
 Mon_UpdateShayminForm = 0x02071D6C | 1;
 Daycare_GetBothBoxMonsPtr = 0x0206C1C8 | 1;
 
-AcquireMonLock = 0x0206DD40 | 1;
-ReleaseMonLock = 0x0206DD8C | 1;
-LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
+BattleSystem_GetMaxBattlers = 0x0223A7F0 | 1;
+ReadBattleScriptFromNarc = 0x0224EB9C | 1;
