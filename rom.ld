@@ -590,3 +590,7 @@ Daycare_GetBothBoxMonsPtr = 0x0206C1C8 | 1;
 
 BattleSystem_GetMaxBattlers = 0x0223A7F0 | 1;
 ReadBattleScriptFromNarc = 0x0224EB9C | 1;
+
+AcquireMonLock = 0x0206DD40 | 1;
+LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
+ReleaseMonLock = 0x0206DD8C | 1;
