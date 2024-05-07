@@ -20,7 +20,7 @@
 
 #define NELEMS_POKEFORMDATATBL 285
 
-void CalcMonStats(struct PartyPokemon *mon) {
+void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	BASE_STATS * baseStats;
 	int level;
 	int maxHp;
