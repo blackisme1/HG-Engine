@@ -2090,3 +2090,62 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno) {
 			break;
 	}
 }
+
+/**
+ * @brief Get a move's split accounting for edge cases
+ * @param sp battle structure
+ * @param moveno move number
+ * @return `SPLIT_PHYSICAL` or `SPLIT_SPECIAL`
+*/
+u8 LONG_CALL GetMoveSplit(struct BattleStruct *sp, int moveno) {
+    // In Pokémon XD: Gale of Darkness, when used during a shadowy aura, Weather Ball's power doubles to 100, and the move becomes a typeless physical move
+    if (sp->move_type == TYPE_TYPELESS && moveno == MOVE_WEATHER_BALL && sp->current_move_index == (u32)moveno) {
+        return SPLIT_PHYSICAL;
+    } else {
+        return sp->moveTbl[moveno].split;
+    }
+}
+
+BOOL LONG_CALL BattleSystem_CheckMoveEffect(void *bsys, struct BattleStruct *ctx, int battlerIdAttacker, int battlerIdTarget, int move) {
+    if (ctx->server_status_flag & BATTLE_STATUS_CHARGE_TURN) {
+        return FALSE;
+    }
+    
+    if (ctx->oneTurnFlag[battlerIdTarget].mamoru_flag 
+        && ctx->moveTbl[move].flag & (1 << 1)
+        && (move != MOVE_CURSE || CurseUserIsGhost(ctx, move, battlerIdAttacker) == TRUE)
+        && (!CheckMoveIsChargeMove(ctx, move) || ctx->server_status_flag & BATTLE_STATUS_CHARGE_MOVE_HIT)) {
+        UnlockBattlerOutOfCurrentMove(bsys, ctx, battlerIdAttacker);
+        ctx->waza_status_flag |= WAZA_STATUS_FLAG_MAMORU_NOHIT; 
+        return FALSE;
+    }
+    
+    if (!(ctx->server_status_flag & BATTLE_STATUS_FLAT_HIT_RATE) //TODO: Is this flag a debug flag to ignore hit rates..?
+        && ((ctx->battlemon[battlerIdTarget].effect_of_moves & MOVE_EFFECT_FLAG_LOCK_ON
+            && ctx->battlemon[battlerIdTarget].moveeffect.battlerIdLockOn == battlerIdAttacker)
+          || GetBattlerAbility(ctx, battlerIdAttacker) == ABILITY_NO_GUARD
+          || GetBattlerAbility(ctx, battlerIdTarget) == ABILITY_NO_GUARD)) {
+        ctx->waza_status_flag &= ~MOVE_STATUS_FLAG_MISS;
+        return FALSE;
+    }
+
+    if (!CheckSideAbility(bsys, ctx, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) && !CheckSideAbility(bsys, ctx, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK)) {
+        if (ctx->field_condition & WEATHER_RAIN_ANY && ctx->moveTbl[move].effect == MOVE_EFFECT_THUNDER) {
+            ctx->waza_status_flag &= ~MOVE_STATUS_FLAG_MISS;
+        }
+        // Blizzard is 100% accurate in Snow also
+        if (ctx->field_condition & (WEATHER_HAIL_ANY | WEATHER_SNOW_ANY) && ctx->moveTbl[move].effect == MOVE_EFFECT_BLIZZARD) {
+            ctx->waza_status_flag &= ~MOVE_STATUS_FLAG_MISS;
+        }
+    }
+    
+    if (!(ctx->waza_status_flag & MOVE_STATUS_FLAG_LOCK_ON) 
+        && ctx->moveTbl[ctx->current_move_index].target != MOVE_TARGET_BOTH
+        && ((!(ctx->server_status_flag & BATTLE_STATUS_HIT_FLY) && ctx->battlemon[battlerIdTarget].effect_of_moves & MOVE_EFFECT_FLAG_FLYING_IN_AIR) 
+            || (!(ctx->server_status_flag & BATTLE_STATUS_SHADOW_FORCE) && ctx->battlemon[battlerIdTarget].effect_of_moves & MOVE_EFFECT_FLAG_SHADOW_FORCE)
+            || (!(ctx->server_status_flag & BATTLE_STATUS_HIT_DIG) && ctx->battlemon[battlerIdTarget].effect_of_moves & MOVE_EFFECT_FLAG_DIGGING)
+            || (!(ctx->server_status_flag & BATTLE_STATUS_HIT_DIVE) && ctx->battlemon[battlerIdTarget].effect_of_moves & MOVE_EFFECT_FLAG_IS_DIVING))) {
+        ctx->waza_status_flag |= WAZA_STATUS_FLAG_KIE_NOHIT;
+    }
+    return FALSE;
+}
