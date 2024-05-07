@@ -153,26 +153,13 @@ swi 0xFC
 bx lr
 
 
-.align 2
-
 .global sprintf
 sprintf:
-push {r0}
-ldr r0, =sprintf_arm
-bx r0
+push {r4, lr}
+//blx 0x020e7f30
+ldr r4, =0x020e7f30
+bl bx_r4
+pop {r4, pc}
 
-.align 2
-.arm
-sprintf_arm:
-pop {r0}
-mov r8, lr
-bl bx_r9
-bx r8
-
-bx_r9:
-ldr r9, =0x020e7f30
-bx r9
-
-.pool
-
-.thumb
+bx_r4:
+bx r4
