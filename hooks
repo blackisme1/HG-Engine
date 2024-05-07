@@ -120,6 +120,8 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 0012 btl_scr_cmd_0E_waitmessage 0223DCAC 3
 0012 Link_QueueIsEmpty 0224ED48 1
 0012 btl_scr_cmd_87_tryknockoff 02242EB4 3
+0012 BtlCmd_WeatherHPRecovery 02242380 3
+0012 BtlCmd_CalcWeatherBallParams 022432AC 3
 
 #trainer data expansion
 arm9 MakeTrainerPokemonParty 08073604 3
@@ -201,7 +203,7 @@ arm9 Bag_HasSpaceForItem_hook 08078388 5
 arm9 Bag_AddItem_hook 0807839C 5
 arm9 Pocket_GetItemSlotForRemove_hook 080783E4 5
 arm9 Bag_GetItemSlotForRemove_hook 08078414 5
-
+arm9 Bag_TakeItem_hook 08078438 5
 arm9 Pocket_TakeItem_hook 08078484 5
 arm9 Bag_HasItem_hook 080784B4 5
 
@@ -218,7 +220,6 @@ arm9 Bag_GetPocketSlotN 08078724 3
 #endif
 
 #endif
-arm9 Bag_TakeItem_hook 08078438 5
 
 #deerling forms
 arm9 Party_TryResetShaymin 08071E78 3
@@ -436,5 +437,8 @@ arm9 MonTryLearnMoveOnLevelUp 02071534 3
 0007 AnimCmd_PlayCryEdit_hook 0221F854 0
 
 arm9 ScrCmd_DaycareSanitizeMon 0204CFB8 1
+
+# 0224C018 + 4 = 224C01C
+0012 BattleSystem_CheckMoveEffect_hook 224C01C 5
 
 arm9 CalcMonStats 0206E27C 1
