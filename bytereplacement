@@ -12,8 +12,8 @@
 0012 0224BCC4 60 B4 C0 46
 
 # CalcSpeed hook setup
-# 024742B6
-0012 024742B6 60 B4 C0 46
+# 0224FC48
+0012 08018388 60 B4 C0 46
 
 # CalcCritical hook setup
 # 02257C5C
@@ -59,13 +59,13 @@ arm9 08078384 60 B4 C0 46
 arm9 08078398 60 B4 C0 46
 arm9 080783E0 60 B4 C0 46
 arm9 08078410 60 B4 C0 46
-
+arm9 08078434 60 B4 C0 46
 arm9 08078480 60 B4 C0 46
 arm9 080784B0 60 B4 C0 46
 
 #endif
 #endif
-arm9 08078434 60 B4 C0 46
+
 
 # 021F9380
 # trying a few things out
@@ -405,3 +405,6 @@ arm9 02074128 F8 B5 82 B0 00 90 00 20
 
 # expand allowed terrain platforms
 0012 02265FEE FF
+
+# BattleSystem_CheckMoveEffect_hook setup
+0012 0224C018 60 B4 C0 46
