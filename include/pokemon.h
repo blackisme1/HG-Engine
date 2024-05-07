@@ -1801,10 +1801,10 @@ void LONG_CALL Daycare_GetBothBoxMonsPtr(Daycare *dayCare, struct BoxPokemon **b
 
 #endif
 
-void CalcMonStats(struct PartyPokemon *mon);
+void LONG_CALL CalcMonStats(struct PartyPokemon *mon);
 
-BOOL AcquireMonLock(struct PartyPokemon *mon);
+BOOL LONG_CALL AcquireMonLock(struct PartyPokemon *mon);
 
-BOOL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
+BOOL LONG_CALL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
 
-void LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
+void LONG_CALL LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
