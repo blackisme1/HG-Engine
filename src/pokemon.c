@@ -41,7 +41,7 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	form = (int)GetMonData(mon, MON_DATA_FORM, NULL);
 	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
 
-	baseStats = (BASE_STATS *)sys_AllocMemory(HEAPID_MAIN_HEAP, sizeof(BASE_STATS));
+	baseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
 	LoadMonBaseStats_HandleAlternateForm(species, (int)form, baseStats);
 
 	if (species == SPECIES_SHEDINJA) {
