@@ -1267,7 +1267,6 @@ const u16 UNUSED BaseExperienceTable[] =
     [SPECIES_CALYREX_ICE_RIDER           ] = 340,
     [SPECIES_CALYREX_SHADOW_RIDER        ] = 340,
     [SPECIES_ENAMORUS_THERIAN            ] = 290,
-	[SPECIES_CASTFORM_SANDY              ] = 147,
     [SPECIES_GROWLITHE_HISUIAN           ] = 70,
     [SPECIES_ARCANINE_HISUIAN            ] = 194,
     [SPECIES_VOLTORB_HISUIAN             ] = 66,
