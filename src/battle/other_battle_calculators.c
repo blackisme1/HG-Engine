@@ -2181,7 +2181,7 @@ typedef enum UpdateMonConditionState {
     UMC_STATE_END
 } UpdateMonConditionState;
 
-static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp) {
+void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp) {
     int i;
     u8 flag = 0;
     int maxBattlers;
@@ -2197,7 +2197,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
         return;
     }
 
-    if (ov12_0224D7EC(bw, sp) == TRUE) {
+    if (ServerZenmetsuCheck(bw, sp) == TRUE) {
         return;
     }
 
@@ -2231,7 +2231,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
                 } else {
                     sp->client_work = battlerId;
                     sp->waza_work = MOVE_AQUA_RING;
-                    sp->hp_calc_work = DamageDivide(sp->battlemon[battlerId].maxhp, 8);
+                    sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp, 8);
                     ReadBattleScriptFromNarc(sp, 1, 169);
                 }
                 sp->next_server_seq_no = sp->server_seq_no;
@@ -2247,7 +2247,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
             sp->pcc_seq_no++;
             break;
         case UMC_STATE_HELD_ITEM:
-            if (TryUseHeldItem(bw, sp, battlerId) == TRUE) {
+            if (HeldItemEffectCheck(bw, sp, battlerId) == TRUE) {
                 flag = 1;
             }
             sp->pcc_seq_no++;
@@ -2273,7 +2273,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
         case UMC_STATE_POISON:
             if ((sp->battlemon[battlerId].condition & STATUS_FLAG_POISONED) && sp->battlemon[battlerId].hp != 0) {
                 sp->client_work = battlerId;
-                sp->hp_calc_work = DamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
+                sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
                 ReadBattleScriptFromNarc(sp, 1, 23);
                 sp->next_server_seq_no = sp->server_seq_no;
                 sp->server_seq_no = 22;
@@ -2284,7 +2284,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
         case UMC_STATE_BAD_POISON:
             if ((sp->battlemon[battlerId].condition & STATUS_FLAG_BADLY_POISONED) && sp->battlemon[battlerId].hp != 0) {
                 sp->client_work = battlerId;
-                sp->hp_calc_work = DamageDivide(sp->battlemon[battlerId].maxhp, 8);
+                sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp, 8);
                 if ((sp->battlemon[battlerId].condition & STATUS_FLAG_TOXIC_COUNT) != STATUS_FLAG_TOXIC_COUNT) {
                     sp->battlemon[battlerId].condition += 1 << 8;
                 }
@@ -2335,7 +2335,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
             if ((sp->battlemon[battlerId].condition2 & STATUS2_BINDING_TURNS) && sp->battlemon[battlerId].hp != 0) {
                 sp->battlemon[battlerId].condition2 -= 1 << 13;
                 if (sp->battlemon[battlerId].condition2 & STATUS2_BINDING_TURNS) {
-                    sp->hp_calc_work = DamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
+                    sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
                     ReadBattleScriptFromNarc(sp, 1, 59);
                 } else {
                     ReadBattleScriptFromNarc(sp, 1, 60);
@@ -2352,7 +2352,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
             sp->temp_work = CheckAbilityActive(bw, sp, CHECK_ABILITY_OPPOSING_SIDE_HP_RET, battlerId, ABILITY_BAD_DREAMS);
             if ((sp->battlemon[battlerId].condition & ((1 << 0) | (1 << 1) | (1 << 2))) && GetBattlerAbility(sp, battlerId) != ABILITY_MAGIC_GUARD &&
                 sp->battlemon[battlerId].hp != 0 && sp->temp_work) {
-                sp->hp_calc_work = DamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
+                sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
                 ReadBattleScriptFromNarc(sp, 1, 263);
                 sp->server_status_flag |= (1 << 6);
                 sp->client_work = battlerId;
@@ -2506,7 +2506,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
         {
             int script;
 
-            if (CheckUseHeldItem(bw, sp, battlerId, (u32 *)&script) == TRUE) {
+            if (HeldItemHealStatusCheck(bw, sp, battlerId, (u32 *)&script) == TRUE) {
                 sp->client_work = battlerId;
                 ReadBattleScriptFromNarc(sp, 1, script);
                 sp->next_server_seq_no = sp->server_seq_no;
@@ -2547,7 +2547,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
     sp->server_seq_no = 11;
 }
 
-static BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
+BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
     int ret = 0; 
     
     do {
@@ -2652,7 +2652,7 @@ static BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
                     if (sp->battlemon[sp->client_no_hit[sp->attack_client]].hp != 0) {
                         sp->defence_client = sp->client_no_hit[sp->attack_client];
                     } else {
-                        sp->defence_client = Battler_GetRandomOpposingBattlerId(bw, sp, sp->attack_client);
+                        sp->defence_client = ChooseRandomTarget(bw, sp, sp->attack_client);
                         if (sp->battlemon[sp->defence_client].hp == 0) {
                             ReadBattleScriptFromNarc(sp, 1, 282);
                             sp->next_server_seq_no = 39;
