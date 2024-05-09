@@ -2210,6 +2210,12 @@ BOOL LONG_CALL CheckItemGradualHPRestore(struct BattleSystem *bsys, struct Battl
 BOOL LONG_CALL ov12_02252218(struct BattleStruct *ctx, int battlerId);
 BOOL LONG_CALL TryHeldItemNegativeEffect(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId);
 
+BOOL LONG_CALL CheckTruant(struct BattleStruct *ctx, int battlerId);
+BOOL LONG_CALL BattleContext_CheckMoveImprisoned(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId, int moveNo);
+BOOL LONG_CALL BattleContext_CheckMoveHealBlocked(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId, int moveNo);
+int LONG_CALL Battler_GetRandomOpposingBattlerId(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId);
+void LONG_CALL CopyBattleMonToPartyMon(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId);
+
 
 
 typedef struct ANIM_CMD_STRUCT
