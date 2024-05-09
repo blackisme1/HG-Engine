@@ -443,3 +443,5 @@ arm9 ScrCmd_DaycareSanitizeMon 0204CFB8 1
 0012 BattleSystem_CheckMoveEffect_hook 224C01C 5
 
 arm9 CalcMonStats 0206E27C 1
+
+0012 BattleControllerPlayer_UpdateMonCondition 02249CC4 2

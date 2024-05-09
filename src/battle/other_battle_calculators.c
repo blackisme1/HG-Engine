@@ -2241,7 +2241,7 @@ static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStr
             sp->pcc_seq_no++;
             break;
         case UMC_STATE_ABILITY:
-            if (ov12_02253068(bw, sp, battlerId) == TRUE) {
+            if (SwitchInAbilityCheck(bw, sp, battlerId) == TRUE) {
                 flag = 1;
             }
             sp->pcc_seq_no++;

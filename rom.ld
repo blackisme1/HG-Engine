@@ -597,3 +597,6 @@ ReadBattleScriptFromNarc = 0x0224EB9C | 1;
 AcquireMonLock = 0x0206DD40 | 1;
 LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
 ReleaseMonLock = 0x0206DD8C | 1;
+
+CheckItemGradualHPRestore = 0x02254D80 | 1;
+TryHeldItemNegativeEffect = 0x0225551C | 1;

@@ -2765,3 +2765,5 @@ void LONG_CALL UnlockBattlerOutOfCurrentMove(struct BattleSystem *bsys, struct B
 BOOL LONG_CALL CheckMoveIsChargeMove(struct BattleStruct *sp, int moveNo);
 
 #endif // BATTLE_H
+
+static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp);
