@@ -117,7 +117,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp)
     {
         for (type = sp->critical; type > 1; type--) // for every critical multiplier above 1, tack on 1.5x multiplier
         {
-            sp->damage = sp->damage;
+            sp->damage = sp->damage * 150 / 100;
         }
     }
 
@@ -140,7 +140,7 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp)
 
         if ((sp->me_first_total_turns - sp->battlemon[sp->attack_client].moveeffect.meFirstCount) < 2)
         {
-            sp->damage = sp->damage;
+            sp->damage = sp->damage * 15 / 10;
         }
         else
         {
@@ -161,22 +161,19 @@ void CalcDamageOverall(void *bw, struct BattleStruct *sp)
 int AdjustDamageForRoll(void *bw, struct BattleStruct *sp UNUSED, int damage)
 {
 #ifdef DEBUG_ADJUSTED_DAMAGE
-    u8 buf[64];
-    sprintf(buf, "Unrolled damage: %d -- ", damage);
-    debugsyscall(buf);
+    u8 buf[128];
+    s32 predamage = damage;
 #endif // DEBUG_ADJUSTED_DAMAGE
 	if (damage)
     {
-		damage *= 100; // 85-100% damage roll removed
+		damage *= (100 - (BattleRand(bw) % 16)); // 85-100% damage roll
 		damage /= 100;
 		if (damage == 0)
 			damage = 1;
 	}
 
 #ifdef DEBUG_ADJUSTED_DAMAGE
-    sprintf(buf, "Battler %d hit battler %d ", sp->attack_client, sp->defence_client);
-    debugsyscall(buf);
-    sprintf(buf, "for %d damage.\n", damage+1);
+    sprintf(buf, "Unrolled damage: %d -- Battler %d hit battler %d for %d damage.\n", predamage, sp->attack_client, sp->defence_client, damage+1);
     debugsyscall(buf);
 #endif // DEBUG_ADJUSTED_DAMAGE
 
