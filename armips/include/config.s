@@ -17,7 +17,7 @@ FAIRY_TYPE_IMPLEMENTED equ 1
 CRY_PSEUDOBANK_START equ 778
 
 // DEBUG_NEEDS_TESTING defines in progress implementations that may not necessarily function.
-DEBUG_NEEDS_TESTING equ 0
+//DEBUG_NEEDS_TESTING equ 0
 
 // LEARNSET_TOTAL_MOVES is the amount of moves that each pokémon should be able to learn by level up
 LEARNSET_TOTAL_MOVES equ 41 // 40+terminate - currently driven by gallade
@@ -45,4 +45,4 @@ DELETABLE_HMS equ 0
 
 // APPLY_ANTIPIRACY will apply the typical anti-piracy code changes to your ROM automatically so that the game runs well on hardware (TWLmenu and R4 are both tested)
 // comment out the lines if you do not want anti-piracy to be applied to your ROM
-.definelabel APPLY_ANTIPIRACY, 0
+//.definelabel APPLY_ANTIPIRACY, 0

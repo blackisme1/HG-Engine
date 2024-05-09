@@ -203,7 +203,7 @@ arm9 Bag_HasSpaceForItem_hook 08078388 5
 arm9 Bag_AddItem_hook 0807839C 5
 arm9 Pocket_GetItemSlotForRemove_hook 080783E4 5
 arm9 Bag_GetItemSlotForRemove_hook 08078414 5
-arm9 Bag_TakeItem_hook 08078438 5
+
 arm9 Pocket_TakeItem_hook 08078484 5
 arm9 Bag_HasItem_hook 080784B4 5
 
@@ -220,6 +220,7 @@ arm9 Bag_GetPocketSlotN 08078724 3
 #endif
 
 #endif
+arm9 Bag_TakeItem_hook 08078438 5
 
 #deerling forms
 arm9 Party_TryResetShaymin 08071E78 3
