@@ -118,9 +118,9 @@ The opposing {STRVAR_1 1, 0, 0} thawed out!
 {STRVAR_1 1, 0, 0} was\ndefrosted by {STRVAR_1 6, 1, 0}!
 The wild {STRVAR_1 1, 0, 0} was\ndefrosted by {STRVAR_1 6, 1, 0}!
 The opposing {STRVAR_1 1, 0, 0} was\ndefrosted by {STRVAR_1 6, 1, 0}!
-{STRVAR_1 1, 0, 0} is paralyzed!\nIt may be unable to move!
-The wild {STRVAR_1 1, 0, 0} is paralyzed!\nIt may be unable to move!
-The opposing {STRVAR_1 1, 0, 0} is paralyzed!\nIt may be unable to move!
+{STRVAR_1 1, 0, 0} is hurt\nby its paralysis!
+The wild {STRVAR_1 1, 0, 0} is hurt\nby its paralysis!
+The opposing {STRVAR_1 1, 0, 0} is hurt\nby its paralysis!
 {STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0}\nparalyzed {STRVAR_1 1, 2, 0}!\fIt may be unable to move!
 {STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0}\nparalyzed the wild {STRVAR_1 1, 2, 0}!\fIt may be unable to move!
 {STRVAR_1 1, 0, 0}’s {STRVAR_1 5, 1, 0}\nparalyzed the opposing {STRVAR_1 1, 2, 0}!\fIt may be unable to move!
