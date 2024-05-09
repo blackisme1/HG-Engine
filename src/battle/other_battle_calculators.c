@@ -2526,12 +2526,12 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 		case UMC_STATE_PARALYZE:
             if ((sp->battlemon[battlerId].condition & STATUS_FLAG_PARALYZED) && sp->battlemon[battlerId].hp != 0) {
                 sp->client_work = battlerId;
-                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, script);
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_FULLY_PARALYZED);
                 sp->next_server_seq_no = sp->server_seq_no;
                 sp->server_seq_no = 22;
                 flag = 1;
             }
-            sp->pcc_seq_no++;
+            sp->stateUpdateMonCondition++;
             break;
 		case UMC_STATE_END:
 			sp->stateUpdateMonCondition = 0;
@@ -2548,7 +2548,7 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 	sp->server_seq_no = 11;
 }
 
-BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
+static BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
 	int ret = 0; 
 	
 	do {
