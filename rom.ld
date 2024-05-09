@@ -601,14 +601,4 @@ ReleaseMonLock = 0x0206DD8C | 1;
 CheckItemGradualHPRestore = 0x02254D80 | 1;
 ov12_02252218 = 0x02252218 | 1;
 TryHeldItemNegativeEffect = 0x0225551C | 1;
-
-CopyBattleMonToPartyMon = 0x02250C40 | 1;
-BattleContext_CheckMoveHealBlocked = 0x02252DF8 | 1;
-BattleContext_CheckMoveImprisoned = 0x02252C74 | 1;
-CheckTruant = 0x02252C40 | 1;
-
-ov12_02252218 = 0x02252218 | 1;
-CheckAbilityActive = 0x02252324 | 1;
-BattleController_EmitBlankMessage = 0x022642F0 | 1;
-MaskOfFlagNo = 0x020726C0 | 1;
 TryUseHeldItem = 0x0225471C | 1;

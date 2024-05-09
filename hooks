@@ -448,5 +448,3 @@ arm9 ScrCmd_DaycareSanitizeMon 0204CFB8 1
 arm9 CalcMonStats 0206E27C 1
 
 0012 BattleControllerPlayer_UpdateMonCondition 02249CC4 2
-
-0012 ov12_0224B528 0224B528 2
