@@ -14,7 +14,7 @@ make install -j
 git clone --recursive https://github.com/BluRosie/hg-engine.git
 
 cd C:/Users/CKIRUser/Downloads/hg-engine
-make -j
+make -j$(nproc)
 
 make clean -j
 make clean_code -j

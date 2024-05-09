@@ -17,7 +17,7 @@ FAIRY_TYPE_IMPLEMENTED equ 1
 CRY_PSEUDOBANK_START equ 778
 
 // DEBUG_NEEDS_TESTING defines in progress implementations that may not necessarily function.
-//DEBUG_NEEDS_TESTING equ 0
+DEBUG_NEEDS_TESTING equ 0
 
 // LEARNSET_TOTAL_MOVES is the amount of moves that each pokémon should be able to learn by level up
 LEARNSET_TOTAL_MOVES equ 41 // 40+terminate - currently driven by gallade
