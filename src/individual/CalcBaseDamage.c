@@ -698,6 +698,12 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		defense /= 2;
 		sp_defense /= 2;
 	}
+	
+	if ((DefendingMon.condition & STATUS_FLAG_FROZEN))
+	{
+		defense *= 2;
+		sp_defense *= 2;
+	}
 
 	// handle simple
 	if (AttackingMon.ability == ABILITY_SIMPLE)
