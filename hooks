@@ -122,6 +122,8 @@ arm9 set_starter_hidden_ability_hook 02096158 5
 0012 btl_scr_cmd_87_tryknockoff 02242EB4 3
 0012 BtlCmd_WeatherHPRecovery 02242380 3
 0012 BtlCmd_CalcWeatherBallParams 022432AC 3
+0012 BtlCmd_TrySubstitute 022414F0 3
+0012 BtlCmd_RapidSpin 02242238 3
 
 #trainer data expansion
 arm9 MakeTrainerPokemonParty 08073604 3
@@ -220,6 +222,7 @@ arm9 Bag_GetPocketSlotN 08078724 3
 #endif
 
 #endif
+
 arm9 Bag_TakeItem_hook 08078438 5
 
 #deerling forms

@@ -11,7 +11,7 @@
 
 a001_020:
     changemondatabyvar VAR_OP_GET_RESULT, BATTLER_WORK, 0x30, VAR_HP_TEMP
-    damagediv VAR_HP_TEMP, 16 // sleep heals 1/16th health
+    damagediv VAR_HP_TEMP, 8 // sleep heals 1/8th health
     printmessage 0x12B, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
