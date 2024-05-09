@@ -597,3 +597,9 @@ TryHeldItemNegativeEffect = 0x0225551C | 1;
 AcquireMonLock = 0x0206DD40 | 1;
 LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
 ReleaseMonLock = 0x0206DD8C | 1;
+
+CheckTruant = 0x02252C40 | 1;
+BattleContext_CheckMoveImprisoned = 0x02252C74 | 1;
+BattleContext_CheckMoveHealBlocked = 0x02252DF8 | 1;
+Battler_GetRandomOpposingBattlerId = 0x02253DA0 | 1;
+CopyBattleMonToPartyMon = 0x02250C40 | 1;

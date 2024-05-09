@@ -2547,3 +2547,133 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 	sp->updateMonConditionData = 0;
 	sp->server_seq_no = 11;
 }
+
+BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
+    int ret = 0; 
+    
+    do {
+        switch (sp->ssc_seq_no) {
+        case 0:
+            sp->battlemon[sp->attack_client].condition2 &= ~(1 << 25);
+            sp->battlemon[sp->attack_client].effect_of_moves &= ~MOVE_EFFECT_FLAG_GRUDGE;
+            sp->ssc_seq_no++;
+            break;
+        case 1:
+            if (CheckTruant(sp, sp->attack_client) == TRUE) {
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_LOAFING);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 2:
+            if (sp->battlemon[sp->attack_client].condition2 & STATUS2_RECHARGE) {
+                sp->battlemon[sp->attack_client].condition2 &= ~STATUS2_RECHARGE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_RECHARGE_TURN);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 3:
+            if (sp->battlemon[sp->attack_client].condition2 & STATUS2_FLINCH) {
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_FAIL_FLINCHED);
+				sp->damage /= 2;
+				sp->next_server_seq_no = sp->server_seq_no;
+				sp->server_seq_no = 22;
+                ret = 2; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 4:
+            if (sp->battlemon[sp->attack_client].moveeffect.disabledMove == sp->waza_no_temp) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromDisable = TRUE; 
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_IS_DISABLED);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 5:
+            if (sp->battlemon[sp->attack_client].moveeffect.tauntTurns && sp->moveTbl[sp->current_move_index].power == 0) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromTaunt = TRUE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_FAIL_TAUNTED);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 6:
+            if (BattleContext_CheckMoveImprisoned(bw, sp, sp->attack_client, sp->current_move_index)) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromImprison = TRUE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_IS_IMPRISONED);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 7:
+            if (BattleContext_CheckMoveHealBlocked(bw, sp, sp->attack_client, sp->current_move_index)) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromHealBlock = TRUE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_FAILED_HEAL_BLOCK);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 8:
+            sp->ssc_seq_no++;
+            if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
+				LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_CONFUSED);
+				sp->next_server_seq_no = sp->server_seq_no;
+				sp->server_seq_no = 22;
+				ret = 2; 
+            }
+            break;
+        case 9:
+            sp->ssc_seq_no++;
+            if (sp->battlemon[sp->attack_client].condition2 & ((1 << 8) | (1 << 9))) {
+                sp->battlemon[sp->attack_client].condition2 -= (1 << 8);
+                if (!(sp->battlemon[sp->attack_client].condition2 & ((1 << 8) | (1 << 9))) && sp->store_damage[sp->attack_client]) {
+                    sp->damage = sp->store_damage[sp->attack_client] * 2;
+                    if (sp->battlemon[sp->client_no_hit[sp->attack_client]].hp != 0) {
+                        sp->attack_client = sp->client_no_hit[sp->attack_client];
+                    } else {
+                        sp->attack_client = Battler_GetRandomOpposingBattlerId(bw, sp, sp->attack_client);
+                        if (sp->battlemon[sp->defence_client].hp == 0) {
+                            LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BIDE_END_NO_TARGET);
+                            sp->next_server_seq_no = 39;
+                            sp->server_seq_no = 22;
+                            ret = 2; 
+                            break;
+                        }
+                    }
+                }
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_END_BIDE);
+                sp->next_server_seq_no = sp->server_seq_no;
+                sp->server_seq_no = 22;
+                ret = 2; 
+            }
+            break;
+        case 10:
+            sp->ssc_seq_no = 0;
+            ret = 3;
+            break;
+        }
+    } while (ret == 0);
+    
+    CopyBattleMonToPartyMon(bw, sp, sp->attack_client);
+    
+    if (ret == 1) {
+        sp->server_status_flag |= (1 << 1);
+        sp->waza_status_flag |= (1 << 31);
+    }
+    
+    return (ret != 3);
+}
