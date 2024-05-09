@@ -2767,3 +2767,5 @@ BOOL LONG_CALL CheckMoveIsChargeMove(struct BattleStruct *sp, int moveNo);
 #endif // BATTLE_H
 
 static void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp);
+
+static BOOL ov12_0224B528(void *bw, struct BattleStruct *sp);
