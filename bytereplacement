@@ -41,13 +41,6 @@ arm9 0806DED0 60 B4 C0 46
 # expand evolutions to 9 per mon + form evos - GetMonEvolution hook setup
 arm9 08070E34 60 B4 C0 46
 
-#updating old moves
-
-#Binding moves 1/8th
-# 0224A112
-0012 08012852 08
-
-
 #ifdef ALLOW_SAVE_CHANGES
 #ifdef ITEM_POCKET_EXPANSION
 

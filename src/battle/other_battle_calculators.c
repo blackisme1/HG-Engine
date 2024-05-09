@@ -2164,7 +2164,6 @@ typedef enum UpdateMonConditionState {
     UMC_STATE_CURSE,
     UMC_STATE_BINDING,
     UMC_STATE_BAD_DREAMS,
-    UMC_STATE_UPROAR,
     UMC_STATE_RAMPAGE,
     UMC_STATE_DISABLE,
     UMC_STATE_ENCORE,
@@ -2361,8 +2360,6 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
                 flag = 1;
             }
             sp->pcc_seq_no++;
-            break;
-        case UMC_STATE_UPROAR:
             break;
         case UMC_STATE_RAMPAGE:
             if (sp->battlemon[battlerId].condition2 & STATUS2_LOCKED_INTO_MOVE) {
