@@ -2233,7 +2233,7 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 				} else {
 					sp->client_work = battlerId;
 					sp->waza_work = MOVE_AQUA_RING;
-					sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp, 16);
+					sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp, 8);
 					LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_AQUA_RING_HEAL);
 				}
 				sp->next_server_seq_no = sp->server_seq_no;

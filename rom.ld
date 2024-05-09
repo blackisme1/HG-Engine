@@ -96,7 +96,6 @@ SetEggStats = 0x0206C8B8 | 1;
 SaveMisc_SetTogepiPersonalityGender = 0x0202ABB0 | 1;
 SaveMisc_GetTogepiPersonalityGender = 0x0202ABBC | 1;
 
-GetBagSaveData = 0x5AC + 0x021F9381;
 SaveData_GetRepelPtr = 0x0202DB05;
 SaveData_GetEventPtr = 0x020503D0 | 1;
 SaveData_GetDexPtr = 0x0202A634 |1;
@@ -591,13 +590,10 @@ Daycare_GetBothBoxMonsPtr = 0x0206C1C8 | 1;
 CurseUserIsGhost = 0x022526D0 | 1;
 UnlockBattlerOutOfCurrentMove = 0x02250CA0 | 1;
 
-BattleSystem_GetMaxBattlers = 0x0223A7F0 | 1;
-ReadBattleScriptFromNarc = 0x0224EB9C | 1;
+CheckItemGradualHPRestore = 0x02254D80 | 1;
+ov12_02252218 = 0x02252218 | 1;
+TryHeldItemNegativeEffect = 0x0225551C | 1;
 
 AcquireMonLock = 0x0206DD40 | 1;
 LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
 ReleaseMonLock = 0x0206DD8C | 1;
-
-CheckItemGradualHPRestore = 0x02254D80 | 1;
-ov12_02252218 = 0x02252218 | 1;
-TryHeldItemNegativeEffect = 0x0225551C | 1;
