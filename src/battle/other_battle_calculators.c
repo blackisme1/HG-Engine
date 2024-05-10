@@ -2639,11 +2639,6 @@ BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
             sp->ssc_seq_no++;
             if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
 				LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_CONFUSED);
-				sp->defence_client = sp->attack_client;
-				sp->client_work = sp->defence_client;
-				sp->hp_calc_work = CalcBaseDamage(bw, sp, MOVE_STRUGGLE, 0, 0, 40, 0, sp->battlerIdAttacker, sp->battlerIdAttacker, 1);
-				sp->hp_calc_work *= -1;
-				ReadBattleScriptFromNarc(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_CONFUSED_SELF_HIT);
 				sp->next_server_seq_no = sp->server_seq_no;
 				sp->server_seq_no = 22;
 				ret = 2; 
