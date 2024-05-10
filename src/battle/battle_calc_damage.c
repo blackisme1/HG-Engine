@@ -59,7 +59,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     UnloadOverlayByID(ovyId);
 	
 	if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
-		ReadBattleScriptFromNarc(sp, 1, 39);
+		LoadBattleSubSeqScript(sp, 1, 39);
 	}
 
     return ret;

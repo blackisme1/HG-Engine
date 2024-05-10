@@ -51,19 +51,19 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	}
 	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
 
-	newAtk = baseStats->atk * level * 3 / 200 + baseStats->hp / 4;
+	newAtk = baseStats->atk * level * 3 / 200 + baseStats->atk / 4;
 	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
 
-	newDef = baseStats->def * level * 3 / 200 + baseStats->hp / 4;
+	newDef = baseStats->def * level * 3 / 200 + baseStats->def / 4;
 	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
 
-	newSpeed = baseStats->speed * level * 3 / 200 + baseStats->hp / 4;
+	newSpeed = baseStats->speed * level * 3 / 200 + baseStats->speed / 4;
 	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
 
-	newSpatk = baseStats->spatk * level * 3 / 200 + baseStats->hp / 4;
+	newSpatk = baseStats->spatk * level * 3 / 200 + baseStats->spatk / 4;
 	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
 
-	newSpdef = baseStats->spdef * level * 3 / 200 + baseStats->hp / 4;
+	newSpdef = baseStats->spdef * level * 3 / 200 + baseStats->spdef / 4;
 	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
 
 	sys_FreeMemoryEz(baseStats);
