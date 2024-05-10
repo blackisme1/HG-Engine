@@ -30,41 +30,6 @@ struct PACKED sDamageCalc
 	u8 type2;
 };
 
-static const u16 SoundproofMoveList[] =
-{
-	MOVE_BOOMBURST,
-	MOVE_BUG_BUZZ,
-	MOVE_CHATTER,
-	MOVE_CLANGING_SCALES,
-	MOVE_CLANGOROUS_SOUL,
-	//MOVE_CLANGOROUS_SOULBLAZE,
-	MOVE_CONFIDE,
-	MOVE_DISARMING_VOICE,
-	MOVE_ECHOED_VOICE,
-	MOVE_EERIE_SPELL,
-	MOVE_GRASS_WHISTLE,
-	MOVE_GROWL,
-	//MOVE_HEAL_BELL,
-	//MOVE_HOWL,
-	MOVE_HYPER_VOICE,
-	MOVE_METAL_SOUND,
-	MOVE_NOBLE_ROAR,
-	MOVE_OVERDRIVE,
-	MOVE_PARTING_SHOT,
-	MOVE_PERISH_SONG,
-	MOVE_RELIC_SONG,
-	MOVE_ROAR,
-	MOVE_ROUND,
-	MOVE_SCREECH,
-	//MOVE_SHADOW_PANIC,
-	MOVE_SING,
-	MOVE_SNARL,
-	MOVE_SNORE,
-	MOVE_SPARKLING_ARIA,
-	MOVE_SUPERSONIC,
-	MOVE_UPROAR,
-};
-
 static const u8 HeldItemPowerUpTable[][2]={
 	{HOLD_EFFECT_BOOST_BUG, TYPE_BUG},
 	{HOLD_EFFECT_BOOST_STEEL, TYPE_STEEL},
@@ -100,9 +65,7 @@ static const u8 HeldItemPowerUpTable[][2]={
 	{HOLD_EFFECT_PLATE_BOOST_DARK, TYPE_DARK},
 	{HOLD_EFFECT_PLATE_BOOST_STEEL, TYPE_STEEL},
 	{HOLD_EFFECT_PLATE_BOOST_NORMAL, TYPE_NORMAL},
-#if FAIRY_TYPE_IMPLEMENTED == 1
 	{HOLD_EFFECT_PLATE_BOOST_FAIRY, TYPE_FAIRY},
-#endif
 };
 
 static const u16 IronFistMovesTable[] = {
@@ -342,18 +305,11 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	movepower = movepower * 130 / 100;
 	}
 
-	// handle punk rock
-	if (AttackingMon.ability == ABILITY_PUNK_ROCK)
-	{
-		for(i = 0; i < NELEMS(SoundproofMoveList); i++)
-		{
-			if(moveno == SoundproofMoveList[i])
-			{
-				movepower = movepower * 130 / 100;
-				break;
-			}
-		}
-	}
+	// handle punk rock TODO uncomment
+    if (AttackingMon.ability == ABILITY_PUNK_ROCK && IsMoveSoundBased(sp->current_move_index))
+    {
+        movepower = movepower * 130 / 100;
+    }
 
 
 	// type boosting held items
@@ -540,22 +496,22 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	}
 
 	// handle "in a pinch" type boosters
-	if ((movetype == TYPE_GRASS) && (AttackingMon.ability == ABILITY_OVERGROW) && (AttackingMon.hp <= AttackingMon.maxhp/2))
+	if ((movetype == TYPE_GRASS) && (AttackingMon.ability == ABILITY_OVERGROW) && (AttackingMon.hp <= AttackingMon.maxhp / 2))
 	{
 		movepower = movepower * 150 / 100;
 	}
 
-	if ((movetype == TYPE_FIRE) && (AttackingMon.ability == ABILITY_BLAZE) && (AttackingMon.hp <= AttackingMon.maxhp/2))
+	if ((movetype == TYPE_FIRE) && (AttackingMon.ability == ABILITY_BLAZE) && (AttackingMon.hp <= AttackingMon.maxhp / 2))
 	{
 		movepower = movepower * 150 / 100;
 	}
 
-	if ((movetype == TYPE_WATER) && (AttackingMon.ability == ABILITY_TORRENT) && (AttackingMon.hp <= AttackingMon.maxhp/2))
+	if ((movetype == TYPE_WATER) && (AttackingMon.ability == ABILITY_TORRENT) && (AttackingMon.hp <= AttackingMon.maxhp / 2))
 	{
 		movepower = movepower * 150 / 100;
 	}
 
-	if ((movetype == TYPE_BUG) && (AttackingMon.ability == ABILITY_SWARM) && (AttackingMon.hp <= AttackingMon.maxhp/2))
+	if ((movetype == TYPE_BUG) && (AttackingMon.ability == ABILITY_SWARM) && (AttackingMon.hp <= AttackingMon.maxhp / 2))
 	{
 		movepower = movepower * 150 / 100;
 	}
@@ -600,7 +556,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	  && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AURA_BREAK) != 0))
 		movepower = movepower * 100 / 133;
 
-#if FAIRY_TYPE_IMPLEMENTED == 1
 	// if FAIRY aura is present but not aura break
 	if ((movetype == TYPE_FAIRY) && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_FAIRY_AURA) != 0)
 	  && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AURA_BREAK) == 0))
@@ -610,7 +565,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	else if ((movetype == TYPE_FAIRY) && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_FAIRY_AURA) != 0)
 	  && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AURA_BREAK) != 0))
 		movepower = movepower * 100 / 133;
-#endif
 
 	//handle steely spirit for the ally
 	if (movetype == TYPE_STEEL && GetBattlerAbility(sp, BATTLER_ALLY(attacker)) == ABILITY_STEELY_SPIRIT)
@@ -1010,18 +964,11 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		damage /= 2;
 	}
 
-	// handle punk rock
-	if (DefendingMon.ability == ABILITY_PUNK_ROCK)
-	{
-		for(i = 0; i < NELEMS(SoundproofMoveList); i++)
-		{
-			if(moveno == SoundproofMoveList[i])
-			{
-				damage /= 2;
-				break;
-			}
-		}
-	}
+    // handle punk rock TODO uncomment
+    if (DefendingMon.ability == ABILITY_PUNK_ROCK && IsMoveSoundBased(moveno))
+    {
+        damage /= 2;
+    }
 
 	// Handle field effects
 	if (sp->terrainOverlay.numberOfTurnsLeft > 0) {
