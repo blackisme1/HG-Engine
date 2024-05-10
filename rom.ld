@@ -603,5 +603,3 @@ BattleContext_CheckMoveImprisoned = 0x02252C74 | 1;
 BattleContext_CheckMoveHealBlocked = 0x02252DF8 | 1;
 Battler_GetRandomOpposingBattlerId = 0x02253DA0 | 1;
 CopyBattleMonToPartyMon = 0x02250C40 | 1;
-
-CalcBaseDamage = 0x02256FFC | 1;

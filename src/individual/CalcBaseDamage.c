@@ -701,6 +701,12 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		defense *= 2;
 		sp_defense *= 2;
 	}
+	
+	if ((DefendingMon.condition & STATUS_FLAG_ASLEEP))
+	{
+		attack /= 2;
+		sp_attack /= 2;
+	}
 
 	// handle simple
 	if (AttackingMon.ability == ABILITY_SIMPLE)
@@ -871,11 +877,8 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
 		defense = defense / 2;
 
-	damage = equivalentAttack * movepower;
-	damage *= (level * 2 / 5 + 2);
-
+	damage = equivalentAttack * movepower /= 25;
 	damage = damage / equivalentDefense;
-	damage /= 50;
 
 	// Handle Parental Bond
 	if (sp->battlemon[attacker].parental_bond_flag == 2) {
@@ -1068,10 +1071,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		default:
 			break;
 		}
-	}
-	
-	if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
-		LoadBattleSubSeqScript(sp, 1, 39);
 	}
 
 	return damage + 1;

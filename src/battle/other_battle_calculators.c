@@ -2343,7 +2343,6 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 			break;
 		case UMC_STATE_BINDING:
 			if (sp->binding_turns[battlerId] && sp->battlemon[battlerId].hp != 0) {
-				//sp->battlemon[battlerId].condition2 -= 1 << 13;
 				sp->binding_turns[battlerId]--;
 				if (sp->binding_turns[battlerId]) {
 					sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
@@ -2381,29 +2380,6 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 				} else if (!(sp->battlemon[battlerId].condition2 & STATUS2_RAMPAGE_TURNS) && !(sp->battlemon[battlerId].condition2 & STATUS2_CONFUSED)) {
 					sp->state_client = battlerId;
 					LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_THRASH_END);
-					sp->next_server_seq_no = sp->server_seq_no;
-					sp->server_seq_no = 22;
-					flag = 1;
-				}
-			}
-			sp->stateUpdateMonCondition++;
-			break;
-		case UMC_STATE_DISABLE:
-			if (sp->battlemon[battlerId].moveeffect.disabledMove) {
-				for (i = 0; i < 4; i++) {
-					if (sp->battlemon[battlerId].moveeffect.disabledMove == sp->battlemon[battlerId].move[i]) {
-						break;
-					}
-				}
-				if (i == 4) {
-					sp->battlemon[battlerId].moveeffect.disabledTurns = 0;
-				}
-				if (sp->battlemon[battlerId].moveeffect.disabledTurns) {
-					sp->battlemon[battlerId].moveeffect.disabledTurns--;
-				} else {
-					sp->battlemon[battlerId].moveeffect.disabledMove = 0;
-					sp->client_work = battlerId;
-					LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_DISABLE_END);
 					sp->next_server_seq_no = sp->server_seq_no;
 					sp->server_seq_no = 22;
 					flag = 1;

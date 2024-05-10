@@ -3520,7 +3520,7 @@ mondata SPECIES_LEDIAN, "Ledian"
 
 
 mondata SPECIES_SPINARAK, "Spinarak"
-    basestats 40, 40, 40, 60, 40, 40
+    basestats 50, 50, 40, 60, 50, 40
     types TYPE_BUG, TYPE_BUG
     catchrate 255
     baseexp 0 // defined in baseexp.s
