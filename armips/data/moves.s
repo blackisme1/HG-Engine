@@ -24,20 +24,20 @@ movedata MOVE_NONE, "-"
     movedescription MOVE_NONE, "-"
 
 movedata MOVE_POUND, "Pound"
-    battleeffect 150
+    battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 50
     type TYPE_NORMAL
     accuracy 100
     pp 20
-    effectchance 25
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_POUND, "The foe is physically\npounded with a long\ntail or a foreleg,\netc. Flinch\n"
+    movedescription MOVE_POUND, "The foe is physically\npounded with a long\ntail or a foreleg,\netc."
 
 movedata MOVE_KARATE_CHOP, "Karate Chop"
     battleeffect 43
@@ -764,7 +764,7 @@ movedata MOVE_SING, "Sing"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 50
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1276,7 +1276,7 @@ movedata MOVE_SLEEP_POWDER, "Sleep Powder"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
-    accuracy 50
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -2365,7 +2365,7 @@ movedata MOVE_SPORE, "Spore"
     basepower 0
     type TYPE_GRASS
     accuracy 100
-    pp 1
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5132,7 +5132,7 @@ movedata MOVE_GRASS_WHISTLE, "Grass Whistle"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
-    accuracy 50
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
