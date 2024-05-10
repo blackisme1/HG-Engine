@@ -57,10 +57,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
                             u32 field_cond, u16 pow, u8 type UNUSED, u8 attacker, u8 defender, u8 critical))(offset);
     ret = internalFunc(bw, sp, moveno, side_cond, field_cond, pow, type, attacker, defender, critical);
     UnloadOverlayByID(ovyId);
-	
-	if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
-		LoadBattleSubSeqScript(sp, 1, 39);
-	}
 
     return ret;
 }

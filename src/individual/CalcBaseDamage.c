@@ -1070,10 +1070,8 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		}
 	}
 	
-	// handle flinch
-	if ((sp->battlemon[attacker].condition2 & 0x08) != 0)
-	{
-		damage /= 2;
+	if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
+		LoadBattleSubSeqScript(sp, 1, 39);
 	}
 
 	return damage + 1;
