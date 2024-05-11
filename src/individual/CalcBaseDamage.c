@@ -824,7 +824,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
 		defense = defense / 2;
 
-	damage = equivalentAttack * movepower / 20;
+	damage = equivalentAttack * movepower / 10;
 	damage = damage / equivalentDefense;
 
 	// Handle Parental Bond
