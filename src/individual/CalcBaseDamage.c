@@ -820,7 +820,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	u16 equivalentDefense;
 	getEquivalentAttackAndDefense(sp, attack, defense, sp_attack, sp_defense, atkstate, defstate, spatkstate, spdefstate, &movesplit, attacker, defender, critical, moveno, &equivalentAttack, &equivalentDefense);
 
-	damage = equivalentAttack * movepower / 10;
+	damage = equivalentAttack * movepower * ((level / 100) + 1) / 20;
 	damage = damage / equivalentDefense;
 
 	// Handle Parental Bond
