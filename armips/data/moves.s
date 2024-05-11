@@ -3301,7 +3301,7 @@ movedata MOVE_ROLLOUT, "Rollout"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_ROLLOUT, "The user rolls into the foe\n. It becomes stronger\neach time it hits."
+    movedescription MOVE_ROLLOUT, "The user rolls into the\nfoe. It becomes\nstronger each time\nit hits."
 
 movedata MOVE_FALSE_SWIPE, "False Swipe"
     battleeffect 101
@@ -5911,11 +5911,11 @@ movedata MOVE_METAL_BURST, "Metal Burst"
     terminatedata
     movedescription MOVE_METAL_BURST, "The user retaliates\nagainst the foe that\nlast inflicted damage\non it with much\ngreater power."
 
-movedata MOVE_U_TURN, "U turn"
+movedata MOVE_U_TURN, "Somersault"
     battleeffect 228
     pss SPLIT_PHYSICAL
     basepower 70
-    type TYPE_BUG
+    type TYPE_FLYING
     accuracy 100
     pp 10
     effectchance 0
@@ -14871,7 +14871,7 @@ movedata MOVE_CACKLE, "Cackle"
     terminatedata
     movedescription MOVE_CACKLE, "Raises foes Speed but\nreduces Attack and\nDefense. Effect is\ndoubled if the foe has\na status condition."
 
-movedata MOVE_CREEP_IN, "Creep In"
+movedata MOVE_CREEP_IN, "Pester"
     battleeffect 321
     pss SPLIT_PHYSICAL
     basepower 70

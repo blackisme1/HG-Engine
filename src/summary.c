@@ -95,20 +95,12 @@ static s8 sNatureStatEffects[25][6] = {
 
 static void PrintStatNumberWithColor(struct SummaryState *summary, u8 windowIdx, u32 justify)
 {
-    u32 nature = GetBoxMonNatureCountMints(Summary_GetPokemonData(summary));
     u32 color = BLACK;
-    if (sNatureStatEffects[nature][windowIdx] > 0) {
-        color = RED;
-    } else if (sNatureStatEffects[nature][windowIdx] < 0) {
-        color = BLUE;
-    }
-
     Summary_PrintString(summary, &summary->addlWindows[windowIdx], color, justify);
 }
 
 void Summary_ColorizeStatScreen(struct SummaryState *summary, u32 mode)
 {
-    u32 nature = GetBoxMonNatureCountMints(Summary_GetPokemonData(summary));
     Summary_NumberToString(summary, 120, summary->pokemonData.attack, 3, 0);
     PrintStatNumberWithColor(summary, 1, JUSTIFY_RIGHT);
     Summary_NumberToString(summary, 121, summary->pokemonData.defense, 3, 0);
@@ -126,14 +118,6 @@ void Summary_ColorizeStatScreen(struct SummaryState *summary, u32 mode)
         {
             u32 msgId = 110;
             u32 color = WHITE;
-            if (sNatureStatEffects[nature][i] > 0) {
-                msgId = 196-1; // Stat+
-                color = RED_INVERT;
-            } else if (sNatureStatEffects[nature][i] < 0) {
-                msgId = 201-1; // Stat-
-                color = BLUE_INVERT;
-            }
-
             //Summary_PrintStatStringAccountForStat(summary, 0xF+i, msgId+i, i-1, JUSTIFY_LEFT);
             Summary_PrintStringGeneric(summary, 0xF+i, msgId+i, color, JUSTIFY_LEFT);
         } else if (mode == 0) { // raw stat

@@ -155,6 +155,14 @@ int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int 
             scriptnum = SUB_SEQ_MOTOR_DRIVE;
         }
     }
+	
+	if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_WIND_RIDER) == TRUE)
+    {
+        if ((movetype == TYPE_FLYING) && (attacker != defender))
+        {
+            scriptnum = SUB_SEQ_MOTOR_DRIVE;
+        }
+    }
 
     // 02252FF8
     if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_DRY_SKIN) == TRUE)

@@ -808,19 +808,13 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 			attack = attack * 15 / 10;
 			sp_attack = sp_attack * 15 / 10;
 		}
-		if ((field_cond & WEATHER_SUNNY_ANY) &&
-			(AttackingMon.ability != ABILITY_MOLD_BREAKER) &&
-			(CheckSideAbility(bw, sp, CHECK_ABILITY_SAME_SIDE_HP, defender, ABILITY_FLOWER_GIFT)))
-		{
-			sp_defense = sp_defense;
-		}
 	}
 
 	u16 equivalentAttack;
 	u16 equivalentDefense;
 	getEquivalentAttackAndDefense(sp, attack, defense, sp_attack, sp_defense, atkstate, defstate, spatkstate, spdefstate, &movesplit, attacker, defender, critical, moveno, &equivalentAttack, &equivalentDefense);
 
-	damage = equivalentAttack * movepower * ((level / 100) + 1) / 20;
+	damage = equivalentAttack * movepower * level / 100;
 	damage = damage / equivalentDefense;
 
 	// Handle Parental Bond
@@ -846,14 +840,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		 && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
 		 && (AttackingMon.ability != ABILITY_INFILTRATOR))
 		{
-			if ((battle_type & BATTLE_TYPE_DOUBLE) && (CheckNumMonsHit(bw, sp, 1, defender) == 2))
-			{
-				damage = damage * 2 / 3;
-			}
-			else
-			{
-				damage /= 2;
-			}
+			damage /= 2;
 		}
 	}
 	else// if (movesplit == SPLIT_SPECIAL) // same as above, handle special moves
@@ -864,14 +851,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		 && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
 		 && (AttackingMon.ability != ABILITY_INFILTRATOR))
 		{
-			if ((battle_type & BATTLE_TYPE_DOUBLE) && (CheckNumMonsHit(bw, sp, 1, defender) == 2))
-			{
-				damage = damage * 2 / 3;
-			}
-			else
-			{
-				damage /= 2;
-			}
+			damage /= 2;
 		}
 	}
 
@@ -879,14 +859,14 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		(sp->moveTbl[moveno].target == 0x4) &&
 		(CheckNumMonsHit(bw, sp, 1, defender) == 2))
 	{
-		damage = damage * 3 / 4;
+		damage = damage / 2;
 	}
 
 	if ((battle_type & BATTLE_TYPE_DOUBLE) &&
 		(sp->moveTbl[moveno].target == 0x8) &&
 		(CheckNumMonsHit(bw, sp, 1, defender) >= 2))
 	{
-		damage = damage * 3 / 4;
+		damage = damage / 2;
 	}
 
 	// handle weather inate type boosts
@@ -904,11 +884,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 				damage = damage * 15 / 10;
 				break;
 			}
-		}
-
-		if ((field_cond & (FIELD_STATUS_FOG | WEATHER_HAIL_ANY | WEATHER_SANDSTORM_ANY | WEATHER_RAIN_ANY)) && (moveno == MOVE_SOLAR_BEAM)) // solar beam nerf
-		{
-			damage /= 2;
 		}
 
 		if (field_cond & WEATHER_SUNNY_ANY) // sun boosts fire but nerfs water
