@@ -3301,7 +3301,7 @@ movedata MOVE_ROLLOUT, "Rollout"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_ROLLOUT, "The user rolls into the\nfoe. It becomes\nstronger each time\nit hits."
+    movedescription MOVE_ROLLOUT, "The user rolls into\nthe foe. It becomes\nstronger each time it\nhits."
 
 movedata MOVE_FALSE_SWIPE, "False Swipe"
     battleeffect 101
