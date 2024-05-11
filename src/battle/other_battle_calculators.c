@@ -395,7 +395,7 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 		stat_stage_acc = 0;
 	}
 
-	if (atk_ability == ABILITY_UNAWARE || atk_ability == ABILITY_MINDS_EYE || atk_ability == ABILITY_KEEN_EYE || atk_ability == ABILITY_ILLUMINATE)
+	if (atk_ability == ABILITY_UNAWARE || atk_ability == ABILITY_MINDS_EYE || atk_ability == ABILITY_KEEN_EYE || atk_ability == ABILITY_ILLUMINATE || move_no == MOVE_CHIP_AWAY || move_no == MOVE_SACRED_SWORD)
 	{
 		stat_stage_evasion = 0;
 	}
