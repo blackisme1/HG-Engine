@@ -638,7 +638,7 @@ trainerdata 20, "Falkner"
         // mon 1
         ivs 0
         abilityslot 1
-        level 14
+        level 10
         pokemon SPECIES_MURKROW
         item ITEM_NONE
         move MOVE_WEATHER_BALL

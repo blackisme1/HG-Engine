@@ -781,7 +781,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	//handles water bubble
 	if((AttackingMon.ability == ABILITY_WATER_BUBBLE) && (movetype == TYPE_WATER))
 	{
-	movepower = movepower * 2;
+		movepower = movepower * 2;
 	}
 
 	// handle weather boosts
