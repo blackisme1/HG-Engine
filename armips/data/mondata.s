@@ -3856,7 +3856,7 @@ mondata SPECIES_BELLOSSOM, "Bellossom"
 
 
 mondata SPECIES_MARILL, "Marill"
-    basestats 70, 20, 50, 40, 20, 50
+    basestats 70, 50, 50, 50, 50, 50
     types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -3878,7 +3878,7 @@ mondata SPECIES_MARILL, "Marill"
 
 mondata SPECIES_AZUMARILL, "Azumarill"
     basestats 100, 50, 80, 60, 50, 80
-    types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
+    types TYPE_WATER, TYPE_FAIRY
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -4087,7 +4087,7 @@ mondata SPECIES_YANMA, "Yanma"
 
 
 mondata SPECIES_WOOPER, "Wooper"
-    basestats 50, 50, 50, 20, 20, 20
+    basestats 70, 70, 70, 30, 30, 30
     types TYPE_WATER, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6250,7 +6250,7 @@ mondata SPECIES_MAKUHITA, "Makuhita"
 
 
 mondata SPECIES_HARIYAMA, "Hariyama"
-    basestats 140, 120, 60, 50, 50, 60
+    basestats 130, 130, 60, 50, 50, 60
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6271,7 +6271,7 @@ mondata SPECIES_HARIYAMA, "Hariyama"
 
 
 mondata SPECIES_AZURILL, "Azurill"
-    basestats 30, 30, 30, 30, 30, 30
+    basestats 40, 40, 40, 40, 40, 40
     types TYPE_NORMAL, TYPE_FAIRY
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6628,7 +6628,7 @@ mondata SPECIES_ILLUMISE, "Illumise"
 
 
 mondata SPECIES_ROSELIA, "Roselia"
-    basestats 50, 60, 45, 65, 100, 80
+    basestats 50, 60, 50, 60, 100, 80
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6649,7 +6649,7 @@ mondata SPECIES_ROSELIA, "Roselia"
 
 
 mondata SPECIES_GULPIN, "Gulpin"
-    basestats 70, 43, 53, 40, 43, 53
+    basestats 80, 40, 50, 40, 40, 50
     types TYPE_POISON, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6670,7 +6670,7 @@ mondata SPECIES_GULPIN, "Gulpin"
 
 
 mondata SPECIES_SWALOT, "Swalot"
-    basestats 100, 73, 83, 55, 73, 83
+    basestats 120, 70, 80, 50, 70, 80
     types TYPE_POISON, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
