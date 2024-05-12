@@ -626,7 +626,7 @@ trainerdata 20, "Falkner"
         // mon 0
         ivs 0
         abilityslot 1
-        level 12
+        level 10
         pokemon SPECIES_NATU
         item ITEM_NONE
         move MOVE_U_TURN

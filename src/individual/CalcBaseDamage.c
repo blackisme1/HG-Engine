@@ -275,6 +275,8 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	// handle huge power + pure power
 	if ((AttackingMon.ability == ABILITY_HUGE_POWER) || (AttackingMon.ability == ABILITY_PURE_POWER))
 		attack = attack * 2;
+	if (AttackingMon.ability == ABILITY_PURE_POWER)
+		sp_attack = sp_attack * 2;
 
 	// handle defeatist
 	if ((AttackingMon.ability == ABILITY_DEFEATIST) && (AttackingMon.hp <= AttackingMon.maxhp / 2))
