@@ -6691,7 +6691,7 @@ mondata SPECIES_SWALOT, "Swalot"
 
 
 mondata SPECIES_CARVANHA, "Carvanha"
-    basestats 45, 90, 20, 65, 65, 20
+    basestats 40, 90, 20, 70, 60, 20
     types TYPE_WATER, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6712,7 +6712,7 @@ mondata SPECIES_CARVANHA, "Carvanha"
 
 
 mondata SPECIES_SHARPEDO, "Sharpedo"
-    basestats 70, 120, 40, 95, 95, 40
+    basestats 70, 120, 40, 100, 90, 40
     types TYPE_WATER, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6744,7 +6744,7 @@ mondata SPECIES_WAILMER, "Wailmer"
     basefriendship 50
     growthrate GROWTH_FLUCTUATING
     egggroups EGG_GROUP_FIELD, EGG_GROUP_WATER_2
-    abilities ABILITY_MOODY, ABILITY_NONE
+    abilities ABILITY_REGENERATOR, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_WAILMER, "It bounces playfully like a ball.\nThe more seawater it swallows,\nthe higher it bounces."
@@ -6765,7 +6765,7 @@ mondata SPECIES_WAILORD, "Wailord"
     basefriendship 50
     growthrate GROWTH_FLUCTUATING
     egggroups EGG_GROUP_FIELD, EGG_GROUP_WATER_2
-    abilities ABILITY_MOODY, ABILITY_NONE
+    abilities ABILITY_REGENERATOR, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_WAILORD, "It is the largest of all identified\nPokémon. They jump as a pack\nto herd their prey."
