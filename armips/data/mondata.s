@@ -1336,7 +1336,7 @@ mondata SPECIES_POLIWRATH, "Poliwrath"
 
 
 mondata SPECIES_ABRA, "Abra"
-    basestats 25, 20, 15, 90, 105, 55
+    basestats 30, 30, 30, 80, 90, 50
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1357,7 +1357,7 @@ mondata SPECIES_ABRA, "Abra"
 
 
 mondata SPECIES_KADABRA, "Kadabra"
-    basestats 40, 35, 30, 105, 120, 70
+    basestats 40, 40, 40, 100, 120, 70
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1378,7 +1378,7 @@ mondata SPECIES_KADABRA, "Kadabra"
 
 
 mondata SPECIES_ALAKAZAM, "Alakazam"
-    basestats 55, 50, 45, 120, 135, 95
+    basestats 50, 50, 50, 120, 130, 100
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1399,7 +1399,7 @@ mondata SPECIES_ALAKAZAM, "Alakazam"
 
 
 mondata SPECIES_MACHOP, "Machop"
-    basestats 70, 80, 50, 35, 35, 35
+    basestats 50, 90, 80, 30, 30, 30
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1420,7 +1420,7 @@ mondata SPECIES_MACHOP, "Machop"
 
 
 mondata SPECIES_MACHOKE, "Machoke"
-    basestats 80, 100, 70, 45, 50, 60
+    basestats 70, 120, 100, 40, 40, 40
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1441,7 +1441,7 @@ mondata SPECIES_MACHOKE, "Machoke"
 
 
 mondata SPECIES_MACHAMP, "Machamp"
-    basestats 90, 130, 80, 55, 65, 85
+    basestats 100, 130, 120, 50, 50, 50
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
