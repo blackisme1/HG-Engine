@@ -3857,7 +3857,7 @@ mondata SPECIES_BELLOSSOM, "Bellossom"
 
 mondata SPECIES_MARILL, "Marill"
     basestats 70, 50, 50, 50, 50, 50
-    types TYPE_WATER, (FAIRY_TYPE_IMPLEMENTED) ? TYPE_FAIRY : TYPE_WATER
+    types TYPE_WATER, TYPE_FAIRY
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
