@@ -4591,7 +4591,7 @@ mondata SPECIES_URSARING, "Ursaring"
 
 
 mondata SPECIES_SLUGMA, "Slugma"
-    basestats 40, 40, 40, 40, 70, 40
+    basestats 40, 40, 40, 40, 90, 40
     types TYPE_FIRE, TYPE_FIRE
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -7573,7 +7573,7 @@ mondata SPECIES_ABSOL, "Absol"
 
 
 mondata SPECIES_WYNAUT, "Wynaut"
-    basestats 90, 30, 50, 30, 30, 50
+    basestats 50, 30, 30, 30, 30, 30
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -7804,7 +7804,7 @@ mondata SPECIES_LUVDISC, "Luvdisc"
 
 
 mondata SPECIES_BAGON, "Bagon"
-    basestats 40, 70, 60, 50, 40, 40
+    basestats 40, 60, 60, 60, 40, 40
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -7972,7 +7972,7 @@ mondata SPECIES_REGICE, "Regice"
 
 
 mondata SPECIES_REGISTEEL, "Registeel"
-    basestats 80, 120, 110, 50, 110, 110
+    basestats 80, 150, 100, 50, 100, 100
     types TYPE_STEEL, TYPE_STEEL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -8539,7 +8539,7 @@ mondata SPECIES_LUXRAY, "Luxray"
 
 
 mondata SPECIES_BUDEW, "Budew"
-    basestats 40, 30, 40, 50, 50, 70
+    basestats 30, 30, 30, 30, 40, 40
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -8581,7 +8581,7 @@ mondata SPECIES_ROSERADE, "Roserade"
 
 
 mondata SPECIES_CRANIDOS, "Cranidos"
-    basestats 60, 130, 40, 60, 30, 30
+    basestats 60, 130, 40, 40, 40, 40
     types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -8592,7 +8592,7 @@ mondata SPECIES_CRANIDOS, "Cranidos"
     basefriendship 70
     growthrate GROWTH_ERRATIC
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_MONSTER
-    abilities ABILITY_MOLD_BREAKER, ABILITY_NONE
+    abilities ABILITY_RECKLESS, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_CRANIDOS, "CRANIDOS toughen up their already\nrock-hard heads by headbutting\none another."
@@ -8613,7 +8613,7 @@ mondata SPECIES_RAMPARDOS, "Rampardos"
     basefriendship 70
     growthrate GROWTH_ERRATIC
     egggroups EGG_GROUP_MONSTER, EGG_GROUP_MONSTER
-    abilities ABILITY_MOLD_BREAKER, ABILITY_NONE
+    abilities ABILITY_RECKLESS, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_RAMPARDOS, "Its skull withstands impacts of any\nmagnitude. As a result, its brain\nnever gets the chance to grow."
@@ -8623,7 +8623,7 @@ mondata SPECIES_RAMPARDOS, "Rampardos"
 
 
 mondata SPECIES_SHIELDON, "Shieldon"
-    basestats 30, 40, 120, 30, 40, 90
+    basestats 60, 40, 130, 40, 40, 40
     types TYPE_ROCK, TYPE_STEEL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -8644,7 +8644,7 @@ mondata SPECIES_SHIELDON, "Shieldon"
 
 
 mondata SPECIES_BASTIODON, "Bastiodon"
-    basestats 60, 60, 170, 30, 40, 140
+    basestats 60, 60, 170, 60, 60, 90
     types TYPE_ROCK, TYPE_STEEL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -9211,7 +9211,7 @@ mondata SPECIES_BRONZONG, "Bronzong"
 
 
 mondata SPECIES_BONSLY, "Bonsly"
-    basestats 40, 80, 80, 30, 30, 40
+    basestats 30, 40, 40, 30, 30, 30
     types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -9253,7 +9253,7 @@ mondata SPECIES_MIMEJR, "Mime Jr."
 
 
 mondata SPECIES_HAPPINY, "Happiny"
-    basestats 70, 30, 30, 30, 30, 30
+    basestats 40, 30, 30, 30, 30, 40
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -9379,7 +9379,7 @@ mondata SPECIES_GARCHOMP, "Garchomp"
 
 
 mondata SPECIES_MUNCHLAX, "Munchlax"
-    basestats 110, 80, 40, 40, 40, 80
+    basestats 40, 40, 30, 30, 30, 30
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -9400,7 +9400,7 @@ mondata SPECIES_MUNCHLAX, "Munchlax"
 
 
 mondata SPECIES_RIOLU, "Riolu"
-    basestats 40, 70, 40, 60, 40, 40
+    basestats 30, 40, 30, 30, 40, 30
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -9652,7 +9652,7 @@ mondata SPECIES_MANTYKE, "Mantyke"
 
 
 mondata SPECIES_SNOVER, "Snover"
-    basestats 170, 60, 50, 50, 60, 50
+    basestats 160, 60, 50, 60, 60, 50
     types TYPE_GRASS, TYPE_ICE
     catchrate 255
     baseexp 0 // defined in baseexp.s
