@@ -14903,7 +14903,7 @@ movedata MOVE_HECKLE, "Heckle"
     terminatedata
     movedescription MOVE_HECKLE, "The user confuses a\nfoe preparing an attack.\nThis move fails if\nthe foe moves first."
 
-movedata MOVE_CRACK_HAMMER, "Crackdown"
+movedata MOVE_CRACKDOWN, "Crackdown"
     battleeffect 325
     pss SPLIT_PHYSICAL
     basepower 70
@@ -14917,7 +14917,7 @@ movedata MOVE_CRACK_HAMMER, "Crackdown"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_CRACK_HAMMER, "The user launches a\nbash with a high\ncritical hit ratio.\nIt may also leave the\ntarget paralyzed."
+    movedescription MOVE_CRACKDOWN, "The user launches a\nbash with a high\ncritical hit ratio.\nIt may also leave the\ntarget paralyzed."
 
 movedata MOVE_WATERMILL, "Watermill"
     battleeffect 0
