@@ -3281,17 +3281,3 @@ u32 LoadCaptureSuccessSPANumEmitters(u32 id)
     else
         return BallToSpaIDs[id][2];
 }
-
-BOOL changehprecoverybasedonweather(void *bw, struct BattleStruct *sp) {
-    BattleScriptIncrementPointer(sp, 1);
-
-    if (!(sp->fieldCondition & FIELD_CONDITION_WEATHER) || CheckAbilityActive(bsys, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) || CheckAbilityActive(bsys, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK)) {
-        sp->hpCalc = sp->battleMons[sp->battlerIdAttacker].maxHp / 2;
-    } else if (sp->fieldCondition & FIELD_CONDITION_SUN_ALL) {
-        sp->hpCalc = DamageDivide(sp->battleMons[sp->battlerIdAttacker].maxHp*20, 30);
-    } else {
-        sp->hpCalc = DamageDivide(sp->battleMons[sp->battlerIdAttacker].maxHp, 4);
-    }
-
-    return FALSE;
-}
