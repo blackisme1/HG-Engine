@@ -12,6 +12,8 @@
 // Skulk Out
 
 a030_153:
+    tryfeint _0024
+_0024:
     if IF_MASK, VAR_BATTLE_TYPE, 0x1, _0028
     changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x20000065
     endscript

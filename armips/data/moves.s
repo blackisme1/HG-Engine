@@ -14794,9 +14794,9 @@ movedata MOVE_NIBBLE, "Nibble"
 movedata MOVE_SKULK_OUT, "Skulk Out"
     battleeffect 317
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 70
     type TYPE_DARK
-    accuracy 0
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -14871,7 +14871,7 @@ movedata MOVE_CACKLE, "Cackle"
     terminatedata
     movedescription MOVE_CACKLE, "Raises foes Speed but\nreduces Attack and\nDefense. Effect is\ndoubled if the foe has\na status condition."
 
-movedata MOVE_CREEP_IN, "Pester"
+movedata MOVE_PESTER, "Pester"
     battleeffect 321
     pss SPLIT_PHYSICAL
     basepower 70
@@ -14885,7 +14885,7 @@ movedata MOVE_CREEP_IN, "Pester"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_CREEP_IN, "A creeping strike that\ninflicts double damage\nif used on a foe that\nis switching in the\nbattle."
+    movedescription MOVE_PESTER, "A creeping strike that\ninflicts double damage\nif used on a foe that\nis switching in the\nbattle."
 
 movedata MOVE_HECKLE, "Heckle"
     battleeffect 322
