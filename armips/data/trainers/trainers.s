@@ -682,7 +682,7 @@ trainerdata 21, "Bugsy"
         item ITEM_NONE
         move MOVE_QUICK_ATTACK
         move MOVE_U_TURN
-        move MOVE_CREEP_IN
+        move MOVE_PESTER
         move MOVE_FOCUS_ENERGY
         ballseal 0
 
@@ -704,7 +704,7 @@ trainerdata 21, "Bugsy"
         level 16
         pokemon SPECIES_YANMA
         item ITEM_NONE
-        move MOVE_CREEP_IN
+        move MOVE_PESTER
         move MOVE_U_TURN
         move MOVE_SUPERSONIC
         move MOVE_NONE

@@ -973,7 +973,7 @@ levelup SPECIES_PARAS
 	learnset MOVE_SHADOW_CLAW, 27
 	learnset MOVE_NIGHTMARE, 33
 	learnset MOVE_DREAM_EATER, 38
-	learnset MOVE_CREEP_IN, 43
+	learnset MOVE_PESTER, 43
 	learnset MOVE_PAIN_SPLIT, 49
 	learnset MOVE_X_SCISSOR, 54
 	terminatelearnset
@@ -990,7 +990,7 @@ levelup SPECIES_PARASECT
 	learnset MOVE_SHADOW_CLAW, 29
 	learnset MOVE_NIGHTMARE, 37
 	learnset MOVE_DREAM_EATER, 44
-	learnset MOVE_CREEP_IN, 51
+	learnset MOVE_PESTER, 51
 	learnset MOVE_PAIN_SPLIT, 59
 	learnset MOVE_X_SCISSOR, 66
 	terminatelearnset
@@ -6738,7 +6738,7 @@ levelup SPECIES_NINCADA
 	learnset MOVE_SAND_ATTACK, 1
 	learnset MOVE_SCRATCH, 1
 	learnset MOVE_HARDEN, 1
-	learnset MOVE_CREEP_IN, 5
+	learnset MOVE_PESTER, 5
 	learnset MOVE_SAND_ATTACK, 9
 	learnset MOVE_ABSORB, 13
 	learnset MOVE_MUD_SLAP, 15
@@ -6766,7 +6766,7 @@ levelup SPECIES_NINJASK
 	learnset MOVE_SAND_ATTACK, 1
 	learnset MOVE_SCRATCH, 1
 	learnset MOVE_HARDEN, 1
-	learnset MOVE_CREEP_IN, 1
+	learnset MOVE_PESTER, 1
 	learnset MOVE_BUG_BITE, 1
 	learnset MOVE_ABSORB, 1
 	learnset MOVE_SAND_ATTACK, 9
@@ -6794,7 +6794,7 @@ levelup SPECIES_SHEDINJA
 	learnset MOVE_SCRATCH, 1
 	learnset MOVE_SAND_ATTACK, 1
 	learnset MOVE_HARDEN, 1
-	learnset MOVE_CREEP_IN, 1
+	learnset MOVE_PESTER, 1
 	learnset MOVE_ABSORB, 1
 	learnset MOVE_SAND_ATTACK, 9
 	learnset MOVE_ABSORB, 14
