@@ -1576,7 +1576,7 @@ movedata MOVE_AGILITY, "Agility"
     movedescription MOVE_AGILITY, "The user relaxes and\nlightens its body to\nmove faster.\nIt sharply boosts\nthe Speed stat."
 
 movedata MOVE_QUICK_ATTACK, "Quick Attack"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_NORMAL
@@ -2936,7 +2936,7 @@ movedata MOVE_PROTECT, "Protect"
     movedescription MOVE_PROTECT, "It enables the user\nto evade all attacks.\nIts chance of failing\nrises if it is used in\nsuccession."
 
 movedata MOVE_MACH_PUNCH, "Mach Punch"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_FIGHTING
@@ -3928,7 +3928,7 @@ movedata MOVE_PSYCH_UP, "Psych Up"
     movedescription MOVE_PSYCH_UP, "The user hypnotizes\nitself into copying\nany stat change\nmade by the foe.\n"
 
 movedata MOVE_EXTREME_SPEED, "Extreme Speed"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 70
     type TYPE_NORMAL
@@ -6568,7 +6568,7 @@ movedata MOVE_DRAIN_PUNCH, "Drain Punch"
     movedescription MOVE_DRAIN_PUNCH, "An energy draining\npunch. The user’s\nHP is restored by\nhalf the damage taken\nby the target."
 
 movedata MOVE_VACUUM_WAVE, "Vacuum Wave"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_SPECIAL
     basepower 50
     type TYPE_FIGHTING
@@ -6696,7 +6696,7 @@ movedata MOVE_NASTY_PLOT, "Nasty Plot"
     movedescription MOVE_NASTY_PLOT, "The user stimulates\nits brain by thinking\nbad thoughts.\nIt sharply raises the\nuser’s Sp. Atk."
 
 movedata MOVE_BULLET_PUNCH, "Bullet Punch"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 50
     type TYPE_STEEL
@@ -6728,7 +6728,7 @@ movedata MOVE_AVALANCHE, "Avalanche"
     movedescription MOVE_AVALANCHE, "An attack move that\ninflicts double the\ndamage if the user\nhas been hurt by the\nfoe in the same turn."
 
 movedata MOVE_ICE_SHARD, "Ice Shard"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_ICE
@@ -6766,7 +6766,7 @@ movedata MOVE_THUNDER_FANG, "Thunder Fang"
     type TYPE_ELECTRIC
     accuracy 100
     pp 10
-    effectchance 25
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -6782,7 +6782,7 @@ movedata MOVE_ICE_FANG, "Ice Fang"
     type TYPE_ICE
     accuracy 100
     pp 10
-    effectchance 25
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -6798,7 +6798,7 @@ movedata MOVE_FIRE_FANG, "Fire Fang"
     type TYPE_FIRE
     accuracy 100
     pp 10
-    effectchance 25
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -6808,7 +6808,7 @@ movedata MOVE_FIRE_FANG, "Fire Fang"
     movedescription MOVE_FIRE_FANG, "The user bites with\nflame cloaked fangs.\nIt may also make the\nfoe flinch or sustain\na burn."
 
 movedata MOVE_SHADOW_SNEAK, "Shadow Sneak"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_GHOST
@@ -7256,7 +7256,7 @@ movedata MOVE_WOOD_HAMMER, "Wood Hammer"
     movedescription MOVE_WOOD_HAMMER, "The user slams its\nrugged body into the\nfoe to attack. The\nuser also sustains\nserious damage."
 
 movedata MOVE_AQUA_JET, "Aqua Jet"
-    battleeffect 103
+    battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_WATER
