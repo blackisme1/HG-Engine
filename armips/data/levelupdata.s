@@ -3508,8 +3508,8 @@ levelup SPECIES_MEW
 
 
 levelup SPECIES_CHIKORITA
-	learnset MOVE_TACKLE, 1
-	learnset MOVE_GROWL, 1
+	learnset MOVE_POUND, 1
+	learnset MOVE_PLAY_NICE, 1
 	learnset MOVE_ABSORB, 6
 	learnset MOVE_SLEEP_POWDER, 10
 	learnset MOVE_STOCKPILE, 13
@@ -3527,8 +3527,8 @@ levelup SPECIES_CHIKORITA
 
 
 levelup SPECIES_BAYLEEF
-	learnset MOVE_TACKLE, 1
-	learnset MOVE_GROWL, 1
+	learnset MOVE_POUND, 1
+	learnset MOVE_PLAY_NICE, 1
 	learnset MOVE_ABSORB, 6
 	learnset MOVE_SLEEP_POWDER, 10
 	learnset MOVE_STOCKPILE, 13
@@ -3546,8 +3546,8 @@ levelup SPECIES_BAYLEEF
 
 
 levelup SPECIES_MEGANIUM
-	learnset MOVE_TACKLE, 1
-	learnset MOVE_GROWL, 1
+	learnset MOVE_POUND, 1
+	learnset MOVE_PLAY_NICE, 1
 	learnset MOVE_ABSORB, 6
 	learnset MOVE_SLEEP_POWDER, 10
 	learnset MOVE_STOCKPILE, 13
@@ -3572,13 +3572,13 @@ levelup SPECIES_CYNDAQUIL
 	learnset MOVE_ROLLOUT, 13
 	learnset MOVE_DEFENSE_CURL, 13
 	learnset MOVE_SWIFT, 19
-	learnset MOVE_FLAME_WHEEL, 22
-	learnset MOVE_CURSE, 28
+	learnset MOVE_FLAME_BURST, 22
+	learnset MOVE_SMOG, 28
 	learnset MOVE_LAVA_PLUME, 31
-	learnset MOVE_DOUBLE_EDGE, 37
+	learnset MOVE_MORNING_SUN, 37
 	learnset MOVE_FLAMETHROWER, 40
-	learnset MOVE_OVERHEAT, 46
-	learnset MOVE_SUPERPOWER, 49
+	learnset MOVE_HAZE, 46
+	learnset MOVE_SUNNY_DAY, 49
 	learnset MOVE_ERUPTION, 55
 	terminatelearnset
 
@@ -3591,13 +3591,13 @@ levelup SPECIES_QUILAVA
 	learnset MOVE_ROLLOUT, 13
 	learnset MOVE_DEFENSE_CURL, 13
 	learnset MOVE_SWIFT, 19
-	learnset MOVE_FLAME_WHEEL, 22
-	learnset MOVE_CURSE, 28
+	learnset MOVE_FLAME_BURST, 22
+	learnset MOVE_SMOG, 28
 	learnset MOVE_LAVA_PLUME, 31
-	learnset MOVE_DOUBLE_EDGE, 37
+	learnset MOVE_MORNING_SUN, 37
 	learnset MOVE_FLAMETHROWER, 40
-	learnset MOVE_OVERHEAT, 46
-	learnset MOVE_SUPERPOWER, 49
+	learnset MOVE_HAZE, 46
+	learnset MOVE_SUNNY_DAY, 49
 	learnset MOVE_ERUPTION, 55
 	terminatelearnset
 
@@ -3610,13 +3610,13 @@ levelup SPECIES_TYPHLOSION
 	learnset MOVE_ROLLOUT, 13
 	learnset MOVE_DEFENSE_CURL, 13
 	learnset MOVE_SWIFT, 19
-	learnset MOVE_FLAME_WHEEL, 22
-	learnset MOVE_CURSE, 28
+	learnset MOVE_FLAME_BURST, 22
+	learnset MOVE_SMOG, 28
 	learnset MOVE_LAVA_PLUME, 31
-	learnset MOVE_DOUBLE_EDGE, 37
+	learnset MOVE_MORNING_SUN, 37
 	learnset MOVE_FLAMETHROWER, 40
-	learnset MOVE_OVERHEAT, 46
-	learnset MOVE_SUPERPOWER, 49
+	learnset MOVE_HAZE, 46
+	learnset MOVE_SUNNY_DAY, 49
 	learnset MOVE_ERUPTION, 55
 	terminatelearnset
 
