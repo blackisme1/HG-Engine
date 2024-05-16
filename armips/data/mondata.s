@@ -801,7 +801,7 @@ mondata SPECIES_VULPIX, "Vulpix"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_SOLAR_POWER, ABILITY_NONE
+    abilities ABILITY_DROUGHT, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_VULPIX, "As it develops, its single white\ntail gains color and splits into six.\nIt is quite warm and cuddly."
@@ -1242,7 +1242,7 @@ mondata SPECIES_GROWLITHE, "Growlithe"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_GUARD_DOG, ABILITY_NONE
+    abilities ABILITY_INTIMIDATE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_GROWLITHE, "It has a brave and trustworthy\nnature. It fearlessly stands up\nto bigger and stronger foes."
@@ -1263,7 +1263,7 @@ mondata SPECIES_ARCANINE, "Arcanine"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_GUARD_DOG, ABILITY_NONE
+    abilities ABILITY_INTIMIDATE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_ARCANINE, "This legendary Chinese Pokémon is\nconsidered magnificent. Many people\nare enchanted by its grand mane."
@@ -1641,7 +1641,7 @@ mondata SPECIES_PONYTA, "Ponyta"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_RUN_AWAY, ABILITY_NONE
+    abilities ABILITY_QUICK_FEET, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_PONYTA, "It is a weak runner immediately\nafter birth. It gradually becomes\nfaster by chasing after its parents."
@@ -2869,7 +2869,7 @@ mondata SPECIES_JOLTEON, "Jolteon"
 
 
 mondata SPECIES_FLAREON, "Flareon"
-    basestats 70, 110, 70, 110, 70, 110
+    basestats 70, 110, 70, 110, 110, 70
     types TYPE_FIRE, TYPE_FIRE
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -4025,7 +4025,7 @@ mondata SPECIES_AIPOM, "Aipom"
 
 mondata SPECIES_SUNKERN, "Sunkern"
     basestats 50, 50, 50, 50, 50, 50
-    types TYPE_GRASS, TYPE_GRASS
+    types TYPE_GRASS, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -4035,7 +4035,7 @@ mondata SPECIES_SUNKERN, "Sunkern"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_LEAF_GUARD, ABILITY_NONE
+    abilities ABILITY_CHLOROPHYLL, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_SUNKERN, "It may plummet from the sky.\nIf attacked by a SPEAROW,\nit will violently shake its leaves."
@@ -4045,8 +4045,8 @@ mondata SPECIES_SUNKERN, "Sunkern"
 
 
 mondata SPECIES_SUNFLORA, "Sunflora"
-    basestats 50, 70, 70, 120, 70, 70
-    types TYPE_GRASS, TYPE_GRASS
+    basestats 90, 90, 90, 90, 90, 90
+    types TYPE_GRASS, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
@@ -4056,7 +4056,7 @@ mondata SPECIES_SUNFLORA, "Sunflora"
     basefriendship 70
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_GRASS, EGG_GROUP_GRASS
-    abilities ABILITY_SOLAR_POWER, ABILITY_NONE
+    abilities ABILITY_DROUGHT, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_SUNFLORA, "It converts sunlight into energy.\nIn the darkness after sunset, it\ncloses its petals and becomes still."
@@ -4161,7 +4161,7 @@ mondata SPECIES_UMBREON, "Umbreon"
     basefriendship 35
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_OWN_TEMPO, ABILITY_NONE
+    abilities ABILITY_PRESSURE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLACK, 0
     mondexentry SPECIES_UMBREON, "When agitated, this Pokémon\nprotects itself by spraying\npoisonous sweat from its pores."
@@ -4234,7 +4234,7 @@ mondata SPECIES_MISDREAVUS, "Misdreavus"
 
 
 mondata SPECIES_UNOWN, "Unown"
-    basestats 60, 60, 60, 60, 60, 60
+    basestats 70, 70, 70, 70, 70, 70
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -4287,7 +4287,7 @@ mondata SPECIES_GIRAFARIG, "Girafarig"
     basefriendship 70
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_FIELD, EGG_GROUP_FIELD
-    abilities ABILITY_CUD_CHEW, ABILITY_NONE
+    abilities ABILITY_FOREWARN, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_YELLOW, 0
     mondexentry SPECIES_GIRAFARIG, "Its tail has a small brain of its\nown. Beware! If you get close, it\nmay react to your scent by biting."
@@ -4486,7 +4486,7 @@ mondata SPECIES_SCIZOR, "Scizor"
 
 
 mondata SPECIES_SHUCKLE, "Shuckle"
-    basestats 50, 50, 170, 50, 50, 170
+    basestats 100, 50, 150, 50, 50, 150
     types TYPE_BUG, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -4770,7 +4770,7 @@ mondata SPECIES_MANTINE, "Mantine"
     basefriendship 50
     growthrate GROWTH_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_WATER_1
-    abilities ABILITY_POWER_SPOT, ABILITY_NONE
+    abilities ABILITY_SWIFT_SWIM, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_MANTINE, "As it majestically swims, it doesn’t\ncare if REMORAID attach to it for\nscavenging its leftovers."
@@ -6901,7 +6901,7 @@ mondata SPECIES_SPINDA, "Spinda"
 
 
 mondata SPECIES_TRAPINCH, "Trapinch"
-    basestats 40, 100, 40, 30, 40, 40
+    basestats 50, 70, 50, 40, 40, 40
     types TYPE_GROUND, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -10534,7 +10534,7 @@ mondata SPECIES_WORMADAM_TRASHY, "-----"
 
 
 mondata SPECIES_GIRATINA_ORIGIN, "-----"
-    basestats 150, 120, 100, 90, 120, 100
+    basestats 150, 120, 100, 10, 120, 100
     types TYPE_GHOST, TYPE_DRAGON
     catchrate 255
     baseexp 220

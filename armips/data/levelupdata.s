@@ -3509,7 +3509,7 @@ levelup SPECIES_MEW
 
 levelup SPECIES_CHIKORITA
 	learnset MOVE_POUND, 1
-	learnset MOVE_PLAY_NICE, 1
+	learnset MOVE_GROWL, 1
 	learnset MOVE_ABSORB, 6
 	learnset MOVE_SLEEP_POWDER, 10
 	learnset MOVE_STOCKPILE, 13
@@ -3528,7 +3528,7 @@ levelup SPECIES_CHIKORITA
 
 levelup SPECIES_BAYLEEF
 	learnset MOVE_POUND, 1
-	learnset MOVE_PLAY_NICE, 1
+	learnset MOVE_GROWL, 1
 	learnset MOVE_ABSORB, 6
 	learnset MOVE_SLEEP_POWDER, 10
 	learnset MOVE_STOCKPILE, 13
@@ -3547,7 +3547,7 @@ levelup SPECIES_BAYLEEF
 
 levelup SPECIES_MEGANIUM
 	learnset MOVE_POUND, 1
-	learnset MOVE_PLAY_NICE, 1
+	learnset MOVE_GROWL, 1
 	learnset MOVE_ABSORB, 6
 	learnset MOVE_SLEEP_POWDER, 10
 	learnset MOVE_STOCKPILE, 13

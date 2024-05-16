@@ -6906,9 +6906,9 @@ movedata MOVE_FLASH_CANNON, "Flash Cannon"
 movedata MOVE_ROCK_CLIMB, "Rock Climb"
     battleeffect 76
     pss SPLIT_PHYSICAL
-    basepower 80
-    type TYPE_ROCK
-    accuracy 90
+    basepower 70
+    type TYPE_NORMAL
+    accuracy 100
     pp 10
     effectchance 50
     target MOVE_TARGET_SELECTED
