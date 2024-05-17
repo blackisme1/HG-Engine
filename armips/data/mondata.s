@@ -5662,7 +5662,7 @@ mondata SPECIES_CASCOON, "Cascoon"
 
 
 mondata SPECIES_DUSTOX, "Dustox"
-    basestats 50, 50, 70, 80, 50, 100
+    basestats 50, 100, 50, 80, 70, 50
     types TYPE_BUG, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6733,7 +6733,7 @@ mondata SPECIES_SHARPEDO, "Sharpedo"
 
 
 mondata SPECIES_WAILMER, "Wailmer"
-    basestats 130, 70, 40, 50, 70, 40
+    basestats 150, 60, 40, 50, 60, 40
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6754,7 +6754,7 @@ mondata SPECIES_WAILMER, "Wailmer"
 
 
 mondata SPECIES_WAILORD, "Wailord"
-    basestats 170, 90, 50, 50, 90, 50
+    basestats 150, 100, 50, 50, 100, 50
     types TYPE_WATER, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
