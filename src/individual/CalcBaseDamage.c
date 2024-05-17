@@ -731,15 +731,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	movepower = movepower * 125 / 100;
 	}
 
-	if ((AttackingMon.ability == ABILITY_RIVALRY) &&
-		((AttackingMon.type1 != DefendingMon.type1) || 
-		(AttackingMon.type1 != DefendingMon.type2) ||
-		(AttackingMon.type2 != DefendingMon.type1) ||
-		(AttackingMon.type2 != DefendingMon.type2)))
-	{
-	movepower = movepower * 75 / 100;
-	}
-
 	// handle iron fist
 	for (i = 0; i < NELEMS(IronFistMovesTable); i++)
 	{
@@ -906,11 +897,14 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 			}
 		}
 
-		if (AttackingMon.ability == ABILITY_SAND_FORCE // sand force boosts damage in sand for certain move types
-		 && field_cond & WEATHER_SANDSTORM_ANY
-		 && (movetype == TYPE_GROUND || movetype == TYPE_ROCK || movetype == TYPE_STEEL))
+		if ((field_cond & WEATHER_SANDSTORM_ANY) && (DefendingMon.ability == SAND_VEIL))
 		{
-			damage = damage * 130 / 100;
+			sp_defense *= 2;
+		}
+		
+		if ((field_cond & WEATHER_HAIL_ANY) && (DefendingMon.ability == SNOW_VEIL))
+		{
+			defense *= 2;
 		}
 	}
 

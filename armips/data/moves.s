@@ -602,7 +602,7 @@ movedata MOVE_TAKE_DOWN, "Take Down"
 movedata MOVE_THRASH, "Thrash"
     battleeffect 27
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 100
     type TYPE_NORMAL
     accuracy 100
     pp 5
@@ -1290,7 +1290,7 @@ movedata MOVE_SLEEP_POWDER, "Sleep Powder"
 movedata MOVE_PETAL_DANCE, "Petal Dance"
     battleeffect 27
     pss SPLIT_SPECIAL
-    basepower 110
+    basepower 100
     type TYPE_GRASS
     accuracy 100
     pp 10
@@ -1420,8 +1420,8 @@ movedata MOVE_ROCK_THROW, "Rock Throw"
     pss SPLIT_PHYSICAL
     basepower 60
     type TYPE_ROCK
-    accuracy 90
-    pp 15
+    accuracy 80
+    pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3211,7 +3211,7 @@ movedata MOVE_LOCK_ON, "Lock-On"
 movedata MOVE_OUTRAGE, "Outrage"
     battleeffect 27
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 100
     type TYPE_DRAGON
     accuracy 100
     pp 5
@@ -11371,7 +11371,7 @@ movedata MOVE_PSYCHIC_FANGS, "Psychic Fangs"
 movedata MOVE_STOMPING_TANTRUM, "Stomp Tantrum"
     battleeffect 27
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 100
     type TYPE_GROUND
     accuracy 100
     pp 10
@@ -13387,7 +13387,7 @@ movedata MOVE_MYSTICAL_POWER, "Mystical Power"
 movedata MOVE_RAGING_FURY, "Raging Fury"
     battleeffect 27
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 100
     type TYPE_FIRE
     accuracy 100
     pp 5

@@ -455,28 +455,6 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 		accuracy = accuracy * 130 / 100;
 	}
 
-	if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0)
-	 && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0))
-	{
-		if (sp->field_condition & WEATHER_SANDSTORM_ANY){
-			if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_SAND_VEIL) == TRUE)
-			{
-				accuracy = accuracy * 80 / 100;
-			}
-		}
-		if (sp->field_condition & (WEATHER_HAIL_ANY | WEATHER_SNOW_ANY))
-		{
-			if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_SNOW_CLOAK) == TRUE)
-			{
-				accuracy = accuracy * 80 / 100;
-			}
-		}
-		if (sp->field_condition & FIELD_STATUS_FOG)
-		{
-			accuracy = accuracy * 6 / 10;
-		}
-	}
-
 	if ((atk_ability == ABILITY_HUSTLE) && (move_split == SPLIT_PHYSICAL))
 	{
 		accuracy = accuracy * 80 / 100;
