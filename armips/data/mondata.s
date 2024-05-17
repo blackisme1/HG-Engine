@@ -1347,7 +1347,7 @@ mondata SPECIES_ABRA, "Abra"
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_NEUROFORCE, ABILITY_NONE
+    abilities ABILITY_MAGIC_GUARD, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_ABRA, "It senses impending attacks and\nteleports away to safety before the\nactual attacks can strike."
@@ -1368,7 +1368,7 @@ mondata SPECIES_KADABRA, "Kadabra"
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_NEUROFORCE, ABILITY_NONE
+    abilities ABILITY_MAGIC_GUARD, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_KADABRA, "It possesses strong spiritual power.\nThe more danger it faces,\nthe stronger its psychic power."
@@ -1389,7 +1389,7 @@ mondata SPECIES_ALAKAZAM, "Alakazam"
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_HUMAN_LIKE, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_NEUROFORCE, ABILITY_NONE
+    abilities ABILITY_MAGIC_GUARD, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_ALAKAZAM, "Closing both its eyes heightens all\nits other senses. This enables it to\nuse its abilities to their extremes."
@@ -1568,11 +1568,11 @@ mondata SPECIES_TENTACRUEL, "Tentacruel"
 
 mondata SPECIES_GEODUDE, "Geodude"
     basestats 40, 80, 100, 30, 30, 30
-    types TYPE_ROCK, TYPE_GROUND
+    types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_NONE, ITEM_BLACK_AUGURITE
+    items ITEM_NONE, ITEM_EVERSTONE
     genderratio 127
     eggcycles 0
     basefriendship 70
@@ -1589,11 +1589,11 @@ mondata SPECIES_GEODUDE, "Geodude"
 
 mondata SPECIES_GRAVELER, "Graveler"
     basestats 50, 100, 110, 40, 40, 50
-    types TYPE_ROCK, TYPE_GROUND
+    types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_HARD_STONE, ITEM_BLACK_AUGURITE
+    items ITEM_HARD_STONE, ITEM_EVERSTONE
     genderratio 127
     eggcycles 0
     basefriendship 70
@@ -1610,11 +1610,11 @@ mondata SPECIES_GRAVELER, "Graveler"
 
 mondata SPECIES_GOLEM, "Golem"
     basestats 80, 120, 130, 40, 60, 70
-    types TYPE_ROCK, TYPE_GROUND
+    types TYPE_ROCK, TYPE_ROCK
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
-    items ITEM_HARD_STONE, ITEM_BLACK_AUGURITE
+    items ITEM_HARD_STONE, ITEM_EVERSTONE
     genderratio 127
     eggcycles 0
     basefriendship 70
@@ -3541,7 +3541,7 @@ mondata SPECIES_SPINARAK, "Spinarak"
 
 
 mondata SPECIES_ARIADOS, "Ariados"
-    basestats 80, 60, 50, 100, 60, 50
+    basestats 60, 80, 50, 100, 60, 50
     types TYPE_POISON, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -4969,7 +4969,7 @@ mondata SPECIES_SMEARGLE, "Smeargle"
 
 
 mondata SPECIES_TYROGUE, "Tyrogue"
-    basestats 30, 40, 30, 40, 30, 30
+    basestats 30, 40, 40, 30, 30, 30
     types TYPE_FIGHTING, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -9222,7 +9222,7 @@ mondata SPECIES_BONSLY, "Bonsly"
     basefriendship 50
     growthrate GROWTH_MEDIUM_FAST
     egggroups EGG_GROUP_UNDISCOVERED, EGG_GROUP_UNDISCOVERED
-    abilities ABILITY_STURDY, ABILITY_NONE
+    abilities ABILITY_COLOR_CHANGE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BROWN, 0
     mondexentry SPECIES_BONSLY, "In order to adjust the level of fluids in\nits body, it exudes water from its eyes.\nThis makes it appear to be crying."

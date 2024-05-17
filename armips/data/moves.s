@@ -764,8 +764,8 @@ movedata MOVE_SING, "Sing"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 100
-    pp 5
+    accuracy 70
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -1484,8 +1484,8 @@ movedata MOVE_TOXIC, "Toxic"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_POISON
-    accuracy 50
-    pp 5
+    accuracy 100
+    pp 1
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -1532,8 +1532,8 @@ movedata MOVE_HYPNOSIS, "Hypnosis"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
-    accuracy 50
-    pp 5
+    accuracy 70
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2366,8 +2366,9 @@ movedata MOVE_SPORE, "Spore"
     type TYPE_GRASS
     accuracy 100
     pp 5
+    pp 5
     effectchance 0
-    target MOVE_TARGET_SELECTED
+    target MOVE_TARGET_BOTH
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
     appeal 0x00
@@ -5132,8 +5133,8 @@ movedata MOVE_GRASS_WHISTLE, "Grass Whistle"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_GRASS
-    accuracy 100
-    pp 5
+    accuracy 70
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -7437,7 +7438,7 @@ movedata MOVE_DARK_VOID, "Dark Void"
     basepower 0
     type TYPE_DARK
     accuracy 100
-    pp 1
+    pp 5
     effectchance 0
     target MOVE_TARGET_BOTH
     priority 0
