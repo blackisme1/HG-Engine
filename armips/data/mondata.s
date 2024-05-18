@@ -6124,7 +6124,7 @@ mondata SPECIES_NINCADA, "Nincada"
 
 
 mondata SPECIES_NINJASK, "Ninjask"
-    basestats 40, 100, 50, 160, 50, 50
+    basestats 60, 90, 50, 150, 50, 50
     types TYPE_BUG, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6145,7 +6145,7 @@ mondata SPECIES_NINJASK, "Ninjask"
 
 
 mondata SPECIES_SHEDINJA, "Shedinja"
-    basestats 40, 160, 50, 50, 100, 50
+    basestats 40, 150, 60, 50, 90, 50
     types TYPE_BUG, TYPE_GHOST
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6544,7 +6544,7 @@ mondata SPECIES_MANECTRIC, "Manectric"
 
 
 mondata SPECIES_PLUSLE, "Plusle"
-    basestats 50, 50, 50, 90, 90, 90
+    basestats 50, 90, 90, 90, 50, 50
     types TYPE_ELECTRIC, TYPE_FIRE
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6565,7 +6565,7 @@ mondata SPECIES_PLUSLE, "Plusle"
 
 
 mondata SPECIES_MINUN, "Minun"
-    basestats 50, 90, 90, 90, 50, 50
+    basestats 50, 50, 50, 90, 90, 90
     types TYPE_ELECTRIC, TYPE_ICE
     catchrate 255
     baseexp 0 // defined in baseexp.s
