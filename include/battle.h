@@ -173,6 +173,7 @@
 
 #define BATTLE_TYPE_NO_EXPERIENCE (BATTLE_TYPE_WIRELESS | BATTLE_TYPE_SAFARI | BATTLE_TYPE_BATTLE_TOWER | BATTLE_TYPE_POKE_PARK)
 
+
 /**
  *  @brief flags for effect_of_moves
  *  defines for BattleStruct's effect_of_moves field
@@ -1102,7 +1103,7 @@ struct PACKED BattleStruct
     /*0x217F*/ u8 beat_up_count;
 
     /*0x2180*/ u32 loop_flag;
-    /*0x2184*/ u32 waza_out_check_on_off;
+    /*0x2184*/ u32 waza_out_check_on_off; // multiHitCheckFlags
     /*0x2188*/ u32 loop_hit_check;
 
     /*0x218C*/ u32 condition2_off_req[CLIENT_MAX];
@@ -1182,6 +1183,9 @@ struct PACKED BattleStruct
 
                TerrainOverlay terrainOverlay;
                u8 printed_field_message;
+
+               BOOL checkOnlySpecifiedTarget; // for BattleFormChangeCheck
+               u8 checkOnlySpecifiedTargetClient;
 };
 
 
@@ -2287,33 +2291,11 @@ extern struct BattleSystem *gBattleSystem;
 enum
 {
     SWITCH_IN_CHECK_WEATHER = 0,
-    SWITCH_IN_CHECK_PRIMAL_REVERSION,
-    SWITCH_IN_CHECK_TRACE,
-    SWITCH_IN_CHECK_WEATHER_ABILITY,
-    SWITCH_IN_CHECK_INTIMIDATE,
-    SWITCH_IN_CHECK_DOWNLOAD,
-    SWITCH_IN_CHECK_ANTICIPATION,
-    SWITCH_IN_CHECK_FOREWARN,
-    SWITCH_IN_CHECK_FRISK,
-    SWITCH_IN_CHECK_SLOW_START,
-    SWITCH_IN_CHECK_MOLD_BREAKER,
-    SWITCH_IN_CHECK_PRESSURE,
-    SWITCH_IN_CHECK_FORECAST,
+    SWITCH_IN_CHECK_ENTRY_EFFECT,
     SWITCH_IN_CHECK_AMULET_COIN,
     SWITCH_IN_CHECK_ABILITY_HEAL_STATUS,
     SWITCH_IN_CHECK_HEAL_STATUS,
-    SWITCH_IN_CHECK_UNNERVE,
-    SWITCH_IN_CHECK_DARK_AURA,
-    SWITCH_IN_CHECK_FAIRY_AURA,
-    SWITCH_IN_CHECK_AURA_BREAK,
-    SWITCH_IN_CHECK_IMPOSTER,
-    SWITCH_IN_CHECK_ICE_FACE,
-
-// items that display messages.
-    SWITCH_IN_CHECK_AIR_BALLOON,
-    SWITCH_IN_CHECK_FIELD,
-    SWITCH_IN_CHECK_SURGE_ABILITY,
-    SWITCH_IN_CHECK_TERRAIN_SEED,
+    SWITCH_IN_CHECK_FIELD, // SwSh DLC Psychic Terrain, Toxic Spikes
     SWITCH_IN_CHECK_END,
 };
 
@@ -2711,7 +2693,7 @@ BOOL LONG_CALL MoveIsMaxMove(u32 moveIndex);
 /**
  * @brief Check if move is affected by Normalize variants
  * @param moveno move number
- * @return `TRUE`if move is affected by Normalize varients, `FALSE` otherwise
+ * @return `TRUE`if move is affected by Normalize variants, `FALSE` otherwise
 */
 BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno);
 
@@ -2722,6 +2704,14 @@ BOOL LONG_CALL MoveIsAffectedByNormalizeVariants(int moveno);
  * @return `SPLIT_PHYSICAL` or `SPLIT_SPECIAL`
 */
 u8 LONG_CALL GetMoveSplit(struct BattleStruct *sp, int moveno);
+
+/**
+ * @brief Check if client can undergo Primal Reversion
+ * @param sp move number
+ * @param client_no battler to check for primal reversion possibility
+ * @return `TRUE` if mon can undergo primal reversion, `FALSE` otherwise
+ */
+BOOL LONG_CALL CanUndergoPrimalReversion(struct BattleStruct *sp, u8 client_no);
 
 // defined in mega.c
 BOOL LONG_CALL CheckMegaData(u32 mon, u32 item);
@@ -2822,8 +2812,9 @@ void LONG_CALL LoadDifferentBattleBackground(struct BattleSystem *bw, u32 bg, u3
  *  @brief Sorts clients' execution order factoring in who has already performed their action
  *  @param bw battle work structure; void * because we haven't defined the battle work structure. Apparently we have but we don't use it here so
  *  @param sp global battle structure
+ *  @param sortTurnOrder whether to sort `turn_order` or not
  */
-void LONG_CALL DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp);
+void LONG_CALL DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp, BOOL sortTurnOrder);
 
 void LONG_CALL BattleControllerPlayer_CalcExecutionOrder(struct BattleSystem *bw, struct BattleStruct *sp);
 
@@ -2836,7 +2827,42 @@ void LONG_CALL UnlockBattlerOutOfCurrentMove(struct BattleSystem *bsys, struct B
  *
  *  @param sp global battle structure
  *  @param moveNo move index to check against a list of move effects that are charge moves
+ *  @return TRUE/FALSE
  */
 BOOL LONG_CALL CheckMoveIsChargeMove(struct BattleStruct *sp, int moveNo);
+
+// Possibly BattleController_AnyExpPayout
+BOOL LONG_CALL ov12_0224DD18(struct BattleStruct *ctx, ControllerCommand a1, ControllerCommand a2);
+
+// Possibly BattleController_CheckBattleOver
+BOOL LONG_CALL ov12_0224D7EC(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+// Possibly BattleController_ToggleSemiInvulnMons
+BOOL LONG_CALL ov12_0224E130(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+// Possibly BattleController_ClearFlags
+void LONG_CALL ov12_0224DC0C(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+void LONG_CALL SortExecutionOrderBySpeed(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+void LONG_CALL SortMonsBySpeed(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+BOOL LONG_CALL ov12_0224B398(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+BOOL LONG_CALL ov12_02250BBC(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+BOOL LONG_CALL BattleSystem_CheckMoveHit(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerIdAttacker, int battlerIdTarget, int move);
+
+BOOL LONG_CALL ov12_0224B498(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+BOOL LONG_CALL ov12_0224BC2C(struct BattleSystem *bsys, struct BattleStruct *ctx);
+
+/**
+ *  @brief checks if the given move should be weakened or not (only prints message)
+ *  @param bw battle work structure
+ *  @param sp global battle structure
+ *  @return TRUE/FALSE
+ */
+BOOL CheckStrongWindsWeaken(struct BattleSystem *bw, struct BattleStruct *sp);
 
 #endif // BATTLE_H

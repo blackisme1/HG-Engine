@@ -163,7 +163,7 @@ typedef struct BaseStats {
     /* 0x12 */ u8 friendship;
     /* 0x13 */ u8 growthRate;
     /* 0x14 */ u8 eggGroups[2];
-    /* 0x16 */ u16 abilities;
+    /* 0x16 */ u8 abilities[2];
     /* 0x18 */ u8 greatMarshRate;
     /* 0x19 */ u8 color:7;
     u8 flip:1;
@@ -1800,11 +1800,3 @@ void LONG_CALL Mon_UpdateShayminForm(struct PartyPokemon *mon, int form);
 void LONG_CALL Daycare_GetBothBoxMonsPtr(Daycare *dayCare, struct BoxPokemon **boxmons);
 
 #endif
-
-void LONG_CALL CalcMonStats(struct PartyPokemon *mon);
-
-BOOL LONG_CALL AcquireMonLock(struct PartyPokemon *mon);
-
-BOOL LONG_CALL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
-
-void LONG_CALL LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
