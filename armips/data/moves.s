@@ -3291,9 +3291,9 @@ movedata MOVE_CHARM, "Charm"
 movedata MOVE_ROLLOUT, "Rollout"
     battleeffect 119
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 30
     type TYPE_ROCK
-    accuracy 75
+    accuracy 100
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3325,7 +3325,7 @@ movedata MOVE_SWAGGER, "Swagger"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_NORMAL
-    accuracy 50
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3334,7 +3334,7 @@ movedata MOVE_SWAGGER, "Swagger"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_SWAGGER, "The user enrages the\nfoe into confusion.\nHowever, it also\nsharply raises the\nfoe’s Attack stat."
+    movedescription MOVE_SWAGGER, "The user enrages the\nfoe into confusion.\nHowever, it also\nraises the foe’s\nAttack stat."
 
 movedata MOVE_MILK_DRINK, "Milk Drink"
     battleeffect 32
@@ -3371,9 +3371,9 @@ movedata MOVE_SPARK, "Spark"
 movedata MOVE_FURY_CUTTER, "Fury Cutter"
     battleeffect 119
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 30
     type TYPE_BUG
-    accuracy 75
+    accuracy 100
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -3481,9 +3481,9 @@ movedata MOVE_RETURN, "Return"
     movedescription MOVE_RETURN, "A full power attack\nthat grows more\npowerful the more\nthe user likes its\nTrainer."
 
 movedata MOVE_PRESENT, "Present"
-    battleeffect 122
+    battleeffect 158
     pss SPLIT_PHYSICAL
-    basepower 1
+    basepower 90
     type TYPE_FLYING
     accuracy 100
     pp 10
@@ -3516,7 +3516,7 @@ movedata MOVE_SAFEGUARD, "Safeguard"
     battleeffect 124
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 0
     pp 5
     effectchance 0
@@ -3532,7 +3532,7 @@ movedata MOVE_PAIN_SPLIT, "Pain Split"
     battleeffect 91
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_GHOST
     accuracy 0
     pp 5
     effectchance 0
@@ -3579,10 +3579,10 @@ movedata MOVE_MAGNITUDE, "Magnitude"
 movedata MOVE_DYNAMIC_PUNCH, "Dynamic Punch"
     battleeffect 76
     pss SPLIT_PHYSICAL
-    basepower 120
+    basepower 90
     type TYPE_FIGHTING
-    accuracy 50
-    pp 10
+    accuracy 100
+    pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3982,7 +3982,7 @@ movedata MOVE_FUTURE_SIGHT, "Future Sight"
     basepower 120
     type TYPE_PSYCHIC
     accuracy 100
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -4827,10 +4827,10 @@ movedata MOVE_MUD_SPORT, "Mud Sport"
 movedata MOVE_ICE_BALL, "Ice Ball"
     battleeffect 119
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 30
     type TYPE_ICE
-    accuracy 75
-    pp 10
+    accuracy 100
+    pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -8011,9 +8011,9 @@ movedata MOVE_ROUND, "Round"
 movedata MOVE_ECHOED_VOICE, "Echoed Voice"
     battleeffect 119
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 30
     type TYPE_NORMAL
-    accuracy 75
+    accuracy 100
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -10616,7 +10616,7 @@ movedata MOVE_SHORE_UP, "Shore Up"
     terminatedata
     movedescription MOVE_SHORE_UP, "---"
 
-movedata MOVE_FIRST_IMPRESSION, "FirstImpression"
+movedata MOVE_FIRST_IMPRESSION, "Impression"
     battleeffect 158
     pss SPLIT_PHYSICAL
     basepower 90

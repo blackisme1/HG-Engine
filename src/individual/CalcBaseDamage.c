@@ -848,20 +848,6 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 		}
 	}
 
-	if ((battle_type & BATTLE_TYPE_DOUBLE) &&
-		(sp->moveTbl[moveno].target == 0x4) &&
-		(CheckNumMonsHit(bw, sp, 1, defender) == 2))
-	{
-		damage = damage / 2;
-	}
-
-	if ((battle_type & BATTLE_TYPE_DOUBLE) &&
-		(sp->moveTbl[moveno].target == 0x8) &&
-		(CheckNumMonsHit(bw, sp, 1, defender) >= 2))
-	{
-		damage = damage / 2;
-	}
-
 	// handle weather inate type boosts
 	if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0) &&
 		(CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0))
@@ -897,12 +883,12 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 			}
 		}
 
-		if ((field_cond & WEATHER_SANDSTORM_ANY) && (DefendingMon.ability == SAND_VEIL))
+		if ((field_cond & WEATHER_SANDSTORM_ANY) && (DefendingMon.ability == ABILITY_SAND_VEIL))
 		{
 			sp_defense *= 2;
 		}
 		
-		if ((field_cond & WEATHER_HAIL_ANY) && (DefendingMon.ability == SNOW_VEIL))
+		if ((field_cond & WEATHER_HAIL_ANY) && (DefendingMon.ability == ABILITY_SNOW_CLOAK))
 		{
 			defense *= 2;
 		}
@@ -912,15 +898,10 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	{
 		damage = damage * 15 / 10;
 	}
+	
 
-	//handles multiscale
-	if ((DefendingMon.ability == ABILITY_MULTISCALE) && (DefendingMon.hp == DefendingMon.maxhp))
-	{
-		damage /= 2;
-	}
-
-	//handles shadow shield
-	if ((DefendingMon.ability == ABILITY_SHADOW_SHIELD) && (DefendingMon.hp == DefendingMon.maxhp))
+	//handles multiscale, shadow shield
+	if (((DefendingMon.ability == ABILITY_MULTISCALE) || (DefendingMon.ability == ABILITY_SHADOW_SHIELD)) && (DefendingMon.hp == DefendingMon.maxhp))
 	{
 		damage /= 2;
 	}

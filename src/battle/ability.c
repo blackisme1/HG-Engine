@@ -36,8 +36,15 @@ void ServerDoPostMoveEffects(void *bw, struct BattleStruct *sp);
 
 const u16 BulletproofMoveList[] =
 {
+	MOVE_AURA_SPHERE,
+	MOVE_DARK_PULSE,
+	MOVE_DRAGON_PULSE,
+	MOVE_HEAL_PULSE,
+	MOVE_ORIGIN_PULSE,
+	MOVE_TERRAIN_PULSE,
+	MOVE_WATER_PULSE,
     MOVE_ACID_SPRAY,
-    MOVE_AURA_SPHERE,
+    //MOVE_AURA_SPHERE,
     MOVE_BARRAGE,
     MOVE_BULLET_SEED,
     MOVE_EGG_BOMB,
