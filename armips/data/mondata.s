@@ -2932,7 +2932,7 @@ mondata SPECIES_OMANYTE, "Omanyte"
 
 
 mondata SPECIES_OMASTAR, "Omastar"
-    basestats 60, 60, 120, 60, 120, 60
+    basestats 80, 60, 120, 60, 120, 60
     types TYPE_ROCK, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -2974,7 +2974,7 @@ mondata SPECIES_KABUTO, "Kabuto"
 
 
 mondata SPECIES_KABUTOPS, "Kabutops"
-    basestats 60, 120, 120, 60, 60, 60
+    basestats 60, 120, 120, 80, 60, 60
     types TYPE_ROCK, TYPE_WATER
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -2995,7 +2995,7 @@ mondata SPECIES_KABUTOPS, "Kabutops"
 
 
 mondata SPECIES_AERODACTYL, "Aerodactyl"
-    basestats 60, 120, 60, 120, 60, 60
+    basestats 60, 130, 60, 130, 60, 60
     types TYPE_ROCK, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
