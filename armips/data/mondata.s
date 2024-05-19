@@ -2029,7 +2029,7 @@ mondata SPECIES_ONIX, "Onix"
 
 
 mondata SPECIES_DROWZEE, "Drowzee"
-    basestats 60, 50, 50, 40, 40, 90
+    basestats 60, 50, 50, 50, 50, 90
     types TYPE_PSYCHIC, TYPE_PSYCHIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
