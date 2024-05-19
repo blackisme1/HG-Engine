@@ -2632,7 +2632,7 @@ BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
                     if (sp->battlemon[sp->client_no_hit[sp->attack_client]].hp != 0) {
                         sp->attack_client = sp->client_no_hit[sp->attack_client];
                     } else {
-                        sp->attack_client = Battler_GetRandomOpposingBattlerId(bw, sp, sp->attack_client);
+                        sp->attack_client = ChooseRandomTarget(bw, sp, sp->attack_client);
                         if (sp->battlemon[sp->defence_client].hp == 0) {
                             LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BIDE_END_NO_TARGET);
                             sp->next_server_seq_no = 39;
