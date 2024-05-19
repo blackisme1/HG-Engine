@@ -2117,50 +2117,48 @@ levelup SPECIES_ONIX
 
 
 levelup SPECIES_DROWZEE
-	learnset MOVE_HYPNOSIS, 1
+	learnset MOVE_HYPNOSIS, 0
+	learnset MOVE_YAWN, 1
 	learnset MOVE_POUND, 1
-	learnset MOVE_DISABLE, 5
-	learnset MOVE_CONFUSION, 9
-	learnset MOVE_HEADBUTT, 13
-	learnset MOVE_POISON_GAS, 17
-	learnset MOVE_MEDITATE, 21
-	learnset MOVE_PSYBEAM, 25
-	learnset MOVE_WAKE_UP_SLAP, 29
-	learnset MOVE_PSYCH_UP, 33
-	learnset MOVE_SYNCHRONOISE, 37
-	learnset MOVE_ZEN_HEADBUTT, 41
-	learnset MOVE_SWAGGER, 45
-	learnset MOVE_PSYCHIC, 49
-	learnset MOVE_NASTY_PLOT, 53
-	learnset MOVE_PSYSHOCK, 57
-	learnset MOVE_FUTURE_SIGHT, 61
+	learnset MOVE_ASTONISH, 5
+	learnset MOVE_POISON_GAS, 10
+	learnset MOVE_HEADBUTT, 12
+	learnset MOVE_GLARE, 15
+	learnset MOVE_BODY_SLAM, 20
+	learnset MOVE_DREAM_EATER, 20
+	learnset MOVE_ZEN_HEADBUTT, 22
+	learnset MOVE_WAKE_UP_SLAP, 25
+	learnset MOVE_SMELLING_SALTS, 30
+	learnset MOVE_PSYCHIC, 32
+	learnset MOVE_SHADOW_SNEAK, 35
+	learnset MOVE_NIGHTMARE, 37
+	learnset MOVE_HEX, 40
+	learnset MOVE_TOXIC, 42
+	learnset MOVE_VENOSHOCK, 44
 	terminatelearnset
 
 
 levelup SPECIES_HYPNO
-	learnset MOVE_FUTURE_SIGHT, 1
-	learnset MOVE_NASTY_PLOT, 1
-	learnset MOVE_NIGHTMARE, 1
-	learnset MOVE_SWITCHEROO, 1
+	// Sleep no longer prevents the use of moves, however, halves Atk, SpAtk and Spe
+	learnset MOVE_HYPNOSIS, 0 // Hypno Only, On Evo, 100 acc
+	learnset MOVE_YAWN, 1
 	learnset MOVE_POUND, 1
-	learnset MOVE_HYPNOSIS, 1
-	learnset MOVE_DISABLE, 1
-	learnset MOVE_CONFUSION, 1
-	learnset MOVE_DISABLE, 5
-	learnset MOVE_CONFUSION, 9
-	learnset MOVE_HEADBUTT, 13
-	learnset MOVE_POISON_GAS, 17
-	learnset MOVE_MEDITATE, 21
-	learnset MOVE_PSYBEAM, 25
-	learnset MOVE_WAKE_UP_SLAP, 29
-	learnset MOVE_PSYCH_UP, 33
-	learnset MOVE_SYNCHRONOISE, 37
-	learnset MOVE_ZEN_HEADBUTT, 41
-	learnset MOVE_SWAGGER, 45
-	learnset MOVE_PSYCHIC, 49
-	learnset MOVE_NASTY_PLOT, 53
-	learnset MOVE_PSYSHOCK, 57
-	learnset MOVE_FUTURE_SIGHT, 61
+	learnset MOVE_ASTONISH, 5
+	learnset MOVE_POISON_GAS, 10
+	learnset MOVE_HEADBUTT, 12
+	learnset MOVE_GLARE, 15
+	learnset MOVE_BODY_SLAM, 20
+	learnset MOVE_DREAM_EATER, 20 // 70 bp, doubles damage on sleeping target, no longer lifesteals
+	learnset MOVE_ZEN_HEADBUTT, 22 // Hypno Only
+	learnset MOVE_WAKE_UP_SLAP, 25 // +Flinches on Sleeping target
+	learnset MOVE_HYPNOSIS, 27
+	learnset MOVE_SMELLING_SALTS, 30 // +Flinches on Paralyzed target
+	learnset MOVE_PSYCHIC, 32
+	learnset MOVE_SHADOW_SNEAK, 35
+	learnset MOVE_NIGHTMARE, 37 // +Sleep+DoT
+	learnset MOVE_TOXIC, 40 // Now doubles damage on Sleeping targets
+	learnset MOVE_HEX, 42 // 50 bp
+	learnset MOVE_VENOSHOCK, 44
 	terminatelearnset
 
 

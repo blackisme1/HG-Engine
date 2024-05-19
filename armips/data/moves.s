@@ -3561,12 +3561,12 @@ movedata MOVE_SACRED_FIRE, "Sacred Fire"
     movedescription MOVE_SACRED_FIRE, "The foe is razed with\na mystical fire of\ngreat intensity.\nIt may also leave the\ntarget with a burn."
 
 movedata MOVE_MAGNITUDE, "Magnitude"
-    battleeffect 0
+    battleeffect 119
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 30
     type TYPE_GROUND
     accuracy 100
-    pp 15
+    pp 20
     effectchance 0
     target MOVE_TARGET_FOES_AND_ALLY
     priority 0
