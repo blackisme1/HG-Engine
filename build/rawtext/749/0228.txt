@@ -1,0 +1,1 @@
+An attack move that\ninflicts double damage\nif used on a foe that\nis switching out of\nbattle.

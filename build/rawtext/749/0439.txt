@@ -1,0 +1,1 @@
+The user launches a\nhuge boulder at the\nfoe to attack.\nIt must rest on the\nnext turn, however.

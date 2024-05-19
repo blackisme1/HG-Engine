@@ -1,0 +1,1 @@
+A creeping strike that\ninflicts double damage\nif used on a foe that\nis switching in the\nbattle.

@@ -1,0 +1,1 @@
+A self healing move.\nThe user restores its\nown HP by up to half\nof its max HP.\n

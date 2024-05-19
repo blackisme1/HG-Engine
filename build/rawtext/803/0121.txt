@@ -1,0 +1,1 @@
+The middle section of its body is\ncalled the core. It glows in a\ndifferent color each time it is seen.

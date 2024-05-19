@@ -1,0 +1,1 @@
+It enables the user\nto evade all attacks.\nIts chance of failing\nrises if it is used in\nsuccession.

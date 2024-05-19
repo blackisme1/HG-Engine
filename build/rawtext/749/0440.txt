@@ -1,0 +1,1 @@
+A slashing attack\nthat may also leave\nthe target poisoned.\nIt has a high\ncritical hit ratio.

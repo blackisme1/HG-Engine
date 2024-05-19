@@ -1,0 +1,1 @@
+When this move is\nused, if the user\nfaints, the foe that\nlanded the knockout\nhit also faints.

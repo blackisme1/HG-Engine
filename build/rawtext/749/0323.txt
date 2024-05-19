@@ -1,0 +1,1 @@
+The user spouts\nwater to damage the\nfoe. The lower the\nuser’s HP, the less\npowerful it becomes.

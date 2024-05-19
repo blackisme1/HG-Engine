@@ -1,0 +1,1 @@
+The user attacks and\nsteals the foe’s held\nitem simultaneously.\nIt can’t steal if the\nuser holds an item.

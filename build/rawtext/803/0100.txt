@@ -1,0 +1,1 @@
+It rolls to move. If the ground is\nuneven, a sudden jolt from hitting\na bump can cause it to explode.

@@ -1,0 +1,1 @@
+The foe is attacked\nwith an odd, hot\nenergy wave.\nIt inflicts damage equal to\nthe user’s level.

@@ -1,0 +1,1 @@
+A harsh attack that\nabsorbs half the\ndamage it inflicted\nto restore HP.

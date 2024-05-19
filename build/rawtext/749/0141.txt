@@ -1,0 +1,1 @@
+A blood draining\nattack. The user’s\nHP is restored by\nhalf the damage taken\nby the target.

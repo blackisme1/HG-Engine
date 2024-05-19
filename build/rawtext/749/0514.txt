@@ -1,0 +1,1 @@
+The user suppresses\nthe target and makes\nits move go last.

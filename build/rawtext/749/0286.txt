@@ -1,0 +1,1 @@
+If the foe knows any\nmove also known by\nthe user, the foe\nis prevented\nfrom using it.

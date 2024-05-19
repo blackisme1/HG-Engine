@@ -1,0 +1,1 @@
+A restrained attack\nthat prevents the\nfoe from fainting.\nThe target is left\nwith at least 1 HP.

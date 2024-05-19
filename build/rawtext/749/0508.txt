@@ -1,0 +1,1 @@
+The user emits a\nhealing pulse that\nrestores a target’s\nHP by up to half.

@@ -1,0 +1,1 @@
+The user blows\ncold air at the foe.\nIt always results in\na critical hit.

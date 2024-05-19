@@ -1,0 +1,1 @@
+Moe: You don’t have enough Pokémon to\nfight with us.\n

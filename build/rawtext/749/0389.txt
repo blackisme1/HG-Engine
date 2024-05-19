@@ -1,0 +1,1 @@
+This move enables the\nuser to attack first.\nIt fails if the foe is\nnot readying an\nattack, however.

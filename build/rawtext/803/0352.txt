@@ -1,0 +1,1 @@
+It changes its shading to match its\nsurroundings so it can sneak up on prey.\nOnly its belly patterns stay fixed.

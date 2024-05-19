@@ -1,0 +1,1 @@
+An attack which is\nnot affected by the\ntarget’s stat\nchanges.
