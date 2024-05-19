@@ -20,7 +20,7 @@
 int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int defender);
 BOOL IntimidateCheckHelper(struct BattleStruct *sp, u32 client);
 int SwitchInAbilityCheck(void *bw, struct BattleStruct *sp);
-BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value);
+BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value, BOOL excludeAccuracyEvasion);
 u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no);
 BOOL MummyAbilityCheck(struct BattleStruct *sp);
 BOOL CanPickpocketStealClientItem(struct BattleStruct *sp, int client_no);
@@ -256,9 +256,11 @@ int SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
  *  @param value to check for.  made flexible for every circumstance, i.e. Moody needs to check if any stat can be raised/lowered
  *  @return TRUE if there is a stat stage not at the passed value; FALSE otherwise (yes accuracy and evasion count too)
  */
-BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value)
+BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value, BOOL excludeAccuracyEvasion)
 {
-    for (int i = 0; i < 7; i++)
+    int counter = excludeAccuracyEvasion ? 5 : 7;
+
+    for (int i = 0; i < counter; i++)
     {
         if (sp->battlemon[client].states[i] != value)
         {
@@ -377,13 +379,15 @@ u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no)
         case ABILITY_MOODY: // this is going to be interesting
             if (sp->battlemon[client_no].hp)
             {
-                int temp = BattleRand(bw) % 7;
+                // Use % 7 instead of %5 and pass FALSE to AreAnyStatsNotAtValue to include accuracy/evasion like earlier gens.
+                
+                int temp = BattleRand(bw) % 5;
 
-                if (AreAnyStatsNotAtValue(sp, client_no, 12)) // if any stat can be lowered
+                if (AreAnyStatsNotAtValue(sp, client_no, 12, TRUE)) // if any stat can be lowered
                 {
                     while (sp->battlemon[client_no].states[temp] == 12)
                     {
-                        temp = BattleRand(bw) % 7;
+                        temp = BattleRand(bw) % 5;
                     }
                 }
                 else
@@ -393,14 +397,14 @@ u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no)
                 sp->calc_work = temp;
 
 
-                temp = BattleRand(bw) % 7;
+                temp = BattleRand(bw) % 5;
 
-                if (AreAnyStatsNotAtValue(sp, client_no, 0)) // if any stat can be raised
+                if (AreAnyStatsNotAtValue(sp, client_no, 0, TRUE)) // if any stat can be raised
                 {
                     while (sp->battlemon[client_no].states[temp] == 0
                         || temp == sp->calc_work)
                     {
-                        temp = BattleRand(bw) % 7;
+                        temp = BattleRand(bw) % 5;
                     }
                 }
                 else
@@ -1122,7 +1126,7 @@ enum
 void ServerDoPostMoveEffects(void *bw, struct BattleStruct *sp)
 {
     // Sort clients because moves may affect speed
-    DynamicSortClientExecutionOrder(bw, sp);
+    DynamicSortClientExecutionOrder(bw, sp, FALSE);
     switch (sp->swoak_seq_no) {
         case SWOAK_SEQ_VANISH_ON_OFF: {
             int ret = 0;
