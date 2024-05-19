@@ -44,11 +44,7 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	BaseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
 	LoadMonBaseStats_HandleAlternateForm(species, (int)form, BaseStats);
 
-    if (species == SPECIES_SHEDINJA) {
-        newMaxHp = 1;
-    } else {
-		newMaxHp = BaseStats->hp * level * 3 / 200 + BaseStats->hp / 4;
-	}
+	newMaxHp = BaseStats->hp * level * 3 / 200 + BaseStats->hp / 4;
 	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
 
 	newAtk = BaseStats->atk * level * 3 / 200 + BaseStats->atk / 4;
@@ -69,9 +65,7 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	sys_FreeMemoryEz(BaseStats);
 
     if (hp != 0 || maxHp == 0) {
-        if (species == SPECIES_SHEDINJA) {
-            hp = 1;
-        } else if (hp == 0) {
+		if (hp == 0) {
             hp = newMaxHp;
         } else if (newMaxHp - maxHp < 0) {
             if (hp > newMaxHp) {
