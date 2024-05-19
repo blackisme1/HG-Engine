@@ -6544,7 +6544,7 @@ mondata SPECIES_MANECTRIC, "Manectric"
 
 
 mondata SPECIES_PLUSLE, "Plusle"
-    basestats 50, 90, 90, 90, 50, 50
+    basestats 60, 90, 90, 90, 60, 60
     types TYPE_ELECTRIC, TYPE_FIRE
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6565,7 +6565,7 @@ mondata SPECIES_PLUSLE, "Plusle"
 
 
 mondata SPECIES_MINUN, "Minun"
-    basestats 50, 50, 50, 90, 90, 90
+    basestats 60, 60, 60, 90, 90, 90
     types TYPE_ELECTRIC, TYPE_ICE
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6586,7 +6586,7 @@ mondata SPECIES_MINUN, "Minun"
 
 
 mondata SPECIES_VOLBEAT, "Volbeat"
-    basestats 70, 70, 70, 90, 70, 70
+    basestats 70, 50, 70, 100, 90, 70
     types TYPE_BUG, TYPE_ELECTRIC
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6607,7 +6607,7 @@ mondata SPECIES_VOLBEAT, "Volbeat"
 
 
 mondata SPECIES_ILLUMISE, "Illumise"
-    basestats 70, 70, 70, 90, 70, 70
+    basestats 70, 50, 70, 100, 90, 70
     types TYPE_BUG, TYPE_FIRE
     catchrate 255
     baseexp 0 // defined in baseexp.s

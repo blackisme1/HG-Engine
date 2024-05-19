@@ -7263,12 +7263,12 @@ levelup SPECIES_VOLBEAT
 	learnset MOVE_MOONLIGHT, 19
 	learnset MOVE_TAIL_GLOW, 22
 	learnset MOVE_SIGNAL_BEAM, 26
-	learnset MOVE_PROTECT, 29
-	learnset MOVE_THUNDER_SHOCK, 33
-	learnset MOVE_HELPING_HAND, 36
-	learnset MOVE_BUG_BUZZ, 40
+	learnset MOVE_THUNDER_SHOCK, 29
+	learnset MOVE_CHARGE, 33
+	learnset MOVE_BUG_BUZZ, 36
+	learnset MOVE_BATON_PASS, 40
 	learnset MOVE_DAZZLING_GLEAM, 43
-	learnset MOVE_BATON_PASS, 47
+	learnset MOVE_ME_FIRST, 47
 	learnset MOVE_ZAP_CANNON, 50
 	terminatelearnset
 
@@ -7283,12 +7283,12 @@ levelup SPECIES_ILLUMISE
 	learnset MOVE_MOONLIGHT, 19
 	learnset MOVE_TAIL_GLOW, 22
 	learnset MOVE_SIGNAL_BEAM, 26
-	learnset MOVE_PROTECT, 29
-	learnset MOVE_EMBER, 33
-	learnset MOVE_HELPING_HAND, 36
-	learnset MOVE_BUG_BUZZ, 40
+	learnset MOVE_EMBER, 29
+	learnset MOVE_WILL_O_WISP, 33
+	learnset MOVE_BUG_BUZZ, 36
+	learnset MOVE_BATON_PASS, 40
 	learnset MOVE_DAZZLING_GLEAM, 43
-	learnset MOVE_BATON_PASS, 47
+	learnset MOVE_ME_FIRST, 47
 	learnset MOVE_INFERNO, 50
 	terminatelearnset
 
