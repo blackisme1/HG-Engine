@@ -64,21 +64,23 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 
 	sys_FreeMemoryEz(BaseStats);
 
-	if (hp != 0 || maxHp == 0) {
-		if (hp == 0) {
-			hp = newMaxHp;
-		} else if (newMaxHp - maxHp < 0) {
-			if (hp > newMaxHp) {
-				hp = newMaxHp;
-			}
-		} else {
-			hp = hp + newMaxHp - maxHp;
-		}
-	}
-	if (hp != 0) {
-		SetMonData(mon, MON_DATA_HP, &hp);
-	}
-	ReleaseMonLock(mon, decry);
+    if (hp != 0 || maxHp == 0) {
+        if (species == SPECIES_SHEDINJA) {
+            hp = newMaxHp;
+        } else if (hp == 0) {
+            hp = newMaxHp;
+        } else if (newMaxHp - maxHp < 0) {
+            if (hp > newMaxHp) {
+                hp = newMaxHp;
+            }
+        } else {
+            hp += newMaxHp - maxHp;
+        }
+    }
+    if (hp != 0) {
+        SetMonData(mon, MON_DATA_HP, &hp);
+    }
+    ReleaseMonLock(mon, decry);
 }
 
 extern u32 word_to_store_form_at;

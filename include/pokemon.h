@@ -1800,3 +1800,7 @@ void LONG_CALL Mon_UpdateShayminForm(struct PartyPokemon *mon, int form);
 void LONG_CALL Daycare_GetBothBoxMonsPtr(Daycare *dayCare, struct BoxPokemon **boxmons);
 
 #endif
+
+BOOL AcquireMonLock(struct PartyPokemon *mon);
+BOOL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
+void LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
