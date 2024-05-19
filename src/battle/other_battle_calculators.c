@@ -1017,7 +1017,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
  *  @param bw battle work structure; void * because we haven't defined the battle work structure. Apparently we have but we don't use it here so
  *  @param sp global battle structure
  */
-void DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp) {
+void LONG_CALL DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp, BOOL sortTurnOrder) {
 	int maxBattlers;
 	int i, j;
 	int temp1, temp2;
@@ -2135,6 +2135,34 @@ BOOL LONG_CALL BattleSystem_CheckMoveEffect(void *bw, struct BattleStruct *sp, i
 	return FALSE;
 }
 
+/**
+ * @brief Check if client can undergo Primal Reversion
+ * @param sp move number
+ * @param client_no battler to check for primal reversion possibility
+ * @return `TRUE` if mon can undergo primal reversion, `FALSE` otherwise
+ */
+BOOL LONG_CALL CanUndergoPrimalReversion(struct BattleStruct *sp, u8 client_no) {
+#ifdef PRIMAL_REVERSION
+    if (((sp->battlemon[client_no].species == SPECIES_KYOGRE
+#ifdef DEBUG_PRIMAL_REVERSION
+          && GetBattleMonItem(sp, client_no) == ITEM_DREAM_BALL
+#else
+          && GetBattleMonItem(sp, client_no) == ITEM_BLUE_ORB
+#endif
+          ) ||
+         (sp->battlemon[client_no].species == SPECIES_GROUDON
+#ifdef DEBUG_PRIMAL_REVERSION
+          && GetBattleMonItem(sp, client_no) == ITEM_DREAM_BALL
+#else
+          && GetBattleMonItem(sp, client_no) == ITEM_RED_ORB
+#endif
+          )) &&
+        sp->battlemon[client_no].hp != 0 && sp->battlemon[client_no].form_no == 0) {
+        return TRUE;
+    }
+#endif  // PRIMAL_REVERSION
+    return FALSE;
+}
 
 typedef enum UpdateMonConditionState {
 	UMC_STATE_INGRAIN,

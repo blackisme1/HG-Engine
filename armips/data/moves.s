@@ -2279,12 +2279,12 @@ movedata MOVE_LEECH_LIFE, "Leech Life"
     terminatedata
     movedescription MOVE_LEECH_LIFE, "A blood draining\nattack. The user’s\nHP is restored by\nhalf the damage taken\nby the target."
 
-movedata MOVE_LOVELY_KISS, "Lovely Kiss"
+movedata MOVE_LOVELY_KISS, "Nasty Kiss"
     battleeffect 1
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
-    accuracy 50
+    type TYPE_DARK
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -2953,10 +2953,10 @@ movedata MOVE_MACH_PUNCH, "Mach Punch"
     movedescription MOVE_MACH_PUNCH, "The user throws a\npunch at blinding\nspeed.\nIt is certain to\nstrike first."
 
 movedata MOVE_SCARY_FACE, "Scary Face"
-    battleeffect 60
+    battleeffect 327
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_DARK
     accuracy 100
     pp 5
     effectchance 0
@@ -2966,7 +2966,7 @@ movedata MOVE_SCARY_FACE, "Scary Face"
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_SCARY_FACE, "The user frightens\nthe foe with a scary\nface to sharply\nreduce its Speed\nstat."
+    movedescription MOVE_SCARY_FACE, "The user frightens\nthe foe with a scary\nface to \nreduce its Attack\nand Speed stat."
 
 movedata MOVE_FEINT_ATTACK, "Feint Attack"
     battleeffect 0
@@ -3085,8 +3085,8 @@ movedata MOVE_ZAP_CANNON, "Zap Cannon"
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_ELECTRIC
-    accuracy 50
-    pp 10
+    accuracy 75
+    pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3579,9 +3579,9 @@ movedata MOVE_MAGNITUDE, "Magnitude"
 movedata MOVE_DYNAMIC_PUNCH, "Dynamic Punch"
     battleeffect 76
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 120
     type TYPE_FIGHTING
-    accuracy 100
+    accuracy 75
     pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
@@ -5449,13 +5449,13 @@ movedata MOVE_BULK_UP, "Bulk Up"
     movedescription MOVE_BULK_UP, "The user tenses its\nmuscles to bulk up\nits body, boosting\nboth its Attack and\nDefense stats."
 
 movedata MOVE_BOUNCE, "Bounce"
-    battleeffect 263
+    battleeffect 6
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 70
     type TYPE_FLYING
     accuracy 100
     pp 5
-    effectchance 50
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -5485,8 +5485,8 @@ movedata MOVE_POISON_TAIL, "Poison Tail"
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_POISON
-    accuracy 50
-    pp 10
+    accuracy 75
+    pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
@@ -8333,7 +8333,7 @@ movedata MOVE_INFERNO, "Inferno"
     pss SPLIT_SPECIAL
     basepower 120
     type TYPE_FIRE
-    accuracy 50
+    accuracy 75
     pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
