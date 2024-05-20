@@ -7267,7 +7267,7 @@ levelup SPECIES_VOLBEAT
 	learnset MOVE_CHARGE, 33
 	learnset MOVE_BUG_BUZZ, 36
 	learnset MOVE_BATON_PASS, 40
-	learnset MOVE_DAZZLING_GLEAM, 43
+	learnset MOVE_ELECTRO_SHOT, 43
 	learnset MOVE_ME_FIRST, 47
 	learnset MOVE_ZAP_CANNON, 50
 	terminatelearnset
@@ -7287,10 +7287,9 @@ levelup SPECIES_ILLUMISE
 	learnset MOVE_WILL_O_WISP, 33
 	learnset MOVE_BUG_BUZZ, 36
 	learnset MOVE_BATON_PASS, 40
-	learnset MOVE_DAZZLING_GLEAM, 43
+	learnset MOVE_FIERY_DANCE, 43
 	learnset MOVE_ME_FIRST, 47
 	learnset MOVE_INFERNO, 50
-	terminatelearnset
 
 
 levelup SPECIES_ROSELIA
