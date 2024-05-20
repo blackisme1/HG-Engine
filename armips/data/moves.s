@@ -9387,9 +9387,9 @@ movedata MOVE_ELECTRIFY, "Electrify"
 movedata MOVE_PLAY_ROUGH, "Play Rough"
     battleeffect 68
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 80
     type TYPE_FAIRY
-    accuracy 90
+    accuracy 100
     pp 10
     effectchance 25
     target MOVE_TARGET_SELECTED
@@ -9403,7 +9403,7 @@ movedata MOVE_PLAY_ROUGH, "Play Rough"
 movedata MOVE_FAIRY_WIND, "Fairy Wind"
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 50
     type TYPE_FAIRY
     accuracy 100
     pp 20
@@ -9419,10 +9419,10 @@ movedata MOVE_FAIRY_WIND, "Fairy Wind"
 movedata MOVE_MOONBLAST, "Moonblast"
     battleeffect 71
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 100
     type TYPE_FAIRY
     accuracy 100
-    pp 15
+    pp 5
     effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
@@ -12683,7 +12683,7 @@ movedata MOVE_GRAV_APPLE, "Grav Apple"
 movedata MOVE_SPIRIT_BREAK, "Spirit Break"
     battleeffect 71
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 90
     type TYPE_FAIRY
     accuracy 100
     pp 5

@@ -6355,7 +6355,7 @@ mondata SPECIES_DELCATTY, "Delcatty"
 
 
 mondata SPECIES_SABLEYE, "Sableye"
-    basestats 30, 70, 110, 30, 30, 110
+    basestats 30, 70, 120, 40, 70, 120
     types TYPE_ROCK, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -6376,8 +6376,8 @@ mondata SPECIES_SABLEYE, "Sableye"
 
 
 mondata SPECIES_MAWILE, "Mawile"
-    basestats 50, 100, 100, 50, 40, 40
-    types TYPE_STEEL, TYPE_FAIRY
+    basestats 120, 120, 30, 70, 70, 40
+    types TYPE_FAIRY, TYPE_DARK
     catchrate 255
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
