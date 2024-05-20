@@ -1284,7 +1284,7 @@ mondata SPECIES_POLIWAG, "Poliwag"
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_WATER_1
-    abilities ABILITY_DAMP, ABILITY_NONE
+    abilities ABILITY_RAIN_DISH, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_POLIWAG, "Because it is inept at walking on\nits newly grown legs, it always \nswims around in water."
@@ -1305,7 +1305,7 @@ mondata SPECIES_POLIWHIRL, "Poliwhirl"
     basefriendship 50
     growthrate GROWTH_MEDIUM_SLOW
     egggroups EGG_GROUP_WATER_1, EGG_GROUP_WATER_1
-    abilities ABILITY_DAMP, ABILITY_NONE
+    abilities ABILITY_RAIN_DISH, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
     mondexentry SPECIES_POLIWHIRL, "The swirl on its belly subtly undulates.\nStaring at it may gradually\ncause drowsiness."
