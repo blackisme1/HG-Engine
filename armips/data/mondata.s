@@ -6597,7 +6597,7 @@ mondata SPECIES_VOLBEAT, "Volbeat"
     basefriendship 70
     growthrate GROWTH_ERRATIC
     egggroups EGG_GROUP_BUG, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_PRANKSTER, ABILITY_NONE
+    abilities ABILITY_LEVITATE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_GRAY, 0
     mondexentry SPECIES_VOLBEAT, "It emits light from its tail to\ncommunicate. It loves the\nsweet aroma given off by ILLUMISE."
@@ -6618,7 +6618,7 @@ mondata SPECIES_ILLUMISE, "Illumise"
     basefriendship 70
     growthrate GROWTH_FLUCTUATING
     egggroups EGG_GROUP_BUG, EGG_GROUP_HUMAN_LIKE
-    abilities ABILITY_BLAZE, ABILITY_NONE
+    abilities ABILITY_LEVITATE, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_PURPLE, 0
     mondexentry SPECIES_ILLUMISE, "Its fragrance attracts a swarm of\nVOLBEAT, so they draw over 200\npatterns in the night sky."
@@ -6880,7 +6880,7 @@ mondata SPECIES_GRUMPIG, "Grumpig"
 
 
 mondata SPECIES_SPINDA, "Spinda"
-    basestats 70, 70, 70, 70, 70, 70
+    basestats 90, 90, 90, 50, 50, 50
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -7615,7 +7615,7 @@ mondata SPECIES_SNORUNT, "Snorunt"
 
 
 mondata SPECIES_GLALIE, "Glalie"
-    basestats 90, 90, 90, 90, 90, 90
+    basestats 110, 70, 80, 70, 70, 80
     types TYPE_ICE, TYPE_ICE
     catchrate 255
     baseexp 0 // defined in baseexp.s
