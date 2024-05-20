@@ -1,4 +1,4 @@
-Basestats: Hp Atk Def Speed Spatk Spdef
+Basestats:: Hp Atk Def Speed Spatk Spdef
 
 Bulbasaur
 Basestats: 50, 50, 50, 50, 50, 50
@@ -143,7 +143,7 @@ Abilities: Rough Skin
 Nidoran
 Basestats: 60, 50, 40, 40, 50, 40
 Types: Poison, Poison
-Abilities: Rivalry // Now Deals 25% more damage to targets that share a type
+Abilities: Rivalry
 
 Nidorina
 Basestats: 70, 60, 70, 50, 60, 50
@@ -343,17 +343,17 @@ Abilities: No Guard
 Bellsprout
 Basestats: 50, 70, 40, 40, 70, 40
 Types: Grass, Poison
-Abilities: Adaptability
+Abilities: Limber
 
 Weepinbell
 Basestats: 60, 90, 50, 50, 90, 50
 Types: Grass, Poison
-Abilities: Adaptability
+Abilities: Limber
 
 Victreebel
 Basestats: 80, 100, 70, 70, 100, 70
 Types: Grass, Poison
-Abilities: Adaptability
+Abilities: Limber
 
 Tentacool
 Basestats: 40, 40, 40, 70, 50, 100
@@ -368,17 +368,17 @@ Abilities: Liquid Ooze
 Geodude
 Basestats: 40, 80, 100, 30, 30, 30
 Types: Rock, Rock
-Abilities: Solid Rock
+Abilities: Mold Breaker
 
 Graveler
 Basestats: 50, 100, 110, 40, 40, 50
 Types: Rock, Rock
-Abilities: Solid Rock
+Abilities: Mold Breaker
 
 Golem
 Basestats: 80, 120, 130, 40, 60, 70
 Types: Rock, Rock
-Abilities: Solid Rock
+Abilities: Mold Breaker
 
 Ponyta
 Basestats: 50, 80, 60, 90, 60, 70
@@ -418,12 +418,12 @@ Abilities: Sharpness
 Doduo
 Basestats: 40, 80, 40, 80, 30, 40
 Types: Normal, Flying
-Abilities: Tangled Feet
+Abilities: Reckless
 
 Dodrio
 Basestats: 60, 110, 70, 110, 60, 60
 Types: Normal, Flying
-Abilities: Tangled Feet
+Abilities: Reckless
 
 Seel
 Basestats: 70, 50, 50, 50, 50, 70
@@ -468,7 +468,7 @@ Abilities: Levitate
 Gengar
 Basestats: 70, 70, 70, 100, 120, 70
 Types: Ghost, Poison
-Abilities: Cursed Body
+Abilities: Levitate
 
 Onix
 Basestats: 170, 50, 50, 70, 30, 30
@@ -482,7 +482,7 @@ Abilities: Bad Dreams
 
 Hypno
 Basestats: 80, 70, 70, 70, 70, 120
-Types: Psychic, Psychic
+Types: Psychic, Ghost
 Abilities: Bad Dreams
 
 Krabby
@@ -526,12 +526,12 @@ Types: Rock, Rock
 Abilities: Rock Head
 
 Hitmonlee
-Basestats: 50, 100, 70, 100, 50, 100
+Basestats: 70, 130, 70, 70, 50, 100
 Types: Fighting, Fighting
 Abilities: Reckless
 
 Hitmonchan
-Basestats: 50, 70, 100, 100, 50, 100
+Basestats: 70, 70, 130, 70, 50, 100
 Types: Fighting, Fighting
 Abilities: Iron Fist
 
@@ -586,13 +586,13 @@ Types: Water, Dragon
 Abilities: Sniper
 
 Goldeen
-Basestats: 50, 60, 50, 60, 50, 50
-Types: Water, Water
+Basestats: 40, 70, 50, 80, 50, 50
+Types: Normal, Water
 Abilities: Marvel Scale
 
 Seaking
-Basestats: 70, 90, 70, 80, 70, 70
-Types: Water, Water
+Basestats: 60, 100, 80, 120, 80, 80
+Types: Normal, Water
 Abilities: Marvel Scale
 
 Staryu
@@ -616,17 +616,17 @@ Types: Bug, Flying
 Abilities: Swarm
 
 Jynx
-Basestats: 60, 50, 40, 90, 120, 90
+Basestats: 50, 50, 50, 50, 100, 150
 Types: Ice, Psychic
-Abilities: Ice Body
+Abilities: Overcoat
 
 Electabuzz
-Basestats: 70, 90, 90, 70, 90, 90
+Basestats: 50, 100, 50, 100, 100, 50
 Types: Electric, Electric
 Abilities: Static
 
 Magmar
-Basestats: 90, 90, 70, 90, 90, 70
+Basestats: 100, 100, 50, 50, 100, 50
 Types: Fire, Fire
 Abilities: Flame Body
 
@@ -641,7 +641,7 @@ Types: Normal, Normal
 Abilities: Anger Point
 
 Magikarp
-Basestats: 30, 30, 30, 80, 30, 30
+Basestats: 60, 40, 40, 80, 40, 40
 Types: Water, Water
 Abilities: Defiant
 
@@ -1160,7 +1160,7 @@ Basestats: 90, 120, 120, 50, 60, 60
 Types: Ground, Ground
 Abilities: Sap Sipper
 
-Porygon2
+Mondata Species Porygon2, Porygon2
 Basestats: 80, 80, 100, 60, 100, 100
 Types: Normal, Normal
 Abilities: Download
@@ -1181,7 +1181,7 @@ Types: Fighting, Fighting
 Abilities: Steadfast
 
 Hitmontop
-Basestats: 50, 100, 100, 70, 50, 100
+Basestats: 70, 70, 70, 130, 50, 100
 Types: Fighting, Fighting
 Abilities: Intimidate
 
@@ -1478,12 +1478,12 @@ Abilities: Soundproof
 Makuhita
 Basestats: 70, 60, 30, 30, 30, 30
 Types: Fighting, Fighting
-Abilities: Guts
+Abilities: Stench
 
 Hariyama
 Basestats: 130, 130, 60, 50, 50, 60
 Types: Fighting, Fighting
-Abilities: Guts
+Abilities: Stench
 
 Azurill
 Basestats: 40, 30, 30, 30, 30, 40
@@ -1572,7 +1572,7 @@ Abilities: Levitate
 
 Roselia
 Basestats: 50, 60, 50, 60, 100, 80
-Types: Grass, Poison
+Types: Grass, Grass
 Abilities: Flower Veil
 
 Gulpin
@@ -1741,7 +1741,7 @@ Types: Rock, Bug
 Abilities: Anger Point
 
 Feebas
-Basestats: 30, 30, 30, 80, 30, 30
+Basestats: 60, 40, 40, 80, 40, 40
 Types: Water, Water
 Abilities: Competitive
 
@@ -1813,40 +1813,40 @@ Abilities: Bulletproof
 Spheal
 Basestats: 70, 40, 50, 30, 50, 50
 Types: Ice, Water
-Abilities: Contrary
+Abilities: Ice Body
 
 Sealeo
 Basestats: 90, 60, 70, 50, 70, 70
 Types: Ice, Water
-Abilities: Contrary
+Abilities: Ice Body
 
 Walrein
 Basestats: 110, 80, 90, 70, 90, 90
 Types: Ice, Water
-Abilities: Contrary
+Abilities: Ice Body
 
 Clamperl
-Basestats: 40, 60, 90, 30, 70, 60
+Basestats: 40, 40, 80, 40, 40, 60
 Types: Water, Water
 Abilities: Shell Armor
 
 Huntail
-Basestats: 50, 110, 100, 50, 90, 90
-Types: Water, Water
+Basestats: 80, 140, 80, 80, 80, 80
+Types: Water, Psychic
 Abilities: Toxic Boost
 
 Gorebyss
-Basestats: 50, 90, 100, 50, 110, 90
-Types: Water, Water
+Basestats: 80, 80, 80, 80, 140, 80
+Types: Water, Psychic
 Abilities: Flare Boost
 
 Relicanth
 Basestats: 100, 90, 130, 50, 50, 70
 Types: Water, Rock
-Abilities: Water Compaction
+Abilities: Serene Grace
 
 Luvdisc
-Basestats: 80, 30, 30, 30, 30, 30
+Basestats: 200, 50, 50, 50, 50, 50
 Types: Water, Fairy
 Abilities: Unburden
 
@@ -1881,19 +1881,19 @@ Types: Steel, Psychic
 Abilities: Tough Claws
 
 Regirock
-Basestats: 80, 100, 200, 50, 50, 100
+Basestats: 150, 100, 200, 150, 50, 50
 Types: Rock, Rock
-Abilities: Clear Body
+Abilities: Slow Start
 
 Regice
-Basestats: 80, 50, 100, 50, 100, 200
+Basestats: 150, 50, 50, 150, 100, 200
 Types: Ice, Ice
-Abilities: Ice Body
+Abilities: Slow Start
 
 Registeel
-Basestats: 80, 150, 100, 50, 100, 100
+Basestats: 150, 50, 150, 150, 50, 150
 Types: Steel, Steel
-Abilities: Full Metal Body
+Abilities: Slow Start
 
 Latias
 Basestats: 80, 80, 90, 110, 110, 130
@@ -1948,46 +1948,46 @@ Abilities: Harvest
 Chimchar
 Basestats: 50, 50, 50, 50, 50, 50
 Types: Fire, Fire
-Abilities: Iron Fist
+Abilities: Gluttony
 
 Monferno
 Basestats: 50, 70, 70, 70, 70, 70
 Types: Fire, Fighting
-Abilities: Iron Fist
+Abilities: Gluttony
 
 Infernape
 Basestats: 50, 100, 100, 70, 100, 100
 Types: Fire, Fighting
-Abilities: Iron Fist
+Abilities: Gluttony
 
 Piplup
 Basestats: 50, 50, 50, 50, 50, 50
 Types: Water, Water
-Abilities: Queenly Majesty
+Abilities: Unnerve
 
 Prinplup
 Basestats: 70, 70, 70, 50, 70, 70
 Types: Water, Water
-Abilities: Queenly Majesty
+Abilities: Unnerve
 
 Empoleon
 Basestats: 70, 100, 100, 50, 100, 100
 Types: Water, Steel
-Abilities: Queenly Majesty
+Abilities: Unnerve
 
 Starly
 Basestats: 30, 60, 30, 60, 30, 30
-Types: Normal, Flying
+Types: Flying, Flying
 Abilities: Reckless
 
 Staravia
 Basestats: 40, 90, 40, 90, 40, 40
-Types: Normal, Flying
+Types: Flying, Flying
 Abilities: Reckless
 
 Staraptor
 Basestats: 60, 120, 60, 120, 60, 60
-Types: Normal, Flying
+Types: Fighting, Flying
 Abilities: Reckless
 
 Bidoof
@@ -2027,26 +2027,26 @@ Abilities: Galvanize
 
 Budew
 Basestats: 30, 30, 30, 30, 40, 40
-Types: Grass, Poison
+Types: Grass, Grass
 Abilities: Flower Veil
 
 Roserade
 Basestats: 60, 70, 70, 90, 130, 100
-Types: Grass, Poison
+Types: Grass, Grass
 Abilities: Flower Veil
 
 Cranidos
-Basestats: 60, 130, 40, 40, 40, 40
-Types: Rock, Rock
+Basestats: 40, 130, 40, 60, 40, 40
+Types: Rock, Normal
 Abilities: Reckless
 
 Rampardos
-Basestats: 90, 170, 60, 60, 60, 60
-Types: Rock, Rock
+Basestats: 60, 170, 60, 90, 60, 60
+Types: Rock, Normal
 Abilities: Reckless
 
 Shieldon
-Basestats: 60, 40, 130, 40, 40, 40
+Basestats: 40, 40, 130, 40, 40, 60
 Types: Rock, Steel
 Abilities: Iron Barbs
 
@@ -2058,7 +2058,7 @@ Abilities: Iron Barbs
 Burmy
 Basestats: 40, 30, 40, 40, 30, 40
 Types: Bug, Bug
-Abilities: Shed Skin
+Abilities: Multiscale
 
 Wormadam
 Basestats: 40, 90, 90, 40, 90, 90
@@ -2070,10 +2070,10 @@ Basestats: 90, 90, 40, 90, 90, 40
 Types: Bug, Flying
 Abilities: Unaware
 
-Combee
+Combee // Now Female Only
 Basestats: 40, 40, 40, 80, 40, 40
 Types: Bug, Flying
-Abilities: Honey Gather
+Abilities: Harvest
 
 Vespiquen
 Basestats: 40, 100, 100, 80, 100, 100
@@ -2081,7 +2081,7 @@ Types: Bug, Flying
 Abilities: Supreme Overlord
 
 Pachirisu
-Basestats: 60, 40, 90, 90, 40, 90
+Basestats: 90, 50, 90, 90, 90, 90
 Types: Electric, Electric
 Abilities: Gluttony
 
@@ -2133,12 +2133,12 @@ Abilities: Flare Boost
 Buneary
 Basestats: 50, 70, 50, 90, 50, 50
 Types: Normal, Normal
-Abilities: Klutz
+Abilities: Fur Coat
 
 Lopunny
 Basestats: 60, 80, 80, 100, 60, 100
 Types: Normal, Normal
-Abilities: Klutz
+Abilities: Fur Coat
 
 Mismagius
 Basestats: 70, 70, 70, 100, 100, 100
@@ -2153,12 +2153,12 @@ Abilities: Prankster
 Glameow
 Basestats: 50, 50, 40, 90, 40, 40
 Types: Normal, Normal
-Abilities: Own Tempo
+Abilities: Pickpocket
 
 Purugly
 Basestats: 80, 80, 60, 110, 60, 60
 Types: Normal, Normal
-Abilities: Anger Point
+Abilities: Pickpocket
 
 Chingling
 Basestats: 40, 30, 50, 80, 50, 40
@@ -2202,7 +2202,7 @@ Abilities: Natural Cure
 
 Chatot
 Basestats: 80, 80, 40, 90, 80, 40
-Types: Psychic, Flying
+Types: Normal, Flying
 Abilities: Own Tempo
 
 Spiritomb
@@ -2216,7 +2216,7 @@ Types: Dragon, Ground
 Abilities: Sand Rush
 
 Gabite
-Basestats: 90, 90, 50, 80, 50, 50
+Basestats: 90, 90, 50, 70, 50, 50
 Types: Dragon, Ground
 Abilities: Sand Rush
 
@@ -2233,32 +2233,32 @@ Abilities: Immunity
 Riolu
 Basestats: 30, 40, 30, 30, 40, 30
 Types: Fighting, Fighting
-Abilities: Iron Fist
+Abilities: Steelworker
 
 Lucario
 Basestats: 70, 110, 70, 90, 110, 70
-Types: Fighting, Steel
-Abilities: Iron Fist
+Types: Fighting, Fighting
+Abilities: Steelworker
 
 Hippopotas
-Basestats: 70, 70, 70, 40, 40, 40
+Basestats: 100, 90, 90, 40, 40, 40
 Types: Ground, Ground
 Abilities: Sand Stream
 
 Hippowdon
-Basestats: 110, 110, 110, 70, 70, 70
+Basestats: 120, 120, 120, 80, 80, 80
 Types: Ground, Ground
 Abilities: Sand Stream
 
 Skorupi
 Basestats: 40, 50, 90, 60, 30, 60
 Types: Poison, Bug
-Abilities: Sniper
+Abilities: Sand Veil
 
 Drapion
-Basestats: 70, 90, 110, 90, 60, 80
+Basestats: 70, 90, 120, 90, 50, 80
 Types: Poison, Dark
-Abilities: Sniper
+Abilities: Sand Veil
 
 Croagunk
 Basestats: 50, 60, 40, 50, 60, 40
@@ -2291,7 +2291,7 @@ Types: Water, Flying
 Abilities: Friend Guard
 
 Snover
-Basestats: 160, 60, 50, 60, 60, 50
+Basestats: 120, 60, 50, 60, 60, 50
 Types: Grass, Ice
 Abilities: Snow Warning
 
@@ -2388,7 +2388,7 @@ Abilities: Pressure
 Froslass
 Basestats: 70, 80, 70, 110, 80, 70
 Types: Ice, Ghost
-Abilities: Perish Body
+Abilities: Snow Cloak
 
 Rotom
 Basestats: 50, 70, 100, 100, 100, 100
@@ -2402,23 +2402,23 @@ Abilities: Levitate
 
 Mesprit
 Basestats: 70, 70, 70, 150, 150, 70
-Types: Fighting, Fighting
+Types: Psychic, Psychic
 Abilities: Levitate
 
 Azelf
-Basestats: 70, 70, 150, 150, 70, 70
-Types: Psychic, Psychic
+Basestats: 70, 150, 70, 150, 70, 70
+Types: Fighting, Fighting
 Abilities: Levitate
 
 Dialga
 Basestats: 90, 120, 120, 20, 150, 100
 Types: Steel, Dragon
-Abilities: Unnerve
+Abilities: Mold Breaker
 
 Palkia
 Basestats: 90, 120, 100, 20, 150, 120
 Types: Water, Dragon
-Abilities: Unnerve
+Abilities: Mold Breaker
 
 Heatran
 Basestats: 100, 100, 100, 80, 120, 100
@@ -2433,7 +2433,7 @@ Abilities: Slow Start
 Giratina
 Basestats: 120, 100, 120, 40, 100, 120
 Types: Ghost, Dragon
-Abilities: Unnerve
+Abilities: Mold Breaker
 
 Cresselia
 Basestats: 120, 80, 120, 80, 80, 120
@@ -2441,7 +2441,7 @@ Types: Psychic, Psychic
 Abilities: Levitate
 
 Phione
-Basestats: 80, 80, 120, 120, 80, 120
+Basestats: 80, 80, 80, 100, 80, 80
 Types: Water, Water
 Abilities: Hydration
 

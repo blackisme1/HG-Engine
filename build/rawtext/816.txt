@@ -406,8 +406,8 @@ Spark Pokémon
 Gleam Eyes Pokémon
 Bud Pokémon
 Bouquet Pokémon
-Head Butt Pokémon
-Head Butt Pokémon
+Headbutt Pokémon
+Headbutt Pokémon
 Shield Pokémon
 Shield Pokémon
 Bagworm Pokémon
@@ -415,7 +415,7 @@ Bagworm Pokémon
 Moth Pokémon
 Tiny Bee Pokémon
 Beehive Pokémon
-EleSquirrel Pokémon
+Squirrel Pokémon
 Sea Weasel Pokémon
 Sea Weasel Pokémon
 Cherry Pokémon
