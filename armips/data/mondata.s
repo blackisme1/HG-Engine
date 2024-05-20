@@ -6277,7 +6277,7 @@ mondata SPECIES_AZURILL, "Azurill"
     baseexp 0 // defined in baseexp.s
     evyields 0, 0, 0, 0, 0, 0
     items ITEM_NONE, ITEM_NONE
-    genderratio 190
+    genderratio 127
     eggcycles 0
     basefriendship 50
     growthrate GROWTH_FAST

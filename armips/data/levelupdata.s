@@ -7117,48 +7117,41 @@ levelup SPECIES_MEDITITE
 	learnset MOVE_BIDE, 1
 	learnset MOVE_MEDITATE, 4
 	learnset MOVE_CONFUSION, 7
-	learnset MOVE_DETECT, 9
-	learnset MOVE_ENDURE, 12
+	learnset MOVE_FAKE_OUT, 9
+	learnset MOVE_PALM_CLOSE, 12
 	learnset MOVE_FEINT, 15
 	learnset MOVE_FORCE_PALM, 17
 	learnset MOVE_HIDDEN_POWER, 20
 	learnset MOVE_CALM_MIND, 23
 	learnset MOVE_MIND_READER, 25
 	learnset MOVE_HIGH_JUMP_KICK, 28
-	learnset MOVE_PSYCH_UP, 31
-	learnset MOVE_ACUPRESSURE, 33
+	learnset MOVE_WORK_UP, 31
+	learnset MOVE_PSYCHIC, 33
 	learnset MOVE_POWER_TRICK, 36
 	learnset MOVE_REVERSAL, 39
 	learnset MOVE_RECOVER, 41
-	learnset MOVE_COUNTER, 44
+	learnset MOVE_REVENGE, 44
 	terminatelearnset
 
 
 levelup SPECIES_MEDICHAM
-	learnset MOVE_ZEN_HEADBUTT, 1
-	learnset MOVE_FIRE_PUNCH, 1
-	learnset MOVE_THUNDER_PUNCH, 1
-	learnset MOVE_ICE_PUNCH, 1
 	learnset MOVE_BIDE, 1
-	learnset MOVE_MEDITATE, 1
-	learnset MOVE_CONFUSION, 1
-	learnset MOVE_DETECT, 1
 	learnset MOVE_MEDITATE, 4
 	learnset MOVE_CONFUSION, 7
-	learnset MOVE_DETECT, 9
-	learnset MOVE_ENDURE, 12
+	learnset MOVE_FAKE_OUT, 9
+	learnset MOVE_PALM_CLOSE, 12
 	learnset MOVE_FEINT, 15
 	learnset MOVE_FORCE_PALM, 17
 	learnset MOVE_HIDDEN_POWER, 20
 	learnset MOVE_CALM_MIND, 23
 	learnset MOVE_MIND_READER, 25
 	learnset MOVE_HIGH_JUMP_KICK, 28
-	learnset MOVE_PSYCH_UP, 31
-	learnset MOVE_ACUPRESSURE, 33
+	learnset MOVE_WORK_UP, 31
+	learnset MOVE_PSYCHIC, 33
 	learnset MOVE_POWER_TRICK, 36
-	learnset MOVE_REVERSAL, 42
-	learnset MOVE_RECOVER, 47
-	learnset MOVE_COUNTER, 53
+	learnset MOVE_REVERSAL, 39
+	learnset MOVE_RECOVER, 41
+	learnset MOVE_REVENGE, 44
 	terminatelearnset
 
 
@@ -7185,9 +7178,6 @@ levelup SPECIES_MANECTRIC
 	learnset MOVE_FIRE_FANG, 1
 	learnset MOVE_TACKLE, 1
 	learnset MOVE_THUNDER_WAVE, 1
-	learnset MOVE_LEER, 1
-	learnset MOVE_HOWL, 1
-	learnset MOVE_ELECTRIC_TERRAIN, 1
 	learnset MOVE_LEER, 4
 	learnset MOVE_HOWL, 7
 	learnset MOVE_QUICK_ATTACK, 11
@@ -7196,12 +7186,12 @@ levelup SPECIES_MANECTRIC
 	learnset MOVE_ODOR_SLEUTH, 16
 	learnset MOVE_BITE, 21
 	learnset MOVE_THUNDER_FANG, 21
-	learnset MOVE_ROAR, 32
-	learnset MOVE_DISCHARGE, 33
-	learnset MOVE_CHARGE, 44
-	learnset MOVE_WILD_CHARGE, 45
-	learnset MOVE_THUNDER, 54
-	learnset MOVE_ELECTRIC_TERRAIN, 60
+	learnset MOVE_ROAR, 30
+	learnset MOVE_DISCHARGE, 30
+	learnset MOVE_CHARGE, 39
+	learnset MOVE_WILD_CHARGE, 39
+	learnset MOVE_THUNDER, 46
+	learnset MOVE_ELECTRIC_TERRAIN, 50
 	terminatelearnset
 
 
