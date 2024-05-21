@@ -2437,7 +2437,7 @@ Abilities: Mold Breaker
 
 Cresselia
 Basestats: 120, 80, 120, 80, 80, 120
-Types: Psychic, Psychic
+Types: Fairy, Psychic
 Abilities: Levitate
 
 Phione
@@ -2452,12 +2452,12 @@ Abilities: Hydration
 
 Darkrai
 Basestats: 80, 120, 80, 120, 120, 80
-Types: Dark, Dark
+Types: Dark, Ghost
 Abilities: Bad Dreams
 
 Shaymin
 Basestats: 100, 100, 100, 100, 100, 100
-Types: Grass, Grass
+Types: Fairy, Grass
 Abilities: Overgrow
 
 Arceus
