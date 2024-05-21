@@ -2386,7 +2386,7 @@ Types: Ghost, Ghost
 Abilities: Pressure
 
 Froslass
-Basestats: 70, 80, 70, 110, 80, 70
+Basestats: 70, 70, 70, 110, 80, 80
 Types: Ice, Ghost
 Abilities: Snow Cloak
 
@@ -2397,17 +2397,17 @@ Abilities: Levitate
 
 Uxie
 Basestats: 70, 70, 150, 70, 70, 150
-Types: Fairy, Fairy
+Types: Fairy, Psychic
 Abilities: Levitate
 
 Mesprit
 Basestats: 70, 70, 70, 150, 150, 70
-Types: Psychic, Psychic
+Types: Psychic, Fighting
 Abilities: Levitate
 
 Azelf
 Basestats: 70, 150, 70, 150, 70, 70
-Types: Fighting, Fighting
+Types: Fighting, Fairy
 Abilities: Levitate
 
 Dialga
@@ -2464,8 +2464,3 @@ Arceus
 Basestats: 110, 110, 110, 50, 110, 110
 Types: Normal, Normal
 Abilities: Multitype
-
-
-
-
-
