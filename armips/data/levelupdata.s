@@ -10225,23 +10225,37 @@ levelup SPECIES_MUNCHLAX
 
 
 levelup SPECIES_RIOLU
+	learnset MOVE_LIFE_DEW, 1
+	learnset MOVE_WORK_UP, 1
+	learnset MOVE_ROCK_SMASH, 1
+	learnset MOVE_NASTY_PLOT, 1
+	learnset MOVE_SCREECH, 1
+	learnset MOVE_FORCE_PALM, 1
+	learnset MOVE_HELPING_HAND, 1
+	learnset MOVE_COPYCAT, 1
+	learnset MOVE_FINAL_GAMBIT, 1
+	learnset MOVE_REVERSAL, 1
 	learnset MOVE_QUICK_ATTACK, 1
-	learnset MOVE_ENDURE, 1
+	learnset MOVE_DETECT, 1
+	learnset MOVE_FEINT, 1
+	learnset MOVE_METAL_CLAW, 1
+	learnset MOVE_LASER_FOCUS, 1
 	learnset MOVE_FORESIGHT, 1
-	learnset MOVE_FEINT, 7
-	learnset MOVE_METAL_CLAW, 8
 	learnset MOVE_COUNTER, 9
-	learnset MOVE_WORK_UP, 16
-	learnset MOVE_ROCK_SMASH, 20
-	learnset MOVE_SCREECH, 26
-	learnset MOVE_FORCE_PALM, 26
+	learnset MOVE_FEINT, 11
+	learnset MOVE_FOCUS_ENERGY, 16
+	learnset MOVE_POWER_UP_PUNCH, 17
+	learnset MOVE_METAL_SOUND, 26
+	learnset MOVE_SWORDS_DANCE, 30
 	learnset MOVE_DETECT, 32
-	learnset MOVE_NASTY_PLOT, 34
-	learnset MOVE_COPYCAT, 34
-	learnset MOVE_SWORDS_DANCE, 40
-	learnset MOVE_REVERSAL, 43
-	learnset MOVE_HELPING_HAND, 44
-	learnset MOVE_FINAL_GAMBIT, 51
+	learnset MOVE_BONE_RUSH, 32
+	learnset MOVE_CALM_MIND, 34
+	learnset MOVE_ME_FIRST, 37
+	learnset MOVE_WORK_UP, 42
+	learnset MOVE_METEOR_MASH, 48
+	learnset MOVE_DRAGON_PULSE, 55
+	learnset MOVE_CLOSE_COMBAT, 57
+	learnset MOVE_EXTREME_SPEED, 60
 	terminatelearnset
 
 
@@ -10266,7 +10280,7 @@ levelup SPECIES_LUCARIO
 	learnset MOVE_FORESIGHT, 1
 	learnset MOVE_COUNTER, 9
 	learnset MOVE_FEINT, 11
-	learnset MOVE_LASER_FOCUS, 16
+	learnset MOVE_FOCUS_ENERGY, 16
 	learnset MOVE_POWER_UP_PUNCH, 17
 	learnset MOVE_METAL_SOUND, 26
 	learnset MOVE_SWORDS_DANCE, 30
@@ -10275,7 +10289,6 @@ levelup SPECIES_LUCARIO
 	learnset MOVE_CALM_MIND, 34
 	learnset MOVE_ME_FIRST, 37
 	learnset MOVE_WORK_UP, 42
-	learnset MOVE_HEAL_PULSE, 47
 	learnset MOVE_METEOR_MASH, 48
 	learnset MOVE_DRAGON_PULSE, 55
 	learnset MOVE_CLOSE_COMBAT, 57
