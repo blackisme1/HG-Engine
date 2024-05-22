@@ -267,13 +267,13 @@ Abilities: Technician
 
 Psyduck
 Basestats: 60, 60, 50, 60, 50, 40
-Types: Water, Water
-Abilities: Swift Swim
+Types: Water, Psychic
+Abilities: Poison Touch
 
 Golduck
 Basestats: 80, 100, 80, 100, 80, 60
 Types: Water, Psychic
-Abilities: Swift Swim
+Abilities: Poison Touch
 
 Mankey
 Basestats: 40, 80, 40, 70, 40, 40
@@ -577,7 +577,7 @@ Abilities: Inner Focus
 
 Horsea
 Basestats: 30, 40, 70, 60, 70, 30
-Types: Water, Water
+Types: Water, Dragon
 Abilities: Sniper
 
 Seadra
@@ -716,7 +716,7 @@ Types: Normal, Normal
 Abilities: Immunity
 
 Articuno
-Basestats: 110, 90, 90, 110, 90, 90
+Basestats: 110, 90, 90, 90, 110, 90
 Types: Ice, Flying
 Abilities: Berserk
 
@@ -726,7 +726,7 @@ Types: Electric, Flying
 Abilities: Berserk
 
 Moltres
-Basestats: 90, 110, 90, 110, 90, 90
+Basestats: 90, 110, 90, 90, 110, 90
 Types: Fire, Flying
 Abilities: Berserk
 
