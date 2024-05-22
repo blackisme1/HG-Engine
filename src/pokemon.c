@@ -17,10 +17,9 @@
 #include "../include/constants/species.h"
 #include "../include/constants/weather_numbers.h"
 
-
 #define NELEMS_POKEFORMDATATBL 285
 
-typedef struct BaseStats {
+typedef struct baseStats {
     /* 0x00 */ u8 hp;
     /* 0x01 */ u8 atk;
     /* 0x02 */ u8 def;
@@ -55,8 +54,12 @@ typedef struct BaseStats {
     /* 0x28 */ u32 tmhm_4;
 } BASE_STATS;
 
+BOOL AcquireMonLock(struct PartyPokemon *mon);
+BOOL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
+void LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
+
 void CalcMonStats(struct PartyPokemon *mon) {
-	BASE_STATS * BaseStats;
+	BASE_STATS * baseStats;
 	int level;
 	int maxHp;
 	int form;
@@ -76,28 +79,28 @@ void CalcMonStats(struct PartyPokemon *mon) {
 	form = (int)GetMonData(mon, MON_DATA_FORM, NULL);
 	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
 
-	BaseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
-	LoadMonBaseStats_HandleAlternateForm(species, form, BaseStats);
+	baseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
+	LoadMonbaseStats_HandleAlternateForm(species, form, baseStats);
 
-	newMaxHp = BaseStats->hp * level * 3 / 200 + BaseStats->hp / 4;
+	newMaxHp = baseStats->hp * level * 3 / 200 + baseStats->hp / 4;
 	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
 
-	newAtk = BaseStats->atk * level * 3 / 200 + BaseStats->atk / 4;
+	newAtk = baseStats->atk * level * 3 / 200 + baseStats->atk / 4;
 	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
 
-	newDef = BaseStats->def * level * 3 / 200 + BaseStats->def / 4;
+	newDef = baseStats->def * level * 3 / 200 + baseStats->def / 4;
 	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
 
-	newSpeed = BaseStats->speed * level * 3 / 200 + BaseStats->speed / 4;
+	newSpeed = baseStats->speed * level * 3 / 200 + baseStats->speed / 4;
 	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
 
-	newSpatk = BaseStats->spatk * level * 3 / 200 + BaseStats->spatk / 4;
+	newSpatk = baseStats->spatk * level * 3 / 200 + baseStats->spatk / 4;
 	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
 
-	newSpdef = BaseStats->spdef * level * 3 / 200 + BaseStats->spdef / 4;
+	newSpdef = baseStats->spdef * level * 3 / 200 + baseStats->spdef / 4;
 	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
 
-	sys_FreeMemoryEz(BaseStats);
+	sys_FreeMemoryEz(baseStats);
     if (hp != 0 || maxHp == 0) {
         if (hp == 0) {
             hp = newMaxHp;
