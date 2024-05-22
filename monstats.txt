@@ -1456,7 +1456,7 @@ Types: Bug, Flying
 Abilities: Speed Boost
 
 Shedinja
-Basestats: 40, 150, 60, 50, 90, 50
+Basestats: 1, 150, 50, 50, 90, 50
 Types: Bug, Ghost
 Abilities: Wonder Guard
 
