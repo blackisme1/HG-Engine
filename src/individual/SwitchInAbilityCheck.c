@@ -179,7 +179,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                                         newBS.weather = WEATHER_HAIL_PERMANENT;
                                     }
                                     break;
-                                case ABILITY_DESOLATE_LAND:
+                                /*case ABILITY_DESOLATE_LAND:
                                     sp->battlemon[client_no].appear_check_flag = 1;
                                     if ((sp->field_condition & WEATHER_EXTREMELY_HARSH_SUNLIGHT) == 0) {
                                         scriptnum = SUB_SEQ_DESOLATE_LAND;
@@ -199,7 +199,7 @@ int UNUSED SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
                                         scriptnum = SUB_SEQ_DELTA_STREAM;
                                         ret = SWITCH_IN_CHECK_MOVE_SCRIPT;
                                     }
-                                    break;
+                                    break;*/
                             }
                         }
                         if (ret == SWITCH_IN_CHECK_MOVE_SCRIPT) {

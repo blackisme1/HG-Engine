@@ -399,7 +399,7 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp)
             }
             sp->fcc_seq_no++;
             break;
-        case FCC_SNOW:
+        /*case FCC_SNOW:
             if (sp->field_condition & WEATHER_SNOW_ANY) {
                 if (sp->field_condition & WEATHER_SNOW_PERMANENT) {
                     LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_WEATHER_EOT_EFFECT);
@@ -421,7 +421,7 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp)
                 ret = 1;
             }
             sp->fcc_seq_no++;
-            break;
+            break;*/
         case FCC_FOG:
 #ifndef DISABLE_END_OF_TURN_WEATHER_MESSAGE
             if (sp->field_condition & FIELD_STATUS_FOG)
