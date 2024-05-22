@@ -1,4 +1,5 @@
 #include "include/config.h"
+#include "include/debug.h"
 #include "include/constants/moves.h"
 #include "include/constants/save.h"
 
@@ -41,6 +42,13 @@ arm9 0806DED0 60 B4 C0 46
 # expand evolutions to 9 per mon + form evos - GetMonEvolution hook setup
 arm9 08070E34 60 B4 C0 46
 
+#updating old moves
+
+#Binding moves 1/8th
+# 0224A112
+0012 08012852 08
+
+
 #ifdef ALLOW_SAVE_CHANGES
 #ifdef ITEM_POCKET_EXPANSION
 
@@ -52,13 +60,13 @@ arm9 08078384 60 B4 C0 46
 arm9 08078398 60 B4 C0 46
 arm9 080783E0 60 B4 C0 46
 arm9 08078410 60 B4 C0 46
-
+arm9 08078434 60 B4 C0 46
 arm9 08078480 60 B4 C0 46
 arm9 080784B0 60 B4 C0 46
 
 #endif
 #endif
-arm9 08078434 60 B4 C0 46
+
 
 # 021F9380
 # trying a few things out
@@ -128,6 +136,18 @@ arm9 0203DFF4 8A 02
 0012 02252054 60 B4 C0 46
 # fix fire fang glitch - change 273 to 272 to properly check shadow force's effect
 0012 0225848C 10
+
+# make stat colors clearer
+arm9 0208C848 00 03 04 00 00 05 06 00
+
+#ifndef IMPLEMENT_NEW_EV_IV_VIEWER
+
+# revert hooks done by above
+arm9 02088B60 20 21 DC 6C 26 1C 0E 42
+arm9 0208D2C4 78 21 03 23 FF F7 D8 FA
+
+#endif
+
 
 #ifndef IMPLEMENT_LEVEL_CAP
 
@@ -390,4 +410,9 @@ arm9 02074128 F8 B5 82 B0 00 90 00 20
 # BattleSystem_CheckMoveEffect_hook setup
 0012 0224C018 60 B4 C0 46
 
-arm9 0208C848 00 ff ff 00 00 ff 00 00
+#ifdef DEBUG_ALWAYS_OBEY
+0012 0224AED0 00 20 70 47
+#endif
+
+# Fix Hidden Power to 60 BP (change +30 instruction to =60)
+0012 022424DC 3C 20
