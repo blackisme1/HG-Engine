@@ -20,6 +20,66 @@
 
 #define NELEMS_POKEFORMDATATBL 285
 
+void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
+	BASE_STATS * BaseStats;
+	int level;
+	int maxHp;
+	int form;
+	int hp;
+	int species;
+	int newMaxHp;
+	int newAtk;
+	int newDef;
+	int newSpeed;
+	int newSpatk;
+	int newSpdef;
+
+	BOOL decry = AcquireMonLock(mon);
+	level = (int)GetMonData(mon, MON_DATA_LEVEL, NULL);
+	maxHp = (int)GetMonData(mon, MON_DATA_MAXHP, NULL);
+	hp = (int)GetMonData(mon, MON_DATA_HP, NULL);
+	form = (int)GetMonData(mon, MON_DATA_FORM, NULL);
+	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
+
+	BaseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
+	LoadMonBaseStats_HandleAlternateForm(species, form, BaseStats);
+
+	newMaxHp = BaseStats->hp * level * 3 / 200 + BaseStats->hp / 4;
+	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
+
+	newAtk = BaseStats->atk * level * 3 / 200 + BaseStats->atk / 4;
+	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
+
+	newDef = BaseStats->def * level * 3 / 200 + BaseStats->def / 4;
+	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
+
+	newSpeed = BaseStats->speed * level * 3 / 200 + BaseStats->speed / 4;
+	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
+
+	newSpatk = BaseStats->spatk * level * 3 / 200 + BaseStats->spatk / 4;
+	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
+
+	newSpdef = BaseStats->spdef * level * 3 / 200 + BaseStats->spdef / 4;
+	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
+
+	sys_FreeMemoryEz(BaseStats);
+    if (hp != 0 || maxHp == 0) {
+        if (hp == 0) {
+            hp = newMaxHp;
+        } else if (newMaxHp - maxHp < 0) {
+            if (hp > newMaxHp) {
+                hp = newMaxHp;
+            }
+        } else {
+            hp += newMaxHp - maxHp;
+        }
+    }
+    if (hp != 0) {
+        SetMonData(mon, MON_DATA_HP, &hp);
+    }
+    ReleaseMonLock(mon, decry);
+}
+
 extern u32 word_to_store_form_at;
 
 /**
