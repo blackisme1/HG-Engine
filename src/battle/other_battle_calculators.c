@@ -2655,7 +2655,7 @@ void LONG_CALL ov12_0224C4D8(struct BattleSystem *bsys, struct BattleStruct *ctx
     ctx->server_seq_no = CONTROLLER_COMMAND_25;
 }
 
-BOOL ov12_0224B528(void *bw, struct BattleStruct *sp) {
+BOOL LONG_CALL ov12_0224B528(void *bw, struct BattleStruct *sp) {
     int ret = 0; 
     
     do {
