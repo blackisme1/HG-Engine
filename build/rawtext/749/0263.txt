@@ -1,0 +1,1 @@
+An attack move that\ndoubles its power if\nthe user is poisoned,\nparalyzed, or has a\nburn.

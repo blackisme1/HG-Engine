@@ -1,0 +1,1 @@
+The user passes its\nheld item to the\ntarget when the\ntarget isn’t\nholding an item.

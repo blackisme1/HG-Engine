@@ -456,20 +456,20 @@ movedata MOVE_ROLLING_KICK, "Rolling Kick"
     movedescription MOVE_ROLLING_KICK, "A spin attack that\ncan also eliminate\nsuch moves as Bind,\nWrap, Leech Seed,\nand Spikes."
 
 movedata MOVE_SAND_ATTACK, "Sand Attack"
-    battleeffect 23
-    pss SPLIT_STATUS
-    basepower 0
+    battleeffect 31
+    pss SPLIT_SPECIAL
+    basepower 40
     type TYPE_GROUND
     accuracy 100
-    pp 10
-    effectchance 0
+    pp 20
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
     appeal 0x00
     contesttype CONTEST_COOL
     terminatedata
-    movedescription MOVE_SAND_ATTACK, "Sand is hurled in the\nfoe’s face, reducing\nits accuracy.\n\n"
+    movedescription MOVE_SAND_ATTACK, "Sand is hurled in the\nfoe’s face.\n\n\n"
 
 movedata MOVE_HEADBUTT, "Headbutt"
     battleeffect 31
@@ -5195,10 +5195,10 @@ movedata MOVE_WATER_SPOUT, "Water Spout"
 movedata MOVE_SIGNAL_BEAM, "Signal Beam"
     battleeffect 76
     pss SPLIT_SPECIAL
-    basepower 80
+    basepower 70
     type TYPE_BUG
     accuracy 100
-    pp 15
+    pp 10
     effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
@@ -5246,7 +5246,7 @@ movedata MOVE_SKY_UPPERCUT, "Sky Uppercut"
     basepower 90
     type TYPE_FIGHTING
     accuracy 100
-    pp 15
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -9387,9 +9387,9 @@ movedata MOVE_ELECTRIFY, "Electrify"
 movedata MOVE_PLAY_ROUGH, "Play Rough"
     battleeffect 68
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 80
     type TYPE_FAIRY
-    accuracy 90
+    accuracy 100
     pp 10
     effectchance 25
     target MOVE_TARGET_SELECTED
@@ -9403,7 +9403,7 @@ movedata MOVE_PLAY_ROUGH, "Play Rough"
 movedata MOVE_FAIRY_WIND, "Fairy Wind"
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 50
     type TYPE_FAIRY
     accuracy 100
     pp 20
@@ -9419,10 +9419,10 @@ movedata MOVE_FAIRY_WIND, "Fairy Wind"
 movedata MOVE_MOONBLAST, "Moonblast"
     battleeffect 71
     pss SPLIT_SPECIAL
-    basepower 95
+    basepower 100
     type TYPE_FAIRY
     accuracy 100
-    pp 15
+    pp 5
     effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
@@ -12683,7 +12683,7 @@ movedata MOVE_GRAV_APPLE, "Grav Apple"
 movedata MOVE_SPIRIT_BREAK, "Spirit Break"
     battleeffect 71
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 90
     type TYPE_FAIRY
     accuracy 100
     pp 5

@@ -1,0 +1,1 @@
+A move that leaves\nthe target badly\npoisoned.\nIts poison damage\nworsens every turn.

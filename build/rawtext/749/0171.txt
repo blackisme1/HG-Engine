@@ -1,0 +1,1 @@
+A sleeping foe is\nshown a nightmare\nthat inflicts some\ndamage every turn.\n

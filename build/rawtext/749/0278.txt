@@ -1,0 +1,1 @@
+The user recycles a\nheld item that\nhas been used in\nbattle so it can be\nused again.

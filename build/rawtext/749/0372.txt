@@ -1,0 +1,1 @@
+If the foe’s HP is\ndown to about half,\nthis attack will hit\nwith double the\npower.

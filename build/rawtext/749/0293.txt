@@ -1,0 +1,1 @@
+The user’s type is\nchanged depending on\nits environment, such\nas at water’s edge, in\ngrass, or in a cave.

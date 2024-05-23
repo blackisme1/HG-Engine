@@ -1,0 +1,1 @@
+A nimble attack\nthat does double\ndamage if the user\nhas no held item.

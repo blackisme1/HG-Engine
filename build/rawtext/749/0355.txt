@@ -1,0 +1,1 @@
+The user lands and\nrests its body.\nIt restores the\nuser’s HP by up to\nhalf of its max HP.

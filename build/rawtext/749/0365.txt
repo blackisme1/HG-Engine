@@ -1,0 +1,1 @@
+The user pecks the\nfoe. If the foe is\nholding a Berry, the\nuser plucks it and\ngains its effect.

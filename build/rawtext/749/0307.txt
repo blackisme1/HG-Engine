@@ -1,0 +1,1 @@
+The foe is razed by\na fiery explosion.\nIt also damages the\nuser by half, however.

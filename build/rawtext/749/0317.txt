@@ -1,0 +1,1 @@
+Boulders are hurled\nat the foe. It also\nlowers the foe’s\nSpeed by preventing\nits movement.

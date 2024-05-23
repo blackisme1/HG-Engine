@@ -1,0 +1,1 @@
+This attack does\ndouble damage to a\ntarget affected by\na status problem.

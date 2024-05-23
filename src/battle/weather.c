@@ -27,7 +27,7 @@ enum{
     FCC_SANDSTORM,
     FCC_SUNNY,
     FCC_HAIL,
-    //FCC_SNOW,
+    FCC_SNOW,
     FCC_FOG,
     FCC_GRAVITY,
     FCC_TERRAIN,

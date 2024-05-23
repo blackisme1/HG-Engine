@@ -17,11 +17,49 @@
 #include "../include/constants/species.h"
 #include "../include/constants/weather_numbers.h"
 
-
 #define NELEMS_POKEFORMDATATBL 285
 
-void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
-	BASE_STATS * BaseStats;
+typedef struct baseStats {
+    /* 0x00 */ u8 hp;
+    /* 0x01 */ u8 atk;
+    /* 0x02 */ u8 def;
+    /* 0x03 */ u8 speed;
+    /* 0x04 */ u8 spatk;
+    /* 0x05 */ u8 spdef;
+    /* 0x06 */ u8 types[2];
+    /* 0x08 */ u8 catchRate;
+    /* 0x09 */ u8 expYield;
+    /* 0x0A */ u16 hp_yield:2;
+    u16 atk_yield:2;
+    u16 def_yield:2;
+    u16 speed_yield:2;
+    /* 0x0B */ u16 spatk_yield:2;
+    u16 spdef_yield:2;
+    u16 padding_B_4:4;
+    /* 0x0C */ u16 item1;
+    /* 0x0E */ u16 item2;
+    /* 0x10 */ u8 genderRatio;
+    /* 0x11 */ u8 eggCycles;
+    /* 0x12 */ u8 friendship;
+    /* 0x13 */ u8 growthRate;
+    /* 0x14 */ u8 eggGroups[2];
+    /* 0x16 */ u8 abilities[2];
+    /* 0x18 */ u8 greatMarshRate;
+    /* 0x19 */ u8 color:7;
+    u8 flip:1;
+    u8 padding_1A[2];
+    /* 0x1C */ u32 tmhm_1;
+    /* 0x20 */ u32 tmhm_2;
+    /* 0x24 */ u32 tmhm_3;
+    /* 0x28 */ u32 tmhm_4;
+} BASE_STATS;
+
+BOOL AcquireMonLock(struct PartyPokemon *mon);
+BOOL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
+void LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
+
+void CalcMonStats(struct PartyPokemon *mon) {
+	BASE_STATS * baseStats;
 	int level;
 	int maxHp;
 	int form;
@@ -41,30 +79,30 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	form = (int)GetMonData(mon, MON_DATA_FORM, NULL);
 	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
 
-	BaseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
-	LoadMonBaseStats_HandleAlternateForm(species, (int)form, BaseStats);
+	baseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
+	LoadMonbaseStats_HandleAlternateForm(species, form, baseStats);
 
+	newMaxHp = baseStats->hp * level * 3 / 200 + baseStats->hp / 4;
 	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);
 
-	newAtk = BaseStats->atk * level * 3 / 200 + BaseStats->atk / 4;
+	newAtk = baseStats->atk * level * 3 / 200 + baseStats->atk / 4;
 	SetMonData(mon, MON_DATA_ATTACK, &newAtk);
 
-	newDef = BaseStats->def * level * 3 / 200 + BaseStats->def / 4;
+	newDef = baseStats->def * level * 3 / 200 + baseStats->def / 4;
 	SetMonData(mon, MON_DATA_DEFENSE, &newDef);
 
-	newSpeed = BaseStats->speed * level * 3 / 200 + BaseStats->speed / 4;
+	newSpeed = baseStats->speed * level * 3 / 200 + baseStats->speed / 4;
 	SetMonData(mon, MON_DATA_SPEED, &newSpeed);
 
-	newSpatk = BaseStats->spatk * level * 3 / 200 + BaseStats->spatk / 4;
+	newSpatk = baseStats->spatk * level * 3 / 200 + baseStats->spatk / 4;
 	SetMonData(mon, MON_DATA_SPECIAL_ATTACK, &newSpatk);
 
-	newSpdef = BaseStats->spdef * level * 3 / 200 + BaseStats->spdef / 4;
+	newSpdef = baseStats->spdef * level * 3 / 200 + baseStats->spdef / 4;
 	SetMonData(mon, MON_DATA_SPECIAL_DEFENSE, &newSpdef);
 
-	sys_FreeMemoryEz(BaseStats);
-
+	sys_FreeMemoryEz(baseStats);
     if (hp != 0 || maxHp == 0) {
-		if (hp == 0) {
+        if (hp == 0) {
             hp = newMaxHp;
         } else if (newMaxHp - maxHp < 0) {
             if (hp > newMaxHp) {

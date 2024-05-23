@@ -1,0 +1,1 @@
+A move that works\ndifferently for the\nGhost type than for\nall the other types.\n

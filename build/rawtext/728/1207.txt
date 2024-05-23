@@ -1,0 +1,1 @@
+The door won’t open?\rWell, duh. It has to have a password\nthat only Team Rocket knows.\r

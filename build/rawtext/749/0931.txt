@@ -1,0 +1,1 @@
+The user launches a\nbash with a high\ncritical hit ratio.\nIt may also leave the\ntarget paralyzed.

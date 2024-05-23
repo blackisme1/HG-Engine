@@ -1,0 +1,1 @@
+The user attacks by\nhurling a blob of mud\nat the foe.\nIt also reduces the\ntarget’s Speed.

@@ -656,7 +656,7 @@ ov12_0224B498 = 0x0224B498 | 1;
 ov12_0224BC2C = 0x0224BC2C | 1;
 
 AcquireMonLock = 0x0206DD40 | 1;
-LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
+LoadMonbaseStats_HandleAlternateForm = 0x020725B4 | 1;
 ReleaseMonLock = 0x0206DD8C | 1;
 
 CheckTruant = 0x02252C40 | 1;

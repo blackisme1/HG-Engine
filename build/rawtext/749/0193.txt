@@ -1,0 +1,1 @@
+Enables the user to\nhit a Ghost type with\nany type of move. It\nalso enables the user\nto hit an evasive foe.

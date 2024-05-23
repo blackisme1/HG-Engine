@@ -1,0 +1,1 @@
+The user flails about\naimlessly to attack.\nIt becomes more\npowerful the less HP\nthe user has.

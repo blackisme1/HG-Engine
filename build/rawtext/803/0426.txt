@@ -1,0 +1,1 @@
+It can generate and release gas\nwithin its body. That’s how it can\ncontrol the altitude of its drift.
