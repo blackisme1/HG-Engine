@@ -1,1 +1,0 @@
-The wild {STRVAR_1 1, 0, 0} used\nMeteor Assault!

@@ -1,1 +1,0 @@
-This attack flinches and\ndoubles damage on a\nsleeping foe. It\nalso wakes the foe\nup, however.

@@ -1,1 +1,0 @@
-The user reflects\nthe target’s type,\nmaking it the same\ntype as the target.

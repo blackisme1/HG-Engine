@@ -1,1 +1,0 @@
-The user focuses its\nmind before launching\na punch. It will fail\nif the user is hit\nbefore it is used.

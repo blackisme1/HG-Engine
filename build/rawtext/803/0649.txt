@@ -1,1 +1,0 @@
-Two bodies comprise a fixed pair. They\nspin around each other to generate\nenergy.

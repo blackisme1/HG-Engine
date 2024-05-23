@@ -1,1 +1,0 @@
-By alternately raising and lowering\nits two heads, it balances itself\nto be more stable while running.

@@ -1,1 +1,0 @@
-The user mimics the\nmove used immediately\nbefore it. The move\nfails if no other move\nhas been used yet.

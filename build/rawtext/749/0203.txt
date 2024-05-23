@@ -1,1 +1,0 @@
-The user endures any\nattack with at least\n1 HP. Its chance of\nfailing rises if it is\nused in succession.

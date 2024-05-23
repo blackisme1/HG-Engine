@@ -1,1 +1,0 @@
-The user adds its HP\nto the foe’s HP, then\nequally shares the\ncombined HP with the\nfoe.

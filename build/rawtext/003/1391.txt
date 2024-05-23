@@ -1,1 +1,0 @@
-The opposing {STRVAR_1 1, 0, 0} used\nMagma Storm!

@@ -1,1 +1,0 @@
-Raises foes Speed but\nreduces Attack and\nDefense. Effect is\ndoubled if the foe has\na status condition.

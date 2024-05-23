@@ -1,1 +1,0 @@
-It prevents the foe\nfrom using its held\nitem. Its Trainer is\nalso prevented from\nusing items on it.

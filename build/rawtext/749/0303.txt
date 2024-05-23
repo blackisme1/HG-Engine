@@ -1,1 +1,0 @@
-The user slacks off,\nrestoring its own HP\nby up to half of its\nmaximum HP.\n

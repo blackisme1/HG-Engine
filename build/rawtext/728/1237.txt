@@ -1,1 +1,0 @@
-Are you making a Pokédex?\nHere’s a hot tip.\rYou want to battle as many Trainers as\nyou can when you see them on routes\fand in caves.\rTheir Pokémon will be recorded in the\nPokédex, and they’ll also make your\fPokémon grow!\n

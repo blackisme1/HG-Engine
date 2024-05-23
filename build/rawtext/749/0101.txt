@@ -1,1 +1,0 @@
-The user makes the\nfoe see a mirage.\nIt inflicts damage\nmatching the user’s\nlevel.

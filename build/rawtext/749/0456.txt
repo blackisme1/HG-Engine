@@ -1,1 +1,0 @@
-The user calls out\nits underlings to heal\nit. The user regains\nup to half of its\nmax HP.

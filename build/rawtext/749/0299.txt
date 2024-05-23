@@ -1,1 +1,0 @@
-The user launches a\nkick with a high\ncritical hit ratio.\nIt may also leave the\ntarget with a burn.

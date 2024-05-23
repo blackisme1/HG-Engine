@@ -1,1 +1,0 @@
-The foe is attacked\nwith a knee kick from\na jump. If it misses,\nthe user is hurt\ninstead.

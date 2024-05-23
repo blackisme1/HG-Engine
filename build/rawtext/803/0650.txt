@@ -1,1 +1,0 @@
-A mini and big gear comprise its body.\nIf the mini gear it launches at a foe\ndoesn’t return, it will die.

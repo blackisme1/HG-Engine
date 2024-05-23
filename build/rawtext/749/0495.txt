@@ -1,1 +1,0 @@
-The user turns the\ntarget’s power\nagainst it. Power\nincreases with the\nfoe’s Attack stat.

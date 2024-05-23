@@ -1,1 +1,0 @@
-The foe is hit with a\nrainbow colored beam.\nIt may also lower the\ntarget’s Attack\nstat.

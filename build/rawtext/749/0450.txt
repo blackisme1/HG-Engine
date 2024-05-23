@@ -1,1 +1,0 @@
-The user bites the\nfoe. If the foe is\nholding a Berry, the\nuser eats it and\ngains its effect.

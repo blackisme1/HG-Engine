@@ -1,1 +1,0 @@
-The user helps the\ntarget and makes it\nuse its move right\nafter the user.

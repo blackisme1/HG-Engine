@@ -1,1 +1,0 @@
-It gathers things it likes and passes\nthem through its loop to teleport them\nto a secret place.

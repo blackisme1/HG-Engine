@@ -1,1 +1,0 @@
-An energy draining\npunch. The user’s\nHP is restored by\nhalf the damage taken\nby the target.

@@ -1,1 +1,0 @@
-It controls three units called Mini-Noses\nusing magnetic force. With them, it can\nattack the foe from three directions.

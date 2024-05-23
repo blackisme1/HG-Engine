@@ -1,1 +1,0 @@
-The foe is thrown\nusing the power of\ngravity. It inflicts\ndamage equal to\nthe user’s level.

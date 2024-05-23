@@ -1,1 +1,0 @@
-The user makes a\ncopy of itself using\nsome of its HP.\nThe copy serves as\nthe user’s decoy.

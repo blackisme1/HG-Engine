@@ -1,1 +1,0 @@
-The user tickles the\nfoe into laughing,\nreducing its Attack\nand Defense stats.\n

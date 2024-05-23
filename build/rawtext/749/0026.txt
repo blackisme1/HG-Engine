@@ -1,1 +1,0 @@
-The user jumps up\nhigh, then strikes\nwith a kick. If the\nkick misses, the\nuser hurts itself.

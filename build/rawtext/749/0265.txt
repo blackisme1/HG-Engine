@@ -1,1 +1,0 @@
-This attack flinches and\ndoubles damage on a\nparalyzed foe. It\nalso cures the foe’s\nparalysis, however.

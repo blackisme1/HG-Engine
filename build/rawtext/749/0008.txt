@@ -1,1 +1,0 @@
-The foe is punched\nwith an icy fist.\nIt may leave the\ntarget frozen.\n

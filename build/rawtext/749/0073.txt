@@ -1,1 +1,0 @@
-A seed is planted on\nthe foe. It steals\nsome HP from the foe\nto heal the user on\nevery turn.

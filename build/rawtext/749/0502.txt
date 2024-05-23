@@ -1,1 +1,0 @@
-The user throws a\nclump of special\nmud that reverts\nall stat changes.

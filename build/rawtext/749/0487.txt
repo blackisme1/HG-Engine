@@ -1,1 +1,0 @@
-The user slams into\nthe target. The\ngreater the weight\ndifference, the\ngreater the damage.

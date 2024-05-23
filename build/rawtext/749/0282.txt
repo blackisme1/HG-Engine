@@ -1,1 +1,0 @@
-The user slaps down\nthe foe’s held item,\ndealing double damage\nandpreventing the item\nfrom being used.

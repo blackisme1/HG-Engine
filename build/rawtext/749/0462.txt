@@ -1,1 +1,0 @@
-The foe is crushed\nwith great force.\nThe attack is more\npowerful the more HP\nthe foe has left.

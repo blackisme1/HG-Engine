@@ -1,1 +1,0 @@
-The foe is stricken\nby a shock wave.\nIt inflicts damage\nequal to the user’s\nlevel.

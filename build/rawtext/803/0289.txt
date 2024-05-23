@@ -1,1 +1,0 @@
-The world’s laziest Pokémon.\nIt moves to another spot when there’s\nno food left within its reach.

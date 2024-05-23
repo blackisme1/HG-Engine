@@ -1,1 +1,0 @@
-The user counters\nthe foe by mimicking\nthe move last used\nby the foe.

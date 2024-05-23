@@ -1,1 +1,0 @@
-Icicles are dropped\non the foe. It may\nalso make the foe\nflinch.

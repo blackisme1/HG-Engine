@@ -1,1 +1,0 @@
-An attack that hits\nfirst and makes the\ntarget flinch. It only\nworks the first turn\nthe user is in battle.

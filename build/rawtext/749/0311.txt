@@ -1,1 +1,0 @@
-An attack move that\nvaries in power and\ntype depending on\nthe weather.\n

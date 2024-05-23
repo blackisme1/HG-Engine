@@ -1,1 +1,0 @@
-The foe is hit with\na watery blast.\nIt also damages the\nuser by half, however.

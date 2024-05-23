@@ -1,1 +1,0 @@
-The foe is hit with a\ndestructive shock\nwave that inflicts\ndamage equal to\nthe user’s level.

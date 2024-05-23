@@ -1,1 +1,0 @@
-The foe is soaked\nby a special acid.\nIts power doubles if\nthe foe is poisoned.

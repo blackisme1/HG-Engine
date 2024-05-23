@@ -1,1 +1,0 @@
-The user fires a beam\nof light at its foe.\nThe type changes\ndepending on the\nDrive held.

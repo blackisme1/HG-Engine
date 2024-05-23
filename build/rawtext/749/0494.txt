@@ -1,1 +1,0 @@
-The user spits fluid\nthat melts the foe.\nIt harshly lowers\nthe foe’s Sp. Def.

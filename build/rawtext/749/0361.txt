@@ -1,1 +1,0 @@
-The user faints. In\nreturn, the Pokémon\ntaking its place will\nhave its HP restored\nand status cured.

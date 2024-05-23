@@ -1,1 +1,0 @@
-The user shoots a\ntorrent of water at\nthe target and\nchanges the target’s\ntype to Water.

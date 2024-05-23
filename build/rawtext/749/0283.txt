@@ -1,1 +1,0 @@
-An attack move that\ncuts down the foe’s\nHP to equal the\nuser’s HP.\n
