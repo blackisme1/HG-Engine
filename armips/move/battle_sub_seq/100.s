@@ -14,6 +14,8 @@ a001_100:
     printmessage 0x1B0, 0x9, 0x1, 0x2, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
+	critcalc
+	damagecalc
     endscript
 
 .close

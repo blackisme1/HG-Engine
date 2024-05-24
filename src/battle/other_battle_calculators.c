@@ -439,31 +439,19 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 
 	if (atk_ability == ABILITY_COMPOUND_EYES)
 	{
-		accuracy = accuracy * 130 / 100;
-	}
-
-	//handle Wonder Skin
-	if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_WONDER_SKIN) == TRUE) && (GetMoveSplit(sp, move_no) == SPLIT_STATUS))
-	{
-		accuracy = accuracy * 50 / 100;
+		accuracy = accuracy * 13 / 10;
 	}
 
 	//handle victory star
 	if ((GetBattlerAbility(sp, BATTLER_ALLY(attacker)) == ABILITY_VICTORY_STAR && sp->battlemon[BATTLER_ALLY(attacker)].hp != 0)
 	 || (atk_ability == ABILITY_VICTORY_STAR))
 	{
-		accuracy = accuracy * 130 / 100;
+		accuracy = accuracy * 13 / 10;
 	}
 
 	if ((atk_ability == ABILITY_HUSTLE) && (move_split == SPLIT_PHYSICAL))
 	{
-		accuracy = accuracy * 80 / 100;
-	}
-
-	if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_TANGLED_FEET) == TRUE)
-	 && (sp->battlemon[defender].condition2 & STATUS2_CONFUSED))
-	{
-		accuracy = accuracy * 50 / 100;
+		accuracy = accuracy * 8 / 10;
 	}
 
 	hold_effect = HeldItemHoldEffectGet(sp, defender);
@@ -496,14 +484,6 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 	if (sp->field_condition & FIELD_STATUS_GRAVITY)
 	{
 		accuracy = accuracy * 10 / 6;
-	}
-
-	//Toxic when used by a poison type
-	if (move_no == MOVE_TOXIC
-	 && (BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_TYPE1, NULL) == TYPE_POISON
-	  || BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_TYPE2, NULL) == TYPE_POISON))
-	{
-		return FALSE;
 	}
 
 	if (((BattleRand(bw) % 100) + 1) > accuracy)
@@ -682,15 +662,19 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 	{
 		if (sp->battlemon[client1].condition & STATUS_FLAG_PARALYZED)
 		{
-			speed1 /= 2; // gen 7 on only halves speed for paralysis
+			speed1 /= 2;
 		}
 		if (sp->battlemon[client1].condition & STATUS_FLAG_FROZEN)
 		{
-			speed1 /= 2; // gen 7 on only halves speed for paralysis
+			speed1 /= 2;
+		}
+		if (sp->battlemon[client1].condition & STATUS_FLAG_ASLEEP)
+		{
+			speed1 /= 2;
 		}
 	}
 	
-	if (sp->battlemon[client2].condition & STATUS_FLAG_BURNED)
+	if (sp->battlemon[client1].condition & STATUS_FLAG_BURNED)
 	{
 		speed1 *= 2;
 	}
@@ -715,14 +699,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if (hold_effect1 == HOLD_EFFECT_QUICK_CLAW)
 	{
-		if ((sp->agi_rand[client1] % (100 / hold_atk1)) == 0)
-		{
-			quick_claw1 = 1;
-			if (flag == 0)
-			{
-				sp->battlemon[client1].moveeffect.quickClawFlag = 1;
-			}
-		}
+		speed1 *= 11 / 10;
 	}
 
 	if (hold_effect1 == HOLD_EFFECT_RAISE_SPEED_IN_PINCH)
@@ -773,11 +750,15 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 	{
 		if (sp->battlemon[client2].condition & STATUS_FLAG_PARALYZED)
 		{
-			speed2 /= 2; // gen 7 on only halves speed for paralysis
+			speed2 /= 2;
 		}
 		if (sp->battlemon[client2].condition & STATUS_FLAG_FROZEN)
 		{
-			speed2 /= 2; // gen 7 on only halves speed for paralysis
+			speed2 /= 2;
+		}
+		if (sp->battlemon[client2].condition & STATUS_FLAG_ASLEEP)
+		{
+			speed2 /= 2;
 		}
 	}
 	
@@ -806,14 +787,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if (hold_effect2 == HOLD_EFFECT_QUICK_CLAW)
 	{
-		if ((sp->agi_rand[client2] % (100 / hold_atk2)) == 0)
-		{
-			quick_claw2 = 1;
-			if (flag == 0)
-			{
-				sp->battlemon[client2].moveeffect.quickClawFlag = 1;
-			}
-		}
+		speed2 *= 11 / 10;
 	}
 
 	if (hold_effect2 == HOLD_EFFECT_RAISE_SPEED_IN_PINCH)
@@ -935,26 +909,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if (priority1 == priority2)
 	{
-		if ((quick_claw1) && (quick_claw2)) // both mons quick claws activates/items that put them first
-		{
-			if (speed1 < speed2)
-			{
-				ret = 1; // client 2 goes
-			}
-			else if ((speed1 == speed2) && (BattleRand(bw) & 1))
-			{
-				ret = 2; // random roll
-			}
-		}
-		else if ((quick_claw1 == 0) && (quick_claw2)) // client2 quick claw activate
-		{
-			ret = 1;
-		}
-		else if ((quick_claw1) && (quick_claw2 == 0)) // client1 quick claw activate
-		{
-			ret = 0;
-		}
-		else if ((move_last1) && (move_last2)) // both clients have lagging tail
+		if ((move_last1) && (move_last2)) // both clients have lagging tail
 		{
 			if (speed1 > speed2) // if client1 is faster with lagging tail, it moves last
 			{
@@ -1988,6 +1943,16 @@ void LONG_CALL getEquivalentAttackAndDefense(struct BattleStruct *sp, u16 attack
 	}
 
 	switch (moveno) {
+		case MOVE_FOUL_PLAY:
+			*equivalentAttack = BattlePokemonParamGet(sp, defender, BATTLE_MON_DATA_ATK, NULL) 
+			* StatBoostModifiers[sp->battlemon[defender].states[STAT_ATTACK]][0]
+			/ StatBoostModifiers[sp->battlemon[defender].states[STAT_ATTACK]][1];
+		break;
+		case MOVE_NIGHT_DAZE:
+			*equivalentAttack = BattlePokemonParamGet(sp, defender, BATTLE_MON_DATA_SPATK, NULL) 
+			* StatBoostModifiers[sp->battlemon[defender].states[STAT_SPATK]][0]
+			/ StatBoostModifiers[sp->battlemon[defender].states[STAT_SPATK]][1];
+		break;
 		case MOVE_CHIP_AWAY:
 		case MOVE_SACRED_SWORD:
 			*equivalentDefense = defenderDefense;

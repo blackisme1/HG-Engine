@@ -531,6 +531,28 @@ BOOL MoveHitAttackerAbilityCheck(void *bw, struct BattleStruct *sp, int *seq_no)
     if (sp->attack_client == 0xFF) {
         return ret;
     }
+	
+	if ((sp->defence_client == sp->fainting_client)
+        && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
+        && (sp->battlemon[sp->attack_client].hp)
+        && ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0)
+        && (sp->battlemon[sp->attack_client].condition2 |= STATUS2_RECHARGE))
+    {
+        sp->battlemon[sp->attack_client].condition2 -= STATUS2_RECHARGE;
+    }
+	
+    if ((sp->defence_client == sp->fainting_client)
+        && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
+        && (sp->battlemon[sp->attack_client].hp)
+        && ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0)
+        && (sp->current_move_index == MOVE_FELL_STINGER))
+    {
+        sp->addeffect_param = ADD_STATE_ATTACK_UP_2;
+        sp->addeffect_type = ADD_EFFECT_MOVE_EFFECT;
+        sp->state_client = sp->attack_client;
+        seq_no[0] = SUB_SEQ_BOOST_STATS;
+        ret = TRUE;
+    }
 
     switch (GetBattlerAbility(sp, sp->attack_client))
     {
