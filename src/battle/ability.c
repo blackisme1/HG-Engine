@@ -66,6 +66,9 @@ const u16 BulletproofMoveList[] =
     MOVE_SLUDGE_BOMB,
     MOVE_WEATHER_BALL,
     MOVE_ZAP_CANNON,
+	MOVE_SELF_DESTRUCT,
+	MOVE_EXPLOSION,
+	MOVE_MISTY_EXPLOSION,
 };
 
 const u16 PowderMoveList[] = {

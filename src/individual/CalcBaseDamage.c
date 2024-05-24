@@ -144,6 +144,9 @@ static const u16 MegaLauncherMovesTable[] = {
     MOVE_SLUDGE_BOMB,
     MOVE_WEATHER_BALL,
     MOVE_ZAP_CANNON,
+	MOVE_SELF_DESTRUCT,
+	MOVE_EXPLOSION,
+	MOVE_MISTY_EXPLOSION,
 };
 
 static const u16 SharpnessMovesTable[] = {
