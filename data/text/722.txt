@@ -175,7 +175,7 @@ Boosts the power of\nbiting moves.
 Normal-type moves become\nIce-type and powered up.
 Prevents itself and\nallies from falling asleep.
 Changes between Blade and\nShield Forme with attacks.
-Flying-type moves gain\npriority when its HP is full.
+Flying-type moves gain\npriority.
 Powers up aura and\npulse moves.
 Boosts the Defense stat\non Grassy Terrain.
 Passes its held item to\nan ally that has used theirs.

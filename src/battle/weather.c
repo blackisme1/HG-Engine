@@ -27,7 +27,7 @@ enum{
     FCC_SANDSTORM,
     FCC_SUNNY,
     FCC_HAIL,
-    //FCC_SNOW,
+    FCC_SNOW,
     FCC_FOG,
     FCC_GRAVITY,
     FCC_TERRAIN,
@@ -42,6 +42,12 @@ void ServerFieldConditionCheck(void *bw, struct BattleStruct *sp)
     int client_set_max;
 
     client_set_max = BattleWorkClientSetMaxGet(bw);
+
+    // Sort here because damage taken here needs to account for speed
+    // store command so that it is unedited by the function call
+    side = sp->server_seq_no;
+    BattleControllerPlayer_CalcExecutionOrder(bw, sp);
+    sp->server_seq_no = side;
 
     do
     {

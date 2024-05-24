@@ -395,7 +395,7 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 		stat_stage_acc = 0;
 	}
 
-	if (atk_ability == ABILITY_UNAWARE || atk_ability == ABILITY_MINDS_EYE || atk_ability == ABILITY_KEEN_EYE || atk_ability == ABILITY_ILLUMINATE)
+	if (atk_ability == ABILITY_UNAWARE || atk_ability == ABILITY_MINDS_EYE || atk_ability == ABILITY_KEEN_EYE || atk_ability == ABILITY_ILLUMINATE || move_no == MOVE_CHIP_AWAY || move_no == MOVE_SACRED_SWORD)
 	{
 		stat_stage_evasion = 0;
 	}
@@ -439,53 +439,19 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 
 	if (atk_ability == ABILITY_COMPOUND_EYES)
 	{
-		accuracy = accuracy * 130 / 100;
-	}
-
-	//handle Wonder Skin
-	if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_WONDER_SKIN) == TRUE) && (GetMoveSplit(sp, move_no) == SPLIT_STATUS))
-	{
-		accuracy = accuracy * 50 / 100;
+		accuracy = accuracy * 13 / 10;
 	}
 
 	//handle victory star
 	if ((GetBattlerAbility(sp, BATTLER_ALLY(attacker)) == ABILITY_VICTORY_STAR && sp->battlemon[BATTLER_ALLY(attacker)].hp != 0)
 	 || (atk_ability == ABILITY_VICTORY_STAR))
 	{
-		accuracy = accuracy * 110 / 100;
-	}
-
-	if ((CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_CLOUD_NINE) == 0)
-	 && (CheckSideAbility(bw, sp, CHECK_ABILITY_ALL_HP, 0, ABILITY_AIR_LOCK) == 0))
-	{
-		if (sp->field_condition & WEATHER_SANDSTORM_ANY){
-			if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_SAND_VEIL) == TRUE)
-			{
-				accuracy = accuracy * 80 / 100;
-			}
-		}
-		if (sp->field_condition & (WEATHER_HAIL_ANY | WEATHER_SNOW_ANY))
-		{
-			if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_SNOW_CLOAK) == TRUE)
-			{
-				accuracy = accuracy * 80 / 100;
-			}
-		}
-		if (sp->field_condition & FIELD_STATUS_FOG)
-		{
-			accuracy = accuracy * 6 / 10;
-		}
+		accuracy = accuracy * 13 / 10;
 	}
 
 	if ((atk_ability == ABILITY_HUSTLE) && (move_split == SPLIT_PHYSICAL))
 	{
-		accuracy = accuracy * 80 / 100;
-	}
-
-	if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_TANGLED_FEET) == TRUE)
-	 && (sp->battlemon[defender].condition2 & STATUS2_CONFUSED))
-	{
-		accuracy = accuracy * 50 / 100;
+		accuracy = accuracy * 8 / 10;
 	}
 
 	hold_effect = HeldItemHoldEffectGet(sp, defender);
@@ -518,14 +484,6 @@ BOOL CalcAccuracy(void *bw, struct BattleStruct *sp, int attacker, int defender,
 	if (sp->field_condition & FIELD_STATUS_GRAVITY)
 	{
 		accuracy = accuracy * 10 / 6;
-	}
-
-	//Toxic when used by a poison type
-	if (move_no == MOVE_TOXIC
-	 && (BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_TYPE1, NULL) == TYPE_POISON
-	  || BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_TYPE2, NULL) == TYPE_POISON))
-	{
-		return FALSE;
 	}
 
 	if (((BattleRand(bw) % 100) + 1) > accuracy)
@@ -704,11 +662,19 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 	{
 		if (sp->battlemon[client1].condition & STATUS_FLAG_PARALYZED)
 		{
-			speed1 /= 2; // gen 7 on only halves speed for paralysis
+			speed1 /= 2;
+		}
+		if (sp->battlemon[client1].condition & STATUS_FLAG_FROZEN)
+		{
+			speed1 /= 2;
+		}
+		if (sp->battlemon[client1].condition & STATUS_FLAG_ASLEEP)
+		{
+			speed1 /= 2;
 		}
 	}
 	
-	if (sp->battlemon[client2].condition & STATUS_FLAG_BURNED)
+	if (sp->battlemon[client1].condition & STATUS_FLAG_BURNED)
 	{
 		speed1 *= 2;
 	}
@@ -733,14 +699,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if (hold_effect1 == HOLD_EFFECT_QUICK_CLAW)
 	{
-		if ((sp->agi_rand[client1] % (100 / hold_atk1)) == 0)
-		{
-			quick_claw1 = 1;
-			if (flag == 0)
-			{
-				sp->battlemon[client1].moveeffect.quickClawFlag = 1;
-			}
-		}
+		speed1 *= 11 / 10;
 	}
 
 	if (hold_effect1 == HOLD_EFFECT_RAISE_SPEED_IN_PINCH)
@@ -791,7 +750,15 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 	{
 		if (sp->battlemon[client2].condition & STATUS_FLAG_PARALYZED)
 		{
-			speed2 /= 2; // gen 7 on only halves speed for paralysis
+			speed2 /= 2;
+		}
+		if (sp->battlemon[client2].condition & STATUS_FLAG_FROZEN)
+		{
+			speed2 /= 2;
+		}
+		if (sp->battlemon[client2].condition & STATUS_FLAG_ASLEEP)
+		{
+			speed2 /= 2;
 		}
 	}
 	
@@ -820,14 +787,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if (hold_effect2 == HOLD_EFFECT_QUICK_CLAW)
 	{
-		if ((sp->agi_rand[client2] % (100 / hold_atk2)) == 0)
-		{
-			quick_claw2 = 1;
-			if (flag == 0)
-			{
-				sp->battlemon[client2].moveeffect.quickClawFlag = 1;
-			}
-		}
+		speed2 *= 11 / 10;
 	}
 
 	if (hold_effect2 == HOLD_EFFECT_RAISE_SPEED_IN_PINCH)
@@ -902,7 +862,6 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 		(
 			GetBattlerAbility(sp, client1) == ABILITY_GALE_WINGS
 			&& sp->moveTbl[move1].type == TYPE_FLYING
-			&& sp->battlemon[client1].hp >= (s32)sp->battlemon[client1].maxhp/2
 		) {
 			priority1++;
 		}
@@ -911,7 +870,6 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 		(
 			GetBattlerAbility(sp, client2) == ABILITY_GALE_WINGS
 			&& sp->moveTbl[move2].type == TYPE_FLYING
-			&& sp->battlemon[client2].hp >= (s32)sp->battlemon[client2].maxhp/2
 		) {
 			priority2++;
 		}
@@ -951,26 +909,7 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
 
 	if (priority1 == priority2)
 	{
-		if ((quick_claw1) && (quick_claw2)) // both mons quick claws activates/items that put them first
-		{
-			if (speed1 < speed2)
-			{
-				ret = 1; // client 2 goes
-			}
-			else if ((speed1 == speed2) && (BattleRand(bw) & 1))
-			{
-				ret = 2; // random roll
-			}
-		}
-		else if ((quick_claw1 == 0) && (quick_claw2)) // client2 quick claw activate
-		{
-			ret = 1;
-		}
-		else if ((quick_claw1) && (quick_claw2 == 0)) // client1 quick claw activate
-		{
-			ret = 0;
-		}
-		else if ((move_last1) && (move_last2)) // both clients have lagging tail
+		if ((move_last1) && (move_last2)) // both clients have lagging tail
 		{
 			if (speed1 > speed2) // if client1 is faster with lagging tail, it moves last
 			{
@@ -1033,11 +972,11 @@ u8 LONG_CALL CalcSpeed(void *bw, struct BattleStruct *sp, int client1, int clien
  *  @param bw battle work structure; void * because we haven't defined the battle work structure. Apparently we have but we don't use it here so
  *  @param sp global battle structure
  */
-void DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp) {
+void LONG_CALL DynamicSortClientExecutionOrder(void *bw, struct BattleStruct *sp, BOOL sortTurnOrder) {
 	int maxBattlers;
 	int i, j;
 	int temp1, temp2;
-	int currentAttackerId = sp->agi_cnt;
+    int currentAttackerId = sp->executionIndex;
 
 	maxBattlers = BattleWorkClientSetMaxGet(bw);
 
@@ -2004,6 +1943,16 @@ void LONG_CALL getEquivalentAttackAndDefense(struct BattleStruct *sp, u16 attack
 	}
 
 	switch (moveno) {
+		case MOVE_FOUL_PLAY:
+			*equivalentAttack = BattlePokemonParamGet(sp, defender, BATTLE_MON_DATA_ATK, NULL) 
+			* StatBoostModifiers[sp->battlemon[defender].states[STAT_ATTACK]][0]
+			/ StatBoostModifiers[sp->battlemon[defender].states[STAT_ATTACK]][1];
+		break;
+		case MOVE_NIGHT_DAZE:
+			*equivalentAttack = BattlePokemonParamGet(sp, defender, BATTLE_MON_DATA_SPATK, NULL) 
+			* StatBoostModifiers[sp->battlemon[defender].states[STAT_SPATK]][0]
+			/ StatBoostModifiers[sp->battlemon[defender].states[STAT_SPATK]][1];
+		break;
 		case MOVE_CHIP_AWAY:
 		case MOVE_SACRED_SWORD:
 			*equivalentDefense = defenderDefense;
@@ -2151,6 +2100,34 @@ BOOL LONG_CALL BattleSystem_CheckMoveEffect(void *bw, struct BattleStruct *sp, i
 	return FALSE;
 }
 
+/**
+ * @brief Check if client can undergo Primal Reversion
+ * @param sp move number
+ * @param client_no battler to check for primal reversion possibility
+ * @return `TRUE` if mon can undergo primal reversion, `FALSE` otherwise
+ */
+BOOL LONG_CALL CanUndergoPrimalReversion(struct BattleStruct *sp, u8 client_no) {
+#ifdef PRIMAL_REVERSION
+    if (((sp->battlemon[client_no].species == SPECIES_KYOGRE
+#ifdef DEBUG_PRIMAL_REVERSION
+          && GetBattleMonItem(sp, client_no) == ITEM_DREAM_BALL
+#else
+          && GetBattleMonItem(sp, client_no) == ITEM_BLUE_ORB
+#endif
+          ) ||
+         (sp->battlemon[client_no].species == SPECIES_GROUDON
+#ifdef DEBUG_PRIMAL_REVERSION
+          && GetBattleMonItem(sp, client_no) == ITEM_DREAM_BALL
+#else
+          && GetBattleMonItem(sp, client_no) == ITEM_RED_ORB
+#endif
+          )) &&
+        sp->battlemon[client_no].hp != 0 && sp->battlemon[client_no].form_no == 0) {
+        return TRUE;
+    }
+#endif  // PRIMAL_REVERSION
+    return FALSE;
+}
 
 typedef enum UpdateMonConditionState {
 	UMC_STATE_INGRAIN,
@@ -2167,7 +2144,6 @@ typedef enum UpdateMonConditionState {
 	UMC_STATE_BINDING,
 	UMC_STATE_BAD_DREAMS,
 	UMC_STATE_RAMPAGE,
-	UMC_STATE_DISABLE,
 	UMC_STATE_ENCORE,
 	UMC_STATE_LOCK_ON,
 	UMC_STATE_CHARGE,
@@ -2335,7 +2311,6 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 			break;
 		case UMC_STATE_BINDING:
 			if (sp->binding_turns[battlerId] && sp->battlemon[battlerId].hp != 0) {
-				//sp->battlemon[battlerId].condition2 -= 1 << 13;
 				sp->binding_turns[battlerId]--;
 				if (sp->binding_turns[battlerId]) {
 					sp->hp_calc_work = BattleDamageDivide(sp->battlemon[battlerId].maxhp * -1, 8);
@@ -2373,29 +2348,6 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 				} else if (!(sp->battlemon[battlerId].condition2 & STATUS2_RAMPAGE_TURNS) && !(sp->battlemon[battlerId].condition2 & STATUS2_CONFUSED)) {
 					sp->state_client = battlerId;
 					LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_THRASH_END);
-					sp->next_server_seq_no = sp->server_seq_no;
-					sp->server_seq_no = 22;
-					flag = 1;
-				}
-			}
-			sp->stateUpdateMonCondition++;
-			break;
-		case UMC_STATE_DISABLE:
-			if (sp->battlemon[battlerId].moveeffect.disabledMove) {
-				for (i = 0; i < 4; i++) {
-					if (sp->battlemon[battlerId].moveeffect.disabledMove == sp->battlemon[battlerId].move[i]) {
-						break;
-					}
-				}
-				if (i == 4) {
-					sp->battlemon[battlerId].moveeffect.disabledTurns = 0;
-				}
-				if (sp->battlemon[battlerId].moveeffect.disabledTurns) {
-					sp->battlemon[battlerId].moveeffect.disabledTurns--;
-				} else {
-					sp->battlemon[battlerId].moveeffect.disabledMove = 0;
-					sp->client_work = battlerId;
-					LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_DISABLE_END);
 					sp->next_server_seq_no = sp->server_seq_no;
 					sp->server_seq_no = 22;
 					flag = 1;
@@ -2546,4 +2498,254 @@ void BattleControllerPlayer_UpdateMonCondition(void *bw, struct BattleStruct *sp
 	sp->stateUpdateMonCondition = 0;
 	sp->updateMonConditionData = 0;
 	sp->server_seq_no = 11;
+}
+
+/**
+ * Platinum version as reference
+ * BattleController_MoveEnd
+ * https://github.com/pret/pokeplatinum/blob/447c17a0f12b4a7656dded8aaa6e41ae9694cd09/src/battle/battle_controller.c#L3965
+ */
+void LONG_CALL ov12_0224D368(struct BattleSystem *bsys, struct BattleStruct *ctx) {
+    int script;
+    u32 battleType = BattleTypeGet(bsys);
+    
+    if (!(battleType & (BATTLE_TYPE_SAFARI | BATTLE_TYPE_POKE_PARK))) {
+        if (AbilityStatusRecoverCheck(bsys, ctx, ctx->attack_client, 0) == TRUE) {
+            return;
+        }
+        // BATTLER_NONE
+        if (ctx->defence_client != 0xFF && AbilityStatusRecoverCheck(bsys, ctx, ctx->defence_client, 0) == TRUE) {
+            return;
+        }
+        if (ov12_0224DD18(ctx, ctx->server_seq_no, ctx->server_seq_no) == TRUE) {
+            return;
+        }
+        if (ov12_0224D7EC(bsys, ctx) == TRUE) {
+            return;
+        }
+        
+        script = SwitchInAbilityCheck(bsys, ctx);
+        if (script) {
+            LoadBattleSubSeqScript(ctx, 1, script);
+            ctx->next_server_seq_no = ctx->server_seq_no;
+            ctx->server_seq_no = CONTROLLER_COMMAND_RUN_SCRIPT;
+            return;
+        }
+        if (ov12_0224E130(bsys, ctx) == TRUE) {
+            return;
+        }
+        ov12_0224DC0C(bsys, ctx);
+    }
+    
+    ctx->playerActions[ctx->executionOrder[ctx->executionIndex]][0] = CONTROLLER_COMMAND_40;
+    
+    if (ctx->oneSelfFlag[ctx->attack_client].trickroom_flag) {
+        SortExecutionOrderBySpeed(bsys, ctx);
+        SortMonsBySpeed(bsys, ctx);
+        ctx->executionIndex = 0;
+    } else {
+        ctx->executionIndex++;
+    }
+    
+    BattleStructureInit(ctx);
+    
+    ctx->server_seq_no = CONTROLLER_COMMAND_8;
+}
+
+enum {
+    TRY_MOVE_START = 0,
+
+    TRY_MOVE_STATE_CHECK_VALID_TARGET = TRY_MOVE_START,
+    TRY_MOVE_STATE_TRIGGER_REDIRECTION_ABILITIES,
+    TRY_MOVE_STATE_CHECK_MOVE_HITS,
+    TRY_MOVE_STATE_CHECK_MOVE_HIT_OVERRIDES,
+    TRY_MOVE_STATE_CHECK_TYPE_CHART,
+    TRY_MOVE_STATE_TRIGGER_IMMUNITY_ABILITIES,
+
+    TRY_MOVE_END,
+};
+
+/**
+ * Platinum version as reference
+ * BattleController_TryMove
+ * https://github.com/pret/pokeplatinum/blob/04d9ea4cfad3963feafecf3eb0f4adcbc7aa5063/src/battle/battle_controller.c#L3240
+ */
+void LONG_CALL ov12_0224C4D8(struct BattleSystem *bsys, struct BattleStruct *ctx) {
+    // u8 buf[64];
+    // sprintf(buf, "In BattleController_TryMove\n");
+    // debugsyscall(buf);
+
+    switch (ctx->woc_seq_no) {
+    case TRY_MOVE_STATE_CHECK_VALID_TARGET:
+        ctx->woc_seq_no++;
+        if (ov12_0224B398(bsys, ctx) == TRUE) {
+            return;
+        }
+        //fallthrough
+    case TRY_MOVE_STATE_TRIGGER_REDIRECTION_ABILITIES:
+        ctx->woc_seq_no++;
+        if (ov12_02250BBC(bsys, ctx) == TRUE) {
+            return;
+        }
+        //fallthrough
+    case TRY_MOVE_STATE_CHECK_MOVE_HITS:
+        // BATTLER_NONE
+        if (!(ctx->waza_out_check_on_off & 0x20) && ctx->defence_client != 0xFF && BattleSystem_CheckMoveHit(bsys, ctx, ctx->attack_client, ctx->defence_client, ctx->current_move_index) == TRUE) {
+            return;
+        }
+        ctx->woc_seq_no++;
+        //fallthrough
+    case TRY_MOVE_STATE_CHECK_MOVE_HIT_OVERRIDES:
+        if (!(ctx->waza_out_check_on_off & 0x40) && ctx->defence_client != 0xFF && BattleSystem_CheckMoveEffect(bsys, ctx, ctx->attack_client, ctx->defence_client, ctx->current_move_index) == TRUE) {
+            return;
+        }
+        ctx->woc_seq_no++;
+        //fallthrough
+    case TRY_MOVE_STATE_CHECK_TYPE_CHART:
+        if (!(ctx->waza_out_check_on_off & 2) && ctx->defence_client != 0xFF && ov12_0224B498(bsys, ctx) == TRUE) {
+            return;
+        }
+        ctx->woc_seq_no++;
+        //fallthrough
+    case TRY_MOVE_STATE_TRIGGER_IMMUNITY_ABILITIES:
+        if (!(ctx->waza_out_check_on_off & 0x10) && ctx->defence_client != 0xFF && ov12_0224BC2C(bsys, ctx) == TRUE) {
+            return;
+        }
+        ctx->woc_seq_no++;
+        //fallthrough
+    case TRY_MOVE_END:
+        ctx->woc_seq_no = 0;
+        break;
+    }
+    ctx->server_seq_no = CONTROLLER_COMMAND_25;
+}
+
+BOOL LONG_CALL ov12_0224B528(void *bw, struct BattleStruct *sp) {
+    int ret = 0; 
+    
+    do {
+        switch (sp->ssc_seq_no) {
+        case 0:
+            sp->battlemon[sp->attack_client].condition2 &= ~(1 << 25);
+            sp->battlemon[sp->attack_client].effect_of_moves &= ~MOVE_EFFECT_FLAG_GRUDGE;
+            sp->ssc_seq_no++;
+            break;
+        case 1:
+            if (CheckTruant(sp, sp->attack_client) == TRUE) {
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_LOAFING);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 2:
+            if (sp->battlemon[sp->attack_client].condition2 & STATUS2_RECHARGE) {
+                sp->battlemon[sp->attack_client].condition2 &= ~STATUS2_RECHARGE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_RECHARGE_TURN);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 3:
+            if (sp->battlemon[sp->attack_client].condition2 & STATUS2_FLINCH) {
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_FAIL_FLINCHED);
+				sp->damage /= 2;
+				sp->next_server_seq_no = sp->server_seq_no;
+				sp->server_seq_no = 22;
+                ret = 2; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 4:
+            if (sp->battlemon[sp->attack_client].moveeffect.disabledMove == sp->waza_no_temp) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromDisable = TRUE; 
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_IS_DISABLED);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 5:
+            if (sp->battlemon[sp->attack_client].moveeffect.tauntTurns && sp->moveTbl[sp->current_move_index].power == 0) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromTaunt = TRUE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_FAIL_TAUNTED);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 6:
+            if (BattleContext_CheckMoveImprisoned(bw, sp, sp->attack_client, sp->current_move_index)) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromImprison = TRUE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_IS_IMPRISONED);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 7:
+            if (BattleContext_CheckMoveHealBlocked(bw, sp, sp->attack_client, sp->current_move_index)) {
+                sp->moveOutCheck[sp->attack_client].stoppedFromHealBlock = TRUE;
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_MOVE_FAILED_HEAL_BLOCK);
+                sp->server_seq_no = 22;
+                sp->next_server_seq_no = 39;
+                ret = 1; 
+            }
+            sp->ssc_seq_no++;
+            break;
+        case 8:
+            sp->ssc_seq_no++;
+            if (sp->battlemon[sp->attack_client].condition2 & STATUS2_CONFUSED) {
+				LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_CONFUSED);
+				sp->next_server_seq_no = sp->server_seq_no;
+				sp->server_seq_no = 22;
+				ret = 2; 
+            }
+            break;
+        case 9:
+            sp->ssc_seq_no++;
+            if (sp->battlemon[sp->attack_client].condition2 & ((1 << 8) | (1 << 9))) {
+                sp->battlemon[sp->attack_client].condition2 -= (1 << 8);
+                if (!(sp->battlemon[sp->attack_client].condition2 & ((1 << 8) | (1 << 9))) && sp->store_damage[sp->attack_client]) {
+                    sp->damage = sp->store_damage[sp->attack_client] * 2;
+                    if (sp->battlemon[sp->client_no_hit[sp->attack_client]].hp != 0) {
+                        sp->attack_client = sp->client_no_hit[sp->attack_client];
+                    } else {
+                        sp->attack_client = ChooseRandomTarget(bw, sp, sp->attack_client);
+                        if (sp->battlemon[sp->defence_client].hp == 0) {
+                            LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_BIDE_END_NO_TARGET);
+                            sp->next_server_seq_no = 39;
+                            sp->server_seq_no = 22;
+                            ret = 2; 
+                            break;
+                        }
+                    }
+                }
+                LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_END_BIDE);
+                sp->next_server_seq_no = sp->server_seq_no;
+                sp->server_seq_no = 22;
+                ret = 2; 
+            }
+            break;
+        case 10:
+            sp->ssc_seq_no = 0;
+            ret = 3;
+            break;
+        }
+    } while (ret == 0);
+    
+    CopyBattleMonToPartyMon(bw, sp, sp->attack_client);
+    
+    if (ret == 1) {
+        sp->server_status_flag |= (1 << 1);
+        sp->waza_status_flag |= (1 << 31);
+    }
+    
+    return (ret != 3);
 }
