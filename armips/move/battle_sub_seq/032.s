@@ -15,13 +15,13 @@ a001_026:
     damagediv VAR_HP_TEMP, 8
 _0054:
     changevar VAR_OP_MUL, VAR_HP_TEMP, -1
-    printmessage 0x82, 0x2, 0xFF, "NaN", "NaN", "NaN", "NaN", "NaN"
+    printmessage 0x82, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-    setstatus2effect BATTLER_WORK, 0x5
+    setstatus2effect BATTLER_ATTACKER, 0x5
     waitmessage
     changevar VAR_OP_SETMASK, VAR_SERVER_STATUS1, 0x40
-    jumptosubseq 2 // deal damage + update hp bar sub seq
+    jumptosubseq 2                                                         // deal damage + update hp bar sub seq
 _00A8:
     endscript
 

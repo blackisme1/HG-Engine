@@ -9,17 +9,14 @@
 
 .create "build/move/battle_sub_seq/1_185", 0
 
-// Drought
-
 a001_185:
-    if IF_MASK, VAR_FIELD_EFFECT, WEATHER_SUNNY_ANY, SkipEffect
     setstatus2effect BATTLER_PLAYER, 0x16
     waitmessage
-    gotosubscript 361
-    printpreparedmessage
+    printmessage 0x2BA, 0xB, 0xFF, 0x15, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-SkipEffect:
+    changevar VAR_OP_CLEARMASK, VAR_FIELD_EFFECT, 0x80FF
+    changevar VAR_OP_SETMASK, VAR_FIELD_EFFECT, 0x20
     endscript
 
 .close

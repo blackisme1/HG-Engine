@@ -20,7 +20,6 @@ a001_173:
     wait 0x1E
     endscript
 _0074:
-    if IF_EQUAL, VAR_CURRENT_MOVE, MOVE_PSYCHIC_NOISE, JustEnd
     printattackmessage
     waitmessage
     wait 0xF
@@ -28,7 +27,6 @@ _0074:
     waitmessage
     wait 0x1E
     changevar VAR_OP_SETMASK, VAR_MOVE_STATUS, 0x80000000
-JustEnd:
     endscript
 
 .close

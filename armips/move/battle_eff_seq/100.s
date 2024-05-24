@@ -11,8 +11,6 @@
 
 a030_100:
     changevar VAR_OP_SET, VAR_ADD_STATUS1, 0xA0000051
-	critcalc
-	damagecalc
     endscript
 
 .close

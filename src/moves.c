@@ -179,7 +179,6 @@ u16 move_effect_to_subscripts[] =
 	[ADD_STATUS_EFF_STRENGTH_SAP]                = SUB_SEQ_STRENGTH_SAP,
 	[ADD_STATUS_EFF_TOXIC_THREAD]                = SUB_SEQ_TOXIC_THREAD,
 	[ADD_STATUS_EFF_MIND_BLOWN]                  = SUB_SEQ_MIND_BLOWN,
-	[ADD_STATUS_EFF_SCARY_FACE]                  = SUB_SEQ_SCARY_FACE,
 };
 
 

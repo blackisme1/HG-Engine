@@ -626,10 +626,10 @@ trainerdata 20, "Falkner"
         // mon 0
         ivs 0
         abilityslot 1
-        level 10
+        level 9
         pokemon SPECIES_NATU
         item ITEM_NONE
-        move MOVE_U_TURN
+        move MOVE_WEATHER_BALL
         move MOVE_RAIN_DANCE
         move MOVE_NONE
         move MOVE_NONE
@@ -638,10 +638,10 @@ trainerdata 20, "Falkner"
         // mon 1
         ivs 0
         abilityslot 1
-        level 12
+        level 14
         pokemon SPECIES_MURKROW
         item ITEM_NONE
-        move MOVE_U_TURN
+        move MOVE_WEATHER_BALL
         move MOVE_PURSUIT
         move MOVE_ASTONISH
         move MOVE_NONE
@@ -654,7 +654,7 @@ trainerdata 20, "Falkner"
         level 15
         pokemon SPECIES_PIDGEOTTO
         item ITEM_NONE
-        move MOVE_U_TURN
+        move MOVE_WEATHER_BALL
         move MOVE_QUICK_ATTACK
         move MOVE_WHIRLWIND
         move MOVE_NONE
@@ -681,8 +681,8 @@ trainerdata 21, "Bugsy"
         pokemon SPECIES_SCYTHER
         item ITEM_NONE
         move MOVE_QUICK_ATTACK
+        move MOVE_LEER
         move MOVE_U_TURN
-        move MOVE_PESTER
         move MOVE_FOCUS_ENERGY
         ballseal 0
 
@@ -704,8 +704,8 @@ trainerdata 21, "Bugsy"
         level 16
         pokemon SPECIES_YANMA
         item ITEM_NONE
-        move MOVE_PESTER
         move MOVE_U_TURN
+        move MOVE_SONIC_BOOM
         move MOVE_SUPERSONIC
         move MOVE_NONE
         ballseal 0

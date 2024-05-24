@@ -20,7 +20,7 @@
 int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int defender);
 BOOL IntimidateCheckHelper(struct BattleStruct *sp, u32 client);
 int SwitchInAbilityCheck(void *bw, struct BattleStruct *sp);
-BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value, BOOL excludeAccuracyEvasion);
+BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value);
 u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no);
 BOOL MummyAbilityCheck(struct BattleStruct *sp);
 BOOL CanPickpocketStealClientItem(struct BattleStruct *sp, int client_no);
@@ -36,14 +36,8 @@ void ServerDoPostMoveEffects(void *bw, struct BattleStruct *sp);
 
 const u16 BulletproofMoveList[] =
 {
-	MOVE_AURA_SPHERE,
-	MOVE_DARK_PULSE,
-	MOVE_DRAGON_PULSE,
-	//MOVE_HEAL_PULSE,
-	MOVE_ORIGIN_PULSE,
-	MOVE_TERRAIN_PULSE,
-	MOVE_WATER_PULSE,
     MOVE_ACID_SPRAY,
+    MOVE_AURA_SPHERE,
     MOVE_BARRAGE,
     MOVE_BULLET_SEED,
     MOVE_EGG_BOMB,
@@ -66,9 +60,6 @@ const u16 BulletproofMoveList[] =
     MOVE_SLUDGE_BOMB,
     MOVE_WEATHER_BALL,
     MOVE_ZAP_CANNON,
-	MOVE_SELF_DESTRUCT,
-	MOVE_EXPLOSION,
-	MOVE_MISTY_EXPLOSION,
 };
 
 const u16 PowderMoveList[] = {
@@ -164,14 +155,6 @@ int MoveCheckDamageNegatingAbilities(struct BattleStruct *sp, int attacker, int 
             scriptnum = SUB_SEQ_MOTOR_DRIVE;
         }
     }
-	
-	if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_WIND_RIDER) == TRUE)
-    {
-        if ((movetype == TYPE_FLYING) && (attacker != defender))
-        {
-            scriptnum = SUB_SEQ_MOTOR_DRIVE;
-        }
-    }
 
     // 02252FF8
     if (MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_DRY_SKIN) == TRUE)
@@ -258,11 +241,9 @@ int SwitchInAbilityCheck(void *bw, struct BattleStruct *sp)
  *  @param value to check for.  made flexible for every circumstance, i.e. Moody needs to check if any stat can be raised/lowered
  *  @return TRUE if there is a stat stage not at the passed value; FALSE otherwise (yes accuracy and evasion count too)
  */
-BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value, BOOL excludeAccuracyEvasion)
+BOOL AreAnyStatsNotAtValue(struct BattleStruct *sp, int client, int value)
 {
-    int counter = excludeAccuracyEvasion ? 5 : 7;
-
-    for (int i = 0; i < counter; i++)
+    for (int i = 0; i < 7; i++)
     {
         if (sp->battlemon[client].states[i] != value)
         {
@@ -381,15 +362,13 @@ u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no)
         case ABILITY_MOODY: // this is going to be interesting
             if (sp->battlemon[client_no].hp)
             {
-                // Use % 7 instead of %5 and pass FALSE to AreAnyStatsNotAtValue to include accuracy/evasion like earlier gens.
-                
-                int temp = BattleRand(bw) % 5;
+                int temp = BattleRand(bw) % 7;
 
-                if (AreAnyStatsNotAtValue(sp, client_no, 12, TRUE)) // if any stat can be lowered
+                if (AreAnyStatsNotAtValue(sp, client_no, 12)) // if any stat can be lowered
                 {
                     while (sp->battlemon[client_no].states[temp] == 12)
                     {
-                        temp = BattleRand(bw) % 5;
+                        temp = BattleRand(bw) % 7;
                     }
                 }
                 else
@@ -399,14 +378,14 @@ u32 TurnEndAbilityCheck(void *bw, struct BattleStruct *sp, int client_no)
                 sp->calc_work = temp;
 
 
-                temp = BattleRand(bw) % 5;
+                temp = BattleRand(bw) % 7;
 
-                if (AreAnyStatsNotAtValue(sp, client_no, 0, TRUE)) // if any stat can be raised
+                if (AreAnyStatsNotAtValue(sp, client_no, 0)) // if any stat can be raised
                 {
                     while (sp->battlemon[client_no].states[temp] == 0
                         || temp == sp->calc_work)
                     {
-                        temp = BattleRand(bw) % 5;
+                        temp = BattleRand(bw) % 7;
                     }
                 }
                 else
@@ -530,28 +509,6 @@ BOOL MoveHitAttackerAbilityCheck(void *bw, struct BattleStruct *sp, int *seq_no)
 
     if (sp->attack_client == 0xFF) {
         return ret;
-    }
-	
-	if ((sp->defence_client == sp->fainting_client)
-        && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
-        && (sp->battlemon[sp->attack_client].hp)
-        && ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0)
-        && (sp->battlemon[sp->attack_client].condition2 |= STATUS2_RECHARGE))
-    {
-        sp->battlemon[sp->attack_client].condition2 -= STATUS2_RECHARGE;
-    }
-	
-    if ((sp->defence_client == sp->fainting_client)
-        && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
-        && (sp->battlemon[sp->attack_client].hp)
-        && ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0)
-        && (sp->current_move_index == MOVE_FELL_STINGER))
-    {
-        sp->addeffect_param = ADD_STATE_ATTACK_UP_2;
-        sp->addeffect_type = ADD_EFFECT_MOVE_EFFECT;
-        sp->state_client = sp->attack_client;
-        seq_no[0] = SUB_SEQ_BOOST_STATS;
-        ret = TRUE;
     }
 
     switch (GetBattlerAbility(sp, sp->attack_client))
@@ -1150,7 +1107,7 @@ enum
 void ServerDoPostMoveEffects(void *bw, struct BattleStruct *sp)
 {
     // Sort clients because moves may affect speed
-    DynamicSortClientExecutionOrder(bw, sp, FALSE);
+    DynamicSortClientExecutionOrder(bw, sp);
     switch (sp->swoak_seq_no) {
         case SWOAK_SEQ_VANISH_ON_OFF: {
             int ret = 0;

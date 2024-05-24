@@ -9,6 +9,8 @@
 
 .create "build/move/battle_sub_seq/1_015", 0
 
+// flinch dialouge activate (not the CC)
+
 a001_015:
     printmessage 0xB5, 0x2, 0x1, "NaN", "NaN", "NaN", "NaN", "NaN"
     waitmessage

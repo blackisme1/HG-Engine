@@ -9,17 +9,14 @@
 
 .create "build/move/battle_sub_seq/1_183", 0
 
-// Drizzle
-
 a001_183:
-    if IF_MASK, VAR_FIELD_EFFECT, WEATHER_RAIN_ANY, SkipEffect
     setstatus2effect BATTLER_PLAYER, 0x13
     waitmessage
-    gotosubscript 362
-    printpreparedmessage
+    printmessage 0x26B, 0xB, 0xFF, 0x15, "NaN", "NaN", "NaN", "NaN"
     waitmessage
     wait 0x1E
-SkipEffect:
+    changevar VAR_OP_CLEARMASK, VAR_FIELD_EFFECT, 0x80FF
+    changevar VAR_OP_SETMASK, VAR_FIELD_EFFECT, 0x2
     endscript
 
 .close

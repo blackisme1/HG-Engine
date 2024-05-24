@@ -12,7 +12,7 @@
 a030_222:
     trynaturalgift _001C
     iffirsthitofparentalbond SkipRemoveItem
-    // swap execution order otherwise it doesnt work for some reason
+    // swap execution order otherwise it doesn't work for some reason
     removeitem BATTLER_ATTACKER
 SkipRemoveItem:
     critcalc
