@@ -166,8 +166,6 @@ int AdjustDamageForRoll(void *bw, struct BattleStruct *sp UNUSED, int damage)
 #endif // DEBUG_ADJUSTED_DAMAGE
 	if (damage)
     {
-		damage *= (100 - (BattleRand(bw) % 16)); // 85-100% damage roll
-		damage /= 100;
 		if (damage == 0)
 			damage = 1;
 	}
