@@ -1,4 +1,5 @@
 #include "../../include/types.h"
+#include "../../include/config.h"
 #include "../../include/battle.h"
 #include "../../include/item.h"
 #include "../../include/mega.h"

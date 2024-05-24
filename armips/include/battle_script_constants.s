@@ -1,4 +1,4 @@
-// LheaRachel's sub sequence defines
+// LheaRachels sub sequence defines
 SUB_SEQ_START_BATTLE                    equ (  0)
 SUB_SEQ_TRY_MOVE                        equ (  1)
 SUB_SEQ_HP_CHANGE                       equ (  2)
@@ -290,7 +290,7 @@ SUB_SEQ_VANISH_OFF                      equ (287)
 SUB_SEQ_TAUNT_END                       equ (288)
 SUB_SEQ_FULL_RESTORE                    equ (289)
 SUB_SEQ_PLUCK_CHECK                     equ (290)
-SUB_SEQ_WAIT_FOR_UNPLAYED_ANIMATION     equ (291) // null subscript; doesn't disable animations; just waits for animation
+SUB_SEQ_WAIT_FOR_UNPLAYED_ANIMATION     equ (291) // null subscript; doesnt disable animations; just waits for animation
 SUB_SEQ_ITEM_POWER_HERB_VANISH          equ (292)
 SUB_SEQ_SHAYMIN_FORM_CHECK              equ (293)
 SUB_SEQ_OVERWORLD_SUN                   equ (294)
@@ -357,17 +357,6 @@ SUB_SEQ_FILLET_AWAY                           equ (352)
 SUB_SEQ_HANDLE_PARENTAL_BOND                  equ (353)
 SUB_SEQ_CREATE_TERRAIN_OVERLAY                equ (354)
 SUB_SEQ_HANDLE_SHED_TAIL                      equ (355)
-SUB_SEQ_HANDLE_AFTER_YOU                      equ (356)
-SUB_SEQ_HANDLE_QUASH                          equ (357)
-SUB_SEQ_DRAIN_FULL                            equ (358)
-SUB_SEQ_SNOW_END                              equ (359)
-SUB_SEQ_HANDLE_HAIL_TEMPORARY                 equ (360)
-SUB_SEQ_HANDLE_SUN_TEMPORARY                  equ (361)
-SUB_SEQ_HANDLE_RAIN_TEMPORARY                 equ (362)
-SUB_SEQ_HANDLE_SANDSTORM_TEMPORARY            equ (363)
-SUB_SEQ_HANDLE_SNOW_TEMPORARY                 equ (364)
-
-
 
 // add status effect constants--used in battle effect scripts to queue up a subscript through the table in src/moves.c
 
@@ -531,6 +520,3 @@ ADD_STATUS_EFF_WORK_UP                         equ (156)
 ADD_STATUS_EFF_SPICY_EXTRACT                   equ (157)
 ADD_STATUS_EFF_FILLET_AWAY                     equ (158)
 ADD_STATUS_EFF_SHED_TAIL                       equ (159)
-ADD_STATUS_EFF_AFTER_YOU                       equ (160)
-ADD_STATUS_EFF_QUASH                           equ (161)
-ADD_STATUS_EFF_DRAIN_FULL                      equ (162)
