@@ -190,5 +190,40 @@ void Summary_ChangeStatScreenState(struct SummaryState *summary, u8 mode)
 
 // change this to possibly take a BoxPokemon structure but be compatible with vanilla handling just in case
 u16 ModifyStatByNature(u32 nature, u16 n, u8 statIndex) {
-    return n;
+    u32 retVal;
+
+    // Dont modify HP, Accuracy, or Evasion by nature
+    if (statIndex < STAT_ATTACK || statIndex > STAT_SPDEF) {
+        return n;
+    }
+
+    if (nature & 0x02000000)
+    {
+        nature = GetBoxMonNatureCountMints(&((struct PartyPokemon *)nature)->box);
+    }
+
+    // thanks to dray for this fix!
+    if (statIndex == STAT_SPEED) // have to convert to window index to use the sNatureStatEffects table
+    {
+        statIndex = 5;
+    } else if (statIndex > STAT_SPEED) {
+        statIndex--;
+    }
+
+    switch (sNatureStatEffects[nature][statIndex]) {
+    case 1:
+        // NOTE: will overflow for n > 595 because the intermediate value is cast to u16 before the division.
+        retVal = n * 100;
+        retVal /= 100;
+        break;
+    case -1:
+        // NOTE: will overflow for n > 728, see above
+        retVal = n * 100;
+        retVal /= 100;
+        break;
+    default:
+        retVal = n;
+        break;
+    }
+    return retVal;
 }
