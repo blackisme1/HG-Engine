@@ -595,7 +595,7 @@ ov12_02252218 = 0x02252218 | 1;
 TryHeldItemNegativeEffect = 0x0225551C | 1;
 
 AcquireMonLock = 0x0206DD40 | 1;
-LoadMonBaseStats_HandleAlternateForm = 0x020725B4 | 1;
+LoadMonbaseStats_HandleAlternateForm = 0x020725B4 | 1;
 ReleaseMonLock = 0x0206DD8C | 1;
 
 CheckTruant = 0x02252C40 | 1;
