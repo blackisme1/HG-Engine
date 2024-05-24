@@ -37,7 +37,7 @@ movedata MOVE_POUND, "Pound"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_POUND, "The foe is physically\npounded with a long\ntail or a foreleg,\netc. This may flinch the target."
+    movedescription MOVE_POUND, "The foe is physically\npounded with a long\ntail or a foreleg,\netc. This may flinch\nthe target."
 
 movedata MOVE_KARATE_CHOP, "Karate Chop"
     battleeffect 43
