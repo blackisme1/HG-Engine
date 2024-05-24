@@ -418,7 +418,7 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     // handle hustle
     if (AttackingMon.ability == ABILITY_HUSTLE)
     {
-	attack = attack * 15 / 10;
+		attack = attack * 15 / 10;
     }
 
     // handle guts
@@ -448,11 +448,11 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     // Handle Fluffy
     if (DefendingMon.ability == ABILITY_FLUFFY) {
 	if (sp->moveTbl[sp->current_move_index].flag & FLAG_CONTACT) {
-	    movepower = movepower * 50 / 100;
+	    movepower /= 2;
 	}
 
 	if (movetype == TYPE_FIRE) {
-	    movepower = movepower * 200 / 100;
+	    movepower *= 2;
 	}
     }
 
@@ -598,27 +598,27 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     if (MoveIsAffectedByNormalizeVariants(moveno)) {
 	// handle aerilate - 20% boost if a normal type move was changed to a flying type move.  does not boost flying type moves themselves
 	if (AttackingMon.ability == ABILITY_AERILATE && movetype == TYPE_FLYING && sp->moveTbl[moveno].type == TYPE_NORMAL) {
-	    movepower = movepower * 120 / 100;
+	    movepower = movepower * 12 / 10;
 	}
 
 	// handle pixilate - 20% boost if a normal type move was changed to a fairy type move.  does not boost fairy type moves themselves
 	if (AttackingMon.ability == ABILITY_PIXILATE && movetype == TYPE_FAIRY && sp->moveTbl[moveno].type == TYPE_NORMAL) {
-	    movepower = movepower * 120 / 100;
+	    movepower = movepower * 12 / 10;
 	}
 
 	// handle galvanize - 20% boost if a normal type move was changed to an electric type move.  does not boost electric type moves themselves
 	if (AttackingMon.ability == ABILITY_GALVANIZE && movetype == TYPE_ELECTRIC && sp->moveTbl[moveno].type == TYPE_NORMAL) {
-	    movepower = movepower * 120 / 100;
+	    movepower = movepower * 12 / 10;
 	}
 
 	// handle refrigerate - 20% boost if a normal type move was changed to an ice type move.  does not boost ice type moves themselves
 	if (AttackingMon.ability == ABILITY_REFRIGERATE && movetype == TYPE_ICE && sp->moveTbl[moveno].type == TYPE_NORMAL) {
-	    movepower = movepower * 120 / 100;
+	    movepower = movepower * 12 / 10;
 	}
 
 	// handle normalize - 20% boost if a normal type move is used (and it changes types to normal too)
 	if (AttackingMon.ability == ABILITY_NORMALIZE && movetype == TYPE_NORMAL) {
-	    movepower = movepower * 120 / 100;
+	    movepower = movepower * 12 / 10;
 	}
     }
 
@@ -747,8 +747,18 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	{
 	    sp_defense = sp_defense * 15 / 10;
 	}
-	if ((field_cond & WEATHER_SNOW_ANY) &&
+	if ((field_cond & WEATHER_SANDSTORM_ANY) && 
+		(MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_SAND_VEIL) == TRUE))
+	{
+	    sp_defense = sp_defense * 15 / 10;
+	}
+	if (((field_cond & WEATHER_HAIL_ANY) || (field_cond & WEATHER_SNOW_ANY)) &&
 	    ((DefendingMon.type1 == TYPE_ICE) || (DefendingMon.type2 == TYPE_ICE)))
+	{
+	    defense = defense * 15 / 10;
+	}
+	if (((field_cond & WEATHER_HAIL_ANY) || (field_cond & WEATHER_SNOW_ANY)) &&
+		(MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_SNOW_CLOAK) == TRUE))
 	{
 	    defense = defense * 15 / 10;
 	}
@@ -769,15 +779,13 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     u16 equivalentDefense;
     getEquivalentAttackAndDefense(sp, attack, defense, sp_attack, sp_defense, atkstate, defstate, spatkstate, spdefstate, &movesplit, attacker, defender, critical, moveno, &equivalentAttack, &equivalentDefense);
 
-    //// halve the defense if using selfdestruct/explosion
-    //if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
-    //    defense = defense / 2;
+    // halve the defense if using selfdestruct/explosion
+    if (sp->moveTbl[moveno].effect == MOVE_EFFECT_HALVE_DEFENSE)
+        defense = defense / 2;
 
     damage = equivalentAttack * movepower;
-    damage *= (level * 2 / 5 + 2);
-
     damage = damage / equivalentDefense;
-    damage /= 50;
+	damage *= (level * 2 / 250);
 
     // Handle Parental Bond
     if (sp->battlemon[attacker].parental_bond_flag == 2) {
@@ -942,5 +950,5 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	}
     }
 
-    return damage + 2;
+    return damage;
 }
