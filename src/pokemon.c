@@ -41,7 +41,7 @@ void LONG_CALL CalcMonStats(struct PartyPokemon *mon) {
 	species = (int)GetMonData(mon, MON_DATA_SPECIES, NULL);
 
 	baseStats = (BASE_STATS *)sys_AllocMemory(0, sizeof(BASE_STATS));
-	LoadMonbaseStats_HandleAlternateForm(species, form, baseStats);
+	LoadMonBaseStats_HandleAlternateForm(species, form, baseStats);
 
 	newMaxHp = baseStats->hp * level * 3 / 200 + baseStats->hp / 4;
 	SetMonData(mon, MON_DATA_MAXHP, &newMaxHp);

@@ -1799,8 +1799,6 @@ typedef struct BaseStats {
     /* 0x28 */ u32 tmhm_4;
 } BASE_STATS;
 
-void LONG_CALL CalcMonStats(struct PartyPokemon *mon);
-
 BOOL LONG_CALL AcquireMonLock(struct PartyPokemon *mon);
 
 BOOL LONG_CALL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
