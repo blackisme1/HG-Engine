@@ -54,10 +54,6 @@ typedef struct BaseStats {
     /* 0x28 */ u32 tmhm_4;
 } BASE_STATS;
 
-BOOL LONG_CALL AcquireMonLock(struct PartyPokemon *mon);
-BOOL LONG_CALL ReleaseMonLock(struct PartyPokemon *mon, BOOL decrypt_result);
-void LONG_CALL LoadMonBaseStats_HandleAlternateForm(int species, int form, BASE_STATS *personal);
-
 void CalcMonStats(struct PartyPokemon *mon) {
 	BASE_STATS * baseStats;
 	int level;
