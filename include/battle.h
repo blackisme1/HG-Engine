@@ -2784,4 +2784,11 @@ void LONG_CALL UnlockBattlerOutOfCurrentMove(struct BattleSystem *bsys, struct B
  */
 BOOL LONG_CALL CheckMoveIsChargeMove(struct BattleStruct *sp, int moveNo);
 
+BOOL LONG_CALL ov12_0224B528(void *bw, struct BattleStruct *sp);
+
+BOOL LONG_CALL CheckTruant(struct BattleSystem *ctx, int battlerId);
+BOOL LONG_CALL BattleContext_CheckMoveImprisoned(struct BattleSystem *bsys, struct BattleStruct *ctx, int battlerId, int moveNo);
+BOOL LONG_CALL BattleContext_CheckMoveHealBlocked(struct BattleSystem *bsys, struct BattleContext *ctx, int battlerId, int moveNo);
+BOOL LONG_CALL CopyBattleMonToPartyMon(struct BattleSystem *bsys, struct BattleContext *ctx, int battlerId);
+
 #endif // BATTLE_H

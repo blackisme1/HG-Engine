@@ -532,14 +532,14 @@ BOOL MoveHitAttackerAbilityCheck(void *bw, struct BattleStruct *sp, int *seq_no)
         return ret;
     }
 	
-	if ((sp->defence_client == sp->fainting_client)
+	/*if ((sp->defence_client == sp->fainting_client)
         && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)
         && (sp->battlemon[sp->attack_client].hp)
         && ((sp->waza_status_flag & WAZA_STATUS_FLAG_NO_OUT) == 0)
-        && (sp->battlemon[sp->attack_client].condition2 |= STATUS2_RECHARGE))
+        && (sp->battlemon[sp->attack_client].condition2 || STATUS2_RECHARGE))
     {
-        sp->battlemon[sp->attack_client].condition2 -= STATUS2_RECHARGE;
-    }
+        sp->battlemon[sp->attack_client].condition2 &= ~STATUS2_RECHARGE;
+    }*/
 	
     if ((sp->defence_client == sp->fainting_client)
         && ((sp->server_status_flag2 & SERVER_STATUS_FLAG2_U_TURN) == 0)

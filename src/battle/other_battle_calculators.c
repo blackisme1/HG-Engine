@@ -2084,7 +2084,7 @@ BOOL LONG_CALL BattleSystem_CheckMoveEffect(void *bw, struct BattleStruct *sp, i
 			sp->waza_status_flag &= ~MOVE_STATUS_FLAG_MISS;
 		}
 		// Blizzard is 100% accurate in Snow also
-		if (sp->field_condition & (WEATHER_HAIL_ANY | WEATHER_SNOW_ANY) && sp->moveTbl[move].effect == MOVE_EFFECT_BLIZZARD) {
+		if ((sp->field_condition & (WEATHER_HAIL_ANY) || sp->field_condition & (WEATHER_SNOW_ANY)) && sp->moveTbl[move].effect == MOVE_EFFECT_BLIZZARD) {
 			sp->waza_status_flag &= ~MOVE_STATUS_FLAG_MISS;
 		}
 	}
@@ -2506,7 +2506,7 @@ BOOL LONG_CALL ov12_0224B528(void *bw, struct BattleStruct *sp) {
 				sp->damage /= 2;
 				sp->next_server_seq_no = sp->server_seq_no;
 				sp->server_seq_no = 22;
-                ret = 2; 
+                ret = 2;
             }
             sp->ssc_seq_no++;
             break;
@@ -2579,9 +2579,9 @@ BOOL LONG_CALL ov12_0224B528(void *bw, struct BattleStruct *sp) {
                     }
                 }
                 LoadBattleSubSeqScript(sp, ARC_BATTLE_SUB_SEQ, SUB_SEQ_END_BIDE);
-                sp->next_server_seq_no = sp->server_seq_no;
-                sp->server_seq_no = 22;
-                ret = 2; 
+				sp->next_server_seq_no = sp->server_seq_no;
+				sp->server_seq_no = 22;
+                ret = 2;
             }
             break;
         case 10:
