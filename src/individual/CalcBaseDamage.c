@@ -328,43 +328,43 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 
     // type boosting held items
     {
-	u8 element[2] = {AttackingMon.item_held_effect, movetype};
-	if (IsElementInArray(HeldItemPowerUpTable, element, NELEMS(HeldItemPowerUpTable), sizeof(element)))
-	{
-	    movepower = movepower * 12 / 10;
-	}
+		u8 element[2] = {AttackingMon.item_held_effect, movetype};
+		if (IsElementInArray(HeldItemPowerUpTable, element, NELEMS(HeldItemPowerUpTable), sizeof(element)))
+		{
+			movepower = movepower * 12 / 10;
+		}
     }
     // handle choice band
     if (AttackingMon.item_held_effect == HOLD_EFFECT_CHOICE_BAND)
-	attack = attack * 15 / 10;
+		attack = attack * 15 / 10;
 
     // handle choice specs
     if (AttackingMon.item_held_effect == HOLD_EFFECT_CHOICE_SPECS)
-	sp_attack = sp_attack * 15 / 10;
+		sp_attack = sp_attack * 15 / 10;
 
     // handle soul dew - gen 7 changes it to just boost movepower if the type is dragon or psychic, no more defense boost
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_SOUL_DEW)
-     && ((AttackingMon.species == SPECIES_LATIOS) || (AttackingMon.species == SPECIES_LATIAS))
-     && (movetype == TYPE_DRAGON || movetype == TYPE_PSYCHIC))
+		&& ((AttackingMon.species == SPECIES_LATIOS) || (AttackingMon.species == SPECIES_LATIAS))
+		&& (movetype == TYPE_DRAGON || movetype == TYPE_PSYCHIC))
     {
-	movepower = movepower * 12 / 10; // 4915/4096
+		movepower = movepower * 12 / 10; // 4915/4096
     }
 
     // handle deep sea tooth
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_DEEP_SEA_TOOTH) && (AttackingMon.species == SPECIES_CLAMPERL))
-	sp_attack *= 2;
+		sp_attack *= 2;
 
     // handle deep sea scale
     if ((DefendingMon.item_held_effect == HOLD_EFFECT_DEEP_SEA_SCALE) && (DefendingMon.species == SPECIES_CLAMPERL))
-	sp_defense *= 2;
+		sp_defense *= 2;
 
     // handle light ball
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_LIGHT_BALL) && (AttackingMon.species == SPECIES_PIKACHU))
-	movepower *= 2;
+		movepower *= 2;
 
     // handle metal powder
     if ((DefendingMon.item_held_effect == HOLD_EFFECT_METAL_POWDER) && (DefendingMon.species == SPECIES_DITTO))
-	defense *= 2;
+		defense *= 2;
 
     // Handle Eviolite
     if (DefendingMon.item_held_effect == HOLD_EFFECT_EVIOLITE) {
@@ -388,21 +388,21 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_THICK_CLUB)
      && ((AttackingMon.species == SPECIES_CUBONE)
       || (AttackingMon.species == SPECIES_MAROWAK)))
-	attack *= 2;
+		attack *= 2;
 
     // handle adamant/lustrous/griseous orb
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_ADAMANT_ORB) &&
 	((movetype == TYPE_DRAGON) || (movetype == TYPE_STEEL)) &&
 	(AttackingMon.species == SPECIES_DIALGA))
     {
-	movepower = movepower * 11 / 10;
+		movepower = movepower * 11 / 10;
     }
 
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_LUSTROUS_ORB) &&
 	((movetype == TYPE_DRAGON) || (movetype == TYPE_WATER)) &&
 	(AttackingMon.species == SPECIES_PALKIA))
     {
-	movepower = movepower * 11 / 10;
+		movepower = movepower * 11 / 10;
     }
 
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_GRISEOUS_ORB) &&
@@ -410,25 +410,25 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	((BattlePokemonParamGet(sp, attacker, BATTLE_MON_DATA_STATUS2, NULL) & STATUS2_TRANSFORMED) == 0) &&
 	(AttackingMon.species == SPECIES_GIRATINA))
     {
-	movepower = movepower * 11 / 10;
+		movepower = movepower * 11 / 10;
     }
 
     // handle items that boost physical/special moves
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_BOOST_PHYSICAL) && (movesplit == SPLIT_PHYSICAL))
     {
-	movepower = movepower * 11 / 10;
+		movepower = movepower * 11 / 10;
     }
 
     if ((AttackingMon.item_held_effect == HOLD_EFFECT_BOOST_SPECIAL) && (movesplit == SPLIT_SPECIAL))
     {
-	movepower = movepower * 11 / 10;
+		movepower = movepower * 11 / 10;
     }
 
     // handle thick fat
     if ((MoldBreakerAbilityCheck(sp, attacker, defender, ABILITY_THICK_FAT) == TRUE) &&
 	((movetype == TYPE_FIRE) || (movetype == TYPE_ICE)))
     {
-	movepower /= 2;
+		movepower /= 2;
     }
 
     // handle hustle
@@ -440,25 +440,25 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     // handle guts
     if ((AttackingMon.ability == ABILITY_GUTS) && (AttackingMon.condition))
     {
-	attack = attack * 15 / 10;
+		attack = attack * 15 / 10;
     }
 
     //handle toxic boost
     if ((AttackingMon.ability == ABILITY_TOXIC_BOOST) && ((AttackingMon.condition & STATUS_FLAG_BADLY_POISONED) || (AttackingMon.condition & STATUS_FLAG_POISONED)))
     {
-	attack = attack * 15 / 10;
+		attack = attack * 15 / 10;
     }
 
     //handle flare boost
     if ((AttackingMon.ability == ABILITY_FLARE_BOOST) && ((AttackingMon.condition & STATUS_FLAG_BURNED)))
     {
-	sp_attack = sp_attack * 15 / 10;
+		sp_attack = sp_attack * 15 / 10;
     }
 
     //handle tough claws
     if ((AttackingMon.ability == ABILITY_TOUGH_CLAWS) && (sp->moveTbl[sp->current_move_index].flag & FLAG_CONTACT))
     {
-	movepower = movepower * 13 / 10;
+		movepower = movepower * 13 / 10;
     }
 
     // Handle Fluffy
@@ -500,12 +500,12 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     // handle mud/water sport
     if ((movetype == TYPE_ELECTRIC) && (CheckFieldMoveEffect(bw, sp, MOVE_EFFECT_FLAG_MUD_SPORT)))
     {
-		movepower /= 3;
+		movepower /= 2;
     }
 
     if ((movetype == TYPE_FIRE) && (CheckFieldMoveEffect(bw, sp, MOVE_EFFECT_FLAG_WATER_SPORT)))
     {
-		movepower /= 3;
+		movepower /= 2;
     }
 
     // handle "in a pinch" type boosters
@@ -832,19 +832,18 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
     // handle physical moves
     if (movesplit == SPLIT_PHYSICAL)
     {
-	// handle reflect
-	if (((side_cond & SIDE_STATUS_REFLECT) != 0)
-	 && (critical == 1)
-	 && (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
-	 && (AttackingMon.ability != ABILITY_INFILTRATOR))
-		{
-			damage /= 2;
-		}
+		// handle reflect
+		if (((side_cond & SIDE_STATUS_REFLECT) != 0)
+			&& (critical == 1)
+			&& (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
+			&& (AttackingMon.ability != ABILITY_INFILTRATOR))
+			{
+				damage /= 2;
+			}
     }
     else// if (movesplit == SPLIT_SPECIAL) // same as above, handle special moves
     {
-		
-	// handle light screen
+		// handle light screen
 		if (((side_cond & SIDE_STATUS_LIGHT_SCREEN) != 0)
 		&& (critical == 1)
 		&& (sp->moveTbl[moveno].effect != MOVE_EFFECT_REMOVE_SCREENS)
@@ -862,35 +861,30 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	{
 	    switch (movetype)
 	    {
-	    case TYPE_FIRE:
-		damage /= 2;
-		break;
-	    case TYPE_WATER:
-		damage = damage * 15 / 10;
-		break;
+			case TYPE_FIRE:
+				damage /= 2;
+			break;
+			case TYPE_WATER:
+				damage = damage * 15 / 10;
+			break;
 	    }
-	}
-
-	if ((field_cond & (FIELD_STATUS_FOG | WEATHER_HAIL_ANY | WEATHER_SANDSTORM_ANY | WEATHER_RAIN_ANY | WEATHER_SNOW_ANY)) && (moveno == MOVE_SOLAR_BEAM || moveno == MOVE_SOLAR_BLADE)) // solar beam nerf
-	{
-	    damage /= 2;
 	}
 
 	if (field_cond & WEATHER_SUNNY_ANY) // sun boosts fire but nerfs water
 	{
 	    switch (movetype)
 	    {
-	    case TYPE_FIRE:
-		damage = damage * 15 / 10;
-		break;
-	    case TYPE_WATER:
-		// If the current weather is Sunny Day and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.
-		if (moveno == MOVE_HYDRO_STEAM && item != ITEM_UTILITY_UMBRELLA) {
-		    damage = damage * 15 / 10;
-		} else {
-		    damage /= 2;
-		}
-		break;
+			case TYPE_FIRE:
+				damage = damage * 15 / 10;
+			break;
+			case TYPE_WATER:
+				// If the current weather is Sunny Day and the user is not holding Utility Umbrella, this move's damage is multiplied by 1.5 instead of halved for being Water type.
+			if (moveno == MOVE_HYDRO_STEAM && item != ITEM_UTILITY_UMBRELLA) {
+				damage = damage * 15 / 10;
+			} else {
+				damage /= 2;
+			}
+			break;
 	    }
 	}
 
@@ -965,5 +959,5 @@ int CalcBaseDamage(void *bw, struct BattleStruct *sp, int moveno, u32 side_cond,
 	}
     }
 
-    return damage;
+    return damage + 1;
 }
