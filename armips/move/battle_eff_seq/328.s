@@ -7,12 +7,12 @@
 .include "armips/include/monnums.s"
 .include "armips/include/movenums.s"
 
-.create "build/move/battle_eff_seq/0_321", 0
+.create "build/move/battle_eff_seq/0_328", 0
 
-a030_321:
-	trysuckerpunch noAttack
-    changevar VAR_OP_MULT, VAR_ABILITY_TEMP, 2
-noAttack:
+// Dragon Tail
+
+a030_328:
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, 0x20000055
 	critcalc
 	damagecalc
 	endscript

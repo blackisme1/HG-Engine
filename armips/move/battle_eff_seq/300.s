@@ -16,7 +16,7 @@ a030_300:
     goto Continue
 // If the user is on Electric Terrain, its base power is increased to 120.
 IncreaseBasePower:
-    changevar VAR_OP_ADD, VAR_ABILITY_TEMP, 40
+    changevar VAR_OP_MULT, VAR_ABILITY_TEMP, 3 / 2
 Continue:
     critcalc
     damagecalc

@@ -393,7 +393,7 @@ movedata MOVE_FURY_ATTACK, "Fury Attack"
     pss SPLIT_PHYSICAL
     basepower 30
     type TYPE_NORMAL
-    accuracy 75
+    accuracy 60
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -425,7 +425,7 @@ movedata MOVE_TACKLE, "Tackle"
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
-    movedescription MOVE_TACKLE, "A physical attack\nin which the user\ncharges and slams\ninto the foe with\nits whole body.Test"
+    movedescription MOVE_TACKLE, "A physical attack\nin which the user\ncharges and slams\ninto the foe with\nits whole body."
 
 movedata MOVE_BODY_SLAM, "Body Slam"
     battleeffect 6
