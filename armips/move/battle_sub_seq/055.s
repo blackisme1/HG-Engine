@@ -19,7 +19,7 @@ a001_055:
     ifterrainoverlayistype MISTY_TERRAIN, ElectricOrMistyTerrainFail
     abilitycheck 0x0, BATTLER_ATTACKER, ABILITY_INSOMNIA, _018C
     abilitycheck 0x0, BATTLER_ATTACKER, ABILITY_VITAL_SPIRIT, _018C
-    ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_1, 0x7, _01B0
+    //ifmonstat IF_MASK, BATTLER_ATTACKER, MON_DATA_STATUS_1, 0x7, _01B0
     // In Generations III–IV only, if the user has the user has Soundproof, then Rest can be used while Uproar is in effect.
     //abilitycheck 0x0, BATTLER_ATTACKER, ABILITY_SOUNDPROOF, _0070
     if IF_MASK, VAR_FIELD_EFFECT, FIELD_STATUS_UPROAR, _01D0

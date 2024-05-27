@@ -370,6 +370,8 @@
 #define SUB_SEQ_STRENGTH_SAP                          (360)
 #define SUB_SEQ_TOXIC_THREAD                          (361)
 #define SUB_SEQ_MIND_BLOWN                            (362)
+#define SUB_SEQ_SCARY_FACE                            (363)
+#define SUB_SEQ_VICTORY_DANCE                         (364)
 
 // add status effect constants--used in battle effect scripts to queue up a subscript through the table in src/moves.c
 
@@ -540,6 +542,7 @@
 #define ADD_STATUS_EFF_STRENGTH_SAP                    (164)
 #define ADD_STATUS_EFF_TOXIC_THREAD                    (165)
 #define ADD_STATUS_EFF_MIND_BLOWN                      (166)
+#define ADD_STATUS_EFF_VICTORY_DANCE                   (167)
 
 // additional effect constants
 #define ADD_STATUS_NONE (0)

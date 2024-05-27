@@ -7,11 +7,11 @@
 .include "armips/include/monnums.s"
 .include "armips/include/movenums.s"
 
-.create "build/move/battle_eff_seq/0_327", 0
+.create "build/move/battle_eff_seq/0_330", 0
 
-// Scary Face
+// Victory Dance
 
-a030_327:
-    changevar VAR_OP_SET, VAR_ADD_STATUS1, ADD_STATUS_SCARY_FACE | ADD_STATUS_DEFENDER
+a030_330:
+    changevar VAR_OP_SET, VAR_ADD_STATUS1, ADD_STATUS_VICTORY_DANCE | ADD_STATUS_ATTACKER
 	endscript
 .close
