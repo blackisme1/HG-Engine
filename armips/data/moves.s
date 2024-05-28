@@ -2085,7 +2085,7 @@ movedata MOVE_SWIFT, "Swift"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SWIFT, "Star shaped rays are\nshot at the foe.\nThis attack never\nmisses.\n"
+    movedescription MOVE_SWIFT, "Star shaped rays are\nshot at the foe."
 
 movedata MOVE_SKULL_BASH, "Skull Bash"
     battleeffect 313
@@ -2902,7 +2902,7 @@ movedata MOVE_SPITE, "Spite"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SPITE, "The user looses its\ngrudge on the move\nlast used by the foe\nby cutting 4 PP from\nit."
+    movedescription MOVE_SPITE, "The user looses its\ngrudge on the move\nlast used by the foe\nby cutting 4 PP from\nit and damaging them."
 
 movedata MOVE_POWDER_SNOW, "Powder Snow"
     battleeffect 5
@@ -2982,7 +2982,7 @@ movedata MOVE_FEINT_ATTACK, "Feint Attack"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_FEINT_ATTACK, "The user draws up to\nthe foe disarmingly,\nthen throws a sucker\npunch.\nIt hits without fail."
+    movedescription MOVE_FEINT_ATTACK, "The user draws up to\nthe foe disarmingly,\nthen throws a sucker\npunch."
 
 movedata MOVE_SWEET_KISS, "Sweet Kiss"
     battleeffect 49
@@ -3083,9 +3083,9 @@ movedata MOVE_SPIKES, "Spikes"
 movedata MOVE_ZAP_CANNON, "Zap Cannon"
     battleeffect 6
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 100
     type TYPE_ELECTRIC
-    accuracy 75
+    accuracy 80
     pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
@@ -3574,14 +3574,14 @@ movedata MOVE_MAGNITUDE, "Magnitude"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_MAGNITUDE, "The user looses a\nground shaking quake\naffecting everyone in\nbattle."
+    movedescription MOVE_MAGNITUDE, "The user looses a\nground shaking quake.\nIts power increases\nif it hits in\nsuccession."
 
 movedata MOVE_DYNAMIC_PUNCH, "Dynamic Punch"
     battleeffect 76
     pss SPLIT_PHYSICAL
-    basepower 120
+    basepower 100
     type TYPE_FIGHTING
-    accuracy 75
+    accuracy 80
     pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
@@ -4332,7 +4332,7 @@ movedata MOVE_HELPING_HAND, "Helping Hand"
     battleeffect 176
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 0
     pp 5
     effectchance 0
@@ -4380,7 +4380,7 @@ movedata MOVE_WISH, "Wish"
     battleeffect 179
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 0
     pp 5
     effectchance 0
@@ -4396,7 +4396,7 @@ movedata MOVE_ASSIST, "Assist"
     battleeffect 180
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_DARK
+    type TYPE_FAIRY
     accuracy 0
     pp 5
     effectchance 0
@@ -4521,9 +4521,9 @@ movedata MOVE_YAWN, "Yawn"
     movedescription MOVE_YAWN, "The user lets loose a\nhuge yawn that lulls\nthe foe into falling\nasleep on the next\nturn."
 
 movedata MOVE_KNOCK_OFF, "Knock Off"
-    battleeffect 188
+    battleeffect 304
     pss SPLIT_PHYSICAL
-    basepower 50
+    basepower 60
     type TYPE_DARK
     accuracy 100
     pp 15
@@ -4534,7 +4534,7 @@ movedata MOVE_KNOCK_OFF, "Knock Off"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_KNOCK_OFF, "The user slaps down\nthe foe’s held item,\ndealing double damage\nandpreventing the item\nfrom being used."
+    movedescription MOVE_KNOCK_OFF, "The user slaps down\nthe foe’s held item,\ndealing double damage\nand preventing the item\nfrom being used."
 
 movedata MOVE_ENDEAVOR, "Endeavor"
     battleeffect 189
@@ -4633,20 +4633,20 @@ movedata MOVE_GRUDGE, "Grudge"
     movedescription MOVE_GRUDGE, "An attack move that\ninflicts double the\ndamage if the user\nhas been hurt by the\nfoe in the same turn."
 
 movedata MOVE_SNATCH, "Snatch"
-    battleeffect 195
+    battleeffect 241
     pss SPLIT_STATUS
     basepower 0
     type TYPE_DARK
     accuracy 0
     pp 5
     effectchance 0
-    target MOVE_TARGET_DEPENDS
+    target MOVE_TARGET_ME_FIRST
     priority 4
-    flags 0
+    flags FLAG_PROTECT
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SNATCH, "The user steals the\neffects of any\nhealing or stat-\nchanging move the foe\nattempts to use."
+    movedescription MOVE_SNATCH, "The user steals the\neffects of any\ndamaging, healing or\nstat changing move\nthe foe attempts to use."
 
 movedata MOVE_SECRET_POWER, "Secret Power"
     battleeffect 268
@@ -4838,7 +4838,7 @@ movedata MOVE_ICE_BALL, "Ice Ball"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_ICE_BALL, "The user continually\nrolls into the foe\nover five turns. It\nbecomes stronger\neach time it hits."
+    movedescription MOVE_ICE_BALL, "The user rolls into\nthe foe. It becomes\nstronger each time it\nhits."
 
 movedata MOVE_NEEDLE_ARM, "Needle Arm"
     battleeffect 31
@@ -4891,18 +4891,18 @@ movedata MOVE_HYPER_VOICE, "Hyper Voice"
 movedata MOVE_POISON_FANG, "Poison Fang"
     battleeffect 202
     pss SPLIT_PHYSICAL
-    basepower 50
+    basepower 70
     type TYPE_POISON
     accuracy 100
-    pp 15
-    effectchance 50
+    pp 10
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_POISON_FANG, "The user bites the\nfoe with toxic fangs.\nIt may also leave the\nfoe badly poisoned.\n"
+    movedescription MOVE_POISON_FANG, "The user bites with\ntoxic fangs.\nIt may also make the\nfoe badly poisoned.\n"
 
 movedata MOVE_CRUSH_CLAW, "Crush Claw"
     battleeffect 69
@@ -5020,7 +5020,7 @@ movedata MOVE_FAKE_TEARS, "Fake Tears"
     battleeffect 62
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_DARK
+    type TYPE_FAIRY
     accuracy 100
     pp 10
     effectchance 0
@@ -5339,9 +5339,9 @@ movedata MOVE_AERIAL_ACE, "Aerial Ace"
 movedata MOVE_ICICLE_SPEAR, "Icicle Spear"
     battleeffect 29
     pss SPLIT_PHYSICAL
-    basepower 30
+    basepower 20
     type TYPE_ICE
-    accuracy 60
+    accuracy 90
     pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -5403,7 +5403,7 @@ movedata MOVE_HOWL, "Howl"
 movedata MOVE_DRAGON_CLAW, "Dragon Claw"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 70
     type TYPE_DRAGON
     accuracy 100
     pp 15
@@ -5419,7 +5419,7 @@ movedata MOVE_DRAGON_CLAW, "Dragon Claw"
 movedata MOVE_FRENZY_PLANT, "Frenzy Plant"
     battleeffect 326
     pss SPLIT_SPECIAL
-    basepower 150
+    basepower 120
     type TYPE_GRASS
     accuracy 100
     pp 5
@@ -5451,7 +5451,7 @@ movedata MOVE_BULK_UP, "Bulk Up"
 movedata MOVE_BOUNCE, "Bounce"
     battleeffect 6
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 80
     type TYPE_FLYING
     accuracy 100
     pp 5
@@ -5483,9 +5483,9 @@ movedata MOVE_MUD_SHOT, "Mud Shot"
 movedata MOVE_POISON_TAIL, "Poison Tail"
     battleeffect 2
     pss SPLIT_PHYSICAL
-    basepower 120
+    basepower 100
     type TYPE_POISON
-    accuracy 75
+    accuracy 80
     pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
@@ -5500,7 +5500,7 @@ movedata MOVE_COVET, "Covet"
     battleeffect 105
     pss SPLIT_PHYSICAL
     basepower 60
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 100
     pp 20
     effectchance 0
@@ -5672,7 +5672,7 @@ movedata MOVE_DOOM_DESIRE, "Doom Desire"
     terminatedata
     movedescription MOVE_DOOM_DESIRE, "Two turns after this\nmove is used, the\nuser blasts the foe\nwith a concentrated\nbundle of light."
 
-movedata MOVE_PSYCHO_BOOST, "Psycho Boost"
+movedata MOVE_PSYCHO_BOOST, "Psycho Blast"
     battleeffect 204
     pss SPLIT_SPECIAL
     basepower 120
@@ -5718,7 +5718,7 @@ movedata MOVE_GRAVITY, "Gravity"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_GRAVITY, "Gravity is intensified\nfor five turns, making\nmoves involving flying\nunusable and\nnegating Levitation."
+    movedescription MOVE_GRAVITY, "Gravity is intensified\nfor five turns, making\nmoves more accurate\nto hit and\nnegating Levitation."
 
 movedata MOVE_MIRACLE_EYE, "Miracle Eye"
     battleeffect 216
@@ -5836,9 +5836,9 @@ movedata MOVE_FEINT, "Feint"
     battleeffect 223
     pss SPLIT_PHYSICAL
     basepower 30
-    type TYPE_NORMAL
+    type TYPE_DARK
     accuracy 100
-    pp 15
+    pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 2
@@ -6110,7 +6110,7 @@ movedata MOVE_LUCKY_CHANT, "Lucky Chant"
     basepower 0
     type TYPE_FAIRY
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER_SIDE
     priority 0
@@ -6124,7 +6124,7 @@ movedata MOVE_ME_FIRST, "Me First"
     battleeffect 241
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_DARK
+    type TYPE_FAIRY
     accuracy 0
     pp 5
     effectchance 0
@@ -6134,7 +6134,7 @@ movedata MOVE_ME_FIRST, "Me First"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_ME_FIRST, "The user tries to cut\nahead of the foe to\nsteal and use the\nfoe’s intended move."
+    movedescription MOVE_ME_FIRST, "The user steals the\neffects of any\ndamaging, healing or\nstat changing move\nthe foe attempts to use."
 
 movedata MOVE_COPYCAT, "Copycat"
     battleeffect 242
@@ -6330,9 +6330,9 @@ movedata MOVE_FLARE_BLITZ, "Flare Blitz"
 
 movedata MOVE_FORCE_PALM, "Force Palm"
     battleeffect 6
-    pss SPLIT_SPECIAL
+    pss SPLIT_PHYSICAL
     basepower 60
-    type TYPE_FIGHTING
+    type TYPE_PSYCHIC
     accuracy 100
     pp 15
     effectchance 25
@@ -8331,9 +8331,9 @@ movedata MOVE_BESTOW, "Bestow"
 movedata MOVE_INFERNO, "Inferno"
     battleeffect 4
     pss SPLIT_SPECIAL
-    basepower 120
+    basepower 100
     type TYPE_FIRE
-    accuracy 75
+    accuracy 80
     pp 5
     effectchance 100
     target MOVE_TARGET_SELECTED
