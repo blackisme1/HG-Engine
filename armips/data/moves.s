@@ -55,7 +55,7 @@ movedata MOVE_KARATE_CHOP, "Karate Chop"
     terminatedata
     movedescription MOVE_KARATE_CHOP, "The foe is attacked\nwith a sharp chop.\nIt has a high\ncritical hit ratio.\n"
 
-movedata MOVE_DOUBLE_SLAP, "Double Slap" // 2-5 strike moves now hit 5 times and their accuracy is calculated per hit.
+movedata MOVE_DOUBLE_SLAP, "Double Slap"
     battleeffect 29
     pss SPLIT_PHYSICAL
     basepower 20
@@ -69,7 +69,7 @@ movedata MOVE_DOUBLE_SLAP, "Double Slap" // 2-5 strike moves now hit 5 times and
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_DOUBLE_SLAP, "The foe is slapped\nrepeatedly, back\nand forth, one to\nfive times in a row.\n"
+    movedescription MOVE_DOUBLE_SLAP, "The foe is slapped\nrepeatedly, back\nand forth, up to\nfive times in a row.\n"
 
 movedata MOVE_COMET_PUNCH, "Comet Punch"
     battleeffect 29
@@ -85,7 +85,7 @@ movedata MOVE_COMET_PUNCH, "Comet Punch"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_COMET_PUNCH, "The foe is hit with\na flurry of punches\nthat strike one to\nfive times in a row.\n"
+    movedescription MOVE_COMET_PUNCH, "The foe is hit with\na flurry of punches\nthat strike up to\nfive times in a row.\n"
 
 movedata MOVE_MEGA_PUNCH, "Mega Punch"
     battleeffect 0
@@ -517,7 +517,7 @@ movedata MOVE_FURY_ATTACK, "Fury Attack"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_FURY_ATTACK, "The foe is jabbed\nrepeatedly with a\nhorn or beak one to\nfive times in a row.\n"
+    movedescription MOVE_FURY_ATTACK, "The foe is jabbed\nrepeatedly with a\nhorn or beak up to\nfive times in a row.\n"
 
 movedata MOVE_HORN_DRILL, "Horn Drill"
     battleeffect 0
@@ -581,7 +581,7 @@ movedata MOVE_WRAP, "Wrap"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_WRAP, "A long body or vines\nare used to wrap and\nsqueeze the foe for\none to five turns.\n"
+    movedescription MOVE_WRAP, "A long body or vines\nare used to wrap and\nsqueeze the foe for\nup to five turns.\n"
 
 movedata MOVE_TAKE_DOWN, "Take Down"
     battleeffect 48
@@ -693,7 +693,7 @@ movedata MOVE_PIN_MISSILE, "Pin Missile"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_PIN_MISSILE, "Sharp pins are shot\nat the foe in rapid\nsuccession.\nThey hit one to five\ntimes in a row."
+    movedescription MOVE_PIN_MISSILE, "Sharp pins are shot\nat the foe in rapid\nsuccession.\nThey hit up to five\ntimes in a row."
 
 movedata MOVE_LEER, "Leer"
     battleeffect 19
@@ -2117,7 +2117,7 @@ movedata MOVE_SPIKE_CANNON, "Barb Cannon"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SPIKE_CANNON, "Sharp barbs are\nfired at the foe to\nstrike one to five\ntimes in rapid\nsuccession."
+    movedescription MOVE_SPIKE_CANNON, "Sharp barbs are\nfired at the foe to\nstrike up to five\ntimes in rapid\nsuccession."
 
 movedata MOVE_CONSTRICT, "Constrict"
     battleeffect 70
@@ -2261,7 +2261,7 @@ movedata MOVE_BARRAGE, "Barrage"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_BARRAGE, "Round objects are\nhurled at the foe to\nstrike one to five\ntimes in a row.\n"
+    movedescription MOVE_BARRAGE, "Round objects are\nhurled at the foe to\nstrike up to five\ntimes in a row.\n"
 
 movedata MOVE_LEECH_LIFE, "Leech Life"
     battleeffect 3
@@ -2486,7 +2486,7 @@ movedata MOVE_FURY_SWIPES, "Fury Swipes"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_FURY_SWIPES, "The foe is raked with\nsharp claws or\nscythes for one to\nfive times in quick\nsuccession."
+    movedescription MOVE_FURY_SWIPES, "The foe is raked with\nsharp claws or\nscythes for up to\nfive times in quick\nsuccession."
 
 movedata MOVE_BONEMERANG, "Bonemerang"
     battleeffect 44
@@ -3190,7 +3190,7 @@ movedata MOVE_BONE_RUSH, "Bone Rush"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_BONE_RUSH, "The user strikes at\nthe foe with a hard\nbone one to five\ntimes in a row.\n"
+    movedescription MOVE_BONE_RUSH, "The user strikes at\nthe foe with a hard\nbone up to five\ntimes in a row.\n"
 
 movedata MOVE_LOCK_ON, "Lock-On"
     battleeffect 94
@@ -4694,7 +4694,7 @@ movedata MOVE_ARM_THRUST, "Arm Thrust"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_ARM_THRUST, "The user looses a\nflurry of open palmed\narm thrusts that hit\none to five times in a\nrow."
+    movedescription MOVE_ARM_THRUST, "The user looses a\nflurry of open palmed\narm thrusts that hit\nup to five times in a\nrow."
 
 movedata MOVE_CAMOUFLAGE, "Camouflage"
     battleeffect 213
@@ -5270,7 +5270,7 @@ movedata MOVE_SAND_TOMB, "Sand Tomb"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SAND_TOMB, "The user traps the\nfoe inside a harshly\nraging sandstorm for\none to five turns.\n"
+    movedescription MOVE_SAND_TOMB, "The user traps the\nfoe inside a harshly\nraging sandstorm for\nup to five turns.\n"
 
 movedata MOVE_SHEER_COLD, "Sheer Cold"
     battleeffect 321
@@ -5318,7 +5318,7 @@ movedata MOVE_BULLET_SEED, "Bullet Seed"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_BULLET_SEED, "The user forcefully\nshoots seeds at the\nfoe. One to five\nseeds are shot in\nrapid succession."
+    movedescription MOVE_BULLET_SEED, "The user forcefully\nshoots seeds at the\nfoe. up to five\nseeds are shot in\nrapid succession."
 
 movedata MOVE_AERIAL_ACE, "Aerial Ace"
     battleeffect 0
@@ -5622,7 +5622,7 @@ movedata MOVE_ROCK_BLAST, "Rock Blast"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_ROCK_BLAST, "The user hurls hard\nrocks at the foe.\nOne to five rocks are\nlaunched in quick\nsuccession."
+    movedescription MOVE_ROCK_BLAST, "The user hurls hard\nrocks at the foe.\nup to five rocks are\nlaunched in quick\nsuccession."
 
 movedata MOVE_SHOCK_WAVE, "Shock Wave"
     battleeffect 0
@@ -8726,7 +8726,7 @@ movedata MOVE_TAIL_SLAP, "Tail Slap"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_TAIL_SLAP, "The use attacks by\nhitting the target\nwith its hard tail.\nIt hits one to five\ntimes in a row."
+    movedescription MOVE_TAIL_SLAP, "The use attacks by\nhitting the target\nwith its hard tail.\nIt hits up to five\ntimes in a row."
 
 movedata MOVE_HURRICANE, "Hurricane"
     battleeffect 308
