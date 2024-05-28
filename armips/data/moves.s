@@ -2056,12 +2056,12 @@ movedata MOVE_WATERFALL, "Waterfall"
     movedescription MOVE_WATERFALL, "The user charges at\nthe foe rapidly, and\nmay make it flinch.\nIt can also be used\nto climb a waterfall."
 
 movedata MOVE_CLAMP, "Clamp"
-    battleeffect 0
+    battleeffect 42
     pss SPLIT_PHYSICAL
-    basepower 70
+    basepower 50
     type TYPE_WATER
-    accuracy 100
-    pp 15
+    accuracy 80
+    pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -2069,7 +2069,7 @@ movedata MOVE_CLAMP, "Clamp"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_CLAMP, "The foe is clamped\nand squeezed by\nthe user."
+    movedescription MOVE_CLAMP, "The foe is clamped\nand squeezed by\nthe user’s very thick\nand sturdy shell for\nfive turns."
 
 movedata MOVE_SWIFT, "Swift"
     battleeffect 0
@@ -3465,12 +3465,12 @@ movedata MOVE_HEAL_BELL, "Heal Bell"
     movedescription MOVE_HEAL_BELL, "The user makes a\nsoothing bell chime\nto heal the status\nproblems of all the\nparty Pokémon."
 
 movedata MOVE_RETURN, "Return"
-    battleeffect 121
+    battleeffect 190
     pss SPLIT_PHYSICAL
-    basepower 1
-    type TYPE_NORMAL
+    basepower 120
+    type TYPE_FAIRY
     accuracy 100
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3478,7 +3478,7 @@ movedata MOVE_RETURN, "Return"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_RETURN, "A full power attack\nthat grows more\npowerful the more\nthe user likes its\nTrainer."
+    movedescription MOVE_RETURN, "The user attacks with\nfull power.\nThe lower the user’s\nHP, the less powerful\nthis attack becomes."
 
 movedata MOVE_PRESENT, "Present"
     battleeffect 158
@@ -3497,12 +3497,12 @@ movedata MOVE_PRESENT, "Present"
     movedescription MOVE_PRESENT, "An attack that hits\nfirst. It only\nworks the first turn\nthe user is in battle."
 
 movedata MOVE_FRUSTRATION, "Frustration"
-    battleeffect 123
+    battleeffect 99
     pss SPLIT_PHYSICAL
     basepower 1
-    type TYPE_NORMAL
+    type TYPE_DARK
     accuracy 100
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3510,7 +3510,7 @@ movedata MOVE_FRUSTRATION, "Frustration"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_FRUSTRATION, "A full power attack\nthat grows more\npowerful the less\nthe user likes its\nTrainer."
+    movedescription MOVE_FRUSTRATION, "An all out attack\nthat becomes more\npowerful the less\nHP the user has.\n"
 
 movedata MOVE_SAFEGUARD, "Safeguard"
     battleeffect 124
@@ -3611,11 +3611,11 @@ movedata MOVE_MEGAHORN, "Megahorn"
 movedata MOVE_DRAGON_BREATH, "DragonBreath"
     battleeffect 6
     pss SPLIT_SPECIAL
-    basepower 50
+    basepower 60
     type TYPE_DRAGON
     accuracy 100
     pp 15
-    effectchance 50
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT
@@ -3644,7 +3644,7 @@ movedata MOVE_ENCORE, "Encore"
     battleeffect 90
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 100
     pp 5
     effectchance 0
@@ -3692,7 +3692,7 @@ movedata MOVE_SWEET_SCENT, "Sweet Scent"
     battleeffect 24
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 100
     pp 10
     effectchance 0
@@ -3709,9 +3709,9 @@ movedata MOVE_IRON_TAIL, "Iron Tail"
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_STEEL
-    accuracy 70
+    accuracy 80
     pp 10
-    effectchance 50
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -3739,10 +3739,10 @@ movedata MOVE_METAL_CLAW, "Metal Claw"
 movedata MOVE_VITAL_THROW, "Vital Throw"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 70
     type TYPE_FIGHTING
-    accuracy 0
-    pp 10
+    accuracy 100
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3750,7 +3750,7 @@ movedata MOVE_VITAL_THROW, "Vital Throw"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_VITAL_THROW, "The user prepares to\nattack the foe.\nThis throw move is\nguaranteed to not miss."
+    movedescription MOVE_VITAL_THROW, "---"
 
 movedata MOVE_MORNING_SUN, "Morning Sun"
     battleeffect 132
@@ -4907,9 +4907,9 @@ movedata MOVE_POISON_FANG, "Poison Fang"
 movedata MOVE_CRUSH_CLAW, "Crush Claw"
     battleeffect 69
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 70
     type TYPE_NORMAL
-    accuracy 70
+    accuracy 100
     pp 10
     effectchance 50
     target MOVE_TARGET_SELECTED
@@ -4957,9 +4957,9 @@ movedata MOVE_METEOR_MASH, "Meteor Mash"
     pss SPLIT_PHYSICAL
     basepower 100
     type TYPE_STEEL
-    accuracy 70
+    accuracy 80
     pp 10
-    effectchance 50
+    effectchance 25
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
@@ -14811,9 +14811,9 @@ movedata MOVE_SKULK_OUT, "Skulk Out"
 movedata MOVE_CRUSH_JAW, "Crush Jaw"
     battleeffect 282
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 80
     type TYPE_DARK
-    accuracy 70
+    accuracy 80
     pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
