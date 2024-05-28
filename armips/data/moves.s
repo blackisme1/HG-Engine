@@ -458,11 +458,11 @@ movedata MOVE_ROLLING_KICK, "Rolling Kick"
 movedata MOVE_SAND_ATTACK, "Sand Attack"
     battleeffect 31
     pss SPLIT_SPECIAL
-    basepower 40
+    basepower 30
     type TYPE_GROUND
     accuracy 100
     pp 20
-    effectchance 25
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
@@ -1304,13 +1304,13 @@ movedata MOVE_PETAL_DANCE, "Petal Dance"
     movedescription MOVE_PETAL_DANCE, "The user rampages\nand attacks for two\nturns. However, it then\nbecomes confused."
 
 movedata MOVE_STRING_SHOT, "String Shot"
-    battleeffect 20
-    pss SPLIT_STATUS
-    basepower 0
+    battleeffect 70
+    pss SPLIT_SPECIAL
+    basepower 20
     type TYPE_BUG
     accuracy 100
-    pp 10
-    effectchance 0
+    pp 20
+    effectchance 100
     target MOVE_TARGET_BOTH
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
@@ -1418,9 +1418,9 @@ movedata MOVE_THUNDER, "Thunder"
 movedata MOVE_ROCK_THROW, "Rock Throw"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 60
+    basepower 50
     type TYPE_ROCK
-    accuracy 85
+    accuracy 100
     pp 20
     effectchance 0
     target MOVE_TARGET_SELECTED
@@ -1725,7 +1725,7 @@ movedata MOVE_MINIMIZE, "Minimize"
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 5
+    pp 1
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -1735,21 +1735,21 @@ movedata MOVE_MINIMIZE, "Minimize"
     terminatedata
     movedescription MOVE_MINIMIZE, "The user compresses\nits body to make\nitself look smaller.\nThe user’s evasion\nstat is boosted."
 
-movedata MOVE_SMOKESCREEN, "SmokeScreen"
-    battleeffect 23
-    pss SPLIT_STATUS
-    basepower 0
-    type TYPE_NORMAL
+movedata MOVE_SMOKESCREEN, "Smokescreen"
+    battleeffect 31
+    pss SPLIT_SPECIAL
+    basepower 30
+    type TYPE_FIRE
     accuracy 100
-    pp 10
-    effectchance 0
+    pp 20
+    effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_MAGIC_COAT | FLAG_PROTECT
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SMOKESCREEN, "The user releases an\nobscuring cloud of\nsmoke or ink.\nIt reduces the foe’s\naccuracy."
+    movedescription MOVE_SMOKESCREEN, "The user releases an\nobscuring cloud of\nsmoke. It has a\nchance to flinch the\ntarget."
 
 movedata MOVE_CONFUSE_RAY, "Confuse Ray"
     battleeffect 49
@@ -2088,9 +2088,9 @@ movedata MOVE_SWIFT, "Swift"
     movedescription MOVE_SWIFT, "Star shaped rays are\nshot at the foe.\nThis attack never\nmisses.\n"
 
 movedata MOVE_SKULL_BASH, "Skull Bash"
-    battleeffect 145
+    battleeffect 313
     pss SPLIT_PHYSICAL
-    basepower 110
+    basepower 120
     type TYPE_ROCK
     accuracy 100
     pp 5
@@ -2101,7 +2101,7 @@ movedata MOVE_SKULL_BASH, "Skull Bash"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SKULL_BASH, "The user tucks in its\nhead to raise its\nDefense in the first\nturn, then rams the\nfoe on the next turn."
+    movedescription MOVE_SKULL_BASH, "The user tucks in its\nhead to raise its\nAttack in the first\nturn, then rams the\nfoe on the next turn."
 
 movedata MOVE_SPIKE_CANNON, "Barb Cannon"
     battleeffect 29
@@ -5912,11 +5912,11 @@ movedata MOVE_METAL_BURST, "Metal Burst"
     terminatedata
     movedescription MOVE_METAL_BURST, "The user retaliates\nagainst the foe that\nlast inflicted damage\non it with much\ngreater power."
 
-movedata MOVE_U_TURN, "Somersault"
+movedata MOVE_U_TURN, "U Turn"
     battleeffect 228
     pss SPLIT_PHYSICAL
     basepower 70
-    type TYPE_FLYING
+    type TYPE_BUG
     accuracy 100
     pp 10
     effectchance 0
@@ -8398,7 +8398,7 @@ movedata MOVE_VOLT_SWITCH, "Volt Switch"
     basepower 70
     type TYPE_ELECTRIC
     accuracy 100
-    pp 20
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -8414,7 +8414,7 @@ movedata MOVE_STRUGGLE_BUG, "Struggle Bug"
     basepower 50
     type TYPE_BUG
     accuracy 100
-    pp 20
+    pp 15
     effectchance 100
     target MOVE_TARGET_BOTH
     priority 0
@@ -8518,7 +8518,7 @@ movedata MOVE_WILD_CHARGE, "Wild Charge"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_WILD_CHARGE, "The user throws an\nelectrified tackle.\nIt hurts the user\na little."
+    movedescription MOVE_WILD_CHARGE, "A reckless, full body\ncharge attack for\nslamming into the foe.\nIt also damages the\nuser a little."
 
 movedata MOVE_DRILL_RUN, "Drill Run"
     battleeffect 43
@@ -8975,7 +8975,7 @@ movedata MOVE_V_CREATE, "V create"
     type TYPE_FIRE
     accuracy 100
     pp 5
-    effectchance 100
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_CONTACT | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
@@ -9851,10 +9851,10 @@ movedata MOVE_INFESTATION, "Infestation"
 movedata MOVE_POWER_UP_PUNCH, "Power Up Punch"
     battleeffect 139
     pss SPLIT_PHYSICAL
-    basepower 40
+    basepower 50
     type TYPE_FIGHTING
     accuracy 100
-    pp 20
+    pp 15
     effectchance 100
     target MOVE_TARGET_SELECTED
     priority 0
@@ -9883,7 +9883,7 @@ movedata MOVE_OBLIVION_WING, "Oblivion Wing"
 movedata MOVE_THOUSAND_ARROWS, "Thousand Arrows"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 80
     type TYPE_GROUND
     accuracy 100
     pp 10
@@ -9899,7 +9899,7 @@ movedata MOVE_THOUSAND_ARROWS, "Thousand Arrows"
 movedata MOVE_THOUSAND_WAVES, "Thousand Waves"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 80
     type TYPE_GROUND
     accuracy 100
     pp 10
@@ -9915,7 +9915,7 @@ movedata MOVE_THOUSAND_WAVES, "Thousand Waves"
 movedata MOVE_LANDS_WRATH, "Land’s Wrath"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 80
     type TYPE_GROUND
     accuracy 100
     pp 10
@@ -9983,7 +9983,7 @@ movedata MOVE_DRAGON_ASCENT, "Dragon Ascent"
     type TYPE_FLYING
     accuracy 100
     pp 5
-    effectchance 100
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
@@ -9999,7 +9999,7 @@ movedata MOVE_HYPERSPACE_FURY, "Hyperspace Fury"
     type TYPE_DARK
     accuracy 100
     pp 5
-    effectchance 100
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
@@ -11038,7 +11038,7 @@ movedata MOVE_REVELATION_DANCE, "Reveal Dance"
     basepower 90
     type TYPE_NORMAL
     accuracy 100
-    pp 15
+    pp 10
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -11051,7 +11051,7 @@ movedata MOVE_REVELATION_DANCE, "Reveal Dance"
 movedata MOVE_CORE_ENFORCER, "Core Enforcer"
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 90
+    basepower 80
     type TYPE_DRAGON
     accuracy 100
     pp 10
@@ -11119,7 +11119,7 @@ movedata MOVE_CLANGING_SCALES, "Clang Scales"
     type TYPE_DRAGON
     accuracy 100
     pp 5
-    effectchance 100
+    effectchance 0
     target MOVE_TARGET_BOTH
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
@@ -11467,7 +11467,7 @@ movedata MOVE_SPECTRAL_THIEF, "Spectral Thief"
 movedata MOVE_SUNSTEEL_STRIKE, "Sunsteel Strike"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 90
+    basepower 80
     type TYPE_STEEL
     accuracy 100
     pp 10
@@ -11483,7 +11483,7 @@ movedata MOVE_SUNSTEEL_STRIKE, "Sunsteel Strike"
 movedata MOVE_MOONGEIST_BEAM, "Moongeist Beam"
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 90
+    basepower 80
     type TYPE_GHOST
     accuracy 100
     pp 10
@@ -15047,6 +15047,22 @@ movedata MOVE_SHADOW_BLAST, "Shadow Blast"
     contesttype 0x00
     terminatedata
     movedescription MOVE_SHADOW_BLAST, "The user unleashes an\noutburst of spectral energy.\nThis move is both Physical\nand Special."
+	
+movedata MOVE_SOMERSAULT, "Somersault"
+    battleeffect 228
+    pss SPLIT_PHYSICAL
+    basepower 70
+    type TYPE_FLYING
+    accuracy 100
+    pp 10
+    effectchance 0
+    target MOVE_TARGET_SELECTED
+    priority 0
+    flags FLAG_KINGS_ROCK | FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_CONTACT
+    appeal 0x00
+    contesttype 0x00
+    terminatedata
+    movedescription MOVE_SOMERSAULT, "After making its\nattack, the user\nrushes back to switch\nplaces with a party\nPokémon in waiting."
 
 movedatanoname NUM_OF_MOVES+1
     battleeffect 0

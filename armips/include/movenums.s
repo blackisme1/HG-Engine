@@ -949,6 +949,7 @@ MOVE_SKID equ 936
 MOVE_SHEAR equ 937
 MOVE_PALM_CLOSE equ 938
 MOVE_SHADOW_BLAST equ 939
+MOVE_SOMERSAULT equ 940
 
 
 // there are a bunch more here but that is fine

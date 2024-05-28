@@ -953,6 +953,7 @@
 #define MOVE_SHEAR 937
 #define MOVE_PALM_CLOSE 938
 #define MOVE_SHADOW_BLAST 939
+#define MOVE_SOMERSAULT 940
 
 // there are a bunch more here but that is fine
 
