@@ -3269,3 +3269,29 @@ u32 LoadCaptureSuccessSPANumEmitters(u32 id)
     else
         return BallToSpaIDs[id][2];
 }
+
+BOOL BtlCmd_TryMeFirst(void *bw, struct BattleStruct *sp);
+    IncrementBattleScriptPtr (ctx, 1);
+
+    u16 move;
+
+    int adrs = read_battle_script_param(ctx);
+
+    if (ctx->battlemon[ctx->battlerIdTarget].battle_moveflag.encoredMove &&
+        ctx->battlemon[ctx->battlerIdTarget].battle_moveflag.encoredMove == ctx->battlemon[ctx->battlerIdTarget].moves[ctx->battlemon[ctx->battlerIdTarget].battle_moveflag.encoredMoveIndex]) {
+        move = ctx->battlemon[ctx->battlerIdTarget].battle_moveflag.encoredMove;
+    } else {
+        move = GetBattlerSelectedMove(ctx, ctx->battlerIdTarget);
+    }
+
+    if ((ctx->playerActions[ctx->battlerIdTarget].command != CONTROLLER_COMMAND_40 && ctx->turnData[ctx->battlerIdTarget].struggleFlag == 0 &&
+        CheckLegalMeFirstMove(ctx, move) == TRUE && ctx->trainerAIData.moveData[move].power) || (ctx->trainerAIData.moveData[move].power == 0 && ctx->trainerAIData.moveData[move].flag & FLAG_SNATCH)) {
+        ctx->battlemon[ctx->battlerIdAttacker].battle_moveflag.meFirstFlag = TRUE;
+        ctx->battlemon[ctx->battlerIdAttacker].battle_moveflag.meFirstCount = ctx->meFirstTotal;
+        ctx->moveTemp = move;
+    } else {
+        IncrementBattleScriptPtr (ctx, adrs);
+    }
+
+    return FALSE;
+}

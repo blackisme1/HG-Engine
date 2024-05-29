@@ -2966,9 +2966,9 @@ movedata MOVE_SCARY_FACE, "Scary Face"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SCARY_FACE, "The user frightens\nthe foe with a scary\nface to \nreduce its Attack\nand Speed stat."
+    movedescription MOVE_SCARY_FACE, "The user frightens\nthe foe with a scary\nface to reduce\nits Attack and\nSpeed stat."
 
-movedata MOVE_FEINT_ATTACK, "Feint Attack"
+movedata MOVE_FEINT_ATTACK, "Sneak Attack"
     battleeffect 0
     pss SPLIT_PHYSICAL
     basepower 70
@@ -3814,7 +3814,7 @@ movedata MOVE_HIDDEN_POWER, "Hidden Power"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_HIDDEN_POWER, "A unique attack that\nvaries in type and\nintensity depending\non the Plate held."
+    movedescription MOVE_HIDDEN_POWER, "A unique attack that\nvaries in type\ndepending on the\nPlate held."
 
 movedata MOVE_CROSS_CHOP, "Cross Chop"
     battleeffect 43
@@ -4662,7 +4662,7 @@ movedata MOVE_SECRET_POWER, "Secret Power"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SECRET_POWER, "A unique attack that\nvaries in type and\nintensity depending\non the Plate held."
+    movedescription MOVE_SECRET_POWER, "A unique attack that\nvaries in type\ndepending on the\nPlate held."
 
 movedata MOVE_DIVE, "Dive"
     battleeffect 0
@@ -5222,7 +5222,7 @@ movedata MOVE_SHADOW_PUNCH, "Shadow Punch"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_SHADOW_PUNCH, "The user throws a\npunch at the foe from\nthe shadows.\nThe punch lands\nwithout fail."
+    movedescription MOVE_SHADOW_PUNCH, "The user throws a\npunch at the foe from\nthe shadows."
 
 movedata MOVE_EXTRASENSORY, "Extrasensory"
     battleeffect 31
@@ -5884,7 +5884,7 @@ movedata MOVE_ACUPRESSURE, "Acupressure"
     battleeffect 226
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_ELECTRIC
     accuracy 0
     pp 5
     effectchance 0
@@ -7550,7 +7550,7 @@ movedata MOVE_HONE_CLAWS, "Hone Claws"
     basepower 0
     type TYPE_DARK
     accuracy 0
-    pp 15
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -7566,7 +7566,7 @@ movedata MOVE_WIDE_GUARD, "Wide Guard"
     basepower 0
     type TYPE_ROCK
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER_SIDE
     priority 3
@@ -7582,7 +7582,7 @@ movedata MOVE_GUARD_SPLIT, "Guard Split"
     basepower 0
     type TYPE_PSYCHIC
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -7598,7 +7598,7 @@ movedata MOVE_POWER_SPLIT, "Power Split"
     basepower 0
     type TYPE_PSYCHIC
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -7614,7 +7614,7 @@ movedata MOVE_WONDER_ROOM, "Wonder Room"
     basepower 0
     type TYPE_PSYCHIC
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -7710,7 +7710,7 @@ movedata MOVE_MAGIC_ROOM, "Magic Room"
     basepower 0
     type TYPE_PSYCHIC
     accuracy 0
-    pp 10
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -7727,7 +7727,7 @@ movedata MOVE_SMACK_DOWN, "Smack Down"
     type TYPE_ROCK
     accuracy 100
     pp 15
-    effectchance 100
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
@@ -7820,7 +7820,7 @@ movedata MOVE_SYNCHRONOISE, "Synchrony"
     battleeffect 0
     pss SPLIT_SPECIAL
     basepower 120
-    type TYPE_PSYCHIC
+    type TYPE_NORMAL
     accuracy 100
     pp 5
     effectchance 0
@@ -8078,7 +8078,7 @@ movedata MOVE_QUICK_GUARD, "Quick Guard"
     basepower 0
     type TYPE_FIGHTING
     accuracy 0
-    pp 15
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER
     priority 3
@@ -8094,7 +8094,7 @@ movedata MOVE_ALLY_SWITCH, "Ally Switch"
     basepower 0
     type TYPE_PSYCHIC
     accuracy 0
-    pp 15
+    pp 5
     effectchance 0
     target MOVE_TARGET_USER
     priority 2
@@ -8110,7 +8110,7 @@ movedata MOVE_SCALD, "Scald"
     basepower 70
     type TYPE_WATER
     accuracy 100
-    pp 15
+    pp 10
     effectchance 50
     target MOVE_TARGET_SELECTED
     priority 0
@@ -8126,7 +8126,7 @@ movedata MOVE_SHELL_SMASH, "Shell Smash"
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 15
+    pp 1
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -8155,10 +8155,10 @@ movedata MOVE_HEAL_PULSE, "Heal Pulse"
 movedata MOVE_HEX, "Hex"
     battleeffect 287
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 50
     type TYPE_GHOST
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -8190,7 +8190,7 @@ movedata MOVE_SHIFT_GEAR, "Shift Gear"
     basepower 0
     type TYPE_STEEL
     accuracy 0
-    pp 10
+    pp 1
     effectchance 0
     target MOVE_TARGET_USER
     priority 0
@@ -8270,7 +8270,7 @@ movedata MOVE_REFLECT_TYPE, "Reflect Type"
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 15
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -8318,7 +8318,7 @@ movedata MOVE_BESTOW, "Bestow"
     basepower 0
     type TYPE_NORMAL
     accuracy 0
-    pp 15
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -9041,7 +9041,7 @@ movedata MOVE_MAT_BLOCK, "Mat Block"
     pp 5
     effectchance 0
     target MOVE_TARGET_USER_SIDE
-    priority 0
+    priority 4
     flags FLAG_MIRROR_MOVE | FLAG_PROTECT | FLAG_MAGIC_COAT
     appeal 0x00
     contesttype 0x00
@@ -9211,10 +9211,10 @@ movedata MOVE_FORESTS_CURSE, "Forest’s Curse"
 movedata MOVE_PETAL_BLIZZARD, "Petal Blizzard"
     battleeffect 0
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 90
     type TYPE_GRASS
     accuracy 100
-    pp 5
+    pp 10
     effectchance 0
     target MOVE_TARGET_FOES_AND_ALLY
     priority 0
@@ -9243,10 +9243,10 @@ movedata MOVE_FREEZE_DRY, "Freeze Dry"
 movedata MOVE_DISARMING_VOICE, "Disarming Voice"
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 70
+    basepower 50
     type TYPE_FAIRY
     accuracy 100
-    pp 15
+    pp 20
     effectchance 0
     target MOVE_TARGET_BOTH
     priority 0
@@ -9403,10 +9403,10 @@ movedata MOVE_PLAY_ROUGH, "Play Rough"
 movedata MOVE_FAIRY_WIND, "Fairy Wind"
     battleeffect 0
     pss SPLIT_SPECIAL
-    basepower 50
+    basepower 70
     type TYPE_FAIRY
     accuracy 100
-    pp 20
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
