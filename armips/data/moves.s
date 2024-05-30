@@ -3324,7 +3324,7 @@ movedata MOVE_SWAGGER, "Swagger"
     battleeffect 118
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_DARK
     accuracy 100
     pp 5
     effectchance 0
@@ -3420,7 +3420,7 @@ movedata MOVE_ATTRACT, "Attract"
     battleeffect 23
     pss SPLIT_STATUS
     basepower 0
-    type TYPE_NORMAL
+    type TYPE_FAIRY
     accuracy 100
     pp 10
     effectchance 0
@@ -3483,7 +3483,7 @@ movedata MOVE_RETURN, "Return"
 movedata MOVE_PRESENT, "Present"
     battleeffect 158
     pss SPLIT_PHYSICAL
-    basepower 100
+    basepower 120
     type TYPE_FLYING
     accuracy 100
     pp 5
@@ -3593,12 +3593,12 @@ movedata MOVE_DYNAMIC_PUNCH, "Dynamic Punch"
     movedescription MOVE_DYNAMIC_PUNCH, "The foe is punched\nwith the user’s full,\nconcentrated power.\nIt confuses the foe\nif it hits."
 
 movedata MOVE_MEGAHORN, "Megahorn"
-    battleeffect 0
+    battleeffect 291
     pss SPLIT_PHYSICAL
     basepower 120
     type TYPE_BUG
-    accuracy 75
-    pp 10
+    accuracy 100
+    pp 5
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -3606,7 +3606,7 @@ movedata MOVE_MEGAHORN, "Megahorn"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_MEGAHORN, "Using its tough\nand impressive\nhorn, the user\nrams into the foe\nwith no letup.\n"
+    movedescription MOVE_MEGAHORN, "The user attacks the\nfoe without\nguarding itself. It\nalso cuts the user’s\nDefense, Sp. Def and Speed."
 
 movedata MOVE_DRAGON_BREATH, "DragonBreath"
     battleeffect 6
@@ -4310,7 +4310,7 @@ movedata MOVE_CHARGE, "Charge"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_CHARGE, "The user boosts the\npower of the Electric\nmove it uses next.\nIt also raises the\nuser’s Sp. Def stat."
+    movedescription MOVE_CHARGE, "The user boosts the\npower of the Electric\nmove it uses next.\nIt also raises the\nuser’s Sp. Atk stat."
 
 movedata MOVE_TAUNT, "Taunt"
     battleeffect 175
@@ -4326,7 +4326,7 @@ movedata MOVE_TAUNT, "Taunt"
     appeal 0x00
     contesttype 0x00
     terminatedata
-    movedescription MOVE_TAUNT, "The foe is taunted\ninto a rage that\nallows it to use only\nattack moves for two\nto four turns."
+    movedescription MOVE_TAUNT, "The foe is taunted\ninto a rage that\nallows it to use only\nattack moves for three\nturns."
 
 movedata MOVE_HELPING_HAND, "Helping Hand"
     battleeffect 176
@@ -4491,10 +4491,10 @@ movedata MOVE_REVENGE, "Revenge"
 movedata MOVE_BRICK_BREAK, "Brick Break"
     battleeffect 186
     pss SPLIT_PHYSICAL
-    basepower 80
+    basepower 60
     type TYPE_FIGHTING
     accuracy 100
-    pp 10
+    pp 15
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
