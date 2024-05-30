@@ -1884,7 +1884,7 @@ movedata MOVE_BIDE, "Bide"
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_NORMAL
-    accuracy 0
+    accuracy 100
     pp 10
     effectchance 0
     target MOVE_TARGET_DEPENDS
@@ -5901,7 +5901,7 @@ movedata MOVE_METAL_BURST, "Metal Burst"
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_STEEL
-    accuracy 0
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_DEPENDS
@@ -6045,7 +6045,7 @@ movedata MOVE_HEAL_BLOCK, "Heal Block"
     pss SPLIT_STATUS
     basepower 0
     type TYPE_PSYCHIC
-    accuracy 0
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_BOTH
@@ -6091,7 +6091,7 @@ movedata MOVE_POWER_TRICK, "Power Trick"
 movedata MOVE_GASTRO_ACID, "Gastro Acid"
     battleeffect 239
     pss SPLIT_STATUS
-    basepower 0
+    basepower 100
     type TYPE_POISON
     accuracy 100
     pp 5
@@ -6556,7 +6556,7 @@ movedata MOVE_DRAIN_PUNCH, "Drain Punch"
     battleeffect 3
     pss SPLIT_PHYSICAL
     basepower 80
-    type TYPE_FIGHTING
+    type TYPE_GRASS
     accuracy 100
     pp 10
     effectchance 0
@@ -10814,7 +10814,7 @@ movedata MOVE_TOXIC_THREAD, "Toxic Thread"
     basepower 0
     type TYPE_POISON
     accuracy 100
-    pp 5
+    pp 1
     effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
@@ -14365,7 +14365,7 @@ movedata MOVE_COMEUPPANCE, "Comeuppance"
     pss SPLIT_PHYSICAL
     basepower 1
     type TYPE_DARK
-    accuracy 0
+    accuracy 100
     pp 5
     effectchance 0
     target MOVE_TARGET_DEPENDS
