@@ -13512,10 +13512,10 @@ movedata MOVE_ESPER_WING, "Esper Wing"
     terminatedata
     movedescription MOVE_ESPER_WING, "---"
 
-movedata MOVE_BITTER_MALICE, "Frosted Snow"
-    battleeffect 0
+movedata MOVE_BITTER_MALICE, "Icing on Top"
+    battleeffect 287
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 50
     type TYPE_ICE
     accuracy 100
     pp 10
@@ -13561,13 +13561,13 @@ movedata MOVE_TRIPLE_ARROWS, "Triple Arrows"
     movedescription MOVE_TRIPLE_ARROWS, "---"
 
 movedata MOVE_INFERNAL_PARADE, "Flame Fan"
-    battleeffect 0
+    battleeffect 287
     pss SPLIT_SPECIAL
-    basepower 60
+    basepower 50
     type TYPE_FIRE
     accuracy 100
     pp 10
-    effectchance 25
+    effectchance 0
     target MOVE_TARGET_SELECTED
     priority 0
     flags FLAG_KEEP_HP_BAR | FLAG_PROTECT | FLAG_MIRROR_MOVE | FLAG_KINGS_ROCK
