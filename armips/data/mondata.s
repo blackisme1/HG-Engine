@@ -3121,7 +3121,7 @@ mondata SPECIES_DRATINI, "Dratini"
 
 
 mondata SPECIES_DRAGONAIR, "Dragonair"
-    basestats 50, 70, 70, 70, 70, 70
+    basestats 90, 70, 50, 70, 70, 50
     types TYPE_DRAGON, TYPE_DRAGON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -3142,7 +3142,7 @@ mondata SPECIES_DRAGONAIR, "Dragonair"
 
 
 mondata SPECIES_DRAGONITE, "Dragonite"
-    basestats 50, 90, 90, 90, 90, 90
+    basestats 130, 90, 50, 90, 90, 50
     types TYPE_DRAGON, TYPE_FLYING
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -3415,7 +3415,7 @@ mondata SPECIES_SENTRET, "Sentret"
 
 
 mondata SPECIES_FURRET, "Furret"
-    basestats 80, 80, 60, 80, 40, 60
+    basestats 60, 100, 60, 90, 30, 60
     types TYPE_NORMAL, TYPE_NORMAL
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -5221,7 +5221,7 @@ mondata SPECIES_PUPITAR, "Pupitar"
 
 
 mondata SPECIES_TYRANITAR, "Tyranitar"
-    basestats 100, 140, 110, 60, 30, 60
+    basestats 100, 130, 110, 60, 40, 50
     types TYPE_ROCK, TYPE_STEEL
     catchrate 255
     baseexp 0 // defined in baseexp.s
