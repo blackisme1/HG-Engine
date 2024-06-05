@@ -2008,7 +2008,7 @@ mondata SPECIES_GENGAR, "Gengar"
 
 
 mondata SPECIES_ONIX, "Onix"
-    basestats 170, 50, 50, 70, 30, 30
+    basestats 180, 50, 50, 60, 30, 30
     types TYPE_ROCK, TYPE_GROUND
     catchrate 255
     baseexp 0 // defined in baseexp.s
