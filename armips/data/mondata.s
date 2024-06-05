@@ -958,7 +958,7 @@ mondata SPECIES_GLOOM, "Gloom"
 
 
 mondata SPECIES_VILEPLUME, "Vileplume"
-    basestats 80, 70, 90, 50, 110, 90
+    basestats 80, 70, 90, 50, 100, 100
     types TYPE_GRASS, TYPE_POISON
     catchrate 255
     baseexp 0 // defined in baseexp.s
@@ -1315,7 +1315,7 @@ mondata SPECIES_POLIWHIRL, "Poliwhirl"
 
 
 mondata SPECIES_POLIWRATH, "Poliwrath"
-    basestats 90, 90, 90, 70, 70, 90
+    basestats 70, 90, 90, 90, 70, 90
     types TYPE_WATER, TYPE_FIGHTING
     catchrate 255
     baseexp 0 // defined in baseexp.s
